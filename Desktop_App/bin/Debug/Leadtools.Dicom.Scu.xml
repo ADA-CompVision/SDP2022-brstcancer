@@ -1,0 +1,2968 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Dicom.Scu</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Dicom.Scu.Queries.BaseQuery">
+      <summary>Base class to use with DICOM queries that require a query retrieve level.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Queries.BaseQuery.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.BaseQuery.QueryRetrieveLevel">
+      <summary>Gets or sets the query retrieve level.</summary>
+      <value>The query retrieve level.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Queries.BroadQuery">
+      <summary>Provides information for a broad modality worklist query.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Queries.BroadQuery.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.BroadQuery.Modality">
+      <summary>Gets or sets the modality.</summary>
+      <value>The modality.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.BroadQuery.ScheduledProcedureStepStartDate">
+      <summary>Gets or sets the scheduled procedure step start date range.</summary>
+      <value>The scheduled procedure step start date range.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.BroadQuery.ScheduledStationAeTitle">
+      <summary>Gets or sets the scheduled station ae title.</summary>
+      <value>The scheduled station ae title.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Queries.ModalityWorklistQuery">
+      <summary>Provides information for a modality worklist query.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Queries.ModalityWorklistQuery.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.ModalityWorklistQuery.AccessionNumber">
+      <summary>Gets or sets the accession number.</summary>
+      <value>The accession number.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.ModalityWorklistQuery.Broad">
+      <summary>Gets or sets the broad query parameters..</summary>
+      <value>The broad query information.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.ModalityWorklistQuery.PatientId">
+      <summary>Gets or sets the patient id.</summary>
+      <value>The patient id.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.ModalityWorklistQuery.PatientName">
+      <summary>Gets or sets the name of the patient.</summary>
+      <value>The name of the patient.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.ModalityWorklistQuery.RequestedProcedureId">
+      <summary>Gets or sets the requested procedure id.</summary>
+      <value>The requested procedure id.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Queries.PatientQuery">
+      <summary>Provides information for querying patient information.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Queries.PatientQuery.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.PatientQuery.PatientBirthDate">
+      <summary>Gets or sets the patient birth date range.</summary>
+      <value>The patient birth date range.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.PatientQuery.PatientComments">
+      <summary>Gets or sets the patient comments.</summary>
+      <value>The patient comments.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.PatientQuery.PatientId">
+      <summary>Gets or sets the patient id.</summary>
+      <value>The patient id.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.PatientQuery.PatientName">
+      <summary>Gets or sets the name of the patient.</summary>
+      <value>The name of the patient.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.PatientQuery.PatientSex">
+      <summary>Gets or sets the patient sex.</summary>
+      <value>The patient sex.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Queries.PatientRootQueryPatient">
+      <summary>Provides information for doing a Patient Root Query C-FIND-REQ.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Queries.PatientRootQueryPatient.#ctor">
+      <summary>Initializes a new instance of the PatientRootQueryPatient class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.PatientRootQueryPatient.PatientQuery">
+      <summary>Gets or sets the patient query.</summary>
+      <value>The patient query information.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Queries.PatientRootQueryStudy">
+      <summary>Provides information for doing a Patient Root Query Study C-FIND-REQ.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Queries.PatientRootQueryStudy.#ctor">
+      <summary>Initializes a new instance of the PatientRootQueryStudy class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.PatientRootQueryStudy.PatientQuery">
+      <summary>Gets or sets the patient query.</summary>
+      <value>The patient query information.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.PatientRootQueryStudy.StudyQuery">
+      <summary>Gets or sets the study query.</summary>
+      <value>The study query information.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Queries.SeriesQuery">
+      <summary>Provides information for querying series information.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Queries.SeriesQuery.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.SeriesQuery.Modality">
+      <summary>Gets or sets the modality.</summary>
+      <value>The modality.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.SeriesQuery.PerfProcStepStartDate">
+      <summary>Gets or sets the performed procedure step start date.</summary>
+      <value>The performed procedure step start date.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.SeriesQuery.PerfProcStepStartTime">
+      <summary>Gets or sets the performed procedure step start time.</summary>
+      <value>The performed procedure step start time.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.SeriesQuery.RequestedProcId">
+      <summary>Gets or sets the requested procedure id.</summary>
+      <value>The requested procedure id.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.SeriesQuery.SchedProcStepId">
+      <summary>Gets or sets the scheduled procedure step id.</summary>
+      <value>The scheduled procedure step id.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.SeriesQuery.SeriesInstanceUID">
+      <summary>Gets or sets the series instance UID.</summary>
+      <value>The series instance UID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.SeriesQuery.SeriesNumber">
+      <summary>Gets or sets the series number.</summary>
+      <value>The series number.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Queries.StudyQuery">
+      <summary>Provides information for querying study information.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Queries.StudyQuery.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.StudyQuery.AccessionNumber">
+      <summary>Gets or sets the accession number.</summary>
+      <value>The accession number.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.StudyQuery.Modalities">
+      <summary>Gets the list of modalities.</summary>
+      <value>The list modalities in the study.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.StudyQuery.ReferringPhysiciansName">
+      <summary>Gets or sets the name of the referring physician.</summary>
+      <value>The name of the referring physician.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.StudyQuery.StudyDate">
+      <summary>Gets or sets the study date range.</summary>
+      <value>The study date range.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.StudyQuery.StudyId">
+      <summary>Gets or sets the study id.</summary>
+      <value>The study id.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.StudyQuery.StudyInstanceUID">
+      <summary>Gets or sets the study instance UID.</summary>
+      <value>The study instance UID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.StudyQuery.StudyTime">
+      <summary>Gets or sets the study time range.</summary>
+      <value>The study time range.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Queries.StudyRootQuerySeries">
+      <summary>Provides information for doing a Study Root Query Series C-FIND-REQ.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Queries.StudyRootQuerySeries.#ctor">
+      <summary>Initializes a new instance of the StudyRootQuerySeries class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.StudyRootQuerySeries.Patient">
+      <summary>Gets or sets the patient query information.</summary>
+      <value>The patient query information.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.StudyRootQuerySeries.Series">
+      <summary>Gets or sets the series query information.</summary>
+      <value>The series query information.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.StudyRootQuerySeries.Study">
+      <summary>Gets or sets the study query information.</summary>
+      <value>The study query information.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Queries.StudyRootQueryStudy">
+      <summary>Provides information for doing a Study Root Query Study C-FIND-REQ</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Queries.StudyRootQueryStudy.#ctor">
+      <summary>Initializes a new instance of the StudyRootQueryStudy class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.StudyRootQueryStudy.Patient">
+      <summary>Gets or sets the patient query information.</summary>
+      <value>The patient query information.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Queries.StudyRootQueryStudy.Study">
+      <summary>Gets or sets the study query information.</summary>
+      <value>The study query information.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.AfterAssociateRequestEventArgs">
+      <summary>Provides data for the AfterAssociateRequest event.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterAssociateRequestEventArgs.Associate">
+      <summary>Gets the associate.</summary>
+      <value>The associate.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterAssociateRequestEventArgs.Reason">
+      <summary>Gets the reason.</summary>
+      <value>The reason.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterAssociateRequestEventArgs.Rejected">
+      <summary>Gets a value indicating whether this AfterAssociateRequestEventArgs is rejected.</summary>
+      <value>`true` if rejected; otherwise, `false`.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterAssociateRequestEventArgs.Result">
+      <summary>Gets the result.</summary>
+      <value>The result.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterAssociateRequestEventArgs.Source">
+      <summary>Gets the source.</summary>
+      <value>The source.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.AfterCFindEventArgs">
+      <summary>Provides data for the AfterCFind event.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCFindEventArgs.MatchCount">
+      <summary>Gets the match count.</summary>
+      <value>A System.Int32 value that represents the match count.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCFindEventArgs.Status">
+      <summary>Gets the status.</summary>
+      <value>A Leadtools.Dicom.DicomCommandStatusType object that represents the status.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCFindEventArgs.StatusAll">
+      <summary>Gets all status-related elements that can be included in the command set of a C-FIND DIMSE service response.</summary>
+      <value>All status-related elements that can be included in the command set of a C-FIND DIMSE service response.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.AfterCGetEventArgs">
+      <summary>Provides data for the AfterCGet event.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.AfterCGetEventArgs.#ctor(Leadtools.Dicom.Scu.Common.DicomScp,System.Int32,System.Int32,System.Int32,Leadtools.Dicom.DicomDataSet,Leadtools.Dicom.DicomCommandStatusType)">
+      <summary>Provides data for the AfterCGet event</summary>
+      <param name="scp">The peer connection the C-GET-REQ was sent to.</param>
+      <param name="Completed">The number of C-STORE sub operations that have completed.</param>
+      <param name="Failed">The number of C-STORE sub operations that have failed.</param>
+      <param name="Warning">The number of C-STORE sub operations with a warning status.</param>
+      <param name="ds">The DICOM dataset sent with the C-MOVE-REQ.</param>
+      <param name="status">The status of the C-MOVE-REQ.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.AfterCGetEventArgs.Dispose">
+      <summary>Releases all resources used by the BeforeCGetEventArgs.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.AfterCGetEventArgs.Dispose(System.Boolean)">
+      <summary>Releases all resources used by the AfterCGetEventArgs.</summary>
+      <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCGetEventArgs.AffectedClass">
+      <summary>Gets or sets the SOP UID for this C-GET query</summary>
+      <value>A System.String value that represents the affected class</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCGetEventArgs.Completed">
+      <summary>Gets or sets number of completed C-STORE sub operations</summary>
+      <value>The number of completed C-STORE sub operations</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCGetEventArgs.Dataset">
+      <summary>Gets or sets a Leadtools.Dicom.DicomDataSetobject which contains the information retrieved from the original C-GET-REQ</summary>
+      <value>A Leadtools.Dicom.DicomDataSetobject which contains the information retrieved from the original C-GET-REQ</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCGetEventArgs.Failed">
+      <summary>Gets or sets number of failed C-STORE sub operations</summary>
+      <value>The number of failed C-STORE sub operations</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCGetEventArgs.MessageId">
+      <summary>Gets or sets the Message ID being responded to</summary>
+      <value>A System.Int32 value that represents Message ID</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCGetEventArgs.PresentationID">
+      <summary>Gets or sets the presentation ID being responded to</summary>
+      <value>A System.Byte value that represents presentation ID</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCGetEventArgs.Remaining">
+      <summary>Gets or sets number of remaining C-STORE sub operations</summary>
+      <value>The number of remaining C-STORE sub operations</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCGetEventArgs.Status">
+      <summary>Gets or sets a status Leadtools.Dicom.DicomCommandStatusType of the C-GET-REQ</summary>
+      <value>A status Leadtools.Dicom.DicomCommandStatusType of the C-GET-REQ</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCGetEventArgs.StatusAll">
+      <summary>Gets all status-related elements that can be included in the command set of a C-GET DIMSE service response.</summary>
+      <value>All status-related elements that can be included in the command set of a C-GET DIMSE service response.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCGetEventArgs.Warning">
+      <summary>Gets or sets number of C-STORE sub operations that generated warnings</summary>
+      <value>The number of C-STORE sub operations that generated warnings</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.AfterCMoveEventArgs">
+      <summary>Provides data for the AfterCMove event.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.AfterCMoveEventArgs.#ctor(Leadtools.Dicom.Scu.Common.DicomScp,System.Int32,System.Int32,System.Int32,Leadtools.Dicom.DicomDataSet,Leadtools.Dicom.DicomCommandStatusType)">
+      <summary>Initializes a new instance of the AfterCMoveEventArgs class.</summary>
+      <param name="scp">The peer connection the C-MOVE-REQ was sent to.</param>
+      <param name="Completed">The number of C-STORE sub operations that have completed.</param>
+      <param name="Failed">The number of C-STORE sub operations that have failed.</param>
+      <param name="Warning">The number of C-STORE sub operations with a warning status.</param>
+      <param name="ds">The DICOM dataset sent with the C-MOVE-REQ.</param>
+      <param name="status">The status of the C-MOVE-REQ.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.AfterCMoveEventArgs.#ctor(Leadtools.Dicom.Scu.Common.DicomScp,System.Int32,System.Int32,System.Int32,Leadtools.Dicom.DicomDataSet,Leadtools.Dicom.DicomCommandStatusType,Leadtools.Dicom.Common.Anonymization.StatusAll)">
+      <summary>Initializes a new instance of the [AfterCMoveEventArgs] class.</summary>
+      <param name="scp">The peer connection the C-MOVE-REQ was sent to.</param>
+      <param name="Completed">The number of C-STORE sub operations that have completed.</param>
+      <param name="Failed">The number of C-STORE sub operations that have failed.</param>
+      <param name="Warning">The number of C-STORE sub operations with a warning status.</param>
+      <param name="ds">The [DicomDataSet] sent with the C-MOVE-REQ.</param>
+      <param name="status">The status of the C-MOVE-REQ.</param>
+      <param name="statusAll">All status-related elements that can be included in the command set of a C-MOVE DIMSE service response.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.AfterCMoveEventArgs.Dispose">
+      <summary>Releases all resources used by the AfterCMoveEventArgs.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.AfterCMoveEventArgs.Dispose(System.Boolean)">
+      <summary>Releases all resources used by the AfterCMoveEventArgs.</summary>
+      <param name="disposing">true to release both managed and unmanaged resources; otherwise, it is false to release only unmanaged resources.</param>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCMoveEventArgs.AffectedClass">
+      <summary>Gets or sets the affected class.</summary>
+      <value>A System.String value that represents the class affected by the request.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCMoveEventArgs.Completed">
+      <summary>Gets or sets the number of completed moves.</summary>
+      <value>A System.Int32 value that represents the number of completed moves.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCMoveEventArgs.Dataset">
+      <summary>Gets or sets the dataset that was moved.</summary>
+      <value>The dataset that was moved.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCMoveEventArgs.Failed">
+      <summary>Gets or sets the number of failed moves.</summary>
+      <value>A System.Int32 value that represents the number of failed moves.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCMoveEventArgs.MessageId">
+      <summary>Gets or sets the message id.</summary>
+      <value>A System.Int32 value that represents the Message ID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCMoveEventArgs.PresentationID">
+      <summary>Gets or sets the presentation ID.</summary>
+      <value>A System.Byte value that represents the Presentation Context ID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCMoveEventArgs.Remaining">
+      <summary>Gets or sets the remaining number of C-STORE operation.</summary>
+      <value>The number of C-STOREs left.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCMoveEventArgs.Status">
+      <summary>Gets or sets the move status.</summary>
+      <value>The status of the move operation.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCMoveEventArgs.StatusAll">
+      <summary>Gets all status-related elements that can be included in the command set of a C-MOVE DIMSE service response.</summary>
+      <value>All status-related elements that can be included in the command set of a C-MOVE DIMSE service response.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCMoveEventArgs.Warning">
+      <summary>Gets or sets the number of warning moves.</summary>
+      <value>A System.Int32 value that represents the number of warning moves.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.AfterConnectEventArgs">
+      <summary>Provides data for the AfterConnect event.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterConnectEventArgs.Error">
+      <summary>Gets or sets the error.</summary>
+      <value>The error.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.AfterCStoreEventArgs">
+      <summary>Provides data for the AfterCStore event.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCStoreEventArgs.AffectedClass">
+      <summary>Gets the affected class.</summary>
+      <value>A System.String value that represents the affected class.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCStoreEventArgs.FileInfo">
+      <summary>Gets the file.</summary>
+      <value>A FileInfo object that represents the file.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCStoreEventArgs.Instance">
+      <summary>Gets the instance.</summary>
+      <value>A System.String value that represents the instance.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCStoreEventArgs.MessageId">
+      <summary>Gets the message id.</summary>
+      <value>A System.Int32 value that represents the message id.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCStoreEventArgs.PresentationID">
+      <summary>Gets the presentation ID.</summary>
+      <value>A System.Byte value that represents the presentation id.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCStoreEventArgs.Status">
+      <summary>Gets the status.</summary>
+      <value>A Leadtools.Dicom.DicomCommandStatusType value that represents the status.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterCStoreEventArgs.StatusAll">
+      <summary>Gets all status-related elements that can be included in the command set of a C-STORE DIMSE service response.</summary>
+      <value>All status-related elements that can be included in the command set of a C-STORE DIMSE service response.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.AfterNActionEventArgs">
+      <summary>Provides data for the AfterNAction event.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.AfterNActionEventArgs.#ctor(Leadtools.Dicom.Scu.Common.DicomScp,System.Byte,System.Int32,System.String,System.String,Leadtools.Dicom.DicomCommandStatusType,System.Int32,Leadtools.Dicom.DicomDataSet)">
+      <summary>Initializes a new instance of the AfterNActionEventArgs class.</summary>
+      <param name="scp">The peer connection that was sent the N-ACTION-REQ.</param>
+      <param name="presentationID">The Presentation Context ID. The ID provides information about both the class type of the data and the Transfer Syntax to use when transferring the data.</param>
+      <param name="messageID">The Message ID. Each message sent by a member of a connection should have a unique ID. Since a member of a connection may send several messages, this ID allows that member to identify when a specific request has been completed.</param>
+      <param name="affectedClass">The class affected by the request. This will be a SOP Class or a Meta SOP Class.</param>
+      <param name="instance">The instance of the class. A server may, for example, have three instances of the Nuclear Medicine Class. This value identifies the data with a specific instance.</param>
+      <param name="status">The status of the original request.</param>
+      <param name="actionType">An application-specific action that was performed on the specified Data Set.</param>
+      <param name="dataSet">A DicomDataSet object that contains the Data Set resulting from the specified.</param>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterNActionEventArgs.ActionType">
+      <summary>Gets or sets application-specific action that was performed on the specified Data Set.</summary>
+      <value>A System.Int32 value that indicates the type of the action that was performed.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.AfterSecureLinkReadyEventArgs">
+      <summary>Provides data for the AfterSecureLInkReady event.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.AfterSecureLinkReadyEventArgs.Error">
+      <summary>Gets or sets the error.</summary>
+      <value>A Leadtools.Dicom.DicomExceptionCode value that indicates the error code.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.BaseEventArgs">
+      <summary>Base event args.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.BaseEventArgs.#ctor">
+      <summary>Initializes a new instance of the BaseEventArgs class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BaseEventArgs.Scp">
+      <summary>Gets the SCP.</summary>
+      <value>The SCP.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.BeforeAssociateAcceptEventArgs">
+      <summary>Provides data for the BeforeAssociationAcceptDelegate.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeAssociateAcceptEventArgs.Associate">
+      <summary>Gets the associate.</summary>
+      <value>The associate.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeAssociateAcceptEventArgs.PresentationContexts">
+      <summary>Gets the presentation contexts.</summary>
+      <value>The presentation contexts.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.BeforeAssociateRequestEventArgs">
+      <summary>Provides data for the BeforeAssociateRequest event.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeAssociateRequestEventArgs.Associate">
+      <summary>Gets the associate.</summary>
+      <value>The associate.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeAssociateRequestEventArgs.PresentationContexts">
+      <summary>Gets the presentation contexts.</summary>
+      <value>The presentation contexts.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.BeforeCFindEventArgs">
+      <summary>Provides data for the BeforeCFind event.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCFindEventArgs.AffectedClass">
+      <summary>Gets the affected class.</summary>
+      <value>A System.String value that represents the affected class.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCFindEventArgs.Dataset">
+      <summary>Gets the dataset.</summary>
+      <value>The dataset.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCFindEventArgs.MessageId">
+      <summary>Gets the message id.</summary>
+      <value>A System.Int32 value that represents the message id.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCFindEventArgs.PresentationID">
+      <summary>Gets the presentation ID.</summary>
+      <value>A System.Byte value that represents the presentation id.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCFindEventArgs.Priority">
+      <summary>Gets or sets the priority.</summary>
+      <value>A Leadtools.Dicom.DicomCommandPriorityType object that represents the priority.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCFindEventArgs.QueryLevel">
+      <summary>Gets the query level.</summary>
+      <value>The query level.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.BeforeCGetEventArgs">
+      <summary>Provides data for the BeforeCGet event.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.BeforeCGetEventArgs.#ctor(Leadtools.Dicom.Scu.Common.DicomScp,Leadtools.Dicom.DicomDataSet,Leadtools.Dicom.DicomCommandPriorityType)">
+      <summary>Initializes a new instance of the BeforeCGetEventArgs class.</summary>
+      <param name="scp">A Leadtools.Dicom.Scu.DicomScp that represents the peer connection to send the C-GET-REQ to.</param>
+      <param name="dataset">The dataset to send with this C-GET-REQ message.</param>
+      <param name="priority">The priority of the C-GET-REQ message.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.BeforeCGetEventArgs.Dispose">
+      <summary>Releases all resources used by the BeforeCGetEventArgs.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.BeforeCGetEventArgs.Dispose(System.Boolean)">
+      <summary>Releases all resources used by the AfterCGetEventArgs.</summary>
+      <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCGetEventArgs.AffectedClass">
+      <summary>Gets or sets the SOP UID for this C-Get query</summary>
+      <value>A System.String value that represents the affected class.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCGetEventArgs.Dataset">
+      <summary>Gets or sets the DICOM data set which describes the C-GET-REQ information to retrieve</summary>
+      <value>A Leadtools.Dicom.DicomDataSet</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCGetEventArgs.MessageId">
+      <summary>Gets or sets the message ID</summary>
+      <value>A System.Int32 value that represents the message ID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCGetEventArgs.PresentationID">
+      <summary>Gets or sets the presentation ID</summary>
+      <value>A System.Byte value that represents the presentation ID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCGetEventArgs.Priority">
+      <summary>Gets or sets priority level of the message</summary>
+      <value>A System.Int32 value that represents the message id.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.BeforeCMoveEventArgs">
+      <summary>Provides data for the BeforeCMove event.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.BeforeCMoveEventArgs.#ctor(Leadtools.Dicom.Scu.Common.DicomScp,Leadtools.Dicom.DicomDataSet,Leadtools.Dicom.DicomCommandPriorityType,System.String)">
+      <summary>Initializes a new instance of the BeforeCMoveEventArgs class.</summary>
+      <param name="scp">A Leadtools.Dicom.Scu.DicomScp that represents the peer connection to send the C-MOVE-REQ to.</param>
+      <param name="dataset">The dataset to send with this C-MOVE-REQ message.</param>
+      <param name="priority">The priority of the C-MOVE-REQ message.</param>
+      <param name="DestAE">A System.String that represents the destination ae title of the move operation.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.BeforeCMoveEventArgs.Dispose">
+      <summary>Releases all resources used by the BeforeCMoveEventArgs.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.BeforeCMoveEventArgs.Dispose(System.Boolean)">
+      <summary>Releases all resources used by the BeforeCMoveEventArgs.</summary>
+      <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCMoveEventArgs.AffectedClass">
+      <summary>Gets or sets the affected class.</summary>
+      <value>A System.String value that represents the affected class.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCMoveEventArgs.Dataset">
+      <summary>Gets the dataset.</summary>
+      <value>The dataset .</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCMoveEventArgs.DestinationAETitle">
+      <summary>Gets the move destination ae title.</summary>
+      <value>The destination AE title.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCMoveEventArgs.MessageId">
+      <summary>Gets or sets the message id.</summary>
+      <value>A System.Int32 value that represents the message id.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCMoveEventArgs.PresentationID">
+      <summary>Gets or sets the presentation ID.</summary>
+      <value>A System.Byte value that represents the presentation ID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCMoveEventArgs.Priority">
+      <summary>Gets or sets the priority.</summary>
+      <value>The priority.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.BeforeConnectEventArgs">
+      <summary>Provides data for the Connect event.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeConnectEventArgs.PrivateKeyPassword">
+      <summary>Gets or sets the private key password.</summary>
+      <value>The private key password.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.BeforeCStoreEventArgs">
+      <summary>Provides data for the BeforeCStore event.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCStoreEventArgs.AffectedClass">
+      <summary>Gets the affected class.</summary>
+      <value>A System.String value that represents the affected class.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCStoreEventArgs.Dataset">
+      <summary>Gets the dataset.</summary>
+      <value>The dataset to store.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCStoreEventArgs.Error">
+      <summary>Gets the error.</summary>
+      <value>The error that occurred.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCStoreEventArgs.FileInfo">
+      <summary>Gets the file info.</summary>
+      <value>The file info .</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCStoreEventArgs.Instance">
+      <summary>Gets the instance.</summary>
+      <value>A System.String value that represents the instance.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCStoreEventArgs.MessageId">
+      <summary>Gets or sets the message id.</summary>
+      <value>A System.Int32 value that represents the message id.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCStoreEventArgs.MoveAE">
+      <summary>Gets the move AE.</summary>
+      <value>The move AE.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCStoreEventArgs.MoveMessageID">
+      <summary>Gets or sets the move message ID.</summary>
+      <value>A System.Int32 value that represents the move message ID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCStoreEventArgs.PresentationID">
+      <summary>Gets the presentation ID.</summary>
+      <value>The presentation ID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCStoreEventArgs.Priority">
+      <summary>Gets the priority.</summary>
+      <value>A Leadtools.Dicom.DicomCommandPriorityType object that represents the priority.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeCStoreEventArgs.Skip">
+      <summary>Gets or sets the skip method.</summary>
+      <value>The skip method .</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.BeforeNActionEventArgs">
+      <summary>Provides data for the BeforeNAction event.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.BeforeNActionEventArgs.#ctor(Leadtools.Dicom.Scu.Common.DicomScp,System.Byte,System.Int32,System.String,System.String,System.Int32,Leadtools.Dicom.DicomDataSet)">
+      <summary>Initializes a new instance of the BeforeNActionEventArgs class.</summary>
+      <param name="scp">The peer connection to send the N-ACTION-REQ.</param>
+      <param name="presentationID">The Presentation Context ID. The ID provides information about both the class type of the data and the Transfer Syntax to use when transferring the data.</param>
+      <param name="messageID">The Message ID. Each message sent by a member of a connection should have a unique ID. Since a member of a connection may send several messages, this ID allows that member to identify when a specific request has been completed.</param>
+      <param name="affectedClass">The class affected by the request. This will be a SOP Class or a Meta SOP Class.</param>
+      <param name="instance">The instance of the class. A server may, for example, have three instances of the Nuclear Medicine Class. This value identifies the data with a specific instance.</param>
+      <param name="actionType">An application-specific action to be performed on the specified Data Set.</param>
+      <param name="dataSet">A DicomDataSet object that contains the Data Set on which the specified action is to be performed.</param>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeNActionEventArgs.ActionType">
+      <summary>Gets or sets the application-specific action to be performed on the specified Data Set.</summary>
+      <value>A System.Int32 value that represents the type of the action performed.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.BeforeNGetEventArgs">
+      <summary>Provides data for the BeforeNGetEvent event.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.BeforeNGetEventArgs.Attributes">
+      <summary>Gets or sets the list of attributes.</summary>
+      <value>An array of the attributes to get. The attributes must be specified using the Data Element Tags.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.ClientAssociationException">
+      <summary>The exception that is thrown when an DICOM association is rejected.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.ClientAssociationException.#ctor(Leadtools.Dicom.DicomAssociateRejectReasonType)">
+      <summary>Initializes a new instance of the ClientAssociationException class.</summary>
+      <param name="reason">The reason for the associate rejection.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.ClientAssociationException.#ctor(System.String,Leadtools.Dicom.DicomAssociateRejectReasonType)">
+      <summary>Initializes a new instance of the ClientAssociationException class.</summary>
+      <param name="message">Message that describes the exception.</param>
+      <param name="reason">The reason for the associate rejection.</param>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ClientAssociationException.Reason">
+      <summary>Gets or sets the reason for associate rejection..</summary>
+      <value>The reason for the associate rejection.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.ClientCommunicationCanceled">
+      <summary>The exception that is thrown when DICOM communication is canceled by the user.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.ClientCommunicationCanceled.#ctor(System.String)">
+      <summary>Initializes a new instance of the ClientCommunicationCanceled class.</summary>
+      <param name="message">Message that describes the exception.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.ClientCommunicationException">
+      <summary>The exception that is thrown when a communication error occurs.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.ClientCommunicationException.#ctor(System.String,Leadtools.Dicom.DicomCommandStatusType)">
+      <summary>Initializes a new instance of the ClientCommunicationException class.</summary>
+      <param name="message">Message that describes the exception.</param>
+      <param name="status">The status the describes the communication exception.</param>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ClientCommunicationException.Status">
+      <summary>Gets or sets the current communication status.</summary>
+      <value>The status that describes the communication exception.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.ClientConnectionException">
+      <summary>Exception that is thrown when a connection exception occurs.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.ClientConnectionException.#ctor(Leadtools.Dicom.DicomExceptionCode)">
+      <summary>Initializes a new instance of the ClientConnectionException class.</summary>
+      <param name="error">The error that occurred during the connect attempt.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.ClientConnectionException.#ctor(System.String,Leadtools.Dicom.DicomExceptionCode)">
+      <summary>Initializes a new instance of the ClientConnectionException class.</summary>
+      <param name="message">Message that describes the exception.</param>
+      <param name="error">The error that occurred during the connect attempt.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.ClientSecureLinkReadyException">
+      <summary>The exception thrown when the secure handshake (TLS) failed.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.ClientSecureLinkReadyException.#ctor(System.String,Leadtools.Dicom.DicomExceptionCode)">
+      <summary>Initializes a new instance of the [ClientSecureLinkReadyException] class.</summary>
+      <param name="message">Gets a message that describes the current exception. (Inherited from [DicomException]) </param>
+      <param name="code">Gets or sets the code that caused this exception. (Inherited from [DicomException]) </param>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ClientSecureLinkReadyException.Code">
+      <summary>Gets the code that caused this exception. (Inherited from [DicomException])</summary>
+      <value>The code that caused this exception. (Inherited from [DicomException])</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.CommonEventArgs">
+      <summary>Provides data for DICOM events that share common data.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.CommonEventArgs.AffectedClass">
+      <summary>Gets the affected class.</summary>
+      <value>The class affected by the request. This will be a SOP Class or a Meta SOP Class.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.CommonEventArgs.DataSet">
+      <summary>Gets the data set.</summary>
+      <value>A Leadtools.Dicom.DicomDataSet object that contains the Data Set on which the specified action is to be performed.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.CommonEventArgs.Instance">
+      <summary>Gets the instance.</summary>
+      <value>The instance of the class. A server may, for example, have three instances of the Nuclear Medicine Class. This value identifies the data with a specific instance.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.CommonEventArgs.MessageID">
+      <summary>Gets or sets the message ID.</summary>
+      <value>A System.Int32 value that represents the Message ID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.CommonEventArgs.PresentationID">
+      <summary>Gets the presentation context id.</summary>
+      <value>A System.Byte value that represents the Presentation Context ID.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.CompositeObjectInstance">
+      <summary>Contains information about a composite object instance.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.CompositeObjectInstance.#ctor">
+      <summary>Initializes a new instance of the CompositeObjectInstance class.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.CompositeObjectInstance.Dispose">
+      <summary>Releases all resources used by the CompositeObjectInstance.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.CompositeObjectInstance.Dispose(System.Boolean)">
+      <summary>Releases all resources used by the CompositeObjectInstance.</summary>
+      <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.CompositeObjectInstance.InstanceNumber">
+      <summary>Gets the instance number.</summary>
+      <value>A number that identifies this SOP Instance.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.CompositeObjectInstance.InstanceType">
+      <summary>Gets the level.</summary>
+      <value>Describes the type of composite object instance.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.CompositeObjectInstance.SeriesInstanceUID">
+      <summary>Gets the series instance UID.</summary>
+      <value>Uniquely identifies the series instance.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.CompositeObjectInstance.SOPClassUID">
+      <summary>Gets the SOP class UID.</summary>
+      <value>Uniquely identifies the SOP Class.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.CompositeObjectInstance.SOPInstanceUID">
+      <summary>Gets the SOP instance UID.</summary>
+      <value>Uniquely identifies the SOP Instance.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.ContentTemplateSequence">
+      <summary>Describes a specific content item.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.ContentTemplateSequence.#ctor">
+      <summary>Initializes a new instance of the ContentTemplateSequence class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ContentTemplateSequence.TemplateIdentifer">
+      <summary>Gets the template identifier.</summary>
+      <value>The template identifer.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.DicomConnection">
+      <summary>This is a support class to be used internally by the LEADTOOLS communication objects.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.#ctor">
+      <summary>Initializes a new instance of the DicomConnection class.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.#ctor(System.String)">
+      <summary>Initializes a new instance of the DicomConnection class.</summary>
+      <param name="TemporaryDirectory">The temporary directory.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.#ctor(System.String,Leadtools.Dicom.DicomNetSecurityMode,Leadtools.Dicom.DicomOpenSslContextCreationSettings)">
+      <summary>Initializes a new instance of the DicomConnection class.</summary>
+      <param name="TemporaryDirectory">The temporary directory.</param>
+      <param name="SecurityMode">The security mode to use when initializing the network structure.</param>
+      <param name="openSslContextCreationSettings">Provides properties to change the security options from the defaults when the security is used.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.AbortRequest(Leadtools.Dicom.DicomAbortSourceType,Leadtools.Dicom.DicomAbortReasonType)">
+      <summary>Aborts the current connection.</summary>
+      <param name="source">The source.</param>
+      <param name="reason">The reason.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.Cancel">
+      <summary>Causes the [DicomConnection] to immediately stop processing.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.CancelRequest">
+      <summary>Cancels the current action.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.Release">
+      <summary>Sends a release request to the peer member of a DICOM connection.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.Verify(Leadtools.Dicom.Scu.Common.DicomScp)">
+      <summary>Verifies the specified SCP.</summary>
+      <param name="scp">The SCP.</param>
+      <returns>true if the SCP was successfully verified; otherwise it is false.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.BuildAssociation(Leadtools.Dicom.Scu.Common.DicomScp)">
+      <summary>Builds the association.</summary>
+      <param name="scp">The SCP.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.Connect(Leadtools.Dicom.Scu.Common.DicomScp)">
+      <summary>Connects the specified SCP.</summary>
+      <param name="scp">The SCP.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.Dispose(System.Boolean)">
+      <summary>Releases unmanaged and - optionally - managed resources</summary>
+      <param name="disposing">`true` to release both managed and unmanaged resources; `false` to release only unmanaged resources.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.GetPresentationContexts">
+      <summary>Gets the presentation contexts. Should be overridden in derived classes.</summary>
+      <returns>List of presentation contexts.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.Log(Leadtools.Dicom.DicomDataSet,System.String,object[])">
+      <summary>Logs the specified message to a text file and saves the dataset.</summary>
+      <param name="ds">The ds.</param>
+      <param name="format">The format.</param>
+      <param name="args">The args.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.Log(System.String,object[])">
+      <summary>Logs the specified message to a text file.</summary>
+      <param name="format">The format.</param>
+      <param name="args">The args.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.LogSendAssociateRequest(Leadtools.Dicom.DicomAssociate)">
+      <summary>Logs the SendAssociateRequest message.</summary>
+      <param name="associate">The DICOM associate information that was sent during the request.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.LogSendCGetRequest(System.Byte,System.Int32,System.String,Leadtools.Dicom.DicomCommandPriorityType,Leadtools.Dicom.DicomDataSet)">
+      <summary>Logs the C-GET-REQ message</summary>
+      <param name="presentationID">The presentation ID.</param>
+      <param name="messageID">The unique message ID for this message.</param>
+      <param name="affectedClass">The SOP UID for this C-GET query.</param>
+      <param name="priority">The priority.</param>
+      <param name="dataSet">The data set to send with this C-GET-REQ.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.LogSendCMoveRequest(System.Byte,System.Int32,System.String,Leadtools.Dicom.DicomCommandPriorityType,System.String,Leadtools.Dicom.DicomDataSet)">
+      <summary>Logs the C-MOVE-REQ message.</summary>
+      <param name="presentationID">The presentation ID.</param>
+      <param name="messageID">The message ID.</param>
+      <param name="affectedClass">The affected class.</param>
+      <param name="priority">The priority.</param>
+      <param name="moveAE">The move destination ae title.</param>
+      <param name="dataSet">The data set to send with this C-MOVE-REQ.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.OnAfterAssociateRequest">
+      <summary>Fires the AfterAssociateRequest event.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.OnAfterClose">
+      <summary>Fires the AfterClose event.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.OnBeforeAssociateAccept(Leadtools.Dicom.DicomAssociate)">
+      <summary>Called before an associate accept is accepted by the SCU.</summary>
+      <param name="associate">Leadtools.Dicom.DicomAssociate object that is to be accepted.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.OnBeforeAssociateRequest(Leadtools.Dicom.DicomAssociate)">
+      <summary>Fires the BeforeAssociateRequest event.</summary>
+      <param name="associate">The DICOM association.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.OnBeforeClose">
+      <summary>Fires the BeforeClose event.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.OnClose(Leadtools.Dicom.DicomExceptionCode,Leadtools.Dicom.DicomNet)">
+      <summary>Notifies a member of a connection that the connection was closed.</summary>
+      <param name="error">An error code.</param>
+      <param name="net">The DicomNet object of the peer member of the connection.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.OnConnect(Leadtools.Dicom.DicomExceptionCode)">
+      <summary>Notifies the SCU that the connection attempt is complete.</summary>
+      <param name="error">An error code.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.OnPrivateKeyPassword(System.Boolean)">
+      <summary>Invokes the private PrivateKeyPassword event.</summary>
+      <param name="encryption">true if the password is being used for encryption; false if the password is being used for decryption.</param>
+      <returns>The secure password.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.OnReceive(Leadtools.Dicom.DicomExceptionCode,Leadtools.Dicom.DicomPduType,System.IntPtr,System.Int32)">
+      <summary>Notifies a connection that data was received.</summary>
+      <param name="error">An error code.</param>
+      <param name="pduType">The type of data that was sent.</param>
+      <param name="buffer">Pointer to a buffer that contains all the data that was sent. This includes the Command Set and any associated Data Set.</param>
+      <param name="bytes">The number of bytes of the data specified by buffer.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.OnReceiveAssociateAccept(Leadtools.Dicom.DicomAssociate)">
+      <summary>Notifies a connection that an Associate Accept message was received.</summary>
+      <param name="association">A DicomAssociate object.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.OnReceiveAssociateReject(Leadtools.Dicom.DicomAssociateRejectResultType,Leadtools.Dicom.DicomAssociateRejectSourceType,Leadtools.Dicom.DicomAssociateRejectReasonType)">
+      <summary>Notifies a connection that an Associate Reject message was received.</summary>
+      <param name="result">The type of the Association rejection.</param>
+      <param name="source">The source of the Association rejection.</param>
+      <param name="reason">The reason for the Association rejection.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.OnReceiveCEchoResponse(System.Byte,System.Int32,System.String,Leadtools.Dicom.DicomCommandStatusType)">
+      <summary>Notifies a connection that a C-ECHO-RSP command was received.</summary>
+      <param name="presentationID">The Presentation Context ID. The ID provides information about both the class type of the data and the Transfer Syntax to use when transferring the data.</param>
+      <param name="messageID">The Message ID. Each message sent by a member of a connection should have a unique ID. Since a member of a connection may send several messages, this ID allows that member to identify when a specific request has been completed.</param>
+      <param name="affectedClass">The class affected by the request. This will be a SOP Class or a Meta SOP Class.</param>
+      <param name="status">The status of the original request.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.OnReceiveData(System.Byte,Leadtools.Dicom.DicomDataSet,Leadtools.Dicom.DicomDataSet)">
+      <summary>Notifies a connection when a Data message was received.</summary>
+      <param name="presentationID">The Presentation Context ID. The ID provides information about both the class type of the data and the Transfer Syntax to use when transferring the data.</param>
+      <param name="cs">A DicomDataSet object that contains the Command Set which specifies the actual command message.</param>
+      <param name="ds">A DicomDataSet object that contains the actual data. This may be a null reference (Nothing in VB) if no Data Set is included.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.OnReceiveReleaseResponse">
+      <summary>Notifies a connection that a Release Response message was received.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.OnSecureLinkReady(Leadtools.Dicom.DicomExceptionCode)">
+      <summary>This method is called when an ISCL or TLS secured connection is successfully established.</summary>
+      <param name="error">An error code.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.OnVerify(System.Int32,System.String,Leadtools.Dicom.DicomSecurityCertificateException)">
+      <summary>Invokes the [VerifyCertificate] event.</summary>
+      <param name="ok">A value of 1 indicates the verification of the certificate was successful. A value of 0 indicates failure.</param>
+      <param name="certificateString">Provides detailed information about the certificate.</param>
+      <param name="error">A [DicomSecurityCertificateException] exception that indicates success or an error.</param>
+      <returns>0 to stop the verification process.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.DicomConnection.Wait">
+      <summary>Waits for the DICOM communication to finish.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.Common.DicomConnection.AfterAssociateRequest">
+      <summary>Occurs after receiving an associate response from the SCP.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.Common.DicomConnection.AfterClose">
+      <summary>Occurs after a close response is received from the scp.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.Common.DicomConnection.AfterConnect">
+      <summary>Occurs after connecting to the SCP.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.Common.DicomConnection.AfterReleaseRequest">
+      <summary>Occurs after release response received from scp.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.Common.DicomConnection.AfterSecureLinkReady">
+      <summary>Occurs after TLS secured connection to SCP is established.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.Common.DicomConnection.BeforeAssociateAccept">
+      <summary>Occurs before an associate is accepted by the SCU.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.Common.DicomConnection.BeforeAssociateRequest">
+      <summary>Occurs when an associate request is sent to the SCP.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.Common.DicomConnection.BeforeClose">
+      <summary>Occurs before a close request is sent to the scp.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.Common.DicomConnection.BeforeConnect">
+      <summary>Occurs before connecting to the SCP.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.Common.DicomConnection.BeforeReleaseRequest">
+      <summary>Occurs before a release request is sent to the scp.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.Common.DicomConnection.PrivateKeyPassword">
+      <summary>Occurs when a private key password is needed.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.Common.DicomConnection.ReceiveBuffer">
+      <summary>Occurs when connections received buffered data.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.Common.DicomConnection.VerifyCertificate">
+      <summary>Occurs during the certificate exchange/verification phase of TLS DICOM Security negotiation and optionally controls the verification process.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.DicomConnection.AETitle">
+      <summary>Gets or sets the AE title.</summary>
+      <value>The AE title.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.DicomConnection.CurrentScp">
+      <summary>Gets the current SCP this is connected to.</summary>
+      <value>The current peer connection.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.DicomConnection.DebugLogFilename">
+      <summary>Gets or sets the debug log filename.</summary>
+      <value>The debug log filename.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.DicomConnection.EnableDebugLog">
+      <summary>Gets or sets a value indicating whether to enable the DICOM debug log.</summary>
+      <value>`true` if true enable debug logging; otherwise, do not do any logging.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.DicomConnection.HostAddress">
+      <summary>Gets or sets the host address.</summary>
+      <value>The host address.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.DicomConnection.HostPort">
+      <summary>Gets or sets the host port.</summary>
+      <value>The host port. This port will be used for store SCP during a C-MOVE-REQ.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.DicomConnection.ImplementationClass">
+      <summary>Gets or sets the implementation class.</summary>
+      <value>The implementation class.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.DicomConnection.ImplementationVersionName">
+      <summary>The Implementation Version Name.</summary>
+      <value>The name of the implementation version.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.DicomConnection.MaxLength">
+      <summary>The Maximum Length for data transfer.</summary>
+      <value>The Maximum Length for data transfer. Defaults to 16K.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.DicomConnection.ProtocolVersion">
+      <summary>Gets or sets the protocol version.</summary>
+      <value>The protocol version.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.DicomConnection.Rejected">
+      <summary>Gets a value indicating whether this DicomConnection connection association has been rejected.</summary>
+      <value>`true` if rejected; otherwise, `false`.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.DicomConnection.RejectReason">
+      <summary>Gets a descriptive string of the reason for associate rejection.</summary>
+      <value>The reason for the rejection.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.DicomConnection.Status">
+      <summary>Internal value to hold the status of the last DICOM operation associated with this connection.</summary>
+      <value>The status of the last operation.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.DicomConnection.Tag">
+      <summary>Gets or sets the object that contains extra information about this connection.</summary>
+      <value>The Object that contains extra information about this connection. The default value is null.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.DicomConnection.TemporaryDirectory">
+      <summary>Gets or sets the temporary directory.</summary>
+      <value>The temporary directory.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.DicomConnection.Timeout">
+      <summary>Gets or sets the connection timeout.</summary>
+      <value>The timeout in seconds.</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.DicomConnection.ActiveScp">
+      <summary>The current peer connection associated with this connection.</summary>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.DicomConnection.cancelEvent">
+      <summary>Cancel event.</summary>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.DicomConnection.CurrentMessageId">
+      <summary>Current message id.</summary>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.DicomConnection.CurrentPid">
+      <summary>Current presentation context id.</summary>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.DicomConnection.dicomEventRequest">
+      <summary>DICOM message event used when receiving DICOM requests (i.e N-Report-REQ).</summary>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.DicomConnection.dicomEventResponse">
+      <summary>DICOM message event used when receiving DICOM responses (i.e. N-ECHO-RSP, C-Find-RSP, C-MOVE-RSP)</summary>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.DicomConnection.parameters">
+      <summary>Internal variable to hold that information associated with DICOM commands.</summary>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.DicomConnection.timeoutEvent">
+      <summary>Timeout event.</summary>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.DicomConnection.waitHandles">
+      <summary>Event wait handle.</summary>
+    </member>
+    <member name="``0:Leadtools.Dicom.Scu.Common.Enum`1">
+      <summary>Enumeration utility methods.</summary>
+      <typeparam name="T">The enumeration type.</typeparam>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.Enum`1.GetValues">
+      <summary>Retrieves an array of the values of the constants in a specified enumeration.</summary>
+      <returns>The array of values.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.Enum`1.Parse(System.String)">
+      <summary>Parses the specified value and returns the enumeration.</summary>
+      <param name="value">The value to parse.</param>
+      <returns>The enumeration value.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.Enum`1.TryParse(System.String)">
+      <summary>Tries to parse the string into an enumeration.</summary>
+      <param name="name">The value to be parsed.</param>
+      <returns>True if the value can be converted to the specified type.</returns>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.FindQuery">
+      <summary>Defines a C-FIND query to send to a C-FIND SCP.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.FindQuery.#ctor">
+      <summary>Initializes a new instance of the FindQuery class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.AccessionNumber">
+      <summary>Gets or sets the accession number.</summary>
+      <value>The accession number.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.InstanceNumber">
+      <summary>Gets or sets the instance number.</summary>
+      <value>The instance number.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.Modalities">
+      <summary>Gets the modalities to find in a study.</summary>
+      <value>The modalities to search for.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.Modality">
+      <summary>Gets or sets the modality.</summary>
+      <value>The modality.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.PatientId">
+      <summary>Gets or sets the patient id.</summary>
+      <value>The patient id.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.PatientName">
+      <summary>Gets or sets the name of the patient.</summary>
+      <value>The name of the patient.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.PerfProcStepStartDate">
+      <summary>Gets or sets the performed procedure step start date.</summary>
+      <value>The performed procedure step start date.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.PerfProcStepStartTime">
+      <summary>Gets or sets the performed procedure step start time.</summary>
+      <value>The performed procedure step start time.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.QueryLevel">
+      <summary>Gets or sets the query level.</summary>
+      <value>The query level for the C-FIND request.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.ReferringPhysiciansName">
+      <summary>Gets or sets the name of the referring physician.</summary>
+      <value>The name of the referring physician.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.RequestedProcId">
+      <summary>Gets or sets the requested procedure id.</summary>
+      <value>The requested procedure id.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.SchedProcStepId">
+      <summary>Gets or sets the scheduled procedure step id.</summary>
+      <value>The scheduled procedure step id.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.SeriesInstanceUID">
+      <summary>Gets or sets the series instance UID.</summary>
+      <value>The series instance UID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.SeriesNumber">
+      <summary>Gets or sets the series number.</summary>
+      <value>The series number.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.SOPInstanceUID">
+      <summary>Gets or sets the SOP instance UID.</summary>
+      <value>The SOP instance UID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.StudyDate">
+      <summary>Gets or sets the study date range.</summary>
+      <value>The study date range.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.StudyId">
+      <summary>Gets or sets the study id.</summary>
+      <value>The study id.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.StudyInstanceUID">
+      <summary>Gets or sets the study instance UID.</summary>
+      <value>The study instance UID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.FindQuery.StudyTime">
+      <summary>Gets or sets the study time range.</summary>
+      <value>The study time range.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.HostReadyEventArgs">
+      <summary>Provides data for the [QueryRetrieveScu.HostReady] event.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.HostReadyEventArgs.#ctor">
+      <summary>Initializes a new instance of the [HostReadyEventArgs] class. (Inherited from [BaseEventArgs])</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.HostReadyEventArgs.ScpHost">
+      <summary>Gets or sets the host [DicomConnection] that listens for connections during a C-MOVE to oneself.</summary>
+      <value>The host [DicomConnection] that listens for connections during a C-MOVE to oneself.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.Iphlpapi">
+      <summary>Provides IPAddress helper function.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.Iphlpapi.#ctor">
+      <summary>Initializes a new instance of the Iphlpapi class.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.Iphlpapi.getIPAddresses(AddressFamily,System.Int32)">
+      <summary>Gets the IP addresses with the specified AddressFamily and index.</summary>
+      <param name="family">The addressing scheme to look for.</param>
+      <param name="index">The index.</param>
+      <returns>The IPAddress at the specified index.</returns>
+    </member>
+    <member name="``0:Leadtools.Dicom.Scu.Common.MatchEventArgs`1">
+      <summary>Provides data for the Match event.</summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.MatchEventArgs`1.Availability">
+      <summary>Gets or sets the availability.</summary>
+      <value>A InstanceAvailability object that represents the availability.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.MatchEventArgs`1.Dataset">
+      <summary>Gets the dataset.</summary>
+      <value>The dataset.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.MatchEventArgs`1.Info">
+      <summary>Gets the info.</summary>
+      <value>*T*</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.MatchEventArgs`1.QueryLevel">
+      <summary>Gets the query level.</summary>
+      <value>The query level .</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.MatchEventArgs`1.RetrieveAETitle">
+      <summary>Gets or sets the retrieve AE title.</summary>
+      <value>A System.String value that represents the retrieve AE title.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.MovedEventArgs">
+      <summary>Provides data for the Moved event.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.MovedEventArgs.Dataset">
+      <summary>Gets the dataset.</summary>
+      <value>The dataset .</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.MovedEventArgs.Instance">
+      <summary>Gets or sets the instance.</summary>
+      <value>A CompositeObjectInstance object that represents the instance.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.MovedEventArgs.Patient">
+      <summary>Gets or sets the patient.</summary>
+      <value>The patient.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.MovedEventArgs.Remote">
+      <summary>Gets the remote.</summary>
+      <value>The remote.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.MovedEventArgs.Series">
+      <summary>Gets or sets the series.</summary>
+      <value>The series.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.MovedEventArgs.Status">
+      <summary>Gets or sets the status for the store operation.</summary>
+      <value>A Leadtools.Dicom.DicomCommandStatusType object that represents the status.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.MovedEventArgs.Study">
+      <summary>Gets or sets the study.</summary>
+      <value>The study.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.Parameters">
+      <summary>Internal class used to hold current DICOM communication information.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.Parameters.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.Parameters.AffectedClass">
+      <summary>Gets or sets the affected class.</summary>
+      <value>A System.String that represents the affected class.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.Parameters.Association">
+      <summary>Gets or sets the association.</summary>
+      <value>A Leadtools.Dicom.DicomAssociate object that represents the association.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.Parameters.Completed">
+      <summary>Gets or sets the number of completed sub operations.</summary>
+      <value>A System.Int32 value that represents the number of completed C-STORE sub operations.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.Parameters.Dataset">
+      <summary>Gets or sets the dataset.</summary>
+      <value>A Leadtools.Dicom.DicomDataSet used with the current DICOM communication.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.Parameters.ExceptionCode">
+      <summary>Gets or sets the exception code.</summary>
+      <value>A Leadtools.Dicom.DicomExceptionCode that represents the exception code.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.Parameters.Failed">
+      <summary>Gets or sets the failed number of sub operations.</summary>
+      <value>A System.Int32 value that represents the number of failed C-STORE sub operations.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.Parameters.MatchCount">
+      <summary>Gets or sets the match count.</summary>
+      <value>A System.Int32 value that represents the number of items return for a C-FIND-REQ.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.Parameters.MessageID">
+      <summary>Gets or sets the message ID.</summary>
+      <value>A System.Int32 value that represents the message ID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.Parameters.PresentationID">
+      <summary>Gets or sets the presentation ID.</summary>
+      <value>A System.Byte that represents the presentation ID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.Parameters.Reason">
+      <summary>Gets or sets the rejection reason.</summary>
+      <value>A Leadtools.Dicom.DicomAssociateRejectReasonType object that represents the reason for the associate rejection.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.Parameters.Remaining">
+      <summary>Gets or sets the remaining number of sub operations.</summary>
+      <value>A System.Int32 value that represents the number of remaining C-STORE sub operations.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.Parameters.Result">
+      <summary>Gets or sets the result.</summary>
+      <value>A Leadtools.Dicom.DicomAssociateRejectResultType object that represents the result of an associate request.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.Parameters.Source">
+      <summary>Gets or sets the rejection source.</summary>
+      <value>A Leadtools.Dicom.DicomAssociateRejectSourceType object that represents the source of the associate rejection.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.Parameters.Status">
+      <summary>Gets or sets the status.</summary>
+      <value>A Leadtools.Dicom.DicomCommandStatusType object that represents the status for the last DICOM message.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.Parameters.Warning">
+      <summary>Gets or sets the number of sub-operations that completed with warnings.</summary>
+      <value>A System.Int32 value that represents the number of C-STORE sub operations completed with warnings.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.PresentationContext">
+      <summary>Summary description for ClassInfo.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.PresentationContext.#ctor">
+      <summary>Initializes a new instance of the PresentationContext class.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.PresentationContext.#ctor(System.String)">
+      <summary>Initializes a new instance of the PresentationContext class.</summary>
+      <param name="AbstractSyntax">The abstract syntax.</param>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.PresentationContext.AbstractSyntax">
+      <summary>Gets or sets the abstract syntax.</summary>
+      <value>The abstract syntax.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.PresentationContext.TransferSyntaxes">
+      <summary>Gets the transfer syntaxes.</summary>
+      <value>The transfer syntaxes.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.PrivateKeyPasswordEventArgs">
+      <summary>Provides data for the PriveKeyPassword event.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.PrivateKeyPasswordEventArgs.PrivateKeyPassword">
+      <summary>Gets or sets the private key password.</summary>
+      <value>The private key password.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.ReceiveBufferEventArgs">
+      <summary>Provides data for the ReceiveBuffer event.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ReceiveBufferEventArgs.Buffer">
+      <summary>Gets or sets the buffer.</summary>
+      <value>The buffer.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ReceiveBufferEventArgs.BufferSize">
+      <summary>Gets or sets the size of the buffer.</summary>
+      <value>The size of the buffer.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ReceiveBufferEventArgs.Error">
+      <summary>Gets or sets the error.</summary>
+      <value>The error.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ReceiveBufferEventArgs.PduType">
+      <summary>Gets or sets the type of the pdu.</summary>
+      <value>The type of the pdu.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.ReceivedStoreRequestEventArgs">
+      <summary>Provides data for the Leadtools.Dicom.Scu.QueryRetrieveScu.ReceivedStoreRequest event.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.ReceivedStoreRequestEventArgs.#ctor(Leadtools.Dicom.Scu.Common.DicomScp,Leadtools.Dicom.DicomDataSet,Leadtools.Dicom.Scu.Common.Patient,Leadtools.Dicom.Scu.Common.Study,Leadtools.Dicom.Scu.Common.Series,Leadtools.Dicom.Scu.Common.CompositeObjectInstance)">
+      <summary>Initializes a new instance of the ReceivedStoreRequestEventArgs class.</summary>
+      <param name="Active">The current connection that the C-GET-REQ is using</param>
+      <param name="ds">The Leadtools.Dicom.DicomDataSet sent with the C-STORE-REQ</param>
+      <param name="Patient">The patient information contained in the Leadtools.Dicom.DicomDataSet.</param>
+      <param name="Study">The study information contained in the Leadtools.Dicom.DicomDataSet.</param>
+      <param name="Series">The series information contained in the Leadtools.Dicom.DicomDataSet.</param>
+      <param name="instance">The instance information contained in the Leadtools.Dicom.DicomDataSet.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.ReceivedStoreRequestEventArgs.Dispose">
+      <summary>Releases all resources used by the BeforeCGetEventArgs.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.ReceivedStoreRequestEventArgs.Dispose(System.Boolean)">
+      <summary>Releases all resources used by the AfterCGetEventArgs.</summary>
+      <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ReceivedStoreRequestEventArgs.Dataset">
+      <summary>Gets or sets a Leadtools.Dicom.DicomDataSet which represents the result of a C-GET-REQ</summary>
+      <value>A Leadtools.Dicom.DicomDataSet which represents the result of a C-GET-REQ</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ReceivedStoreRequestEventArgs.Instance">
+      <summary>Gets or sets the instance.</summary>
+      <value>A CompositeObjectInstance value that represents the instance</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ReceivedStoreRequestEventArgs.Patient">
+      <summary>Gets or sets the patient.</summary>
+      <value>A Patient value that represents the patient</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ReceivedStoreRequestEventArgs.Series">
+      <summary>Gets or sets the series.</summary>
+      <value>A Series value that represents the series</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ReceivedStoreRequestEventArgs.Status">
+      <summary>Gets or sets the status for the store operation.</summary>
+      <value>A Leadtools.Dicom.DicomCommandStatusType object that represents the status.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ReceivedStoreRequestEventArgs.Study">
+      <summary>Gets or sets the study.</summary>
+      <value>A Study value that represents the study</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.ReferencedImageSequence">
+      <summary>Item that contains a reference to a selected Image SOP Class/SOP Instance pair.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.ReferencedImageSequence.#ctor">
+      <summary>Initializes a new instance of the ReferencedImageSequence class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ReferencedImageSequence.ReferencedSOPClassUID">
+      <summary>Gets the referenced SOP class UID.</summary>
+      <value>The referenced SOP class UID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ReferencedImageSequence.ReferencedSOPInstanceUID">
+      <summary>Gets the referenced SOP instance UID.</summary>
+      <value>The referenced SOP instance UID.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.ReferencedRequestSequence">
+      <summary>Item that provides info on a selected request.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.ReferencedRequestSequence.#ctor">
+      <summary>Initializes a new instance of the ReferencedRequestSequence class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ReferencedRequestSequence.AccessionNumber">
+      <summary>Gets the accession number.</summary>
+      <value>The accession number.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ReferencedRequestSequence.RequestedProcedureCodeSequence">
+      <summary>Gets the requested procedure code sequence.</summary>
+      <value>The requested procedure code sequence.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ReferencedRequestSequence.RequestedProcedureId">
+      <summary>Gets the requested procedure id.</summary>
+      <value>The requested procedure id.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ReferencedRequestSequence.StudyInstanceUID">
+      <summary>Gets the study instance UID.</summary>
+      <value>The study instance UID.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.ReferencedSeriesSequence">
+      <summary>Item the includes the attributes for a series.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.ReferencedSeriesSequence.#ctor">
+      <summary>Initializes a new instance of the ReferencedSeriesSequence class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ReferencedSeriesSequence.ReferencedImageSequence">
+      <summary>Gets the referenced image sequence.</summary>
+      <value>The referenced image sequence.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.ReferencedSeriesSequence.SeriesInstanceUID">
+      <summary>Gets the series instance UID.</summary>
+      <value>The series instance UID.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.StatusCommonEventArgs">
+      <summary>Provides data for DICOM events that share common data that includes a status.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.StatusCommonEventArgs.Status">
+      <summary>Gets or sets the status.</summary>
+      <value>The status of the original request.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.StatusCommonEventArgs.StatusAll">
+      <summary>Gets all status-related elements that can be included in the command set of a DIMSE service response.</summary>
+      <value>All status-related elements that can be included in the command set of a DIMSE service response.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.StorageCommitmentResultEventArgs">
+      <summary>Provides data for the Leadtools.Dicom.Scu.StoreScu.StorageCommitmentResult event.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.StorageCommitmentResultEventArgs.#ctor(Leadtools.Dicom.Common.Anonymization.StorageCommitmentResult)">
+      <summary>Initializes a new instance of the StorageCommitmentResultEventArgs class.</summary>
+      <param name="result">The result of the storage commitment request.</param>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.StorageCommitmentResultEventArgs.Result">
+      <summary>Gets or sets the storage commitment result.</summary>
+      <value>The result of the storage commitment request.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.StorageCommitmentWaitEventArgs">
+      <summary>Provides data for the StorageCommitmentWait event.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.StorageCommitmentWaitEventArgs.#ctor(Leadtools.Dicom.Scu.Common.StorageCommitOptions)">
+      <summary>Initializes a new instance of this class.</summary>
+      <param name="options">The options for the new StorageCommitmentWaitEventArgs.</param>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.StorageCommitmentWaitEventArgs.Options">
+      <summary>Gets or sets the options for this StorageCommitmentWaitEventArgs.</summary>
+      <value>The options for this StorageCommitmentWaitEventArgs.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.VerifyCertificateEventArgs">
+      <summary>Provides data for the [VerifyCertificate] event.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.VerifyCertificateEventArgs.CertificateString">
+      <summary>Provides detailed information about each certificate in the certificate exchange/verification phase of TLS DICOM Security negotiation and optionally controls the verification process.</summary>
+      <value>A value that provides detailed information about each certificate in the certificate exchange/verification phase of TLS DICOM Security negotiation and optionally controls the verification process.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.VerifyCertificateEventArgs.ErrorException">
+      <summary>Indicates whether it is success or an error occurred in the certificate exchange/verification phase of TLS DICOM Security negotiation and optionally controls the verification process.</summary>
+      <value>A DicomSecurityCertificateException value that indicates whether it is success or an error occurred in the certificate exchange/verification phase of TLS DICOM Security negotiation and optionally controls the verification process.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.VerifyCertificateEventArgs.Ok">
+      <summary>Determines the verification behavior in the certificate exchange/verification phase of TLS DICOM Security negotiation and optionally controls the verification process.</summary>
+      <value>An integer value that determines the verification behavior in the certificate exchange/verification phase of TLS DICOM Security negotiation and optionally controls the verification process.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.VerifyingObserverSequence">
+      <summary>Describes a person authorized to verify specific documents.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Common.VerifyingObserverSequence.#ctor">
+      <summary>Initializes a new instance of the VerifyingObserverSequence class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.VerifyingObserverSequence.VerificationDateTime">
+      <summary>Gets the verification date time.</summary>
+      <value>The verification date time.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.VerifyingObserverSequence.VerifyingObserverIdentificationCodeSequence">
+      <summary>Gets the verifying observer identification code sequence.</summary>
+      <value>Coded identifier of verifying observer.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.VerifyingObserverSequence.VerifyingObserverName">
+      <summary>Gets the name of the verifying observer.</summary>
+      <value>The name of the verifying observer.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Common.VerifyingObserverSequence.VerifyingOrganization">
+      <summary>Gets the verifying organization.</summary>
+      <value>The verifying organization.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.AfterAssociateRequestDelegate">
+      <summary>Represents the method that will handle the AfterAssociateRequest event of a DicomFindSCU.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.AfterCFindDelegate">
+      <summary>Represents the method that will handle the AfterCFind event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.AfterCGetDelegate">
+      <summary>Represents the method that will handle the AfterCGet event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.AfterCMoveDelegate">
+      <summary>Represents the method that will handle the AfterCMove event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.AfterConnectDelegate">
+      <summary>Represents the method that will handle the AfterConnect event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.AfterCStoreDelegate">
+      <summary>Represents the method that will handle the AfterCStoreEvent.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.AfterSecureLinkReadyDelegate">
+      <summary>Represents the method that will handle the AfterSecureLinkReady event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.BeforeAssociationAcceptDelegate">
+      <summary>Represents the method that will handle the `BeforeAssociateRequest` event of an SCU.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.BeforeAssociationRequestDelegate">
+      <summary>Represents the method that will handle the BeforeAssociationRequest event of a DicomFindSCU.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.BeforeCFindDelegate">
+      <summary>Represents the method that will handle the BeforeCFind event of a DicomFindSCU.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.BeforeCGetDelegate">
+      <summary>Represents the method that will handle the BeforeCGet event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.BeforeCMoveDelegate">
+      <summary>Represents the method that will handle the BeforeCMove event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.BeforeConnectDelegate">
+      <summary>Represents the method that will handle the BeforeConnect event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.BeforeCStoreDelegate">
+      <summary>Represents the method that will handle the BeforeCStore event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.HostReadyDelegate">
+      <summary>Represents the method that will handle the [QueryRetrieveScu.HostReady] event of a [QueryRetrieveScu] when calling [QueryRetrieveScu.Move].</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.MatchInstanceDelegate">
+      <summary>Represents the method that will handle the MatchInstance event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.MatchSeriesDelegate">
+      <summary>Represents the method that will handle the MatchSeries event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.MatchStudyDelegate">
+      <summary>Represents the method that will handle the MatchStudy event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.MovedDelegate">
+      <summary>Represents the method that will handle the Moved event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.PrivateKeyPasswordDelegate">
+      <summary>Represents the method that will handle the PrivateKeyPassword event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.ReceiveBufferDelegate">
+      <summary>Represents the method that will handle the ReceiveBuffer event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.ReceivedStoreRequestDelegate">
+      <summary>Represents the method that will handle the Leadtools.Dicom.Scu.QueryRetrieveScu.ReceivedStoreRequest event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.VerifyCertificateDelegate">
+      <summary>Represents the method that will handle the [VerifyCertificate] event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">Additional event data that contains event data.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.CompletionFlag">
+      <summary>The estimated degree of completeness of this SR Document with respect to externally defined criteria in a manner specified in the Conformance Statement.</summary>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.CompletionFlag.Unspecified">
+      <summary>Completion flag wasn't specified.</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.CompletionFlag.Partial">
+      <summary>Partial content.</summary>
+      <value>1</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.CompletionFlag.Complete">
+      <summary>Complete content.</summary>
+      <value>2</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.Compression">
+      <summary>Specifies the compression to use when issuing a C-STORE-REQ.</summary>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.Compression.Lossy">
+      <summary>Use lossy compression.</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.Compression.Lossless">
+      <summary>Use lossless compression.</summary>
+      <value>1</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.Compression.Native">
+      <summary>Do not use any compression. Send the dataset as is.</summary>
+      <value>2</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.InstanceAvailability">
+      <summary>The availability of the referenced Instance</summary>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.InstanceAvailability.NotProvided">
+      <summary>Value not provided.</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.InstanceAvailability.Online">
+      <summary>Instances are immediately available from the Retrieve AE Title (0008,0054), and if a C-MOVE were to be requested, it would succeed in a reasonably short time.</summary>
+      <value>1</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.InstanceAvailability.Nearline">
+      <summary>Instances need to be retrieved from relatively slow media such as optical disk or tape. If a C-MOVE were to be requested from the Retrieve AE Title (0008,0054), it would succeed, but may take a considerable time'</summary>
+      <value>2</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.InstanceAvailability.Offline">
+      <summary>A manual intervention is needed before the instances may be retrieved. If a C-MOVE were to be requested from the Retrieve AE Title (0008,0054), it would fail (e.g., by timeout) without such manual intervention.</summary>
+      <value>3</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.InstanceAvailability.Unavailable">
+      <summary>Instances cannot be retrieved from the Retrieve AE Title (0008,0054). If a C-MOVE were to be requested, it would fail. Note that SOP Instances that are unavailable from this AE may be available from other AEs, or may have an alternate representation that is available from this AE.</summary>
+      <value>4</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.InstanceLevel">
+      <summary>Defines the level of a composition object instance.</summary>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.InstanceLevel.Composite">
+      <summary>Composite object instance.</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.InstanceLevel.Image">
+      <summary>(0x00000001)Image instance.</summary>
+      <value>1</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.InstanceLevel.PresentationState">
+      <summary>Presentation state instance.</summary>
+      <value>2</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.InstanceLevel.StructuredReport">
+      <summary>Structured report instance.</summary>
+      <value>3</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.InstanceLevel.KeyImageNote">
+      <summary>Key image note instance.</summary>
+      <value>4</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.InstanceLevel.EvidenceDocument">
+      <summary>Evidence document instance.</summary>
+      <value>5</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.QueryLevel">
+      <summary>Defines the level of a C-FIND query.</summary>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.QueryLevel.Study">
+      <summary>Study information query.</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.QueryLevel.Series">
+      <summary>Series information query.</summary>
+      <value>1</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.QueryLevel.Image">
+      <summary>(0x00000001)Composite object instance information query.</summary>
+      <value>2</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.QueryLevel.Custom">
+      <summary>Represents a custom query level.</summary>
+      <value>3</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.SkipMethod">
+      <summary>Specifies how to handle files during a C-STORE operation.</summary>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.SkipMethod.None">
+      <summary>Don't skip any files.</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.SkipMethod.CurrentFile">
+      <summary>Skip only the current file.</summary>
+      <value>1</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.SkipMethod.AllFiles">
+      <summary>Skip all files. Operation will be canceled.</summary>
+      <value>2</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Common.VerificationFlag">
+      <summary>Indicates whether this Structured Report Document is verified.</summary>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.VerificationFlag.UnVerified">
+      <summary>Not attested to.</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.Common.VerificationFlag.Verified">
+      <summary>(0x00000000)Attested to by a verifying observer name.</summary>
+      <value>1</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.ConnectionInformation">
+      <summary>Contains information about a peer connection.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.ConnectionInformation.AETitle">
+      <summary>Gets or sets the AE title.</summary>
+      <value>The AE title.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.ConnectionInformation.DebugLogFilename">
+      <summary>Gets or sets the debug log filename.</summary>
+      <value>The debug log filename.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.ConnectionInformation.EnableDebugLog">
+      <summary>Gets or sets a value indicating whether \[enable debug log\].</summary>
+      <value>`true` if the debug log is enabled; otherwise, `false`.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.ConnectionInformation.HostAddress">
+      <summary>Gets or sets the host address.</summary>
+      <value>The host address.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.ConnectionInformation.HostPort">
+      <summary>Gets or sets the host port.</summary>
+      <value>The host port.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.ConnectionInformation.ImplementationClass">
+      <summary>Gets or sets the implementation class UID.</summary>
+      <value>The Implementation Class UID .</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.ConnectionInformation.ImplementationVersionName">
+      <summary>Gets or sets the Implementation Version Name.</summary>
+      <value>The Implementation Version Name.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.ConnectionInformation.SocketOptions">
+      <summary>Gets or sets the socket options to use with this connection.</summary>
+      <value>The socket options.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.DicomScp">
+      <summary>Contains information about the peer connection.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.DicomScp.#ctor">
+      <summary>Initializes a new instance of the DicomScp class.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.DicomScp.#ctor(IPAddress,System.String,System.Int32)">
+      <summary>Initializes a new instance of the DicomScp class.</summary>
+      <param name="PeerAddress">The peer address.</param>
+      <param name="AETitle">The called AE title.</param>
+      <param name="Port">The port.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.DicomScp.ToString">
+      <summary>Returns a System.String that represents the current System.Object.</summary>
+      <returns>A System.String that represents the current System.Object.</returns>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.DicomScp.AETitle">
+      <summary>Gets or sets the called AE title.</summary>
+      <value>The called AE title.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.DicomScp.Association">
+      <summary>Gets the association.</summary>
+      <value>The association.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.DicomScp.PeerAddress">
+      <summary>Gets or sets the peer address.</summary>
+      <value>The peer address.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.DicomScp.Port">
+      <summary>Port number of the peer computer to which to connect (the SCP's port).</summary>
+      <value>The port. Defaults to port 104.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.DicomScp.Relational">
+      <summary>Gets or sets a value indicating whether this DicomScp supports relation queries.</summary>
+      <value>`true` if relational, otherwise it is `false`.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.DicomScp.Secure">
+      <summary>Gets or sets a value indicating whether this [DicomScp] is using secure (TLS) DICOM communication.</summary>
+      <value>A value indicating whether this [DicomScp] is using secure (TLS) DICOM communication.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.DicomScp.Timeout">
+      <summary>Gets or sets the timeout in seconds. Once the timeout is reached the connection will be terminated.</summary>
+      <value>The timeout. The default is 30 seconds.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.EvidenceDocumentInstance">
+      <summary>Used in the Process of Creating a Radiological Diagnostic Report.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.EvidenceDocumentInstance.#ctor">
+      <summary>Initializes a new instance of the EvidenceDocumentInstance class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.EvidenceDocumentInstance.ConceptNameCodeSequence">
+      <summary>Gets the concept name code sequence.</summary>
+      <value>Code describing the concept represented by the Content Item.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.EvidenceDocumentInstance.ContentDate">
+      <summary>Gets the content date.</summary>
+      <value>The date the image pixel data creation started.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.EvidenceDocumentInstance.ContentTemplateSequence">
+      <summary>Gets the content template sequence.</summary>
+      <value>Template that describes the content of this Content Item and its subsidiary Content Items.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.EvidenceDocumentInstance.ContentTime">
+      <summary>Gets the content time.</summary>
+      <value>The time the image pixel data creation started.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.EvidenceDocumentInstance.ReferencedRequestSeqence">
+      <summary>Gets the referenced request sequence.</summary>
+      <value>Identifies requested procedures which are being fulfilled by this document.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.ImageInstance">
+      <summary>Contains DICOM image information.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.ImageInstance.#ctor">
+      <summary>Initializes a new instance of the ImageInstance class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.ImageInstance.BitsAllocated">
+      <summary>Gets the bits allocated.</summary>
+      <value>Number of bits allocated for each pixel sample.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.ImageInstance.Columns">
+      <summary>Gets the columns.</summary>
+      <value>Number of columns in the image.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.ImageInstance.Frames">
+      <summary>Gets the frames.</summary>
+      <value>Number of frames in a Multi-frame Image.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.ImageInstance.Images">
+      <summary>Gets the images.</summary>
+      <value>The images located in the dataset. These represent the top level Pixel Data element only.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.ImageInstance.Rows">
+      <summary>Gets the rows.</summary>
+      <value>Number of rows in the image.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.KeyImageInstance">
+      <summary>Contains information on key image notes.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.KeyImageInstance.#ctor">
+      <summary>Initializes a new instance of the KeyImageInstance class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.KeyImageInstance.ConceptNameCodeSequence">
+      <summary>Gets the concept name code sequence.</summary>
+      <value>Code describing the concept represented by the Content Item.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.KeyImageInstance.ContentDate">
+      <summary>Gets the content date.</summary>
+      <value>The date the image pixel data creation started.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.KeyImageInstance.ContentTime">
+      <summary>Gets the content time.</summary>
+      <value>The time image pixel data creation began.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.KeyImageInstance.ObservationDateTime">
+      <summary>Gets the observation date time.</summary>
+      <value>The date and time on which this Content Item was completed.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.KeyImageInstance.ReferencedRequestSequence">
+      <summary>Gets the referenced request sequence.</summary>
+      <value>Identifies requested procedures which are being fulfilled by this document.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.MediaCreationManagementScu">
+      <summary>Contains information about a DICOM Scu that can instruct a device to create interchange media containing a set of Composite SOP Instance.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.MediaCreationManagementScu.#ctor(System.String,Leadtools.Dicom.Scu.DicomScp)">
+      <summary>Initializes a new instance of the MediaCreationManagementScu class.</summary>
+      <param name="applicationEntityTitle">The application entity title.</param>
+      <param name="scp">The peer connection to connect to.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.MediaCreationManagementScu.#ctor(System.String,Leadtools.Dicom.Scu.DicomScp,System.String,Leadtools.Dicom.DicomNetSecurityMode,Leadtools.Dicom.DicomOpenSslContextCreationSettings)">
+      <summary>Initializes a new instance of the MediaCreationManagementScu class.</summary>
+      <param name="applicationEntityTitle">The application entity title.</param>
+      <param name="scp">The peer connection to connect to.</param>
+      <param name="temporaryDirectory">The location of temporary files. DICOM uses temporary files during the course of creating a file. If this parameter is null, the DICOM temporary files are kept in the directory Windows places its own temporary files. If this parameter is not null, the temporary files are placed in the specified directory</param>
+      <param name="securityMode">Specifies the security mode to use when initializing the network connection.</param>
+      <param name="openSslContextCreationSettings">Provides properties to change the security options from the defaults when the security mode is set to the Transport Layer Security (TLS) mode.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.MediaCreationManagementScu.CancelMediaCreation(Leadtools.Dicom.Common.Anonymization.MediaCreationManagement)">
+      <summary>Cancels the media creation request.</summary>
+      <param name="mediaObject">The media creation object.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.MediaCreationManagementScu.CancelMediaCreation(System.String)">
+      <summary>Cancels the media creation request.</summary>
+      <param name="mediaCreationSopInstanceUID">The media creation sop instance UID.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.MediaCreationManagementScu.CreateMedia(Leadtools.Dicom.Common.Anonymization.MediaCreationReferencedSop)">
+      <summary>Sends a DICOM N-CREATE message to an SCP to initiate a media request operation.</summary>
+      <param name="referencedSops">The list of SOP instances that created interchange media shall contain.</param>
+      <returns>An object that represents the media creation request.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.MediaCreationManagementScu.GetMedia(System.String)">
+      <summary>Gets a currently initiated media creation request.</summary>
+      <param name="mediaCreationSopInstanceUID">The media creation sop instance UID to retrieve.</param>
+      <returns>An object that represents the media creation request.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.MediaCreationManagementScu.GetMediaObjectStatus(System.String)">
+      <summary>Gets the media creation execution status.</summary>
+      <param name="mediaCreationSopInstanceUID">The sop instance UID of the media creation object to retrieve the status of.</param>
+      <returns>An object that represents the execution status of the supplied media creation UID.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.MediaCreationManagementScu.TestConnection">
+      <summary>Tests the connection.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.MediaCreationManagementScu.UpdateMediaObjectStatus(Leadtools.Dicom.Common.Anonymization.MediaCreationManagement)">
+      <summary>Updates the ExecutionStatus of the media creation object.</summary>
+      <param name="mediaObject">The media creation object to update.</param>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.AllowLossyCompression">
+      <summary>Gets or sets the value specifying whether or not to allow lossy compression.</summary>
+      <value>Yes to allow lossy compression, no otherwise.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.AllowMediaSplitting">
+      <summary>Gets or sets the value specifying whether or not to allow media splitting.</summary>
+      <value>Yes to allow media splitting, no otherwise.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.AllowNonDicomObjects">
+      <summary>Gets or sets the value specifying whether to include non-DICOM objects(e.g., HTML files, JPEG images) that are a rendering of the DICOM instances, on the created media.</summary>
+      <value>Yes to allow non-DICOM object, no otherwise.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.BarcodeSymbology">
+      <summary>Gets or sets the barcode symbology.</summary>
+      <value>The barcode symbology.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.BarcodeValue">
+      <summary>Gets or sets the barcode value.</summary>
+      <value>The barcode value.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.Connection">
+      <summary>Gets or sets the connection.</summary>
+      <value>Information about a peer connection.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.IncludeDisplayApplication">
+      <summary>Gets or sets the value specifying whether or not to include a display application.</summary>
+      <value>Yes to include a display application, not otherwise.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.LabelStyleSelection">
+      <summary>Gets or sets the label style selection.</summary>
+      <value>Specifies an implementation specific style of labeling.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.LabelText">
+      <summary>Gets or sets the label text.</summary>
+      <value>Additional text to include on any label.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.MediaDisposition">
+      <summary>Gets or sets the media disposition.</summary>
+      <value>Specifies where and to whom to send the media when completed.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.MediaFileSetID">
+      <summary>Gets or sets the media file set ID.</summary>
+      <value>The media file set ID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.MediaFileSetUID">
+      <summary>Gets or sets the media file set UID.</summary>
+      <value>The media file set UID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.MediaSopInstanceUID">
+      <summary>Gets or sets the media sop instance UID.</summary>
+      <value>The media sop instance UID.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.NumberOfCopies">
+      <summary>Gets or sets the number of copies.</summary>
+      <value>The number of copies of the media to create.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.PreserveCompositeInstancesAfterMediaCreation">
+      <summary>Gets or sets the value specifying whether or not to preserve composite instances after media creation.</summary>
+      <value>Yes to preserve composite instances after media creation, no otherwise.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.Priority">
+      <summary>Gets or sets the request priority.</summary>
+      <value>The request priority.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.Scp">
+      <summary>Gets or sets the SCP.</summary>
+      <value>The peer connection media management request will be sent.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.SpecificCharacterSet">
+      <summary>Gets or sets the specific character set.</summary>
+      <value>The specific character set.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.MediaCreationManagementScu.UseLabelInformationFromInstances">
+      <summary>Gets or sets the value specifying whether to extract information from the instances to use as the label.</summary>
+      <value>Yes to extract label information from the instances, no otherwise.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Patient">
+      <summary>Contains patient information.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Patient.#ctor">
+      <summary>Initializes a new instance of the Patient class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Patient.AdditionalPatientHistory">
+      <summary>Gets the additional patient history.</summary>
+      <value>The additional patient history.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Patient.BirthDate">
+      <summary>Gets the patient's birth date.</summary>
+      <value>Birth date of the patient.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Patient.Comments">
+      <summary>Gets the patient's comments.</summary>
+      <value>User-defined additional information about the patient.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Patient.Id">
+      <summary>Gets the patient's id.</summary>
+      <value>Primary hospital identification number or code for the patient.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Patient.Name">
+      <summary>Gets the patient's name.</summary>
+      <value>Patient's full legal name.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Patient.NumberOfRelatedInstances">
+      <summary>Gets the number of related instances.</summary>
+      <value>The number of related instances.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Patient.NumberOfRelatedSeries">
+      <summary>Gets the number of related series.</summary>
+      <value>The number of related series.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Patient.NumberOfRelatedStudies">
+      <summary>Gets the number of related studies.</summary>
+      <value>The number of related studies.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Patient.Sex">
+      <summary>Gets the patient's sex.</summary>
+      <value>Sex of the named patient. Enumerated Values are: M = male F = female O = other.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.PatientUpdaterScu">
+      <summary>Provides DICOM communication support for custom Patient Updater messages.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PatientUpdaterScu.#ctor(System.String)">
+      <summary>Initializes a new instance of the PatientUpdaterScu class.</summary>
+      <param name="TemporaryDirectory">The temporary directory.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PatientUpdaterScu.#ctor(Leadtools.Dicom.DicomNetSecurityMode,Leadtools.Dicom.DicomOpenSslContextCreationSettings)">
+      <summary>Initializes a new instance of the PatientUpdaterScu class.</summary>
+      <param name="SecurityMode">The security mode to use when initializing the network structure.</param>
+      <param name="openSslContextCreationSettings">Provides properties to change the security options from the defaults when the security is used.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PatientUpdaterScu.ChangePatient(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.Common.Anonymization.ChangePatient)">
+      <summary>Changes the patient.</summary>
+      <param name="scp">The peer connection to send the change patient request to.</param>
+      <param name="data">The data specific to the change patient request.</param>
+      <returns>The status of the operation.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PatientUpdaterScu.ChangeSeries(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.Common.Anonymization.ChangeSeries)">
+      <summary>Changes the series.</summary>
+      <param name="scp">The peer connection to send the change series request to.</param>
+      <param name="data">The data specific to the change series request.</param>
+      <returns>The status of the operation.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PatientUpdaterScu.CopyPatient(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.Common.Anonymization.CopyPatient)">
+      <summary>Copies the patient.</summary>
+      <param name="scp">The peer connection to send the copy patient request to.</param>
+      <param name="data">The data specific to the copy patient request.</param>
+      <returns>The status of the operation.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PatientUpdaterScu.CopyStudy(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.Common.Anonymization.CopyStudy)">
+      <summary>Copies the study.</summary>
+      <param name="scp">The peer connection to send the copy study request to.</param>
+      <param name="data">The data specific to the copy study request.</param>
+      <returns>The status of the operation.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PatientUpdaterScu.DeletePatient(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.Common.Anonymization.DeletePatient)">
+      <summary>Deletes the patient.</summary>
+      <param name="scp">The peer connection to send the delete patient request to.</param>
+      <param name="data">The data specific to the delete patient request.</param>
+      <returns>The status of the operation.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PatientUpdaterScu.DeleteSeries(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.Common.Anonymization.DeleteSeries)">
+      <summary>Deletes the series.</summary>
+      <param name="scp">The peer connection to send the delete series request to.</param>
+      <param name="data">The data specific to the delete series request.</param>
+      <returns>The status of the operation.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PatientUpdaterScu.MergePatient(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.Common.Anonymization.MergePatient)">
+      <summary>Merges the patient.</summary>
+      <param name="scp">The peer connection to send the merge patient request to.</param>
+      <param name="data">The data specific to the merge patient request.</param>
+      <returns>The status of the operation.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PatientUpdaterScu.MergeStudy(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.Common.Anonymization.MergeStudy)">
+      <summary>Merges the study.</summary>
+      <param name="scp">The peer connection to send the merge study request to.</param>
+      <param name="data">The data specific to the merge study request.</param>
+      <returns>The status of the operation.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PatientUpdaterScu.MoveStudyToNewPatient(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.Common.Anonymization.MoveToNewPatient)">
+      <summary>Move a study to a new patient.</summary>
+      <param name="scp">The peer connection to send the move study to new patient request to.</param>
+      <param name="data">The data specific to the move study to new patient request.</param>
+      <returns>The status of the operation.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PatientUpdaterScu.SendNActionRequest``1(Leadtools.Dicom.Scu.DicomScp,``0,System.Int32,System.String)">
+      <summary>Sends the N action request to the specified scp.</summary>
+      <param name="Scp">The peer connection to send the N-ACTION request to.</param>
+      <param name="Query">Holds information specific to the N-ACTION request.</param>
+      <param name="action">The action to be performed.</param>
+      <param name="instance">The instance to be affected by this request.</param>
+      <returns>The status of the operation.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PatientUpdaterScu.SendUpdate(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.DicomDataSet,System.Int32,System.String)">
+      <summary>Sends a patient update message to the specified scp.</summary>
+      <param name="Scp">The peer connection to send the update request to.</param>
+      <param name="ds">The DICOM dataset that describes the update request information.</param>
+      <param name="action">The update action to perform.</param>
+      <param name="instance">The patient update instance.</param>
+      <returns>The status of the operation.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PatientUpdaterScu.GetPresentationContexts">
+      <summary>Gets the presentation contexts. Should be overridden in derived classes.</summary>
+      <returns>List of presentation contexts.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PatientUpdaterScu.OnAfterNAction(System.Object,Leadtools.Dicom.Scu.AfterNActionEventArgs)">
+      <summary>Fires the AfterNAction event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="e">The Leadtools.Dicom.Scu.Common.AfterNActionEventArgs instance containing the event data.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PatientUpdaterScu.OnBeforeNAction(System.Object,Leadtools.Dicom.Scu.BeforeNActionEventArgs)">
+      <summary>Fires the BeforeNaction event.</summary>
+      <param name="sender">The source of the event.</param>
+      <param name="args">The Leadtools.Dicom.Scu.Common.BeforeNActionEventArgs instance containing the event data.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PatientUpdaterScu.OnReceiveNActionResponse(System.Byte,System.Int32,System.String,System.String,Leadtools.Dicom.DicomCommandStatusType,System.Int32,Leadtools.Dicom.DicomDataSet)">
+      <summary>Notifies a connection that an N-ACTION response message was received.</summary>
+      <param name="presentationID">The Presentation Context ID. The ID provides information about both the class type of the data and the Transfer Syntax to use when transferring the data.</param>
+      <param name="messageID">The Message ID. Each message sent by a member of a connection should have a unique ID. Since a member of a connection may send several messages, this ID allows that member to identify when a specific request has been completed.</param>
+      <param name="affectedClass">The class affected by the request. This will be a SOP Class or a Meta SOP Class.</param>
+      <param name="instance">The instance of the class. A server may, for example, have three instances of the Nuclear Medicine Class. This value identifies the data with a specific instance.</param>
+      <param name="status">The status of the original reques.</param>
+      <param name="action">An application-specific action.</param>
+      <param name="dataSet">A DicomDataSet object that contains the Data Set resulting from the specified action.</param>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.PatientUpdaterScu.AfterNAction">
+      <summary>Occurs after an N-ACTION response message has been received from the scp.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.PatientUpdaterScu.BeforeNAction">
+      <summary>Occurs when an N-ACTION request message is sent to an scp.</summary>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.PerformedProcedureStepScu">
+      <summary>Uses abilities of the base DicomNet class to implement a Modality Performed Procedure Step and General Purpose Procedure Step SCU.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PerformedProcedureStepScu.#ctor">
+      <summary>Initializes a new instance of the PerformedProcedureStepScu class.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PerformedProcedureStepScu.#ctor(System.String,Leadtools.Dicom.DicomNetSecurityMode,Leadtools.Dicom.DicomOpenSslContextCreationSettings)">
+      <summary>Initializes a new instance of the PerformedProcedureStepScu class.</summary>
+      <param name="TemporaryDirectory">The temporary directory.</param>
+      <param name="SecurityMode">The security mode.</param>
+      <param name="openSslContextCreationSettings">The open SSL context creation settings.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PerformedProcedureStepScu.Create(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.DicomDataSet,System.String)">
+      <summary>Sends an N-CREATE-REQ to the SCP.</summary>
+      <param name="Scp">The peer connection to send the N-CREATE-REQ to.</param>
+      <param name="dataset">The dataset to send in the N-CREATE-REQ.</param>
+      <param name="AbstractSyntax">The abstract syntax. Valid values for the AbstractSyntax are Modality Performed Procedure Class and General Purpose Performed Procedure Step.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PerformedProcedureStepScu.Create``1(Leadtools.Dicom.Scu.DicomScp,System.Boolean,``0)">
+      <summary>Sends an N-CREATE-REQ to the SCP.</summary>
+      <param name="Scp">The peer connection to send the N-CREATE-REQ to.</param>
+      <param name="ignoreClass">If set to `true` ignores class defined in the InstanceAttribute of Data.</param>
+      <param name="Data">The data to send in the N-CREATE-REQ.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PerformedProcedureStepScu.Create``1(Leadtools.Dicom.Scu.DicomScp,``0)">
+      <summary>Sends an N-CREATE-REQ to the SCP.</summary>
+      <param name="Scp">The peer connection to send the N-CREATE-REQ to.</param>
+      <param name="Data">The data to send in the request.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PerformedProcedureStepScu.Create``1(Leadtools.Dicom.Scu.DicomScp,``0,Leadtools.Dicom.Common.Anonymization.BeforeAddTagDelegate)">
+      <summary>Sends an N-CREATE-REQ to the SCP.</summary>
+      <param name="Scp">The peer connection to send the N-CREATE-REQ to.</param>
+      <param name="Data">The data to send in the N-CREATE-REQ.</param>
+      <param name="beforeAdd">The delegate to call before adding Data properties to the dataset that will be used in the N-CREATE-REQ.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PerformedProcedureStepScu.Create``1(Leadtools.Dicom.Scu.DicomScp,``0,System.Boolean,Leadtools.Dicom.Common.Anonymization.BeforeAddTagDelegate)">
+      <summary>Sends an N-CREATE-REQ to the SCP.</summary>
+      <param name="Scp">The peer connection to send the N-CREATE-REQ to.</param>
+      <param name="Data">The data to send in the N-CREATE-REQ.</param>
+      <param name="ignoreClass">If set to `true` ignores class defined in the InstanceAttribute of Data.</param>
+      <param name="beforeAdd">The delegate to call before adding Data properties to the dataset that will be used in the N-CREATE-REQ.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PerformedProcedureStepScu.Get``1(Leadtools.Dicom.Scu.DicomScp,System.String,System.String,List&lt;long&gt;)">
+      <summary>Sends an N-GET-REQ to the SCP.</summary>
+      <param name="Scp">The peer connection to send the N-SET-REQ to.</param>
+      <param name="AbstractSyntax">The abstract syntax. Valid values for the AbstractSyntax are Modality Performed Retrieve Class and General Purpose Performed Procedure Step.</param>
+      <param name="SOPInstanceUID">The SOP Instance of the class. A server may, for example, have three instances of the Nuclear Modality Performed Retrieve Class. This value identifies the data with a specific instance.</param>
+      <param name="Attributes">The attributes to get. The attributes must be specified using the Data Element Tags.</param>
+      <returns>The requested data return from the N-SET-REQ. TResult needs to have the correct attributes in order to be update with information from the returned dataset.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PerformedProcedureStepScu.Set(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.DicomDataSet,System.String)">
+      <summary>Sends an N-SET-REQ to the SCP.</summary>
+      <param name="Scp">The peer connection to send the N-SET-REQ to.</param>
+      <param name="dataset">The dataset to send in the N-CREATE-REQ.</param>
+      <param name="AbstractSyntax">The abstract syntax. Valid values for the AbstractSyntax are Modality Performed Procedure Class and General Purpose Performed Procedure Step.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PerformedProcedureStepScu.Set``1(Leadtools.Dicom.Scu.DicomScp,System.Boolean,``0)">
+      <summary>Sends an N-SET-REQ to the SCP.</summary>
+      <param name="Scp">The peer connection to send the N-SET-REQ to.</param>
+      <param name="ignoreClass">If set to `true` ignores class defined in the InstanceAttribute of Data.</param>
+      <param name="Data">The data to send in the N-SET-REQ.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PerformedProcedureStepScu.Set``1(Leadtools.Dicom.Scu.DicomScp,System.Boolean,``0,Leadtools.Dicom.Common.Anonymization.BeforeAddTagDelegate)">
+      <summary>Sends an N-SET-REQ to the SCP.</summary>
+      <param name="Scp">The peer connection to send the N-SET-REQ to.</param>
+      <param name="ignoreClass">If set to `true` ignores class defined in the InstanceAttribute of Data.</param>
+      <param name="Data">The data to send in the N-SET-REQ.</param>
+      <param name="beforeAdd">The delegate to call before adding Data properties to the dataset that will be used in the N-SET-REQ.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PerformedProcedureStepScu.Set``1(Leadtools.Dicom.Scu.DicomScp,``0)">
+      <summary>Sends an N-SET-REQ to the SCP.</summary>
+      <param name="Scp">The peer connection to send the N-SET-REQ to.</param>
+      <param name="Data">The data to send in the N-SET-REQ.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PerformedProcedureStepScu.Set``1(Leadtools.Dicom.Scu.DicomScp,``0,Leadtools.Dicom.Common.Anonymization.BeforeAddTagDelegate)">
+      <summary>Sends an N-SET-REQ to the SCP.</summary>
+      <param name="Scp">The peer connection to send the N-SET-REQ to.</param>
+      <param name="Data">The data to send in the N-SET-REQ.</param>
+      <param name="beforeAdd">The delegate to call before adding Data properties to the dataset that will be used in the N-SET-REQ.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PerformedProcedureStepScu.GetPresentationContexts">
+      <summary>Gets the presentation contexts. Should be overridden in derived classes.</summary>
+      <returns>List of presentation contexts.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PerformedProcedureStepScu.OnReceiveNCreateResponse(System.Byte,System.Int32,System.String,System.String,Leadtools.Dicom.DicomCommandStatusType,Leadtools.Dicom.DicomDataSet)">
+      <summary>Notifies a connection that an N-CREATE-RSP command was received.</summary>
+      <param name="presentationID">The Presentation Context ID. The ID provides information about both the class type of the data and the Transfer Syntax to use when transferring the data.</param>
+      <param name="messageID">The Message ID. Each message sent by a member of a connection should have a unique ID. Since a member of a connection may send several messages, this ID allows that member to identify when a specific request has been completed.</param>
+      <param name="affectedClass">The class affected by the request. This will be a SOP Class or a Meta SOP Class.</param>
+      <param name="instance">The instance of the class. A server may, for example, have three instances of the Nuclear Medicine Class. This value identifies the data with a specific instance.</param>
+      <param name="status">The status of the original request.</param>
+      <param name="dataSet">A Leadtools.Dicom.DicomDataSet object that contains the Data Set which contains the information used when creating the new SOP Instance.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PerformedProcedureStepScu.OnReceiveNGetResponse(System.Byte,System.Int32,System.String,System.String,Leadtools.Dicom.DicomCommandStatusType,Leadtools.Dicom.DicomDataSet)">
+      <summary>Notifies a connection that an N-GET-RSP command was received.</summary>
+      <param name="presentationID">The Presentation Context ID. The ID provides information about both the class type of the data and the Transfer Syntax to use when transferring the data.</param>
+      <param name="messageID">The Message ID. Each message sent by a member of a connection should have a unique ID. Since a member of a connection may send several messages, this ID allows that member to identify when a specific request has been completed.</param>
+      <param name="affectedClass">The class affected by the request. This will be a SOP Class or a Meta SOP Class.</param>
+      <param name="instance">The instance of the class. A server may, for example, have three instances of the Nuclear Medicine Class. This value identifies the data with a specific instance.</param>
+      <param name="status">The status of the original request.</param>
+      <param name="dataSet">A Leadtools.Dicom.DicomDataSet object that contains the Data Set which contains the retrieved elements.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PerformedProcedureStepScu.OnReceiveNSetResponse(System.Byte,System.Int32,System.String,System.String,Leadtools.Dicom.DicomCommandStatusType,Leadtools.Dicom.DicomDataSet)">
+      <summary>Notifies a connection that an N-SET-RSP command was received.</summary>
+      <param name="presentationID">The Presentation Context ID. The ID provides information about both the class type of the data and the Transfer Syntax to use when transferring the data.</param>
+      <param name="messageID">The Message ID. Each message sent by a member of a connection should have a unique ID. Since a member of a connection may send several messages, this ID allows that member to identify when a specific request has been completed.</param>
+      <param name="affectedClass">The class affected by the request. This will be a SOP Class or a Meta SOP Class.</param>
+      <param name="instance">The instance of the class. A server may, for example, have three instances of the Nuclear Medicine Class. This value identifies the data with a specific instance.</param>
+      <param name="status">The status of the original request.</param>
+      <param name="dataSet">A Leadtools.Dicom.DicomDataSet object that contains the Data Set which contains the retrieved elements.</param>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.PerformedProcedureStepScu.AfterNCreate">
+      <summary>Occurs after an N-CREATE-RSP has been received from the SCP.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.PerformedProcedureStepScu.AfterNGet">
+      <summary>Occurs after an N-GET-RSP has been received from the SCP.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.PerformedProcedureStepScu.AfterNSet">
+      <summary>Occurs after an N-SET-RSP has been received from the SCP.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.PerformedProcedureStepScu.BeforeNCreate">
+      <summary>Occurs just before an N-CREATE-REQ is sent to the SCP.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.PerformedProcedureStepScu.BeforeNGet">
+      <summary>Occurs just before and N-GET-REQ is sent to the SCP.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.PerformedProcedureStepScu.BeforeNSet">
+      <summary>Occurs just before an N-SET-REQ is sent to the SCP.</summary>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.PresentationStateInstance">
+      <summary>Contains information related to a presentation state composite instance.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.PresentationStateInstance.#ctor">
+      <summary>Initializes a new instance of the PresentationStateInstance class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.PresentationStateInstance.CreateDate">
+      <summary>Gets or sets the creation date.</summary>
+      <value>The creation date.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.PresentationStateInstance.CreateTime">
+      <summary>Gets or sets the presentation creation time.</summary>
+      <value>Time at which this presentation was created.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.PresentationStateInstance.CreatorsName">
+      <summary>Gets or sets the content creator's name.</summary>
+      <value>Name of operator (such as a technologist or physician) creating the content of the SOP Instance.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.PresentationStateInstance.Description">
+      <summary>Gets or sets the content description.</summary>
+      <value>A description of the content of the SOP Instance.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.PresentationStateInstance.Label">
+      <summary>Gets or sets the content label.</summary>
+      <value>A label that is used to identify this SOP Instance.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.PresentationStateInstance.ReferencedSeriesSequence">
+      <summary>Gets or sets the referenced series sequence.</summary>
+      <value>Sequence of items each of which includes the attributes of a series.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.QueryRetrieveScu">
+      <summary>Uses abilities of the base DicomNet class to implement a DICOM Find SCU and a DICOM Move SCU.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.#ctor">
+      <summary>Initializes a new instance of the QueryRetrieveScu class.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.#ctor(System.String,Leadtools.Dicom.DicomNetSecurityMode,Leadtools.Dicom.DicomOpenSslContextCreationSettings)">
+      <summary>Initializes a new instance of the QueryRetrieveScu class.</summary>
+      <param name="TemporaryDirectory">The temporary directory.</param>
+      <param name="SecurityMode">The security mode to use when initializing the network structure.</param>
+      <param name="openSslContextCreationSettings">Provides properties to change the security options from the defaults when the security is used.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.Find(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.DicomDataSet)">
+      <summary>Sends a C-FIND-REQ message to a peer member of a connection defined by Scp.</summary>
+      <param name="Scp">The peer connection to send the C-FIND-REQ to.</param>
+      <param name="request">The DICOM data sets which describes the query information to search for.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.Find(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.Scu.FindQuery)">
+      <summary>Sends a C-FIND-REQ message to a peer member of a connection defined by Scp.</summary>
+      <param name="Scp">The peer connection to send the C-FIND-REQ to.</param>
+      <param name="Query">The query information that describes the DICOM datasets to be found.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.Find(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.Scu.FindQuery,System.Boolean,Leadtools.Dicom.DicomDataSet)">
+      <summary>Sends a C-FIND-REQ message to a peer member of a connection defined by Scp. The C-FIND-REQ dataset is provided by Template.</summary>
+      <param name="Scp">The peer connection to send the C-FIND-REQ to.</param>
+      <param name="Query">The query information that describes the DICOM datasets to be found.</param>
+      <param name="AddOptional">If set to `true` add optional C-FIND-REQ items.</param>
+      <param name="Template">The template dataset to use in the C-FIND-REQ.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.Find(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.Scu.FindQuery,System.Boolean,System.String)">
+      <summary>Sends a C-FIND-REQ message to a peer member of a connection defined by Scp. The C-FIND-REQ dataset is provided by Template.</summary>
+      <param name="Scp">The peer connection to send the C-FIND-REQ to.</param>
+      <param name="Query">The query information that describes the DICOM datasets to be found.</param>
+      <param name="AddOptional">If set to `true` add optional C-FIND-REQ items.</param>
+      <param name="TemplateFile">The template dataset filename used in the C-FIND-REQ.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.Find``2(Leadtools.Dicom.Scu.DicomScp,``0,Leadtools.Dicom.Common.Anonymization.BeforeAddTagDelegate,Leadtools.Dicom.Scu.DicomMatchDelegate)">
+      <summary>Sends a C-FIND-REQ message to a peer member of a connection defined by Scp. The C-FIND-REQ is defined by the Query parameter.</summary>
+      <param name="Scp">The peer connection to send the C-FIND-REQ to.</param>
+      <param name="Query">The query information that describes the DICOM datasets to be found.</param>
+      <param name="OnBeforeAdd">The method to call before a property defined in the class Query is added to the dataset.</param>
+      <param name="OnMatch">The delegate to be called for each dataset that matches the query parameters.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.Find``2(Leadtools.Dicom.Scu.DicomScp,``0,Leadtools.Dicom.Common.Anonymization.BeforeAddTagDelegate,Leadtools.Dicom.Scu.DicomMatchDelegate,Leadtools.Dicom.DicomDataSet)">
+      <summary>Sends a C-FIND-REQ message to a peer member of a connection defined by Scp. The C-FIND-REQ is defined by the Query parameter.</summary>
+      <param name="Scp">The peer connection to send the C-FIND-REQ to.</param>
+      <param name="Query">The query information that describes the DICOM datasets to be found.</param>
+      <param name="OnBeforeAdd">The method to call before a property defined in the class Query is added to the dataset.</param>
+      <param name="OnMatch">The delegate to be called for each dataset that matches the query parameters.</param>
+      <param name="Template">The template dataset to use for the C-FIND-REQ.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.Find``2(Leadtools.Dicom.Scu.DicomScp,``0,Leadtools.Dicom.Scu.DicomMatchDelegate)">
+      <summary>Sends a C-FIND-REQ message to a peer member of a connection defined by Scp. The C-FIND-REQ is defined by the Query parameter.</summary>
+      <param name="Scp">The peer connection to send the C-FIND-REQ to.</param>
+      <param name="Query">The query information that describes the DICOM datasets to be found.</param>
+      <param name="OnMatch">The method to call when a dataset successfully matches the query parameters.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.Find``2(Leadtools.Dicom.Scu.DicomScp,``0,Leadtools.Dicom.Scu.DicomMatchDelegate,Leadtools.Dicom.DicomDataSet)">
+      <summary>Sends a C-FIND-REQ message to a peer member of a connection defined by Scp. The C-FIND-REQ is defined by the Query parameter.</summary>
+      <param name="Scp">The peer connection to send the C-FIND-REQ to.</param>
+      <param name="Query">The query information that describes the DICOM datasets to be found.</param>
+      <param name="OnMatch">The delegate to be called for each dataset that matches the query parameters.</param>
+      <param name="Template">The template dataset to use for the C-FIND-REQ.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.Get(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.DicomDataSet)">
+      <summary>Sends a C-GET-REQ message to a peer member of a connection defined by Scp.</summary>
+      <param name="scp">The peer connection to send the C-GET-REQ to</param>
+      <param name="request">The DICOM data sets which describes the C-GET-REQ information to retrieve.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.Get(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.DicomDataSet,Leadtools.Dicom.Scu.PresentationContext)">
+      <summary>Sends a C-GET-REQ message to a peer member of a connection defined by Scp.</summary>
+      <param name="scp">The peer connection to send the C-GET-REQ to.</param>
+      <param name="request">The [DicomDataSet] data sets which describes the C-GET-REQ information to retrieve.</param>
+      <param name="additionalPresentationContexts">A list of presentation contexts to add to the [Leadtools.Dicom.DicomAssociate].</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.Get(Leadtools.Dicom.Scu.DicomScp,System.String,Leadtools.Dicom.Scu.PresentationContext)">
+      <summary>Sends a STUDY-level C-GET-REQ message to a peer member of a connection defined by Scp.</summary>
+      <param name="Scp">The peer connection to send the C-GET-REQ to.</param>
+      <param name="StudyInstanceUID">The study instance UID of the study to retrieve.</param>
+      <param name="additionalPresentationContexts">A list of presentation contexts to add to the Leadtools.Dicom.DicomAssociate</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.Get(Leadtools.Dicom.Scu.DicomScp,System.String,System.String,Leadtools.Dicom.Scu.PresentationContext)">
+      <summary>Sends a SERIES-level C-GET-REQ message to a peer member of a connection defined by Scp.</summary>
+      <param name="Scp">The peer connection to send the C-GET-REQ to.</param>
+      <param name="StudyInstanceUID">The study instance UID of the series to retrieve.</param>
+      <param name="SeriesInstanceUID">The series instance UID of the series to retrieve.</param>
+      <param name="additionalPresentationContexts">A list of presentation contexts to add to the Leadtools.Dicom.DicomAssociateDicomAssociation</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.Get(Leadtools.Dicom.Scu.DicomScp,System.String,System.String,System.String,Leadtools.Dicom.Scu.PresentationContext)">
+      <summary>Sends an IMAGE-level C-GET-REQ message to a peer member of a connection defined by Scp.</summary>
+      <param name="Scp">The peer connection to send the C-GET-REQ to.</param>
+      <param name="StudyInstanceUID">The study instance UID of the instance to retrieve.</param>
+      <param name="SeriesInstanceUID">The series instance UID of the instance to retrieve.</param>
+      <param name="SopInstanceUID">The SOP instance UID of the instance to retrieve.</param>
+      <param name="additionalPresentationContexts">A list of presentation contexts to add to the Leadtools.Dicom.DicomAssociateDicomAssociation</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.GetCompatiblePresentationContext(Leadtools.Dicom.DicomDataSet)">
+      <summary>Returns a Leadtools.Dicom.Scu.Common.PresentationContext that contains the abstract syntax and transfer syntax of a Leadtools.Dicom.DicomDataSet</summary>
+      <param name="ds">The Leadtools.Dicom.DicomDataSet that is used to generate the Leadtools.Dicom.Scu.Common.PresentationContext</param>
+      <returns>a Leadtools.Dicom.Scu.Common.PresentationContext that contains the abstract syntax and transfer syntax of a Leadtools.Dicom.DicomDataSet</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.Move(Leadtools.Dicom.Scu.DicomScp,System.String,Leadtools.Dicom.DicomDataSet)">
+      <summary>Sends a C-MOVE-REQ message to a peer member of a connection defined by Scp.</summary>
+      <param name="Scp">The peer connection to send the C-MOVE-REQ to.</param>
+      <param name="DestAE">The name of the Application Entity to which to move the data. If DestAE is null or empty the dataset will be moved to the AETitle defined in DicomFindSCU.</param>
+      <param name="request">The DICOM dataset that describes the move operation to perform.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.Move(Leadtools.Dicom.Scu.DicomScp,System.String,System.String)">
+      <summary>Sends a C-MOVE-REQ message to a peer member of a connection defined by Scp.</summary>
+      <param name="Scp">The peer connection to send the C-MOVE-REQ to.</param>
+      <param name="DestAE">The name of the Application Entity to which to move the data. If DestAE is null or empty the dataset will be moved to the AETitle defined in DicomFindSCU</param>
+      <param name="StudyInstanceUID">The study instance UID of the study to move.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.Move(Leadtools.Dicom.Scu.DicomScp,System.String,System.String,System.String)">
+      <summary>Sends a C-MOVE-REQ message to a peer member of a connection defined by Scp.</summary>
+      <param name="Scp">The peer connection to send the C-MOVE-REQ to.</param>
+      <param name="DestAE">The name of the Application Entity to which to move the data. If DestAE is null or empty the dataset will be moved to the AETitle defined in DicomFindSCU</param>
+      <param name="StudyInstanceUID">The study instance UID of the study to move.</param>
+      <param name="SeriesInstanceUID">The series instance UID of the series to move.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.Move(Leadtools.Dicom.Scu.DicomScp,System.String,System.String,System.String,System.String)">
+      <summary>Sends a C-MOVE-REQ message to a peer member of a connection defined by Scp.</summary>
+      <param name="Scp">The peer connection to send the C-MOVE-REQ to.</param>
+      <param name="DestAE">The name of the Application Entity to which to move the data. If DestAE is null or empty the dataset will be moved to the AETitle defined in DicomFindSCU</param>
+      <param name="StudyInstanceUID">The study instance UID of the study to move.</param>
+      <param name="SeriesInstanceUID">The series instance UID of the series to move.</param>
+      <param name="SopInstanceUID">The sop instance UID of the instance to move.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.BuildAssociation(Leadtools.Dicom.Scu.DicomScp)">
+      <summary>Builds the association.</summary>
+      <param name="scp">The SCP.</param>
+      <returns>A DICOM request associate.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.Finalize">
+      <summary>Releases unmanaged resources and performs other cleanup operations before the QueryRetrieveScu is reclaimed by garbage collection.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.GetPresentationContexts">
+      <summary>Gets the presentation contexts. Should be overridden in derived classes.</summary>
+      <returns>List of presentation contexts.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.OnAfterCGet(Leadtools.Dicom.Scu.AfterCGetEventArgs)">
+      <summary>Raises the AfterCGet event.</summary>
+      <param name="e">The Leadtools.Dicom.Scu.Common.AfterCGetDelegate instance containing the event data.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.OnAfterCMove(Leadtools.Dicom.Scu.AfterCMoveEventArgs)">
+      <summary>Raises the AfterCMove event.</summary>
+      <param name="e">The Leadtools.Dicom.Scu.Common.AfterCMoveEventArgs instance containing the event data.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.OnBeforeCGet(Leadtools.Dicom.Scu.BeforeCGetEventArgs)">
+      <summary>Raises the BeforeCGet event.</summary>
+      <param name="e">The Leadtools.Dicom.Scu.Common.BeforeCGetDelegate instance containing the event data.</param>
+      <returns>The priority level of the message.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.OnBeforeCMove(Leadtools.Dicom.Scu.BeforeCMoveEventArgs)">
+      <summary>Raises the BeforeCMove event.</summary>
+      <param name="e">The Leadtools.Dicom.Scu.Common.BeforeCMoveEventArgs instance containing the event data.</param>
+      <returns>The priority level of the message.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.OnReceiveAssociateAccept(Leadtools.Dicom.DicomAssociate)">
+      <summary>Called when an associate accept is received.</summary>
+      <param name="association">The association.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.OnReceiveAssociateRequest(Leadtools.Dicom.DicomAssociate)">
+      <summary>Called when an associate request is received.</summary>
+      <param name="association">The association.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.OnReceiveCFindResponse(System.Byte,System.Int32,System.String,Leadtools.Dicom.DicomCommandStatusType,Leadtools.Dicom.DicomDataSet)">
+      <summary>Called when C-FIND-RSP is received.</summary>
+      <param name="presentationID">The presentation ID.</param>
+      <param name="messageID">The message ID.</param>
+      <param name="affectedClass">The affected class.</param>
+      <param name="status">The status.</param>
+      <param name="dataSet">The data set.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.OnReceiveCGetResponse(System.Byte,System.Int32,System.String,Leadtools.Dicom.DicomCommandStatusType,System.Int32,System.Int32,System.Int32,System.Int32,Leadtools.Dicom.DicomDataSet)">
+      <summary>Called when a C-GET-RSP received.</summary>
+      <param name="presentationID">The presentation ID.</param>
+      <param name="messageID">The message ID being responded to.</param>
+      <param name="affectedClass">The SOP UID for this C-GET query.</param>
+      <param name="status">The status (0000 if successful, FF00 if pending, or other values.</param>
+      <param name="remaining">The number of remaining C-STORE sub operations to be invoked.</param>
+      <param name="completed">The number of C-STORE sub operations invoked by this C-GET operation that have been successfully completed.</param>
+      <param name="failed">The number of C-STORE sub operations invoked by this C-GET operation that failed.</param>
+      <param name="warning">The number of C-STORE sub operations invoked by this C-GET operation that generated warnings</param>
+      <param name="dataSet">A Leadtools.Dicom.DicomDataSet object which contains the information retrieved from the original C-GET-REQ</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.OnReceiveCMoveResponse(System.Byte,System.Int32,System.String,Leadtools.Dicom.DicomCommandStatusType,System.Int32,System.Int32,System.Int32,System.Int32,Leadtools.Dicom.DicomDataSet)">
+      <summary>Called when C-MOVE-RSP is received.</summary>
+      <param name="presentationID">The presentation ID.</param>
+      <param name="messageID">The message ID.</param>
+      <param name="affectedClass">The affected class.</param>
+      <param name="status">The status.</param>
+      <param name="remaining">The remaining.</param>
+      <param name="completed">The completed.</param>
+      <param name="failed">The failed.</param>
+      <param name="warning">The warning.</param>
+      <param name="dataSet">The data set.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.OnReceiveCStoreRequest(System.Byte,System.Int32,System.String,System.String,Leadtools.Dicom.DicomCommandPriorityType,System.String,System.Int32,Leadtools.Dicom.DicomDataSet)">
+      <summary>Called when a C-STORE-REQ is received..</summary>
+      <param name="presentationID">The presentation ID.</param>
+      <param name="messageID">The message ID.</param>
+      <param name="affectedClass">The affected class.</param>
+      <param name="instance">The instance.</param>
+      <param name="priority">The priority.</param>
+      <param name="moveAE">The move AE.</param>
+      <param name="moveMessageID">The move message ID.</param>
+      <param name="dataSet">The data set.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.OnReceiveCStoreRequest(Leadtools.Dicom.Scu.QueryRetrieveScu,System.Byte,System.Int32,System.String,System.String,Leadtools.Dicom.DicomCommandPriorityType,System.String,System.Int32,Leadtools.Dicom.DicomDataSet)">
+      <summary>Called when a C-STORE-REQ is received from the internal storage server.</summary>
+      <param name="scu">The scu that received the C-STORE request.</param>
+      <param name="presentationID">The presentation ID.</param>
+      <param name="messageID">The message ID.</param>
+      <param name="affectedClass">The affected class.</param>
+      <param name="instance">The instance.</param>
+      <param name="priority">The priority.</param>
+      <param name="moveAE">The move AE.</param>
+      <param name="moveMessageID">The move message ID.</param>
+      <param name="dataSet">The data set.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.QueryRetrieveScu.OnReceiveReleaseRequest">
+      <summary>Notifies a connection that a Release Request message was received.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.QueryRetrieveScu.AfterCFind">
+      <summary>Occurs when a C-FIND-REQ has completed.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.QueryRetrieveScu.AfterCGet">
+      <summary>Occurs before a C-GET-REQ is sent to the scp.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.QueryRetrieveScu.AfterCMove">
+      <summary>Occurs when C-MOVE-REQ is finished.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.QueryRetrieveScu.BeforeCFind">
+      <summary>Occurs when C-FIND-REQ is sent to the SCP.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.QueryRetrieveScu.BeforeCGet">
+      <summary>Occurs before a C-GET-REQ is sent to the scp.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.QueryRetrieveScu.BeforeCMove">
+      <summary>Occurs before a C-MOVE-REQ is sent to the SCP.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.QueryRetrieveScu.HostReady">
+      <summary>Occurs during a C-MOVE to oneself (the host) after the destination AE connects back to the host.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.QueryRetrieveScu.MatchInstance">
+      <summary>Occurs when an instance has been matched.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.QueryRetrieveScu.MatchSeries">
+      <summary>Occurs when a series has been matched.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.QueryRetrieveScu.MatchStudy">
+      <summary>Occurs when a study has been matched.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.QueryRetrieveScu.Moved">
+      <summary>Occurs when a dataset has been successfully moved to the destination.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.QueryRetrieveScu.ReceivedStoreRequest">
+      <summary>Occurs when C-STORE-REQ is received as a result of a C-GET request.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.QueryRetrieveScu.EnableMoveToSelf">
+      <summary>Gets or sets a value indicating whether to enable the internal server on a C-MOVE operation.</summary>
+      <value>`true` if internal server is enabled, otherwise it is `false`.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.QueryRetrieveScu.SecureHostSettings">
+      <summary>Gets or sets the security (TLS) host settings when doing a C-MOVE to oneself.</summary>
+      <value>The security (TLS) host settings when doing a C-MOVE to oneself.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.QueryRetrieveScu.UseSecureHost">
+      <summary>Gets or sets a value indicating whether a C-MOVE to oneself requires secure (TLS) communication.</summary>
+      <value>A value indicating whether a C-MOVE to oneself requires secure (TLS) communication. The default value is *false*.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Series">
+      <summary>Contains series information.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Series.#ctor">
+      <summary>Initializes a new instance of the Series class.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Series.FindInstances">
+      <summary>Finds instances under this series. The Match event will be called for each instance.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Series.Move(System.String)">
+      <summary>Moves the instances.</summary>
+      <param name="DestAE">The destination AE title.</param>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Series.CurveNumber">
+      <summary>Gets the curve number.</summary>
+      <value>The curve number.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Series.Date">
+      <summary>Gets the date.</summary>
+      <value>Date the Series started.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Series.Description">
+      <summary>Gets the series description.</summary>
+      <value>User provided description of the series.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Series.InstanceUID">
+      <summary>Gets the series instance UID.</summary>
+      <value>Unique identifier of the series.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Series.LookupTableNumber">
+      <summary>Gets the lookup table number.</summary>
+      <value>The lookup table number.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Series.Modality">
+      <summary>Gets the modality.</summary>
+      <value>Type of equipment that originally acquired the data used to create the images in this series.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Series.Number">
+      <summary>Gets the series number.</summary>
+      <value>A number that identifies this series.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Series.NumberOfRelatedInstances">
+      <summary>Gets the number of related instances.</summary>
+      <value>The number of related instances.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Series.OverlayNumber">
+      <summary>Gets the overlay number.</summary>
+      <value>The overlay number.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Series.PerformedProcStepId">
+      <summary>Gets the performed procedure step id.</summary>
+      <value>User or equipment generated identifier of that part of a Procedure that has been carried out within this step.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Series.PerfProcStepStartDate">
+      <summary>Gets the performed procedure step start date.</summary>
+      <value>Date on which the Performed Procedure Step started.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Series.PerfProcStepStartTime">
+      <summary>Gets the performed procedure step start time.</summary>
+      <value>Time on which the Performed Procedure Step started.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Series.RequestedProcId">
+      <summary>Gets the requested procedure id.</summary>
+      <value>Identifier that identifies the Requested Procedure in the Imaging Service Request.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Series.SchedProcStepId">
+      <summary>Gets the scheduled procedure step id.</summary>
+      <value>Identifier that identifies the Scheduled Procedure Step.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.SRInstance">
+      <summary>Contains information that relates to a structured report composite instance.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.SRInstance.#ctor">
+      <summary>Initializes a new instance of the SRInstance class.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.SRInstance.CompletionFlag">
+      <summary>Gets the completion flag.</summary>
+      <value>The estimated degree of completeness of this SR Document with respect to externally defined criteria in a manner specified in the Conformance Statement.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.SRInstance.ConceptNameCodeSequence">
+      <summary>Gets the concept name code sequence.</summary>
+      <value>Code describing the concept represented by the Content Item.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.SRInstance.ContentDate">
+      <summary>Gets the content date.</summary>
+      <value>The date the document content creation started.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.SRInstance.ContentTime">
+      <summary>Gets the content time.</summary>
+      <value>The time the document content creation started.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.SRInstance.ObservationDateTime">
+      <summary>Gets the observation date time.</summary>
+      <value>The date and time on which this Content Item was completed.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.SRInstance.ReferencedRequestSequence">
+      <summary>Gets the referenced request sequence.</summary>
+      <value>Identifies requested procedures which are being fulfilled by this document.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.SRInstance.VerificationFlag">
+      <summary>Gets the verification flag.</summary>
+      <value>Indicates whether this SR document is verified.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.SRInstance.VerifyingObserverSequence">
+      <summary>Gets the verifying observer sequence.</summary>
+      <value>The person or persons authorized to verify specific documents and accept responsibility for the content of the document.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.StoreScu">
+      <summary>Implements a DICOM C-STORE SCU.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.StoreScu.#ctor">
+      <summary>Initializes a new instance of the StoreScu class.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.StoreScu.#ctor(System.String)">
+      <summary>Initializes a new instance of the StoreScu class.</summary>
+      <param name="TemporaryDirectory">The temporary directory.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.StoreScu.#ctor(System.String,Leadtools.Dicom.DicomNetSecurityMode,Leadtools.Dicom.DicomOpenSslContextCreationSettings)">
+      <summary>Initializes a new instance of the StoreScu class.</summary>
+      <param name="TemporaryDirectory">The temporary directory.</param>
+      <param name="SecurityMode">The security mode to use when initializing the network structure.</param>
+      <param name="openSslContextCreationSettings">Provides properties to change the security options from the defaults when the security is used.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.StoreScu.StopListener">
+      <summary>Stops the SCU DICOM Listener.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.StoreScu.StorageCommit(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.DicomDataSet,Leadtools.Dicom.Scu.StorageCommitOptions)">
+      <summary>Sends a storage commit request message to a peer member of a connection defined by SCP.</summary>
+      <param name="Scp">The peer connection to send the storage commit request to.</param>
+      <param name="commitDS">The dataset to send.</param>
+      <param name="storageCommitOptions">A StorageCommitOptions which contains the options for the store.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.StoreScu.StorageCommit(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.Common.Anonymization.SopInstanceReference,System.String,Leadtools.Dicom.Scu.StorageCommitOptions)">
+      <summary>Sends a storage commit request message to a peer member of a connection defined by SCP.</summary>
+      <param name="Scp">The peer connection to send the storage commit request to.</param>
+      <param name="sopInstanceReferences">List of SopInstanceReference objects to store.</param>
+      <param name="transactionUid">The UID for the transaction.  If null or empty, it will be generated and returned.</param>
+      <param name="storageCommitOptions">A StorageCommitOptions which contains the options for the store.</param>
+      <returns>The UID for the transaction. If transactionUid was null or empty, a new UID will be generated and returned, otherwise, the same value will be returned.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.StoreScu.StorageCommit(Leadtools.Dicom.Scu.DicomScp,IEnumerable&lt;string&gt;,System.String,Leadtools.Dicom.Scu.StorageCommitOptions)">
+      <summary>Sends a storage commit request message to a peer member of a connection defined by SCP.</summary>
+      <param name="Scp">The peer connection to send the storage commit request to.</param>
+      <param name="files">List of files to store.</param>
+      <param name="transactionUid">The UID for the transaction.  If null or empty, it will be generated and returned.</param>
+      <param name="storageCommitOptions">A StorageCommitOptions which contains the options for the store.</param>
+      <returns>The UID for the transaction. If transactionUid was null or empty, a new UID will be generated and returned, otherwise, the same value will be returned.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.StoreScu.Store(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.DicomDataSet)">
+      <summary>Sends a C-STORE-REQ message to a peer member of a connection defined by SCP.</summary>
+      <param name="Scp">The peer connection to send the C-STORE-REQ to.</param>
+      <param name="dataset">The dataset to send.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.StoreScu.Store(Leadtools.Dicom.Scu.DicomScp,Leadtools.Dicom.DicomDataSet,System.Boolean)">
+      <summary>Sends a C-STORE-REQ message to a peer member of a connection defined by SCP.</summary>
+      <param name="Scp">The peer connection to send the C-STORE-REQ to.</param>
+      <param name="dataset">The dataset to send.</param>
+      <param name="stayConnected">If set to `true` stay connected.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.StoreScu.Store(Leadtools.Dicom.Scu.DicomScp,System.String)">
+      <summary>Sends a C-STORE-REQ message to a peer member of a connection defined by Scp.</summary>
+      <param name="Scp">The peer connection to send the C-STORE-REQ to.</param>
+      <param name="DicomFile">The DICOM file to send.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.StoreScu.Store(Leadtools.Dicom.Scu.DicomScp,System.String,System.String,System.Boolean)">
+      <summary>Sends a C-STORE-REQ message to a peer member of a connection defined by Scp.</summary>
+      <param name="Scp">The peer connection to send the C-MOVE-REQ to.</param>
+      <param name="Dir">The file directory to search for DICOM files.</param>
+      <param name="SearchPattern">The search pattern.</param>
+      <param name="Recurse">If set to `true` recurse the directory.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.StoreScu.Store(Leadtools.Dicom.Scu.DicomScp,System.String,System.String,System.Boolean,System.Boolean)">
+      <summary>Sends a C-STORE-REQ message to a peer member of a connection defined by Scp.</summary>
+      <param name="Scp">The peer connection to send the C-MOVE-REQ to.</param>
+      <param name="Dir">The file directory to search for DICOM files.</param>
+      <param name="SearchPattern">The search pattern.</param>
+      <param name="Recurse">If set to `true` recurse the directory.</param>
+      <param name="singleConnection">If set to `true` use a single DICOM connection for all C-STORE.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.StoreScu.GetPresentationContexts">
+      <summary>Gets the presentation contexts. Should be overridden in derived classes.</summary>
+      <returns>List of presentation contexts.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.StoreScu.OnReceiveAssociateRequest(Leadtools.Dicom.DicomAssociate)">
+      <summary>Called when an associate request is received.</summary>
+      <param name="association">The association.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.StoreScu.OnReceiveCStoreResponse(System.Byte,System.Int32,System.String,System.String,Leadtools.Dicom.DicomCommandStatusType)">
+      <summary>Notifies a connection that a C-STORE-RSP command was received.</summary>
+      <param name="presentationID">The Presentation Context ID. The ID provides information about both the class type of the data and the Transfer Syntax to use when transferring the data.</param>
+      <param name="messageID">The Message ID. Each message sent by a member of a connection should have a unique ID. Since a member of a connection may send several messages, this ID allows that member to identify when a specific request has been completed.</param>
+      <param name="affectedClass">The class affected by the request. This will be a SOP Class or a Meta SOP Class.</param>
+      <param name="instance">The instance of the class. A server may, for example, have three instances of the Nuclear Medicine Class. This value identifies the data with a specific instance.</param>
+      <param name="status">The status of the original request.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.StoreScu.OnReceiveNActionResponse(System.Byte,System.Int32,System.String,System.String,Leadtools.Dicom.DicomCommandStatusType,System.Int32,Leadtools.Dicom.DicomDataSet)">
+      <summary>Notifies a connection that an N-ACTION-RSP command was received.</summary>
+      <param name="presentationID">The Presentation Context ID. The ID provides information about both the class type of the data and the Transfer Syntax to use when transferring the data.</param>
+      <param name="messageID">The Message ID. Each message sent by a member of a connection should have a unique ID. Since a member of a connection may send several messages, this ID allows that member to identify when a specific request has been completed.</param>
+      <param name="affectedClass">The class affected by the request. This will be a SOP Class or a Meta SOP Class.</param>
+      <param name="instance">The instance of the class. A server may, for example, have three instances of the Nuclear Medicine Class. This value identifies the data with a specific instance.</param>
+      <param name="status">The status of the original request.</param>
+      <param name="action">An application-specific action.</param>
+      <param name="dataSet">A Leadtools.Dicom.DicomDataSet object that contains the Data Set resulting from the specified action.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.StoreScu.OnReceiveNReportRequest(System.Byte,System.Int32,System.String,System.String,System.Int32,Leadtools.Dicom.DicomDataSet)">
+      <summary>Notifies a connection that an N-EVENT-REPORT-REQ command was received.</summary>
+      <param name="presentationID">The Presentation Context ID. The ID provides information about both the class type of the data and the Transfer Syntax to use when transferring the data.</param>
+      <param name="messageID">The Message ID. Each message sent by a member of a connection should have a unique ID. Since a member of a connection may send several messages, this ID allows that member to identify when a specific request has been completed.</param>
+      <param name="affectedClass">The class affected by the request. This will be a SOP Class or a Meta SOP Class.</param>
+      <param name="instance">The instance of the class. A server may, for example, have three instances of the Nuclear Medicine Class. This value identifies the data with a specific instance.</param>
+      <param name="dicomEvent">An application-specific event for which a report is to be generated.</param>
+      <param name="dataSet">A Leadtools.Dicom.DicomDataSet object that contains an application-specific Data Set which contains information related to the operation.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.StoreScu.OnReceiveReleaseRequest">
+      <summary>Notifies a connection that a Release Request message was received.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.StoreScu.AfterCStore">
+      <summary>Occurs after receiving a C-STORE-RSP.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.StoreScu.AfterNAction">
+      <summary>Occurs after receiving an N-ACTION-RSP.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.StoreScu.BeforeCStore">
+      <summary>Occurs before a C-STORE-REQ is sent to the server.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.StoreScu.BeforeNAction">
+      <summary>Occurs before an N-ACTION-REQ is sent to the server.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.StoreScu.StorageCommitmentResult">
+      <summary>Occurs after receiving a storage commitment response.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Scu.StoreScu.StorageCommitmentWait">
+      <summary>This event is fired while waiting to recieve the Storage Commit results.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.StoreScu.Compression">
+      <summary>Gets or sets the compression to use when storing DICOM files.</summary>
+      <value>The compression to use during a C-STORE operation. The default compression is Native.</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.StoreScu.StorageCommitOptions">
+      <summary>Enumeration listing the different options available for storage commitment.</summary>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.Study">
+      <summary>Contains study information.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Study.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Study.FindSeries">
+      <summary>Finds the list of series for this study. Match event will be called for each series.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Scu.Study.Move(System.String)">
+      <summary>Moves the series.</summary>
+      <param name="DestAE">The destination AE title.</param>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Study.AccessionNumber">
+      <summary>Gets the accession number.</summary>
+      <value>A RIS generated number which identifies the order for the Study.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Study.AdmitDiagDescrp">
+      <summary>Gets the admitting diagnoses description.</summary>
+      <value>Description of the admitting diagnosis (diagnoses).</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Study.Age">
+      <summary>Gets the patient's age.</summary>
+      <value>Age of patient.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Study.Date">
+      <summary>Gets the study date.</summary>
+      <value>Date the study started.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Study.Description">
+      <summary>Gets or sets the description.</summary>
+      <value>Institution-generated description or classification of the Study (component) performed.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Study.Id">
+      <summary>Gets the study id.</summary>
+      <value>User or equipment generated Study identifier.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Study.InstanceUID">
+      <summary>Gets the study instance uid.</summary>
+      <value>Unique identifier for the Study.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Study.ModalitiesInStudy">
+      <summary>Gets the modalities in the study.</summary>
+      <value>The list of modalities in the study.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Study.NameOfDrsReading">
+      <summary>Gets the name of DRS reading.</summary>
+      <value>The name of DRS reading.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Study.NumberOfRelatedInstances">
+      <summary>Gets the number of related instances.</summary>
+      <value>The number of related instances in the study.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Study.NumberofRelatedSeries">
+      <summary>Gets the number of related series.</summary>
+      <value>The number of series available in the study.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Study.Patient">
+      <summary>Gets the patient information.</summary>
+      <value>The patient.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Study.ReferringPhysiciansName">
+      <summary>Gets the referring physician's name.</summary>
+      <value>Name of the patient's referring physician.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Study.Size">
+      <summary>Gets the patient's size.</summary>
+      <value>Length or size of the patient, in meters.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Study.Time">
+      <summary>Gets the study time.</summary>
+      <value>Time the study was started.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Scu.Study.Weight">
+      <summary>Gets the patient's weight.</summary>
+      <value>Weight of the patient, in kilograms.</value>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.DicomMatchDelegate`1">
+      <summary>Represents the method that will handle a DICOM match.</summary>
+      <param name="obj">The data created from the match.</param>
+      <param name="ds">The original dataset returned from the C-FIND-REQ.</param>
+    </member>
+    <member name="T:Leadtools.Dicom.Scu.StorageCommitOptions">
+      <summary>Enumeration listing the different options available for storage commitment.</summary>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.StorageCommitOptions.None">
+      <summary>Use the default behavior.</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.StorageCommitOptions.NoWaitForResults">
+      <summary></summary>
+      <value>1</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.StorageCommitOptions.WaitForResultsThenClose">
+      <summary>After receiving the N-Action-Rsp, wait for the N-Event-Report-Req on the same Association.</summary>
+      <value>2</value>
+    </member>
+    <member name="F:Leadtools.Dicom.Scu.StorageCommitOptions.WaitForResultsAndStayOpen">
+      <summary>After receiving the N-Action-Rsp, wait for the N-Event-Report-Req on the same Association.</summary>
+      <value>3</value>
+    </member>
+  </members>
+</doc>

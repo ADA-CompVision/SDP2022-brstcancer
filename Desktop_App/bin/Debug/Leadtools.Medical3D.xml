@@ -1,0 +1,1834 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Medical3D</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Medical3D.Medical3DCamera">
+      <summary>The Medical3DCamera class manages the camera properties.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DCamera.#ctor">
+      <summary>Initializes a new instance of the Medical3DCamera class.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DCamera.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,Leadtools.Medical3D.Medical3DProjectionMethod)">
+      <summary>Initializes a new instance of the class Medical3DCamera with explicit parameters.</summary>
+      <param name="xRotation">X-rotation angle. Possible values range from -180 to 180.</param>
+      <param name="yRotation">Y-rotation angle. Possible values range from -90 to 90.</param>
+      <param name="zRotation">Z-rotation angle. Possible values range from 0 to 360.</param>
+      <param name="Zoom">The camera zooming. Possible values range from 1 to 190. Default value is 128.</param>
+      <param name="xOffset">X-offset.</param>
+      <param name="yOffset">Y-offset.</param>
+      <param name="method">The camera projection method.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DCamera.ResetPosition">
+      <summary>Resets the camera position to the default state (0, 0, 0)</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DCamera.ResetRotation">
+      <summary>Resets the camera rotation to the default state (0, 0, 0).</summary>
+      <returns>Leadtools.MedicalViewer.Point3DOld rotation value.</returns>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DCamera.Rotate(System.Single,System.Single,System.Single,Leadtools.Medical3D.Medical3DAxis)">
+      <summary>Rotates the camera by a specific amount in the specified axis (axes).</summary>
+      <param name="x">Amount of rotation in the x-axis.</param>
+      <param name="y">Amount of rotation in the y-axis.</param>
+      <param name="z">Amount of rotation in the z-axis.</param>
+      <param name="axes">Axis (axes) to rotate. You can combine two or more flags.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DCamera.RotateX(System.Single)">
+      <summary>Rotates the camera in the x-axis by the specified amount.</summary>
+      <param name="x">Rotation amount.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DCamera.RotateY(System.Single)">
+      <summary>Rotates the camera in the y-axis by the specified amount.</summary>
+      <param name="y">Rotation amount.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DCamera.RotateZ(System.Single)">
+      <summary>Rotates the camera in the z-axis by specified amount.</summary>
+      <param name="z">Rotation amount.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DCamera.Translate(System.Single,System.Single,System.Single,Leadtools.Medical3D.Medical3DAxis)">
+      <summary>Translates or moves the camera by the specified amount along the specified axis (axes).</summary>
+      <param name="x">Translation amount in the x-axis.</param>
+      <param name="y">Translation amount in the y-axis.</param>
+      <param name="z">Translation amount in the z-axis.</param>
+      <param name="axes">Axis (axes) to translate toward. You can combine two or more flags.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DCamera.TranslateX(System.Single)">
+      <summary>Translates or moves the camera in the x-axis by the specified amount.</summary>
+      <param name="x">Amount of translation along the x-axis.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DCamera.TranslateY(System.Single)">
+      <summary>Translates or moves the camera in the y-axis by the specified amount.</summary>
+      <param name="y">Amount of translation along the y-axis.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DCamera.TranslateZ(System.Single)">
+      <summary>Translates or moves the camera in the z-axis by the specified amount.</summary>
+      <param name="z">Amount of translation along the z-axis.</param>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DCamera.AxialRotation">
+      <summary>Gets or sets the Axial (Z) rotation angle of the camera.</summary>
+      <value>Axial (Z) rotation angle of the camera.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DCamera.Far">
+      <summary>Gets or sets the camera far clipping plane position.</summary>
+      <value>The camera far clipping plane position. Valid values range from 0 to 6.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DCamera.Near">
+      <summary>Gets or sets the camera near clipping plane position.</summary>
+      <value>The camera near clipping plane position. Valid values range from 0 to 6.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DCamera.ProjectionMethod">
+      <summary>Gets or sets the camera's projection method.</summary>
+      <value>A Medical3DProjectionMethod value that represents the projection method used for the camera.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DCamera.XOffset">
+      <summary>Gets or sets the camera's X offset.</summary>
+      <value>The camera's X offset.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DCamera.XRotation">
+      <summary>Gets or sets the camera X rotation angle.</summary>
+      <value>The camera X rotation angle.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DCamera.YOffset">
+      <summary>Gets or sets the camera Y offset.</summary>
+      <value>The camera Y offset.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DCamera.YRotation">
+      <summary>Gets or sets the camera Y rotation angle.</summary>
+      <value>The camera Y rotation angle. Possible values range from -90 to 90.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DCamera.ZOffset">
+      <summary>Gets or sets the camera Z offset.</summary>
+      <value>The camera Z offset.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DCamera.Zoom">
+      <summary>Gets or sets the camera zoom value.</summary>
+      <value>The camera zoom value.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DCameraEventArgs">
+      <summary>The Medical3DCameraEventArgs class provides data about the various 3D camera actions.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DCameraEventArgs.#ctor">
+      <summary>Initializes a new instance of the Medical3DCameraEventArgs class.</summary>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DColorMapping">
+      <summary>The Medical3DColorMapping class is used to hold the color mapping histogram for the 3D object. it contains the Red, blue, green and alpha channel histograms.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DColorMapping.#ctor">
+      <summary>Initializes a new instance of the class Medical3DColorMapping with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DColorMapping.#ctor(Leadtools.Medical3D.Medical3DObject)">
+      <summary>Initializes a new instance of the class Medical3DColorMapping with explicit parameters.</summary>
+      <param name="parent">the parent of this color map</param>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DColorMapping.BlueChannel">
+      <summary>sets the color palette of the blue channel for the 3D object.</summary>
+      <value>array that represents the color palette of the blue channel for the 3D object.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DColorMapping.GreenChannel">
+      <summary>sets the color palette of the green channel for the 3D object.</summary>
+      <value>array that represents the color palette of the green channel for the 3D object.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DColorMapping.OpacChannel">
+      <summary>sets the color palette of the alpha channel for the 3D object.</summary>
+      <value>array that represents the color palette of the alpha channel for the 3D object.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DColorMapping.RedChannel">
+      <summary>sets the color palette of the red channel for the 3D object.</summary>
+      <value>array that represents the color palette of the red channel for the 3D object.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DContainer">
+      <summary>The Medical3DContainer class manages the 3D objects and rendering techniques.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.#ctor">
+      <summary>Initializes a new instance of the class Medical3DContainer with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.#ctor(Control)">
+      <summary>Initializes a new instance of the class Medical3DContainer.</summary>
+      <param name="control">the control where the objects are rendered.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.#ctor(Control,System.String)">
+      <summary>Initializes a new instance of the Medical3DContainer class.</summary>
+      <param name="control">The control where the objects are rendered.</param>
+      <param name="path">The path to where the temporary files are stored.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.#ctor(Control,System.String,System.Boolean)">
+      <summary>Initializes a new instance of the Medical3DContainer class.</summary>
+      <param name="control">The control where the objects are rendered.</param>
+      <param name="path">The path to where the temporary files are stored.</param>
+      <param name="softwareRendering"></param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.#ctor(System.String)">
+      <summary>Initializes a new instance of the class Medical3DContainer with a custom path for the Temp3DFolder.</summary>
+      <param name="path">A string that specifies the path where the temporary data will be stored.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.#ctor(System.String,System.Boolean)">
+      <summary>Initializes a new instance of the Medical3DContainer class.</summary>
+      <param name="path">The path to where the temporary files are stored.</param>
+      <param name="softwareRendering"></param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.HandleMouseDown(Leadtools.MedicalViewer.MedicalViewerActionType,Control,MouseEventArgs,System.Int32)">
+      <summary>Handles the mouse down event that occur on the control.</summary>
+      <param name="actionType">Leadtools.MedicalViewer.MedicalViewerActionType that represents the action that You wants to perform.</param>
+      <param name="control">The control where the objects are rendered.</param>
+      <param name="args">System.Windows.Forms.MouseEventArgs that represents the arguments that are received through one of the mouse events. You must pass the mouse event arguments that were received from the various mouse events, such as MouseDown, MouseUp, MouseMove, etc.</param>
+      <param name="objectIndex">A zero-based index of the object that will receive the effects of handling the mouse event through this method.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.HandleMouseMove(Control,MouseEventArgs,System.Int32)">
+      <summary>Handles the mouse move event that occurs on the control.</summary>
+      <param name="control">The control where the objects are rendered.</param>
+      <param name="args">System.Windows.Forms.MouseEventArgs that represents the arguments that are received through one of the mouse events. You must pass the mouse event arguments that were received from the various mouse events, such as MouseDown, MouseUp, MouseMove, etc.</param>
+      <param name="objectIndex">The index of the object that will receive the effects of handling the mouse event through this method.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.HandleMouseUp(Control,MouseEventArgs,System.Int32)">
+      <summary>Handles the mouse up event that occurs on the control.</summary>
+      <param name="control">The control where the objects are rendered.</param>
+      <param name="args">System.Windows.Forms.MouseEventArgs that represents the arguments that are received through one of the mouse events. You must pass the mouse event arguments that were received from the various mouse events, such as MouseDown, MouseUp, MouseMove, etc.</param>
+      <param name="objectIndex">index of the object that will receive the effects of handling the mouse event through this method.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.Render(Control)">
+      <summary>Renders the objects of the container on the specified control.</summary>
+      <param name="control">Rendering surface, or the place where the objects are going to be displayed.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.ResetPosition">
+      <summary>Resets the position of all objects in the container to (0, 0, 0).</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.ResetRotation">
+      <summary>Resets the rotation of all the objects to (0, 0, 0).</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.ResetScale">
+      <summary>Resets the scale of all the objects in the container.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.RotateX(System.Single)">
+      <summary>Rotates all the objects in the container by a specific amount in the x-axis.</summary>
+      <param name="x">Amount of rotation along the x-axis.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.RotateY(System.Single)">
+      <summary>Rotates all the objects in the container by a specific amount in the y-axis.</summary>
+      <param name="y">Amount of rotation along the y-axis.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.RotateZ(System.Single)">
+      <summary>Rotates all the objects in the container by a specific amount in the z-axis.</summary>
+      <param name="z">Amount of rotation along the z-axis.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.Scale(System.Single)">
+      <summary>Scales all objects in the container by a specific amount in all directions.</summary>
+      <param name="scale">Scaling amount for all axes.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.Scale(System.Single,System.Single,System.Single,Leadtools.Medical3D.Medical3DAxis)">
+      <summary>Scales all objects in the container by a specific amount in any direction.</summary>
+      <param name="x">Scaling amount of x-axis.</param>
+      <param name="y">Scaling amount of y-axis.</param>
+      <param name="z">Scaling amount of z-axis.</param>
+      <param name="axes">Axis (axes) of scaling. You can combine multiple flags.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.ScaleX(System.Single)">
+      <summary>Scales all objects in the container by a specific amount in the x-axis.</summary>
+      <param name="x">Amount of scaling on the x-axis.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.ScaleY(System.Single)">
+      <summary>Scales all objects in the container by a specific amount in the y-axis.</summary>
+      <param name="y">Amount of scaling on the y-axis.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.ScaleZ(System.Single)">
+      <summary>Scales all objects in the container by a specific amount in the z-axis.</summary>
+      <param name="z">Amount of scaling on the z-axis.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.SendAddFrame(System.String)">
+      <summary>Sends the frame mapped to the specified ID to the rendering engine.</summary>
+      <param name="guid">The file mapping ID that specifies the file to be sent.</param>
+      <returns>Reserved for future use. Returns 0.</returns>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.Translate(System.Single,System.Single,System.Single,Leadtools.Medical3D.Medical3DAxis)">
+      <summary>Translates all objects in the container by a specific amount in the specific axis.</summary>
+      <param name="x">Translation amount in the x-axis.</param>
+      <param name="y">Translation amount in the y-axis.</param>
+      <param name="z">Translation amount in the z-axis.</param>
+      <param name="axes">Axis (axes) of translation. You can combine multiple flags.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.TranslateX(System.Single)">
+      <summary>Translates all objects in the container by a specific amount in the x-axis.</summary>
+      <param name="x">Amount of translation along the x-axis.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.TranslateY(System.Single)">
+      <summary>Translates all objects in the container by a specific amount in the y-axis.</summary>
+      <param name="y">Amount of translation along the y-axis.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.TranslateZ(System.Single)">
+      <summary>Translates all objects in the container by a specific amount in the z-axis.</summary>
+      <param name="z">Amount of translation along the z-axis.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.Dispose">
+      <summary>Releases all resources used by the Medical3DContainer.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.Dispose(System.Boolean)">
+      <summary>Releases all the resources used by this Medical3DContainer.</summary>
+      <param name="disposing"></param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DContainer.Finalize">
+      <summary>Overrides Finalize.</summary>
+    </member>
+    <member name="E:Leadtools.Medical3D.Medical3DContainer.CreateObject">
+      <summary>Optional delegate method for additional processing.</summary>
+    </member>
+    <member name="E:Leadtools.Medical3D.Medical3DContainer.PostPaint">
+      <summary>Optional delegate method for additional processing.</summary>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DContainer.BackgroundColor">
+      <summary>Gets or sets the color of the background.</summary>
+      <value>System.Drawing.Color structure representing the background color.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DContainer.Camera">
+      <summary>Gets the class containing the camera properties.</summary>
+      <value>A class containing the camera properties.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DContainer.CurrentObjectIndex">
+      <summary>Gets or sets the index of the object that will be affected by the mouse events.</summary>
+      <value>The zero-based index of the object.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DContainer.Inverted">
+      <summary>Gets or sets the value indicating whether to show the object in the inversion mode.</summary>
+      <value>True to show the object in inversion mode; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DContainer.MIP">
+      <summary>Gets the class containing information, properties and methods that will be applied to all objects of the container when using the MIP rendering technique.</summary>
+      <value>A class containing information, properties and methods that will be applied to all objects of the container when using the MIP rendering technique.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DContainer.MPR">
+      <summary>Gets the class containing information, properties and methods that will be applied to all objects of the container when using the MPR rendering technique.</summary>
+      <value>A class containing information, properties and methods that will be applied to all objects of the container when using the MPR rendering technique.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DContainer.Objects">
+      <summary>Gets the Medical3DObjectCollection\&lt;Medical3DObject\&gt; assigned to the container.</summary>
+      <value>A Medical3DObjectCollection\&lt;Medical3DObject\&gt; assigned to the container.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DContainer.OwnerControl">
+      <summary>Gets the 3D controls associated with this container.</summary>
+      <value>System.Windows.Forms.Control that represents the 3D control associated with this container. This control is usually of type Medical3DControl.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DContainer.RenderingType">
+      <summary>The rendering type used in the 3D volume.</summary>
+      <value>The Medical3DVolumeRenderingType that indicates the rendering type of the volume.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DContainer.Space">
+      <summary>Gets or sets the value that determines whether to rotate objects using the object space or the view space.</summary>
+      <value>Medical3DSpace determines whether to rotate objects using the object space or the view space.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DContainer.VolumeType">
+      <summary>Gets or sets the rendering volume type.</summary>
+      <value>Medical3DVolumeType represents the rendering volume type.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DContainer.VRT">
+      <summary>Gets the class containing information, properties and methods that will be applied to all objects of the container when using the VRT rendering technique.</summary>
+      <value>A class containing information, properties and methods that will be applied to all objects of the container when using the VRT rendering technique.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DControl">
+      <summary>The Medical3DControl class represents the control that is used to hold the container and render the 3D object automatically.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DControl.#ctor">
+      <summary>Initializes a new instance of the Medical3DControl class.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DControl.#ctor(System.Boolean)">
+      <summary>Initializes a new instance of the Medical3DContainer class. It holds the container and renders the 3D object automatically.</summary>
+      <param name="softwareRendering"></param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DControl.#ctor(Leadtools.Medical3D.Medical3DContainer)">
+      <summary>Initializes a new instance of the Medical3DControl class with explicit parameters.</summary>
+      <param name="container">Medical3DContainer Represents the container that contains the object(s) that will be rendered on the control.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DControl.#ctor(Leadtools.Medical3D.Medical3DObject)">
+      <summary>Initializes a new instance of the Medical3DControl class with explicit parameters.</summary>
+      <param name="object3D">Medical3DObject Represents the object that will be rendered on the control.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DControl.#ctor(System.String)">
+      <summary>Initializes a new instance of the Medical3DControl class. It holds the container and renders the 3D object automatically.</summary>
+      <param name="tempPath">The path to where the temporary files are stored.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DControl.AddAction(Leadtools.MedicalViewer.MedicalViewerActionType)">
+      <summary>Adds a new action to the Medical 3D control.</summary>
+      <param name="actionType">The action to be added.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DControl.CanExecuteAction(Leadtools.MedicalViewer.MedicalViewerActionType)">
+      <summary>A method that is used to determine whether the action *actionType* can be executed in the Medical3DControl.</summary>
+      <param name="actionType">Leadtools.MedicalViewer.MedicalViewerActionTypethat represents the action which will be tested if it can be executed in the Medical3DControl</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DControl.Invalidate">
+      <summary>Repaints the Medical 3D Control, which causes the 3D object to be re-rendered.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DControl.ResetOrientationCubePosition">
+      <summary>Resets the orientation cube to the default position. The default position is at the bottom right of the rendering area.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DControl.ResetWindowLevelValues">
+      <summary>Resets the image window level to the default values.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DControl.SetAction(Leadtools.MedicalViewer.MedicalViewerActionType,Leadtools.MedicalViewer.MedicalViewerMouseButtons,Leadtools.MedicalViewer.MedicalViewerActionFlags)">
+      <summary>Assigns the action to a specific mouse button.</summary>
+      <param name="actionType">The action to be assigned</param>
+      <param name="mouseButton">The Mouse event to be associated with the specified action.</param>
+      <param name="applyingOperation">Indicates the cells to which the action is applied and when the action is applied.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DControl.SetWindowLevel(System.Int32,System.Int32)">
+      <summary>Sets the image window level to the specified values of width and center parameters.</summary>
+      <param name="width">the window level width value</param>
+      <param name="center">the window level center value</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DControl.Dispose(System.Boolean)">
+      <summary>Releases all resources used by the Medical3DControl.</summary>
+      <param name="disposing">true to release both managed and unmanaged resources; otherwise, false to release only unmanaged resources.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DControl.GetCellActionProperties(Leadtools.MedicalViewer.MedicalViewerActionType,System.Int32)">
+      <summary>Gets the current properties for the specified action.</summary>
+      <param name="actionType">The specified action.</param>
+      <param name="subCellIndex">The zero-based index of the sub-cell for which the properties will be retrieved.</param>
+      <returns>A Leadtools.MedicalViewer.MedicalViewerBaseAction that contains the retrieved properties.</returns>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DControl.OnHandleCreated(System.EventArgs)">
+      <summary>Overrides Control.OnHandleCreated.</summary>
+      <param name="e">An System.EventArgs containing the event data.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DControl.SetCellActionProperties(Leadtools.MedicalViewer.MedicalViewerActionType,Leadtools.MedicalViewer.MedicalViewerBaseAction,System.Int32)">
+      <summary>Sets the current properties for the specified action.</summary>
+      <param name="actionType">The action for which the properties are being set.</param>
+      <param name="actionProperties">The properties to be set.</param>
+      <param name="subCellIndex">The zero-based index of the sub-cell for which the properties are being set.</param>
+    </member>
+    <member name="E:Leadtools.Medical3D.Medical3DControl.CameraMoved">
+      <summary>Occurs when the user moves the camera with the mouse using the MoveCamera action.</summary>
+    </member>
+    <member name="E:Leadtools.Medical3D.Medical3DControl.CameraRotated">
+      <summary>Occurs when the user rotates the camera with the mouse using the RotateCamera action.</summary>
+    </member>
+    <member name="E:Leadtools.Medical3D.Medical3DControl.CameraSettingsChanged">
+      <summary>Occurs when the user moves or rotates the camera with the mouse using the RotateCamera or MoveCamera actions.</summary>
+    </member>
+    <member name="E:Leadtools.Medical3D.Medical3DControl.CameraZoomed">
+      <summary>Occurs when the user zooms the camera with the mouse using the ZoomCamera action.</summary>
+    </member>
+    <member name="E:Leadtools.Medical3D.Medical3DControl.ObjectChanged">
+      <summary>Occurs when the user moves, rotates or scales the object with the mouse using the MoveObject or RotateObject actions.</summary>
+    </member>
+    <member name="E:Leadtools.Medical3D.Medical3DControl.ObjectMoved">
+      <summary>Occurs when the user moves the object with the mouse using the MoveObject action.</summary>
+    </member>
+    <member name="E:Leadtools.Medical3D.Medical3DControl.ObjectRotated">
+      <summary>Occurs when the user rotates the object with the mouse using the RotateObject action.</summary>
+    </member>
+    <member name="E:Leadtools.Medical3D.Medical3DControl.ObjectScaled">
+      <summary>Occurs when the user scales the object with the mouse using the ScaleObject action.</summary>
+    </member>
+    <member name="E:Leadtools.Medical3D.Medical3DControl.PlaneChanged">
+      <summary>Occurs when the user moves or rotates the MPR plane or clipping planes with the mouse using the MovePlane or RotatePlane actions.</summary>
+    </member>
+    <member name="E:Leadtools.Medical3D.Medical3DControl.PlaneMoved">
+      <summary>Occurs when the user moves the MPR plane or clipping planes with the mouse using the MovePlane action.</summary>
+    </member>
+    <member name="E:Leadtools.Medical3D.Medical3DControl.PlaneRotated">
+      <summary>Occurs when the user rotates the MPR plane or clipping planes with the mouse using the RotatePlane action.</summary>
+    </member>
+    <member name="E:Leadtools.Medical3D.Medical3DControl.UIChanged">
+      <summary>Optional delegate method for additional processing.</summary>
+    </member>
+    <member name="E:Leadtools.Medical3D.Medical3DControl.WindowLevelChanged">
+      <summary>Occurs when the user changes the window-level values with the mouse using the WindowLevel action.</summary>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DControl.ApplyWindowLevelOnAllCells">
+      <summary>Applies the window level mouse action on all orthogonal MPR cells and the 3D object when applying this action on any cell.</summary>
+      <value>true to apply the window level action to all cells; otherwise, false to apply it only to the active cell.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DControl.ApplyWindowLevelOnMPRSlices">
+      <summary>Applies the window level mouse action on all orthogonal MPR when applying this action on any MPR cell.</summary>
+      <value>true to apply the window level action to all MPR cells; otherwise, false to apply it only to the active cell.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DControl.AutoUpdate">
+      <summary>Enables or disables the automatic update of the control (re-rendering the objects) when changes occur.</summary>
+      <value>true to enable the automatic update; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DControl.AxialFrame">
+      <summary>Gets or sets the control that will be used to display the MPR axial frame.</summary>
+      <value>The control that will be used to display the MPR axial frame.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DControl.CoronalFrame">
+      <summary>Gets or sets the control that will be used to display the MPR coronal frame.</summary>
+      <value>The control that will be used to display the MPR coronal frame.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DControl.ObjectsContainer">
+      <summary>Gets or sets the container that holds and controls the 3D objects.</summary>
+      <value>A Medical3DContainer representing the container that holds and controls the 3D objects.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DControl.SagittalFrame">
+      <summary>Gets or sets the control that will be used to display the MPR sagittal frame.</summary>
+      <value>The control that will be used to display the MPR sagittal frame.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DControl.ShowOrientationCube">
+      <summary>Shows or hides the orientation cube.</summary>
+      <value>true to show the orientation cube; otherwise, false to hide the orientation cube.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DEngine">
+      <summary>The Medical3DEngine class is used to check the 3D hardware specifications and validate the support. This class also handles the communication between the 3D toolkit and the MedicalViewer control.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DEngine.#ctor">
+      <summary>Initializes a new instance of the class Medical3DEngine.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DEngine.CanUse3DTexturing(System.Int32,System.Int32,System.Int32)">
+      <summary>Gets the current hardware that renders the volume using 3D texturing.</summary>
+      <param name="width">Width of the proposed volume.</param>
+      <param name="height">Height of the proposed volume.</param>
+      <param name="depth">Number of frames of the proposed volume.</param>
+      <returns>For more hardware capability checks, please refer to Medical3DEngine Class</returns>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DEngine.Provide3DInformation(Leadtools.MedicalViewer.MedicalViewerData3DRequestedEventArgs)">
+      <summary>Provides the 3D information that is requested by the MedicalViewer or the MedicalViewerCell control.</summary>
+      <param name="data">The information requested by the MedicalViewer or the MedicalViewerCell control.</param>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.BlendingAvailable">
+      <summary>Gets the value that indicates whether the blending operation is supported by the current hardware.</summary>
+      <value>true if the blending operation is supported; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.CanCreateMesh">
+      <summary>Gets the value that indicates whether or not you can create a mesh.</summary>
+      <value>true if a mesh can be created; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.ComputerName">
+      <summary>Gets the System.String value that indicates the name of the computer.</summary>
+      <value>A System.String that indicates the name of the current computer.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.DedicatedGPUMemorySize">
+      <summary>Gets the value that indicates the amount of dedicated GPU memory.</summary>
+      <value>Value that indicates the amount of dedicated GPU memory.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.DedicatedGPUMemorySize64">
+      <summary>Value that indicates the amount of dedicated GPU memory.</summary>
+      <value>Gets the value that indicates the amount of dedicated GPU memory, in 64-bit format.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.DirectXVersion">
+      <summary>Gets the value that indicates the name of the current DirectX version installed on the system.</summary>
+      <value>Value that indicates the name of the current DirectX version installed on the system.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.HardwareCompatible">
+      <summary>Gets the value that indicates whether the current hardware is capable of running the 3D engine or not.</summary>
+      <value>true if the current hardware is advanced enough to run the 3D engine, false if any key hardware requirement is missing.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.HardwareShaderAvailable">
+      <summary>Gets the value that indicates whether the hardware shader is supported by the current hardware.</summary>
+      <value>true if the hardware shader is available; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.IsValidDirectXVersion">
+      <summary>Gets the value that indicates whether the current DirectX version can run the 3D engine properly.</summary>
+      <value>true if the current DirectX version can run the 3D engine properly; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.Maximum2DTextureDimension">
+      <summary>Gets the value that indicates the maximum 2D Texturing allowed by the current hardware.</summary>
+      <value>Value that indicates the maximum 2D Texturing allowed by the current hardware.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.Maximum3DTextureDimension">
+      <summary>Gets the value that indicates the maximum 3D Texturing allowed by the current hardware.</summary>
+      <value>Value that indicates the maximum 3D Texturing allowed by the current hardware.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.PixelShaderAvailable">
+      <summary>Gets the value that indicates whether the pixel shading is supported by the current hardware.</summary>
+      <value>true if the pixel shading is available; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.RenderingType">
+      <summary>Indicates whether the Medical 3D engine runs in *software* or *hardware* rendering type.</summary>
+      <value>Medical3DVolumeRenderingType represents the Medical 3D engine rendering type.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.SharedGPUMemorySize">
+      <summary>Gets the value that indicates the amount of shared GPU memory.</summary>
+      <value>Value that indicates the amount of shared GPU memory.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.SharedGPUMemorySize64">
+      <summary>Gets the value that indicates the amount of shared GPU memory.</summary>
+      <value>Value that indicates the amount of shared GPU memory.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.SoftwareRendering">
+      <summary>Determines whether the engine values are based on hardware or software.</summary>
+      <value>**true** to use software, or **false** to use hardware. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.TexturingAvailable">
+      <summary>Gets the value that indicates whether texturing is supported by the current hardware.</summary>
+      <value>true if texturing is available; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.TexturingBackBufferAvailable">
+      <summary>Gets the value that indicates whether the texture back buffer is supported by the current hardware.</summary>
+      <value>true if the texture back buffer is supported by the current hardware; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.VertexShaderAvailable">
+      <summary>Gets the value that indicates whether vertex shading is supported by the current hardware.</summary>
+      <value>true if vertex shading is available; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DEngine.ZOperationAvailable">
+      <summary>Gets the value that indicates whether the vertex Z operation is supported by the current hardware.</summary>
+      <value>true if the vertex Z operation is available; otherwise, false.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DHistogram">
+      <summary>The Medical3DHistogram class is contains the grayscale histogram of the 3D object along with the histogram information.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DHistogram.#ctor">
+      <summary>Initializes a new instance of the class Medical3DHistogram with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DHistogram.#ctor(Leadtools.Medical3D.Medical3DObject)">
+      <summary>Initializes a new instance of the Medical3DHistogram class with explicit parameters.</summary>
+      <param name="parent">Medical3DObject that represents the 3D object.</param>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DHistogram.BinsNumber">
+      <summary>Gets the number of histogram bins in the array.</summary>
+      <value>Value that represents the number of histogram bins in the array.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DHistogram.HistogramData">
+      <summary>Gets the histogram data of the 3D object</summary>
+      <value>An array of values that represents the histogram data of the 3D object.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DHistogram.Minimumval">
+      <summary>Gets the value of the zero index in the histogram array.</summary>
+      <value>Value of the zero index in the histogram array.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DMIPEngine">
+      <summary>The Medical3DMIPEngine class provides support for MIP volume rendering.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DMIPEngine.#ctor">
+      <summary>Initializes a new instance of the Medical3DMIPEngine class with default parameters.</summary>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DMPR">
+      <summary>The Medical3DMPR class contains information, properties and methods that are applied on a 3D object when it is rendered using the MPR rendering technique.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DMPR.#ctor">
+      <summary>Initializes a new instance of the Medical3DMPR class with default parameters.</summary>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPR.AxialPlane">
+      <summary>Gets the class that contains information, properties and methods used to handle the Axial plane of the MPR.</summary>
+      <value>Medical3DOrthogonalMPRPlane class that contains information, properties and methods used to handle the Axial plane of the MPR.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPR.CoronalPlane">
+      <summary>Gets the class that contains information, properties and methods used to handle the Coronal plane of the MPR.</summary>
+      <value>Medical3DOrthogonalMPRPlane class that contains information, properties and methods used to handle the Coronal plane of the MPR.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPR.EnableFrameBoundaries">
+      <summary>Enables or disables the frame boundaries.</summary>
+      <value>true to enable the frame boundaries; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPR.EnableIntersectionLines">
+      <summary>Enables or disables the intersection line.</summary>
+      <value>true to enable the intersection line; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPR.FrameBoundariesColor">
+      <summary>Gets or sets the color value of the frame boundaries. Frame boundaries represent a rectangle that surrounds each of the MPR planes.</summary>
+      <value>The color of the frame boundaries.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPR.IntersectionLineColor">
+      <summary>Gets or sets the color value of the intersection line.</summary>
+      <value>The color of the intersection line.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPR.Planes">
+      <summary>Gets the oblique MPR planes used to show the object data when it is rendered.</summary>
+      <value>An array of Medical3DPlane that represents an array of oblique MPR planes.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPR.RemoveBackground">
+      <summary>Gets or sets a value that indicates whether to remove the background of the images that appear on the MPR planes or render only the data.</summary>
+      <value>true to remove the background; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPR.SagittalPlane">
+      <summary>Gets the class that contains information, properties and methods used to handle the Sagittal plane of the MPR.</summary>
+      <value>Medical3DOrthogonalMPRPlane class that contains information, properties and methods used to handle the Sagittal plane of the MPR.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DMPREngine">
+      <summary>The Medical3DMPREngine class provides support for MPR volume rendering.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DMPREngine.#ctor">
+      <summary>Initializes a new instance of the Medical3DMPREngine class with default parameters.</summary>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DMPRInfo">
+      <summary>The Medical3DMPRInfo class is contains information about the MPR frame.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DMPRInfo.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPRInfo.Center">
+      <summary>Gets or sets the window level center value of the retrieved MPR slice.</summary>
+      <value>Value that represents the window level center value of the retrieved MPR slice.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPRInfo.CentiPerPixelX">
+      <summary>Gets or sets the x-axis pixel spacing of the MPR slice.</summary>
+      <value>A value that represents the x-axis pixel spacing of the MPR slice.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPRInfo.CentiPerPixelY">
+      <summary>Gets or sets the y-axis pixel spacing of the MPR slice.</summary>
+      <value>A value that represents the y-axis pixel spacing of the MPR slice.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPRInfo.CentiPerPixelZ">
+      <summary>Gets or sets the z-axis pixel spacing of the MPR slice.</summary>
+      <value>A value that represents the z-axis pixel spacing of the MPR slice.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPRInfo.Image">
+      <summary>Gets or sets the MPR slice.</summary>
+      <value>Leadtools.RasterImage that represents the MPR slice.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPRInfo.Orientation">
+      <summary>Gets or sets the image patient orientation of the MPR slice.</summary>
+      <value>An array of values that represents the image patient orientation of the MPR slice.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPRInfo.Position">
+      <summary>Gets or sets the image patient position of the MPR slice.</summary>
+      <value>An array of values that represents the image patient position of the MPR slice.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPRInfo.ShiftToNegativeAmount">
+      <summary>Gets or sets the MPR slice signed shift value.</summary>
+      <value>A value that represents the MPR slice signed shift value.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPRInfo.Width">
+      <summary>Gets or sets the window level width value of the retrieved MPR slice.</summary>
+      <value>Value that represents the window level width value of the retrieved MPR slice.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DMPRPlane">
+      <summary>The Medical3DMPRPlane class contains information, properties and methods used to handle the oblique MPR plane.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DMPRPlane.#ctor">
+      <summary>Initializes a new instance of the Medical3DMPRPlane class with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DMPRPlane.Move(System.Single)">
+      <summary>Moves the plane forward or backward using the value of Normal as a reference.</summary>
+      <param name="value">The translation amount. Possible values range from -1 to 1.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DMPRPlane.Rotate(System.Single)">
+      <summary>Rotates the plane the specified number of degrees.</summary>
+      <param name="value">The rotation amount.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DMPRPlane.SetPlanePoints(Leadtools.MedicalViewer.Point3D,Leadtools.MedicalViewer.Point3D)">
+      <summary>Re-orients the plane position using point and normal.</summary>
+      <param name="point">The plane point.</param>
+      <param name="normal">The plane normal.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DMPRPlane.SetPlanePoints(Leadtools.MedicalViewer.Point3D,Leadtools.MedicalViewer.Point3D,Leadtools.MedicalViewer.Point3D)">
+      <summary>Re-orients the plane position using three points.</summary>
+      <param name="point1">The first point.</param>
+      <param name="point2">The second point.</param>
+      <param name="point3">The third point.</param>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPRPlane.Axis">
+      <summary>Gets or sets the reference axis around which the rotation will occur.</summary>
+      <value>Medical3DAxis representing the reference axis around which the rotation will occur.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPRPlane.Enabled">
+      <summary>Enables or disables the MPR plane.</summary>
+      <value>true enables the MPR plane; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPRPlane.Normal">
+      <summary>Gets or sets the point that represents the plane normal.</summary>
+      <value>Leadtools.MedicalViewer.Point3D that represents the plane normal.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPRPlane.Point">
+      <summary>Gets or sets a point on the plane.</summary>
+      <value>Leadtools.MedicalViewer.Point3D that represents a point on the plane.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DMPRPlane.Space">
+      <summary>Gets or sets the reference space used when rotating the plane.</summary>
+      <value>Medical3DSpace representing the reference space used when rotating the plane.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DObject">
+      <summary>The Medical3DObject class is used to contain the 3D object source image. It also contains properties and methods for adjusting object characteristics.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.#ctor">
+      <summary>Initializes a new instance of the class Medical3DObject with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.#ctor(Leadtools.RasterImage)">
+      <summary>Initializes a new instance of the Medical3DObject class with explicit parameters.</summary>
+      <param name="image">Leadtools.RasterImage that contains the 3D object images that will be rendered.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.GeneratePanoramicImage(System.String)">
+      <summary>Converts the data saved in the _guid_.</summary>
+      <param name="guid">The id referencing the stored image.</param>
+      <returns>RasterImage that contains the output image.</returns>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.GeneratePanoramicRasterImage(System.String)">
+      <summary>Converts the data saved in the _guid_.</summary>
+      <param name="guid">The id referencing the stored image.</param>
+      <returns>RasterImage that contains the output image.</returns>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.GenerateRasterImage(System.String)">
+      <summary>Generates a rasterImage out of the data saved through the file mapping in the MedicalViewer.</summary>
+      <param name="guid">The file mapping ID of the saved image.</param>
+      <returns>The RasterImage generated from the file mapping ID.</returns>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.Get3DSettings(System.String)">
+      <summary>Gets the properties of the 3D object using a JSON object.</summary>
+      <param name="json">JSON file containing the data requested to be retrieved.</param>
+      <returns>An updated JSON file containing the requested data.</returns>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.GetGUID">
+      <summary>Gets the GUID for this Medical 3D object.</summary>
+      <returns>String value containing the GUID for this Medical 3D object.</returns>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.GetImage(System.String,IList&lt;PointF&gt;,Leadtools.Medical3D.PanoramicInfo)">
+      <summary>Generates a panoramic image using the specified parameters, and stores the result in the mapping file specified by _guid_.</summary>
+      <param name="guid">The file mapping name where the output image is stored.</param>
+      <param name="points">A list of points that contains the polygon used to generate the panoramic image.</param>
+      <param name="info">PanoramicInfo that contains extra settings that controls the thickness and angle of the panoramic curve.</param>
+      <returns>To convert the file mapped from this method into a RasterImage, refer to GeneratePanoramicImage.</returns>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.GetMPRInformation(Leadtools.Medical3D.Medical3DMPRPlaneType,System.Int32)">
+      <summary>returns the MPR image with the specified type and index.</summary>
+      <param name="mprType">the type of MPR to fetch.</param>
+      <param name="mprIndex">the index of the MPR slice to fetch.</param>
+      <returns>Medical3DMPRInfo that contains the MPR image with the specified type and index.</returns>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.GetPanoramicImage(IList&lt;PointF&gt;,Leadtools.Medical3D.PanoramicInfo)">
+      <summary>Gets the panoramic image using the specified points and information. </summary>
+      <param name="points">A list of points that contains the polygon used to generate the panoramic image.</param>
+      <param name="info">PanoramicInfo that contains extra settings that controls the thickness and angle of the panoramic curve.</param>
+      <returns>RasterImage that contains the resulting panoramic image.</returns>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.GetPanoramicImage(System.String,IList&lt;PointF&gt;,Leadtools.Medical3D.PanoramicInfo)">
+      <summary>Gets the panoramic image using the specified points and information. </summary>
+      <param name="guid">The GUID the raster image is written on.</param>
+      <param name="points">A list of points containing the polygon used to generate the panoramic image.</param>
+      <param name="info">PanoramicInfo that contains extra settings to control the thickness and angle of the panoramic curve.</param>
+      <returns>RasterImage that contains the result panoramic image.</returns>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.GetRendered3DObject">
+      <summary>Returns the rendered view of the 3D object as an image.</summary>
+      <returns>Leadtools.RasterImage the contains the rendered view of the 3D object.</returns>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.GetSliceImage(System.String,Leadtools.MedicalViewer.Point3D,Leadtools.MedicalViewer.Point3D,Leadtools.Medical3D.SliceInfo)">
+      <summary>Get a slice of the 3D volume and maps it to a file with a file name.</summary>
+      <param name="guid">File name that contains the extracted slice.</param>
+      <param name="curvePoints">2-dimensional array of 3D points that make up the horizontal pixel of the output image. </param>
+      <param name="verticalCurve">Array of 3D points that make up the vertical pixels of the output image. </param>
+      <param name="info">Class that contains the type, thickness, and information about the slice extraction.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.HitTest(Point)">
+      <summary>Gets the index of the plane from the specified position.</summary>
+      <param name="point">The position at which to perform the hit test operation.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.LoadObjectFromFile(System.String)">
+      <summary>Loads a raw data object from a file.</summary>
+      <param name="objectFileName">The file name having the data being loaded.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.LoadState(System.String)">
+      <summary>Loads the object status from a file.</summary>
+      <param name="fileName">The file name from which the state data will be loaded.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.Map3DImageToFile(System.String,tagRECT*)">
+      <summary>Maps the current view of the 3D volume to a file using the specified name.</summary>
+      <param name="fileName">The name of the file containing the mapped information.</param>
+      <param name="rcRect">The view rectangle of the 3D volume.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.MemoryEfficientCancel">
+      <summary>This method cancels the memory efficient loading method.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.MemoryEfficientEnd(System.Single[],Leadtools.MedicalViewer.Point2D)">
+      <summary>Ends the 3D object creation process, making it ready for display.</summary>
+      <param name="imageOrientation">The orientation of the image. Get this value from the DICOM file.</param>
+      <param name="pixelSpacing">The spacing between pixels. Get this value from the DICOM file.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.MemoryEfficientEnd(System.Single[],Leadtools.MedicalViewer.Point2D,System.Single)">
+      <summary>Ends object creation and makes it ready to be displayed.</summary>
+      <param name="imageOrientation">Orientation of the image. Get this value from the DICOM file.</param>
+      <param name="pixelSpacing">The spacing between pixels. Get this value from the DICOM file.</param>
+      <param name="sliceThickness">The spacing between two successive frames.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.MemoryEfficientInit(System.Int32)">
+      <summary>Creates an empty object having the specified dimensions.</summary>
+      <param name="depth">The depth of the 3D object, or the number of frames used to create the 3D object.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.MemoryEfficientSetFrame(Leadtools.RasterImage,System.Int32,System.Boolean)">
+      <summary>Fills the 3D object with data from the specified Leadtools.RasterImage.</summary>
+      <param name="image">Leadtools.RasterImage used to fill a portion of the object.</param>
+      <param name="frameIndex">The index that represents the place of the ***image*** to set in the 3D object</param>
+      <param name="remove">true to of dispose the ***image*** after copying its data and placing in the 3D object; false, otherwise.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.MemoryEfficientSetFrame(Leadtools.RasterImage,System.Int32,DateTime,System.Boolean)">
+      <summary>Fills the 3D object with data from the specified Leadtools.RasterImage sent through the *image* paramete4r.</summary>
+      <param name="image">Leadtools.RasterImage used to fill a portion of the object.</param>
+      <param name="frameIndex">The index that represents the place of the ***image*** to set in the 3D object.</param>
+      <param name="captureTime">Creation time of the set frame. Get this value from the DICOM file.</param>
+      <param name="remove">true to dispose of the ***image*** after copying its data and placing it in the 3D object; false, otherwise.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.MemoryEfficientSetFrame(Leadtools.RasterImage,System.Int32,System.Int32,System.Boolean)">
+      <summary>Fills the 3D object with data from the specified Leadtools.RasterImage.</summary>
+      <param name="image">Leadtools.RasterImage used to fill a portion of the object.</param>
+      <param name="frameIndex">The index that represents the place of the **image** to set in the 3D object</param>
+      <param name="instanceNumber">The instance number of the frame being set. Get this value from the DICOM file</param>
+      <param name="remove">true to dispose of the **image** after copying its data and placing in the 3D object; false, otherwise.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.MemoryEfficientSetFrame(Leadtools.RasterImage,System.Int32,Leadtools.MedicalViewer.Point3D,System.Boolean)">
+      <summary>Fills the 3D object with data from the specified Leadtools.RasterImage.</summary>
+      <param name="image">Leadtools.RasterImageused to fill a portion of the object.</param>
+      <param name="frameIndex">The index that represents the place of the **image** to set in the 3D object.</param>
+      <param name="imagePosition">the position of the frame being set. Get this value from the DICOM file.</param>
+      <param name="remove">true to dispose of the **image** after copying its data and placing it into the 3D object; false, otherwise.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.MemoryEfficientSetFrame(Leadtools.RasterImage,System.Int32,Leadtools.MedicalViewer.Point3D,System.Boolean,System.Single,System.Single,System.Int32,System.Int32)">
+      <summary>Adds a data slice to the 3D object from the specified Leadtools.RasterImage.</summary>
+      <param name="image">Leadtools.RasterImage used to fill a portion of the object.</param>
+      <param name="frameIndex">The index that represents the place in the 3D object in which the *image* is set.</param>
+      <param name="imagePosition">The position of the frame being set. Get this value from the DICOM file.</param>
+      <param name="remove"></param>
+      <param name="slope">The slope value of the slice. Get this value from the DICOM file.</param>
+      <param name="intercept">The intercept value of the slice. Get this value from the DICOM file.</param>
+      <param name="windowWidth">The window level width value of the slice.</param>
+      <param name="windowCenter">The window level center value of the slice.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.ResetPosition">
+      <summary>Resets the position of 3D object to (0, 0, 0).</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.ResetRotation">
+      <summary>Resets the rotation of the 3D object to (0, 0, 0).</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.ResetScale">
+      <summary>Resets the scale of the 3D object.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.ResetThresholdValues">
+      <summary>Resets the threshold properties to their original values (0, 255).</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.RotateX(System.Single)">
+      <summary>Rotates the 3D object in the container by a specified amount on the x-axis.</summary>
+      <param name="x">The amount of rotation on the x-axis.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.RotateXYZ(System.Single,System.Single,System.Single)">
+      <summary>Rotates the 3D object in the container by specified amounts on the x-axis, y-axis, and z-axis.</summary>
+      <param name="x">The amount of rotation on the x-axis.</param>
+      <param name="y">The amount of rotation on the y-axis.</param>
+      <param name="z">The amount of rotation on the z-axis.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.RotateY(System.Single)">
+      <summary>Rotates the 3D object in the container by the specified amount on the y-axis.</summary>
+      <param name="y">The amount of rotation on the y-axis.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.RotateZ(System.Single)">
+      <summary>Rotates the 3D object in the container by the specified amount on the z-axis.</summary>
+      <param name="z">The amount of rotation on the z-axis.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.SaveObjectToFile(System.String)">
+      <summary>Saves the object to a file as raw data.</summary>
+      <param name="objectFileName">The name of the file to which the data will be saved.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.SaveState(System.String)">
+      <summary>Saves the object status to a file.</summary>
+      <param name="fileName">The file name for which the state data will be saved.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.ScaleX(System.Single)">
+      <summary>Scales the 3D object in the container by the specified amount in the x-axis.</summary>
+      <param name="x">The amount of x-axis scaling</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.ScaleXYZ(System.Single)">
+      <summary>Scales the 3D object in the container by a specified amount in all directions.</summary>
+      <param name="scale">The amount of scaling</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.ScaleXYZ(System.Single,System.Single,System.Single,Leadtools.Medical3D.Medical3DAxis)">
+      <summary>Scales the 3D object in the container by a specified amount in any direction.</summary>
+      <param name="x">tThe amount of x-axis scaling</param>
+      <param name="y">The amount of y-axis scaling</param>
+      <param name="z">The amount of z-axis scaling</param>
+      <param name="axes">A Medical3DAxis enumeration value that specifies the axis (axes) of scaling. You can combine one or more flags.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.ScaleY(System.Single)">
+      <summary>Scales the 3D object in the container by a specified amount in the y-axis.</summary>
+      <param name="y">The amount of y-axis scaling</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.ScaleZ(System.Single)">
+      <summary>Scales the 3D object in the container by a specified amount in the z-axis.</summary>
+      <param name="z">The amount of z-axis scaling</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.SetImage(Leadtools.RasterImage)">
+      <summary>Sets the image used to render the 3D object and then frees the image.</summary>
+      <param name="image">Leadtools.RasterImage used to render the 3D object.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.SetRotationFace(Leadtools.Medical3D.Medical3DCubeFace)">
+      <summary>Rotates the 3D volume to face the specified direction.</summary>
+      <param name="face">The 3D volume face.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.Translate(System.Single,System.Single,System.Single,Leadtools.Medical3D.Medical3DAxis)">
+      <summary>Translates the 3D object in the container by a specified amount in the any specified axis.</summary>
+      <param name="x">The amount of translation in the x-axis</param>
+      <param name="y">The amount of translation in the y-axis</param>
+      <param name="z">The amount of translation in the z-axis</param>
+      <param name="axes">A Medical3DAxis enumeration value that specifies the axis (axes) of translation. You can combine one or more flags.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.TranslateX(System.Single)">
+      <summary>Translates the 3D object by a specified amount in the x-axis.</summary>
+      <param name="x">The amount of translation in the x-axis</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.TranslateY(System.Single)">
+      <summary>Translates the 3D object by a specified amount in the y-axis.</summary>
+      <param name="y">the amount of translation in the y-axis</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.TranslateZ(System.Single)">
+      <summary>Translates the 3D object by a specified amount in the z-axis.</summary>
+      <param name="z">The amount of translation in the z-axis</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.Update3DSettings(System.String)">
+      <summary>Sets the properties of the 3D object using a JSON object.</summary>
+      <param name="json">JSON file containing the data requested to be updated.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.WriteMPRImage(System.String,System.Int32,Leadtools.Medical3D.Medical3DMPRPlaneType,System.Int32)">
+      <summary>Maps the specified MPR slice of the 3D volume to a file.</summary>
+      <param name="fileName">The unique name of the file containing the mapped information.</param>
+      <param name="resizeFactor">The resizing factor to be used on the MPR image.</param>
+      <param name="mprType">A Medical3DMPRPlaneType value indicating the MPR image type.</param>
+      <param name="index">The index of the slice.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObject.WriteMPRImage(System.String,System.Int32,Leadtools.Medical3D.Medical3DMPRPlaneType,System.Int32)">
+      <summary>Maps a specified MPR slice of the 3D volume to a file.</summary>
+      <param name="fileName">File mapping name.</param>
+      <param name="fileName"></param>
+      <param name="mprType">The MPR image type.</param>
+      <param name="index">The index of the slice.</param>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.BoneWindowLevel">
+      <summary>Gets the WindowLevel that contains the bone of the 3D volume. </summary>
+      <value>The WindowLevel containing bone values of the 3D volume.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.BoundaryBoxColor">
+      <summary>Gets or sets the color of the 3D object boundary box.</summary>
+      <value>The System.Drawing.Color of the boundary box.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.ClippingBoundaryBoxColor">
+      <summary>Gets or sets the color of the polygon resulting from the intersection between the clipping plane and the boundary box.</summary>
+      <value>System.Drawing.Color the polygon resulting from the intersection between the clipping plane and the boundary box.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.ClippingPlanesColor">
+      <summary>Gets or sets the color of the 3D object clipping plane.</summary>
+      <value>The System.Drawing.Color of the clipping plane.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.ColorMap">
+      <summary>Sets the color map will be used to render the 3D object.</summary>
+      <value>Medical3DColorMapping that contains the color map which will be used to render the 3D object.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.EnableBoundaryBox">
+      <summary>Gets or sets the value that indicates whether to show the boundary box of the 3D object or not.</summary>
+      <value>true to show the boundary box; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.EnableClippingBoundaryBox">
+      <summary>Gets or sets the value that indicates whether to show the clipping boundary box of the 3D object or not.</summary>
+      <value>true to show the clipping boundary box; otherwise, false to hide the boundary box</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.EnableClippingPlanes">
+      <summary>Gets or sets the value that indicates whether to show the clipping planes of the 3D object or not.</summary>
+      <value>true to show the clipping planes, false to hide the boundary box</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.EnableThresholding">
+      <summary>Gets or sets the value that indicates whether to enable or disable the thresholding feature.</summary>
+      <value>True to enable thresholding; false to disable thresholding.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.FrameOfReferenceUID">
+      <summary>Gets or sets the value that indicates the ID of the DICOM file that was used to create this 3D object.</summary>
+      <value>The value that indicates the ID of the DICOM file that was used to create this 3D object.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.Histogram">
+      <summary>Gets the grayscale histogram of the 3D object.</summary>
+      <value>Medical3DHistogram that contains the grayscale hsitogram of the 3D object.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.Image">
+      <summary>Gets or sets the image that is used to render the 3D object.</summary>
+      <value>Leadtools.RasterImage that is used to render the 3D object.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.ImageOrientation">
+      <summary>Gets or sets the orientation of the image.</summary>
+      <value>An array of float values representing the orientation of the image.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.LowerThreshold">
+      <summary>Gets or sets the low threshold value.</summary>
+      <value>Value that indicates the lower threshold value. This value must not exceed the UpperThreshold value. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.MaximumValue">
+      <summary>Gets the maximum intensity value allowed for this 3D object.</summary>
+      <value>Value that indicates the maximum intensity value allowed for this 3D object.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.MinimumValue">
+      <summary>Gets the minimum intensity value allowed for this 3D object.</summary>
+      <value>Value that indicates the minimum intensity value allowed for this 3D object.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.MissingFramesFillType">
+      <summary>Gets or sets the method that will be used to fill the missing frames in the 3D volume.</summary>
+      <value>Medical3DMissingFramesFillMethod value that represents the fill method.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.MPR">
+      <summary>Gets the class that contains the information, properties and methods that will be applied on this 3D object when using the MPR rendering technique.</summary>
+      <value>The Medical3DMPR class that contains the information, properties and methods that will be applied on this 3D object when using the MPR rendering technique. To switch to the MPR rendering technique, set the value of the property VolumeType to Medical3DVolumeType.MPR</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.Opacity">
+      <summary>Gets or sets the opacity value (transparency) of the 3D object.</summary>
+      <value>The opacity value (transparency) of the 3D object.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.Palette">
+      <summary>Gets or sets the color palette that will be used to render the 3D object.</summary>
+      <value>array that represents color palette that will be used to render the 3D object.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.PixelSpacing">
+      <summary>Gets or sets the distance length in millimeters between two successive pixels in both the horizontal and the vertical directions.</summary>
+      <value>The distance between two successive pixels.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.Planes">
+      <summary>Gets the clipping planes array used to clip the 3D object when it is rendered.</summary>
+      <value>Medical3DPlane that represents the array of clipping planes.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.RemoveInterval">
+      <summary>Gets or sets the enumeration value that specifies the thresholding behavior</summary>
+      <value>A Medical3DRemoveIntervalType enumeration value that determines which interval will be removed. The inner interval is the interval between the LowerThreshold and UpperThreshold. The outer interval is outside those bounds.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.Scale">
+      <summary>Gets or sets the scale of the 3D object.</summary>
+      <value>Value that indicates the scale of the 3D object. If the scale of the object is not the same along the 3 axes, the scale will return 100.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.Slab">
+      <summary>Gets or sets the class that contains the slab values.</summary>
+      <value>A Medical3DSlab class that contains the slab values.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.SSD">
+      <summary>Gets the class that contains the information, properties and methods that will be applied to this 3D object when using the SSD rendering technique.</summary>
+      <value>A Medical3DSSD class that contains the information, properties and methods that will be applied to this 3D object when using the SSD rendering technique. To switch to the SSD rendering technique, set the value of the VolumeType property to Medical3DVolumeType.SSD.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.UpperThreshold">
+      <summary>Gets or set the upper threshold value.</summary>
+      <value>Value that indicates the upper threshold value. This value must not be less than the LowerThreshold value. The default value is 255.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.WindowLevelProperties">
+      <summary>Gets the class containing information and properties that control the window-leveling of the 3D object.</summary>
+      <value>A class containing information and properties for window-leveling the 3D object.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.XOffset">
+      <summary>Gets or sets the value that represents the offset of the object in the x-axis.</summary>
+      <value>Value that indicates the offset of the object in the x-axis.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.XRotation">
+      <summary>Gets the rotation angle around the x-axis.</summary>
+      <value>The rotation angle around the x-axis.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.XScale">
+      <summary>Gets or sets the value that represents the scale of the object in the x-axis.</summary>
+      <value>Value that indicates the scale of the object in the x-axis.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.YOffset">
+      <summary>Gets or sets the value that represents the offset of the object on the y-axis.</summary>
+      <value>Value that indicates the offset of the object in the y-axis.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.YRotation">
+      <summary>Gets the rotation angle around the y-axis.</summary>
+      <value>The rotation angle around the y-axis.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.YScale">
+      <summary>Gets or sets the value that represents the scale of the object on the y-axis.</summary>
+      <value>Value that indicates the scale of the object on the y-axis.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.ZOffset">
+      <summary>Gets or sets the value that represents the offset of the object in the z-axis.</summary>
+      <value>Value that indicates the offset of the object in the z-axis.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.ZRotation">
+      <summary>Gets the rotation angle around the z-axis.</summary>
+      <value>The rotation angle around the z-axis.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObject.ZScale">
+      <summary>Gets or sets the value that represents the scale of the object in the z-axis.</summary>
+      <value>Value that indicates the scale of the object in the z-axis.</value>
+    </member>
+    <member name="``0:Leadtools.Medical3D.Medical3DObjectCollection`1">
+      <summary>The Medical3DObjectCollection generic collection of Medical3DObject objects.</summary>
+      <typeparam name="Medical3DObject"></typeparam>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObjectCollection`1.#ctor">
+      <summary>Initializes a new instance of the Medical3DObjectCollection\&lt;Medical3DObject\&gt; class.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObjectCollection`1.Remove(Leadtools.Medical3D.Medical3DObject)">
+      <summary>Removes the specified object.</summary>
+      <param name="item">The object to remove.</param>
+      <returns>true if the element has been removed successfully; otherwise, false.</returns>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObjectCollection`1.RemoveAt(System.Int32)">
+      <summary>Removes the object at the specified index.</summary>
+      <param name="index">The zero-based index of the object.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObjectCollection`1.OnItemAdded(Leadtools.MedicalViewer.MedicalViewerCollectionEventArgs)">
+      <summary>Overrides OnItemAdded.</summary>
+      <param name="e">A MedicalViewerCollectionEventArgs that contains the event data.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObjectCollection`1.OnItemRemoved(Leadtools.MedicalViewer.MedicalViewerCollectionEventArgs)">
+      <summary>Overrides OnItemRemoved.</summary>
+      <param name="e">An MedicalViewerCollectionEventArgs that contains the event data.</param>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DObjectEventArgs">
+      <summary>The Medical3DObjectEventArgs class provides information about the object being changed.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DObjectEventArgs.#ctor(System.Int32)">
+      <summary>Initializes a new instance of the Medical3DObjectEventArgs class with explicit parameters.</summary>
+      <param name="objectIndex">zero-based index of the object being changed.</param>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DObjectEventArgs.ObjectIndex">
+      <summary>Gets the index of the object being changed by various object actions.</summary>
+      <value>A zero-based index of the object.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DOrthogonalMPRPlane">
+      <summary>The Medical3DOrthogonalMPRPlane class contains information, properties and methods used to handle the orthogonal MPR plane.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DOrthogonalMPRPlane.#ctor">
+      <summary>Initializes a new instance of the Medical3DOrthogonalMPRPlane class with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DOrthogonalMPRPlane.Move(System.Single)">
+      <summary>Moves the plane forward or backward using the normal plane as a reference.</summary>
+      <param name="value">The amount of translation. Possible values range from -1 to 1.</param>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DOrthogonalMPRPlane.Enabled">
+      <summary>Enables or disables the MPR plane.</summary>
+      <value>true enables the MPR plane; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DOrthogonalMPRPlane.FrameIndex">
+      <summary>Gets or sets the corresponding RasterImage frame index of the plane.</summary>
+      <value>The corresponding RasterImage frame index of the plane.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DOrthogonalMPRPlane.Point">
+      <summary>Gets or sets a point on the plane.</summary>
+      <value>Leadtools.MedicalViewer.Point3D that represents a point on the plane.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DOrthogonalMPRPlane.Position">
+      <summary>Gets or sets the position of the MPR orthogonal plane.</summary>
+      <value>The position of the MPR orthogonal plane.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DOrthogonalMPRPlane.Type">
+      <summary>Gets the type of the orthogonal MPR plane.</summary>
+      <value>A Medical3DMPRPlaneType value that represents the type of orthogonal plane.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DPlane">
+      <summary>The Medical3DPlane class contains the information, properties and methods used to handle the clipping plane.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DPlane.#ctor">
+      <summary>Initializes a new instance of the Medical3DPlane class with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DPlane.Move(System.Single)">
+      <summary>Moves the plane forward or backward using the value of the Normal property as a reference.</summary>
+      <param name="value">Translation amount. Possible values range from -1 to 1.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DPlane.Rotate(System.Single)">
+      <summary>Rotates the plane a specified number of degrees.</summary>
+      <param name="value">The number of degrees to rotate the plane.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DPlane.SetPlanePoints(Leadtools.MedicalViewer.Point3D,Leadtools.MedicalViewer.Point3D)">
+      <summary>Re-orients the plane position using point and normal.</summary>
+      <param name="point">The plane point.</param>
+      <param name="normal">The plane normal.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DPlane.SetPlanePoints(Leadtools.MedicalViewer.Point3D,Leadtools.MedicalViewer.Point3D,Leadtools.MedicalViewer.Point3D)">
+      <summary>Re-orients the plane position using three points.</summary>
+      <param name="point1">The first point.</param>
+      <param name="point2">The second point.</param>
+      <param name="point3">The third point.</param>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DPlane.Axis">
+      <summary>Gets or sets the reference axis around which rotation will occur.</summary>
+      <value>The reference Medical3DAxis around which rotation will occur.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DPlane.Enabled">
+      <summary>Enables or disables the clipping plane.</summary>
+      <value>true enables the clipping plane; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DPlane.Normal">
+      <summary>Gets or sets the point that represents the normal plane.</summary>
+      <value>A Leadtools.MedicalViewer.Point3D point that represents the normal plane.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DPlane.Point">
+      <summary>Gets or sets a point on the plane.</summary>
+      <value>A Leadtools.MedicalViewer.Point3D point that represents a point on the plane.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DPlane.Space">
+      <summary>Gets or sets the reference space used when rotating the plane.</summary>
+      <value>Medical3DSpace represents the reference space used when rotating the plane.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DPlaneEventArgs">
+      <summary>The Medical3DPlaneEventArgs provides data about various plane events.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DPlaneEventArgs.#ctor(Leadtools.Medical3D.Medical3DVolumeType,System.Int32,System.Int32,System.Int32)">
+      <summary>Initializes a new instance of the Medical3DPlaneEventArgs class with explicit parameters.</summary>
+      <param name="type">Type of the object that contains the plane.</param>
+      <param name="objectIndex">A zero-based index of the object that contains the plane.</param>
+      <param name="planeIndex">A zero-based index of the plane.</param>
+      <param name="frameIndex">A zero-based index of the frame that is drawn on the MPR plane.</param>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DPlaneEventArgs.FrameIndex">
+      <summary>Gets the index of the frame that is drawn on the MPR plane.</summary>
+      <value>A zero-based index of the frame.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DPlaneEventArgs.ObjectIndex">
+      <summary>Gets the index of the object that contains the plane being affected by the action.</summary>
+      <value>A zero-based index of the object.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DPlaneEventArgs.PlaneIndex">
+      <summary>Gets the index of the plane being affected by the plane action.</summary>
+      <value>A zero-based index of the plane.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DPlaneEventArgs.Type">
+      <summary>Gets the volume type.</summary>
+      <value>Medical3DVolumeType represents the volume type.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DPostPaintEventArgs">
+      <summary>The Medical3DPostPaintEventArgs class provides data about the PostPaint event.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DPostPaintEventArgs.#ctor(System.Int32,Leadtools.Medical3D.Medical3DObject,Graphics)">
+      <summary>Initializes a new instance of the Medical3DWindowLevelEventArgs class with explicit parameters.</summary>
+      <param name="objectIndex">A zero-based index of the object for which the window-level values are being changed.</param>
+      <param name="object3D">The object being drawn</param>
+      <param name="graphics">A graphics class used to draw on the rendering area</param>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DPostPaintEventArgs.Object">
+      <summary>Gets the object being drawn.</summary>
+      <value>Medical3DContainer.Objects collection that represents the object being drawn.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DPostPaintEventArgs.ObjectIndex">
+      <summary>Gets the index of the object being drawn.</summary>
+      <value>A zero-based index of the object.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DSlab">
+      <summary>The Medical3DSlab class is used to apply slab features to a 3D object.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DSlab.#ctor">
+      <summary>Initializes a new instance of the Medical3DSlab class.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DSlab.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+      <summary>Initializes a new instance of the Medical3DSlab class with explicit parameters.</summary>
+      <param name="X1">The first boundary of the slab on the x-axis.</param>
+      <param name="X2">The second boundary of the slab on the x-axis.</param>
+      <param name="Y1">The first boundary of the slab on the y-axis.</param>
+      <param name="Y2">The second boundary of the slab on the y-axis.</param>
+      <param name="Z1">The first boundary of the slab on the z-axis.</param>
+      <param name="Z2">The second boundary of the slab on the z-axis.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DSlab.#ctor(Leadtools.Medical3D.Medical3DSlab)">
+      <summary>Initializes a new instance of the class Medical3DSlab with explicit parameters.</summary>
+      <param name="slab">Medical3DSlab represents the class from which to copy the values of the slab.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DSlab.Reset">
+      <summary>Resets the slab to the default values.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DSlab.SetValues(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+      <summary>Sets the Medical3DSlab parameters.</summary>
+      <param name="X1">The first boundary of the slab on the x-axis.</param>
+      <param name="X2">The second boundary of the slab on the x-axis.</param>
+      <param name="Y1">The first boundary of the slab on the y-axis.</param>
+      <param name="Y2">The second boundary of the slab on the y-axis.</param>
+      <param name="Z1">The first boundary of the slab on the z-axis.</param>
+      <param name="Z2">The second boundary of the slab on the z-axis.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DSlab.SetValues(Leadtools.Medical3D.Medical3DSlab)">
+      <summary>Copies the values from the specified slab into this instance.</summary>
+      <param name="slab">The source slab from which to copy the slab values.</param>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DSlab.Enabled">
+      <summary>Enables or disables the slab feature.</summary>
+      <value>true enables the slab feature; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DSlab.X1">
+      <summary>Gets or sets the first boundary of the slab on the x-axis.</summary>
+      <value>The first boundary of the slab on the x-axis.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DSlab.X2">
+      <summary>Gets or sets the second boundary of the slab on the x-axis.</summary>
+      <value>The second boundary of the slab on the x-axis.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DSlab.Y1">
+      <summary>Gets or sets the first boundary of the slab on the y-axis.</summary>
+      <value>The first boundary of the slab on the y-axis.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DSlab.Y2">
+      <summary>Gets or sets the second boundary of the slab on the y-axis.</summary>
+      <value>The second boundary of the slab on the y-axis.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DSlab.Z1">
+      <summary>Gets or sets the first boundary of the slab on the z-axis.</summary>
+      <value>The first boundary of the slab on the z-axis.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DSlab.Z2">
+      <summary>Gets or sets the second boundary of the slab on the z-axis.</summary>
+      <value>The second boundary of the slab on the z-axis.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DSSD">
+      <summary>The Medical3DSSD class contains information, properties and methods that are applied to a 3D object when it is rendered using the SSD rendering technique.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DSSD.#ctor">
+      <summary>Initializes a new instance of the Medical3DSSD class with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DSSD.LoadMesh(System.String)">
+      <summary>Loads the saved mesh into an empty 3D object.</summary>
+      <param name="fileName">the name of the saved 3D mesh.</param>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DSSD.SaveMesh(System.String)">
+      <summary>Saves a mesh to one or more files.</summary>
+      <param name="fileName">The name of the saved 3D mesh.</param>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DSSD.MeshColor">
+      <summary>Gets or sets the color of the mesh</summary>
+      <value>System.Drawing.Color value that represents the color of the mesh.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DSSD.Threshold">
+      <summary>Gets or sets the (ISO threshold) for the mesh.</summary>
+      <value>Value that represents the (ISO threshold) for the mesh.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DVRTEngine">
+      <summary>The Medical3DVRTEngine class provides support for VRT volume rendering.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DVRTEngine.#ctor">
+      <summary>Initializes a new instance of the Medical3DVRTEngine class with default parameters.</summary>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DWindowLevelEventArgs">
+      <summary>The Medical3DWindowLevelEventArgs class provides data about the WindowLevelChanged event.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DWindowLevelEventArgs.#ctor(System.Int32,System.Int32,System.Int32)">
+      <summary>Initializes a new instance of the Medical3DWindowLevelEventArgs class with explicit parameters.</summary>
+      <param name="objectIndex">A zero-based index of the object for which the window-level values are being changed.</param>
+      <param name="center">The new value of the window-level center.</param>
+      <param name="width">The new value of the window-level width.</param>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DWindowLevelEventArgs.Center">
+      <summary>Gets the window-level center value.</summary>
+      <value>The center value.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DWindowLevelEventArgs.ObjectIndex">
+      <summary>Gets the index of the object being affected by the window-level action.</summary>
+      <value>A zero-based index of the object.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DWindowLevelEventArgs.Width">
+      <summary>Gets the window-level width value.</summary>
+      <value>The width value.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DWindowLevelProperties">
+      <summary>The Medical3DWindowLevelProperties class is used to apply the window-leveling to the 3D object.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DWindowLevelProperties.#ctor">
+      <summary>Initializes a new instance of the Medical3DWindowLevelProperties class with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.Medical3DWindowLevelProperties.Reset">
+      <summary>Resets window-leveling parameters to the default values.</summary>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DWindowLevelProperties.Center">
+      <summary>Gets or sets the center.</summary>
+      <value>The center value.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DWindowLevelProperties.Factor">
+      <summary>Gets or sets the factor used to adjust window-leveling.</summary>
+      <value>The factor used to adjust window-leveling. Possible values range from -1000 to 1000.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DWindowLevelProperties.Type">
+      <summary>Gets or sets the type window-leveling algorithm used.</summary>
+      <value>A Medical3DWindowLevelFillType value that represents the window-leveling algorithm used. The default is Medical3DWindowLevelFillType.Linear.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.Medical3DWindowLevelProperties.Width">
+      <summary>Gets or sets the width.</summary>
+      <value>The width.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.PanoramicInfo">
+      <summary>Contains the panoramic output settings.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.PanoramicInfo.#ctor">
+      <summary>Initializes a new instance of PanoramicInfo with the default parameters. </summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.PanoramicInfo.#ctor(System.Single,System.Single,Leadtools.Medical3D.PanoramicProjectionType)">
+      <summary>Initializes a new instance of PanoramicInfo with the specified parameters *_angle* , *_thickness* and *_type_*. </summary>
+      <param name="angle">The z-axis angle of the panoramic output.</param>
+      <param name="thickness">The thickness of the panoramic polygon.</param>
+      <param name="type">The rendering type used to produce the panoramic output.</param>
+    </member>
+    <member name="P:Leadtools.Medical3D.PanoramicInfo.Angle">
+      <summary>Gets or sets the panoramic Z-axis angle. </summary>
+      <value>A value that indicates the panoramic Z-axis angle.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.PanoramicInfo.Thickness">
+      <summary>Gets or sets the thickness of the desired panoramic output image. </summary>
+      <value>`float` value that indicates the thickness of the panoramic output image.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.PanoramicInfo.Type">
+      <summary>Gets or sets the panoramic projection type.  However, this is reserved for future use. </summary>
+      <value>PanoramicProjectionType that represents the panoramic output projection type.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.SliceInfo">
+      <summary>A class that represents the slice information that is used to extract the slice.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.SliceInfo.#ctor">
+      <summary>Initializes a new instance of SliceInfo with the default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.SliceInfo.#ctor(System.Single,Leadtools.Medical3D.ProjectionType,System.Single,System.Single,System.Single,System.Single)">
+      <summary>Initializes a new instance of $SliceInfo with explicit parameters.</summary>
+      <param name="thickness">The thickness of the extracted slice.</param>
+      <param name="type">The type of the extracted slice.</param>
+      <param name="scaleFactorX">The x-scale of the extract slice. The slice output will be stretched or compressed horizontally based on the value specified here.</param>
+      <param name="scaleFactorY">The y-scale of the extract slice. The slice output will be stretched or compressed vertically based on the value specified here.</param>
+      <param name="brightness">Brightness value of the extracted slice.</param>
+      <param name="contrast">Contrast value of the extracted slice.</param>
+    </member>
+    <member name="P:Leadtools.Medical3D.SliceInfo.Brightness">
+      <summary>Determine the brightness  of the extracted image.</summary>
+      <value>a float value that represents the brightness  of the extracted image.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.SliceInfo.Contrast">
+      <summary>Determines the contrast of the extracted image.</summary>
+      <value>A float value that represents the contrast of the extracted image.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.SliceInfo.ScaleFactorX">
+      <summary>Indicates the y-scale value of the extracted slice.</summary>
+      <value>A float that indicates the x-scale value of the extracted slice. The slice output will be stretched or compressed horizontally based on the **ScaleFactorX** value specified.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.SliceInfo.ScaleFactorY">
+      <summary>Indicates the y-scale value of the extracted slice.</summary>
+      <value>A float that indicates the y-scale value of the extracted slice. The slice output will be stretched or compressed vertically based on the **ScaleFactorY** value specified.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.SliceInfo.Thickness">
+      <summary>Represents the thickness of the extract slice</summary>
+      <value>a float value that represents the thickness of the extract slice, default value is 1</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.SliceInfo.Type">
+      <summary>Gets or sets the value that represents the type of the 3D volume projection</summary>
+      <value>ProjectionType that represents the type of the 3d volume projection</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.WindowLevel">
+      <summary>Contains information that controls the cell values of the window level.</summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.WindowLevel.#ctor">
+      <summary>Initializes a new instance of WindowLevel. </summary>
+    </member>
+    <member name="M:Leadtools.Medical3D.WindowLevel.#ctor(System.Int32,System.Int32)">
+      <summary>Initializes a new instance of WindowLevel with the specified parameters. </summary>
+      <param name="windowWidth">The width value of the window level.</param>
+      <param name="windowCenter">The center value of the window level.</param>
+    </member>
+    <member name="P:Leadtools.Medical3D.WindowLevel.WindowCenter">
+      <summary>Gets or sets the center value of the window level. </summary>
+      <value>Value that indicates the center value of the window level.</value>
+    </member>
+    <member name="P:Leadtools.Medical3D.WindowLevel.WindowWidth">
+      <summary>Gets or sets the center value of the window level. </summary>
+      <value>Value that indicates the window level center.</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DAxis">
+      <summary>Specifies the axis that will be used.</summary>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DAxis.X">
+      <summary>x-axis.</summary>
+      <value>0x00000001</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DAxis.Y">
+      <summary>y-axis.</summary>
+      <value>0x00000002</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DAxis.Z">
+      <summary>(0x00000007)z-axis.</summary>
+      <value>0x00000004</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DAxis.XYZ">
+      <summary>All axes</summary>
+      <value>0x00000007</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DCubeFace">
+      <summary>Specifies the direction the 3D volume should face.</summary>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DCubeFace.Right">
+      <summary>right side</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DCubeFace.Left">
+      <summary>left side</summary>
+      <value>1</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DCubeFace.Posterior">
+      <summary>Posterior side (the back side).</summary>
+      <value>2</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DCubeFace.Anterior">
+      <summary>Anterior side (the front side).</summary>
+      <value>3</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DCubeFace.Superior">
+      <summary>Superior side (the top side).</summary>
+      <value>4</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DCubeFace.Inferior">
+      <summary>Inferior side (the bottom side).</summary>
+      <value>5</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DMissingFramesFillMethod">
+      <summary>Specifies the method used to fill the missing frames in the 3D object volume.</summary>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DMissingFramesFillMethod.Trilinear">
+      <summary>Fills missing frames by using the tri-linear interpolation method.</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DMissingFramesFillMethod.LastKnownFrame">
+      <summary>Fills missing frames by using the last known frame.</summary>
+      <value>1</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DMissingFramesFillMethod.FirstNextFrame">
+      <summary>Fills missing frames by using the first next known frame.</summary>
+      <value>2</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DMissingFramesFillMethod.Nearest">
+      <summary>Fills missing frames by using the nearest interpolation method.</summary>
+      <value>3</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DMissingFramesFillMethod.Empty">
+      <summary>Deals with missing frames by considering them to be transparent black empty regions.</summary>
+      <value>4</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DMPRPlaneType">
+      <summary>Specifies the type of orthogonal MPR plane.</summary>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DMPRPlaneType.Axial">
+      <summary>The axial orthogonal plane.</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DMPRPlaneType.Sagittal">
+      <summary>The Sagittal orthogonal plane.</summary>
+      <value>1</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DMPRPlaneType.Coronal">
+      <summary>The Coronal orthogonal plane.</summary>
+      <value>2</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DProjectionMethod">
+      <summary>Specifies the camera projection method used when viewing the 3D object.</summary>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DProjectionMethod.Orthogonal">
+      <summary>The camera will use the Orthogonal projection method.</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DProjectionMethod.Perspective">
+      <summary>The camera will use the Perspective projection method (Default).</summary>
+      <value>1</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DRemoveIntervalType">
+      <summary>Specifies which interval will be removed when using the thresholding feature.</summary>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DRemoveIntervalType.InnerRange">
+      <summary>Removes the inner interval (which is between LowerThreshold and UpperThreshold).</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DRemoveIntervalType.OuterRange">
+      <summary>Removes the outer interval (which is outside LowerThreshold and UpperThreshold).</summary>
+      <value>1</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DSlabFlags">
+      <summary>Specifies which parameter will be used when applying the slab feature.</summary>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DSlabFlags.X1">
+      <summary>X1 parameter will be used.</summary>
+      <value>0x00000001</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DSlabFlags.X2">
+      <summary>X2 parameter will be used.</summary>
+      <value>0x00000002</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DSlabFlags.Y1">
+      <summary>Y1 parameter will be used.</summary>
+      <value>0x00000004</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DSlabFlags.Y2">
+      <summary>Y2 parameter will be used.</summary>
+      <value>0x00000008</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DSlabFlags.Z1">
+      <summary>Z1 parameter will be used.</summary>
+      <value>0x00000010</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DSlabFlags.Z2">
+      <summary>Z2 parameter will be used.</summary>
+      <value>0x00000020</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DSlabFlags.All">
+      <summary>All parameters will be used.</summary>
+      <value>0x0000003F</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DSpace">
+      <summary>Specifies the reference used when rotating the 3D object or plane.</summary>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DSpace.Object">
+      <summary>Object space.</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DSpace.View">
+      <summary>View space.</summary>
+      <value>1</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DVolumeRenderingType">
+      <summary>Indicates the type used to render the 3D object.</summary>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DVolumeRenderingType.Type3D">
+      <summary>3D texturing type.</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DVolumeRenderingType.Type2D">
+      <summary>2D texturing type.</summary>
+      <value>1</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DVolumeRenderingType.Auto">
+      <summary>Auto-picks the best texturing type for the volume.</summary>
+      <value>2</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DVolumeType">
+      <summary>Specifies the volume type used to render the 3D objects.</summary>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DVolumeType.VRT">
+      <summary>VRT (Volume Rendering Technique) rendering method.</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DVolumeType.MIP">
+      <summary>MIP (Maximum Intensity Projection) rendering method.</summary>
+      <value>1</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DVolumeType.MPR">
+      <summary>MPR (Multi-Planar Reconstruction) rendering method.</summary>
+      <value>2</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DVolumeType.SSD">
+      <summary>SSD (Surface Shaded Display) rendering method.</summary>
+      <value>3</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DVolumeType.MINIP">
+      <summary>MinIP (Minimum Intensity Projection) rendering method.</summary>
+      <value>6</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Medical3DWindowLevelFillType">
+      <summary>Specifies the type of algorithm that is used when applying window-leveling on a 3D object.</summary>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DWindowLevelFillType.Linear">
+      <summary>Linear (Default).</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DWindowLevelFillType.Exponential">
+      <summary>Exponential.</summary>
+      <value>1</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DWindowLevelFillType.Logarithmic">
+      <summary>Logarithmic.</summary>
+      <value>2</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Medical3DWindowLevelFillType.Sigmoid">
+      <summary>Sigmoid.</summary>
+      <value>3</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.PanoramicProjectionType">
+      <summary>Specifies the volume type used to render panoramic projection within the specified thickness.</summary>
+    </member>
+    <member name="F:Leadtools.Medical3D.PanoramicProjectionType.PANORAMIC_MIP">
+      <summary>MIP (Maximum Intensity Projection) rendering method.</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.PanoramicProjectionType.PANORAMIC_MinIP">
+      <summary>MinIP (Minimum Intensity Projection) rendering method.</summary>
+      <value>1</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.PanoramicProjectionType.PANORAMIC_VRT">
+      <summary>VRT (Volume Rendering Technique) rendering method.</summary>
+      <value>2</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.ProjectionType">
+      <summary>Specifies the type of the 3D volume projection.</summary>
+    </member>
+    <member name="F:Leadtools.Medical3D.ProjectionType.MIP">
+      <summary>Maximum intensity projection</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.ProjectionType.MinIP">
+      <summary>Minimum intensity projection</summary>
+      <value>1</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.ProjectionType.VRT">
+      <summary>Volume rendering technique.</summary>
+      <value>2</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.ProjectionType.Average">
+      <summary>Average volume rendering</summary>
+      <value>3</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.Settings3D">
+      <summary>Specifies the properties supported to be used in the JSON string used to get and set the properties of the 3D volume.</summary>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.Undefined">
+      <summary>N/A</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.HighResQuality">
+      <summary>High Res Quality</summary>
+      <value>1</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.LowResQuality">
+      <summary>Low Res Quality</summary>
+      <value>2</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.ProjectionMethod">
+      <summary>Projection Method</summary>
+      <value>3</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.ShowClippingFrame">
+      <summary>Show Clipping Frame</summary>
+      <value>4</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.ShowMPRCrossLines">
+      <summary>Show MPR Cross Lines</summary>
+      <value>5</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.ShowRotationCube">
+      <summary>Show Rotation Cube</summary>
+      <value>6</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.ShowVolumeBorder">
+      <summary>Show Volume Border</summary>
+      <value>7</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.IsoThreshold">
+      <summary>Iso Threshold</summary>
+      <value>8</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.AxialPosition">
+      <summary>Axial Position</summary>
+      <value>9</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.CoronalPosition">
+      <summary>Coronal Position</summary>
+      <value>10</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.SagittalPosition">
+      <summary>Sagittal Position</summary>
+      <value>11</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.WindowWidth">
+      <summary>Window Width</summary>
+      <value>12</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.WindowCenter">
+      <summary>Window Center</summary>
+      <value>13</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.MinimumValue">
+      <summary>Minimum Value</summary>
+      <value>14</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.MaximumValue">
+      <summary>Maximum Value</summary>
+      <value>15</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.RotationFace">
+      <summary>Rotation Face</summary>
+      <value>16</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.VolumeType">
+      <summary>Volume Type</summary>
+      <value>17</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.BoneWindowWidth">
+      <summary>Bone Window's Width</summary>
+      <value>18</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.Settings3D.BoneWindowCenter">
+      <summary>Bone Window' Center</summary>
+      <value>19</value>
+    </member>
+    <member name="T:Leadtools.Medical3D.VRTColoringModeFlags">
+      <summary>Specifies VRT Coloring Mode.</summary>
+    </member>
+    <member name="F:Leadtools.Medical3D.VRTColoringModeFlags.Gray">
+      <summary>Grayscale</summary>
+      <value>0</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.VRTColoringModeFlags.Predefined">
+      <summary>Predefined</summary>
+      <value>1</value>
+    </member>
+    <member name="F:Leadtools.Medical3D.VRTColoringModeFlags.Custom">
+      <summary>Custom</summary>
+      <value>2</value>
+    </member>
+  </members>
+</doc>

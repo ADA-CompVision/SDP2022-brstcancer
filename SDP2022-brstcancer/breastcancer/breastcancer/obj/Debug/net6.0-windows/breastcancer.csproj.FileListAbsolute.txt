@@ -1,0 +1,41 @@
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\bin\Debug\net6.0-windows\breastcancer.exe
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\bin\Debug\net6.0-windows\breastcancer.deps.json
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\bin\Debug\net6.0-windows\breastcancer.runtimeconfig.json
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\bin\Debug\net6.0-windows\breastcancer.dll
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\bin\Debug\net6.0-windows\breastcancer.pdb
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.csproj.AssemblyReference.cache
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.Form1.resources
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.Form2.resources
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.Form3.resources
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.Properties.Resources.resources
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.csproj.GenerateResource.cache
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.GeneratedMSBuildEditorConfig.editorconfig
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.AssemblyInfoInputs.cache
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.AssemblyInfo.cs
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.csproj.CoreCompileInputs.cache
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.dll
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\obj\Debug\net6.0-windows\refint\breastcancer.dll
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.pdb
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.genruntimeconfig.cache
+E:\OneDrive - ADA University\Homework\Fall2022\SDP\breastcancer\breastcancer\obj\Debug\net6.0-windows\ref\breastcancer.dll
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\bin\Debug\net6.0-windows\breastcancer.exe
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\bin\Debug\net6.0-windows\breastcancer.deps.json
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\bin\Debug\net6.0-windows\breastcancer.runtimeconfig.json
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\bin\Debug\net6.0-windows\breastcancer.dll
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\bin\Debug\net6.0-windows\breastcancer.pdb
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.csproj.AssemblyReference.cache
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.Form1.resources
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.Form2.resources
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.Form3.resources
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.Properties.Resources.resources
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.csproj.GenerateResource.cache
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.AssemblyInfoInputs.cache
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.AssemblyInfo.cs
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.csproj.CoreCompileInputs.cache
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.dll
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\refint\breastcancer.dll
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.pdb
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.genruntimeconfig.cache
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\ref\breastcancer.dll
+C:\Users\Narmina\Source\Repos\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.Form4.resources

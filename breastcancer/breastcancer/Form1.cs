@@ -16,6 +16,7 @@ namespace breastcancer
         {
             this.WindowState = FormWindowState.Maximized;
             this.BackColor = BackColor = Color.White;
+            //11
             //pictureBox2.Image = Image.FromFile("E:\\OneDrive - ADA University\\Homework\\Fall2022\\SDP\\Logo\\ribbon.png");
 
 

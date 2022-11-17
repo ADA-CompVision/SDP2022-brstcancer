@@ -30,130 +30,190 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButtonPositive = new System.Windows.Forms.RadioButton();
+            this.buttonPrevious = new System.Windows.Forms.Button();
+            this.buttonNext = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.radioButtonPotential = new System.Windows.Forms.RadioButton();
+            this.radioButtonNegative = new System.Windows.Forms.RadioButton();
+            this.pictureBox_ribbon = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ribbon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(24, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(176, 54);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(715, 469);
+            this.pictureBox1.Size = new System.Drawing.Size(292, 206);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDoubleClick);
             // 
-            // radioButton1
+            // radioButtonPositive
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(893, 226);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(62, 19);
-            this.radioButton1.TabIndex = 300;
-            this.radioButton1.Text = "Cancer";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButtonPositive.AutoSize = true;
+            this.radioButtonPositive.Location = new System.Drawing.Point(1031, 114);
+            this.radioButtonPositive.Name = "radioButtonPositive";
+            this.radioButtonPositive.Size = new System.Drawing.Size(66, 19);
+            this.radioButtonPositive.TabIndex = 300;
+            this.radioButtonPositive.Text = "Positive";
+            this.radioButtonPositive.UseVisualStyleBackColor = true;
+            this.radioButtonPositive.CheckedChanged += new System.EventHandler(this.radioButtonPositive_CheckedChanged_1);
             // 
-            // button1
+            // buttonPrevious
             // 
-            this.button1.Location = new System.Drawing.Point(958, 471);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Previous";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonPrevious.Location = new System.Drawing.Point(921, 444);
+            this.buttonPrevious.Name = "buttonPrevious";
+            this.buttonPrevious.Size = new System.Drawing.Size(75, 23);
+            this.buttonPrevious.TabIndex = 6;
+            this.buttonPrevious.Text = "Previous";
+            this.buttonPrevious.UseVisualStyleBackColor = true;
+            this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
             // 
-            // button2
+            // buttonNext
             // 
-            this.button2.Location = new System.Drawing.Point(1127, 471);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Next";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonNext.Location = new System.Drawing.Point(1022, 444);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(75, 23);
+            this.buttonNext.TabIndex = 5;
+            this.buttonNext.Text = "Next";
+            this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(617, 494);
+            this.label1.Location = new System.Drawing.Point(617, 452);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 15);
             this.label1.TabIndex = 8;
             this.label1.Text = "label1";
             // 
-            // button3
+            // radioButtonPotential
             // 
-            this.button3.Location = new System.Drawing.Point(1039, 471);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Show";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.radioButtonPotential.AutoSize = true;
+            this.radioButtonPotential.Location = new System.Drawing.Point(1031, 163);
+            this.radioButtonPotential.Name = "radioButtonPotential";
+            this.radioButtonPotential.Size = new System.Drawing.Size(72, 19);
+            this.radioButtonPotential.TabIndex = 800;
+            this.radioButtonPotential.Text = "Potential";
+            this.radioButtonPotential.UseVisualStyleBackColor = true;
+            this.radioButtonPotential.CheckedChanged += new System.EventHandler(this.radioButtonPotential_CheckedChanged);
             // 
-            // radioButton2
+            // radioButtonNegative
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(893, 275);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(112, 19);
-            this.radioButton2.TabIndex = 800;
-            this.radioButton2.Text = "Potential Cancer";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.radioButtonNegative.AutoSize = true;
+            this.radioButtonNegative.Location = new System.Drawing.Point(1031, 205);
+            this.radioButtonNegative.Name = "radioButtonNegative";
+            this.radioButtonNegative.Size = new System.Drawing.Size(72, 19);
+            this.radioButtonNegative.TabIndex = 900;
+            this.radioButtonNegative.Text = "Negative";
+            this.radioButtonNegative.UseVisualStyleBackColor = true;
+            this.radioButtonNegative.CheckedChanged += new System.EventHandler(this.radioButtonNegative_CheckedChanged);
             // 
-            // radioButton3
+            // pictureBox_ribbon
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(893, 317);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(85, 19);
-            this.radioButton3.TabIndex = 900;
-            this.radioButton3.Text = "Not Cancer";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            this.pictureBox_ribbon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox_ribbon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_ribbon.Image")));
+            this.pictureBox_ribbon.Location = new System.Drawing.Point(1179, 2);
+            this.pictureBox_ribbon.Name = "pictureBox_ribbon";
+            this.pictureBox_ribbon.Size = new System.Drawing.Size(63, 68);
+            this.pictureBox_ribbon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_ribbon.TabIndex = 901;
+            this.pictureBox_ribbon.TabStop = false;
             // 
-            // pictureBox2
+            // pictureBox3
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1179, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(63, 68);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 901;
-            this.pictureBox2.TabStop = false;
+            this.pictureBox3.Location = new System.Drawing.Point(530, 54);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(292, 206);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 902;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(530, 281);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(292, 206);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 904;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Location = new System.Drawing.Point(176, 281);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(292, 206);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 903;
+            this.pictureBox5.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1022, 316);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 77);
+            this.textBox1.TabIndex = 905;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(46, 301);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 906;
+            this.button1.Text = ">";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(46, 163);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 907;
+            this.button2.Text = "<";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1241, 559);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox_ribbon);
+            this.Controls.Add(this.radioButtonNegative);
+            this.Controls.Add(this.radioButtonPotential);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonNext);
+            this.Controls.Add(this.buttonPrevious);
+            this.Controls.Add(this.radioButtonPositive);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,13 +221,18 @@
 
         #endregion
         private PictureBox pictureBox1;
-        private RadioButton radioButton1;
+        private RadioButton radioButtonPositive;
+        private Button buttonPrevious;
+        private Button buttonNext;
+        private Label label1;
+        private RadioButton radioButtonPotential;
+        private RadioButton radioButtonNegative;
+        private PictureBox pictureBox_ribbon;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox5;
+        private TextBox textBox1;
         private Button button1;
         private Button button2;
-        private Label label1;
-        private Button button3;
-        private RadioButton radioButton2;
-        private RadioButton radioButton3;
-        private PictureBox pictureBox2;
     }
 }

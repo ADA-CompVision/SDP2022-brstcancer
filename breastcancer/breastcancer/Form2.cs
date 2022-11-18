@@ -21,10 +21,6 @@ namespace breastcancer
         int c = 0;
         int diagnosisInt = 0;
         string[] files;
-       // String pathPos = "E:\\OneDrive - ADA University\\Homework\\Fall2022\\SDP\\PotentialCancer\\";
-        //String pathPot = "E:\\OneDrive - ADA University\\Homework\\Fall2022\\SDP\\Cancer\\";
-        //String pathN = "E:\\OneDrive - ADA University\\Homework\\Fall2022\\SDP\\NotCancer\\";
-
 
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -40,14 +36,11 @@ namespace breastcancer
             pictureBox4.Image = Image.FromFile(files[c]);
 
             label1.Text = c + 1 + " out of " + files.Length + " images \n";
-            //MessageBox.Show(getImageId().ToString());
         }
 
 
         private void buttonPrevious_Click(object sender, EventArgs e)
         {
-
-
 
             var filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
             // Read existing json data
@@ -78,7 +71,7 @@ namespace breastcancer
 
 
 
-
+            textBoxComment.Text = "";
             radioButtonPositive.Checked = false;
             radioButtonPotential.Checked = false;
             radioButtonNegative.Checked = false;
@@ -133,6 +126,8 @@ namespace breastcancer
 
 
             //reseting
+            textBoxComment.Text = "";
+
             radioButtonPositive.Checked = false;
             radioButtonPotential.Checked = false;
             radioButtonNegative.Checked = false;
@@ -154,55 +149,16 @@ namespace breastcancer
 
         private void radioButtonPositive_CheckedChanged_1(object sender, EventArgs e)
         {
-            string fullPath = Path.GetFullPath(files[c]).TrimEnd(Path.DirectorySeparatorChar);
-            string projectName = Path.GetFileName(fullPath);
-            String pathCan = pathPos + projectName;
-            pictureBox1.Image.Save(pathCan);
-
-            if (File.Exists(pathPot + projectName))
-            {
-                File.Delete(pathPot + projectName);
-            }
-            if (File.Exists(pathN + projectName))
-            {
-                File.Delete(pathN + projectName);
-            }
             diagnosisInt = 1;
-
         }
 
         private void radioButtonPotential_CheckedChanged(object sender, EventArgs e)
         {
-            string fullPath = Path.GetFullPath(files[c]).TrimEnd(Path.DirectorySeparatorChar);
-            string projectName = Path.GetFileName(fullPath);
-            String pathCan = pathPot + projectName;
-            pictureBox1.Image.Save(pathCan);
-            if (File.Exists(pathPos + projectName))
-            {
-                File.Delete(pathPos + projectName);
-            }
-            if (File.Exists(pathN + projectName))
-            {
-                File.Delete(pathN + projectName);
-            }
             diagnosisInt = 2;
         }
 
         private void radioButtonNegative_CheckedChanged(object sender, EventArgs e)
         {
-            string fullPath = Path.GetFullPath(files[c]).TrimEnd(Path.DirectorySeparatorChar);
-            string projectName = Path.GetFileName(fullPath);
-            String pathCan = pathN + projectName;
-            pictureBox1.Image.Save(pathCan);
-
-            if (File.Exists(pathPos + projectName))
-            {
-                File.Delete(pathPos + projectName);
-            }
-            if (File.Exists(pathPot + projectName))
-            {
-                File.Delete(pathPot + projectName);
-            }
             diagnosisInt = 3;
         }
 

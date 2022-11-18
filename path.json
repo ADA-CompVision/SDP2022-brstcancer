@@ -1,0 +1,16 @@
+[
+  {
+    "ImageId": 1,
+    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Images\\image0.png",
+    "Diagnosis": 2,
+    "Comment": "klfjsdl",
+    "DoctorId": 1
+  },
+  {
+    "ImageId": 2,
+    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Images\\image1.png",
+    "Diagnosis": 1,
+    "Comment": "skldfjsldfkj",
+    "DoctorId": 1
+  }
+]

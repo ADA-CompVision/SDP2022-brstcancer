@@ -40,9 +40,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxComment = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -161,13 +162,13 @@
             this.pictureBox5.TabIndex = 903;
             this.pictureBox5.TabStop = false;
             // 
-            // textBox1
+            // textBoxComment
             // 
-            this.textBox1.Location = new System.Drawing.Point(1022, 316);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 77);
-            this.textBox1.TabIndex = 905;
+            this.textBoxComment.Location = new System.Drawing.Point(1022, 316);
+            this.textBoxComment.Multiline = true;
+            this.textBoxComment.Name = "textBoxComment";
+            this.textBoxComment.Size = new System.Drawing.Size(100, 77);
+            this.textBoxComment.TabIndex = 905;
             // 
             // button1
             // 
@@ -187,6 +188,13 @@
             this.button2.Text = "<";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(108, 45);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(807, 463);
+            this.panel1.TabIndex = 908;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -194,7 +202,7 @@
             this.ClientSize = new System.Drawing.Size(1241, 559);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxComment);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox3);
@@ -206,6 +214,7 @@
             this.Controls.Add(this.buttonPrevious);
             this.Controls.Add(this.radioButtonPositive);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel1);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -231,8 +240,9 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
-        private TextBox textBox1;
+        private TextBox textBoxComment;
         private Button button1;
         private Button button2;
+        private Panel panel1;
     }
 }

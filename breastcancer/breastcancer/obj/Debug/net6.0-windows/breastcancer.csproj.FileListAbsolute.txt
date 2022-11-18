@@ -39,3 +39,6 @@ E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\breastcancer\breastcanc
 E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.genruntimeconfig.cache
 E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\ref\breastcancer.dll
 E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.Form4.resources
+E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\breastcancer\breastcancer\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\breastcancer\breastcancer\bin\Debug\net6.0-windows\Newtonsoft.Json.Bson.dll
+E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.csproj.CopyComplete

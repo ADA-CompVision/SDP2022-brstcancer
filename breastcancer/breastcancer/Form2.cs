@@ -55,108 +55,121 @@ namespace breastcancer
 
         private void buttonPrevious_Click(object sender, EventArgs e)
         {
-
-            var filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
-            // Read existing json data
-            var jsonData = System.IO.File.ReadAllText(filePath);
-            // De-serialize to object or create new list
-            var dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
-                                  ?? new List<Data>();
-            int id = 1;
-            if (dataList.Count > 0)
+            if (radioButtonNegative.Checked == false && radioButtonPositive.Checked == false && radioButtonPotential.Checked == false)
             {
-                id = dataList.Max(x => x.ImageId) + 1;
+                MessageBox.Show("You need to choose one option");
             }
-
-            // Add any new data
-            dataList.Add(new Data()
-            {
-                ImageId = id,// w,//get last image id from json file then ++ and assign
-                //ImageName
-                Diagnosis = diagnosisInt,
-                Comment = textBoxComment.Text,
-                DoctorId = 1
-            });
-
-            // Update json data string
-            jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
-            System.IO.File.WriteAllText(filePath, jsonData);
-
-
-
-
-            textBoxComment.Text = "";
-            radioButtonPositive.Checked = false;
-            radioButtonPotential.Checked = false;
-            radioButtonNegative.Checked = false;
-
-            if (c == 0)
-                buttonPrevious.Enabled = false;
             else
             {
-                c--;
-                buttonNext.Enabled = true;
-                label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n" + filesNotResized[c];
 
-                pictureBox1.Image = Image.FromFile(filesNotResized[c]);
-                pictureBox5.Image = Image.FromFile(filesBrightened[c]);
-                pictureBox3.Image = Image.FromFile(filesDarked[c]);
-                pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
+                var filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
+                // Read existing json data
+                var jsonData = System.IO.File.ReadAllText(filePath);
+                // De-serialize to object or create new list
+                var dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
+                                      ?? new List<Data>();
+                int id = 1;
+                if (dataList.Count > 0)
+                {
+                    id = dataList.Max(x => x.ImageId) + 1;
+                }
+
+                // Add any new data
+                dataList.Add(new Data()
+                {
+                    ImageId = id,// w,//get last image id from json file then ++ and assign
+                                 //ImageName
+                    Diagnosis = diagnosisInt,
+                    Comment = textBoxComment.Text,
+                    DoctorId = 1
+                });
+
+                // Update json data string
+                jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
+                System.IO.File.WriteAllText(filePath, jsonData);
+
+
+
+
+                textBoxComment.Text = "";
+                radioButtonPositive.Checked = false;
+                radioButtonPotential.Checked = false;
+                radioButtonNegative.Checked = false;
+
+                if (c == 0)
+                    buttonPrevious.Enabled = false;
+                else
+                {
+                    c--;
+                    buttonNext.Enabled = true;
+                    label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + filesNotResized[c];
+
+                    pictureBox1.Image = Image.FromFile(filesNotResized[c]);
+                    pictureBox5.Image = Image.FromFile(filesBrightened[c]);
+                    pictureBox3.Image = Image.FromFile(filesDarked[c]);
+                    pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
+                }
             }
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            var filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
-            // Read existing json data
-            var jsonData = System.IO.File.ReadAllText(filePath);
-            // De-serialize to object or create new list
-            var dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
-                                  ?? new List<Data>();
-            int id = 1;
-            if (dataList.Count > 0)
+            if (radioButtonNegative.Checked == false && radioButtonPositive.Checked == false && radioButtonPotential.Checked == false)
             {
-                id = dataList.Max(x => x.ImageId) + 1;
+                MessageBox.Show("You need to choose one option");
             }
-
-            // Add any new data
-            dataList.Add(new Data()
-            {
-                ImageId = id,// w,//get last image id from json file then ++ and assign
-                ImageName = filesNotResized[c],
-                Diagnosis = diagnosisInt,
-                Comment = textBoxComment.Text,
-                DoctorId = 1
-            });
-
-            // Update json data string
-            jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
-            System.IO.File.WriteAllText(filePath, jsonData);
-
-
-
-            //reseting
-            textBoxComment.Text = "";
-
-            radioButtonPositive.Checked = false;
-            radioButtonPotential.Checked = false;
-            radioButtonNegative.Checked = false;
-
-            if (c == filesNotResized.Length - 1)
-                buttonNext.Enabled = false;
             else
             {
-                c++;
-                buttonPrevious.Enabled = true;
-                label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + files[c];
+                var filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
+                // Read existing json data
+                var jsonData = System.IO.File.ReadAllText(filePath);
+                // De-serialize to object or create new list
+                var dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
+                                      ?? new List<Data>();
+                int id = 1;
+                if (dataList.Count > 0)
+                {
+                    id = dataList.Max(x => x.ImageId) + 1;
+                }
 
-                pictureBox1.Image = Image.FromFile(filesNotResized[c]);
-                pictureBox5.Image = Image.FromFile(filesBrightened[c]);
-                pictureBox3.Image = Image.FromFile(filesDarked[c]);
-                pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
+                // Add any new data
+                dataList.Add(new Data()
+                {
+                    ImageId = id,// w,//get last image id from json file then ++ and assign
+                    ImageName = filesNotResized[c],
+                    Diagnosis = diagnosisInt,
+                    Comment = textBoxComment.Text,
+                    DoctorId = 1
+                });
+
+                // Update json data string
+                jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
+                System.IO.File.WriteAllText(filePath, jsonData);
+
+
+
+                //reseting
+                textBoxComment.Text = "";
+
+                radioButtonPositive.Checked = false;
+                radioButtonPotential.Checked = false;
+                radioButtonNegative.Checked = false;
+
+                if (c == filesNotResized.Length - 1)
+                    buttonNext.Enabled = false;
+                else
+                {
+                    c++;
+                    buttonPrevious.Enabled = true;
+                    label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + files[c];
+
+                    pictureBox1.Image = Image.FromFile(filesNotResized[c]);
+                    pictureBox5.Image = Image.FromFile(filesBrightened[c]);
+                    pictureBox3.Image = Image.FromFile(filesDarked[c]);
+                    pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
+                }
             }
         }
-
         private void radioButtonPositive_CheckedChanged_1(object sender, EventArgs e)
         {
             diagnosisInt = 1;
@@ -176,9 +189,50 @@ namespace breastcancer
         {
             new Form4().Show();
         }
-
+        private void pictureBox3_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            new Form4().Show();
+        }
+        private void pictureBox4_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            new Form4().Show();
+        }
+        private void pictureBox5_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            new Form4().Show();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
+            pictureBox3.Image = Image.FromFile(filesNotResized[c]);
+            pictureBox4.Image = Image.FromFile(filesBrightened[c]);
+            pictureBox1.Image = Image.FromFile(filesDarked[c]);
+            pictureBox5.Image = Image.FromFile(filesHighlyBrightened[c]);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            pictureBox3.Image = Image.FromFile(filesNotResized[c]);
+            pictureBox4.Image = Image.FromFile(filesBrightened[c]);
+            pictureBox1.Image = Image.FromFile(filesDarked[c]);
+            pictureBox5.Image = Image.FromFile(filesHighlyBrightened[c]);
+        }
+
+        private void pictureBox3_DoubleClick(object sender, EventArgs e)
+        {
+            new Form4().Show();
+
+        }
+
+        private void pictureBox4_DoubleClick(object sender, EventArgs e)
+        {
+            new Form4().Show();
+
+        }
+
+        private void pictureBox5_DoubleClick(object sender, EventArgs e)
+        {
+            new Form4().Show();
 
         }
     }

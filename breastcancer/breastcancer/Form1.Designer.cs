@@ -59,9 +59,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(211, 202);
+            this.pictureBox1.Location = new System.Drawing.Point(260, 436);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(270, 199);
+            this.pictureBox1.Size = new System.Drawing.Size(206, 129);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -69,7 +69,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(570, 177);
+            this.pictureBox2.Location = new System.Drawing.Point(584, 95);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(249, 269);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -80,10 +80,10 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(935, 202);
+            this.pictureBox3.Location = new System.Drawing.Point(976, 434);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(204, 199);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox3.Size = new System.Drawing.Size(175, 116);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
@@ -92,7 +92,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.HotPink;
-            this.label1.Location = new System.Drawing.Point(659, 483);
+            this.label1.Location = new System.Drawing.Point(662, 464);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 25);
             this.label1.TabIndex = 4;

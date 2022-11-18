@@ -1,191 +1,23 @@
 [
   {
     "ImageId": 1,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Images\\image0.png",
+    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image0.jpg",
     "Diagnosis": 2,
-    "Comment": "klfjsdl",
+    "Comment": "test",
     "DoctorId": 1
   },
   {
     "ImageId": 2,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Images\\image1.png",
-    "Diagnosis": 1,
-    "Comment": "skldfjsldfkj",
+    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image0.jpg",
+    "Diagnosis": 3,
+    "Comment": "test2",
     "DoctorId": 1
   },
   {
     "ImageId": 3,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image0.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 4,
     "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image1.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 5,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image10.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 6,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image11.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 7,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image12.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 8,
-    "ImageName": null,
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 9,
-    "ImageName": null,
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 10,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image11.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 11,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image12.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 12,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image13.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 13,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image14.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 14,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image15.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 15,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image16.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 16,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image17.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 17,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image18.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 18,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image19.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 19,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image2.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 20,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image3.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 21,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image4.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 22,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image5.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 23,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image6.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 24,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image7.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 25,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image8.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 26,
-    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Photos\\NotResized\\image9.jpg",
-    "Diagnosis": 0,
-    "Comment": "",
-    "DoctorId": 1
-  },
-  {
-    "ImageId": 27,
-    "ImageName": null,
-    "Diagnosis": 0,
-    "Comment": "",
+    "Diagnosis": 2,
+    "Comment": "tsets3",
     "DoctorId": 1
   }
 ]

@@ -20,22 +20,36 @@ namespace breastcancer
         }
         int c = 0;
         int diagnosisInt = 0;
-        string[] files;
+        string[] filesNotResized;
+        string[] filesBrightened;
+        string[] filesDarked;
+        string[] filesHighlyBrightened;
+
 
         private void Form2_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+            this.BackColor = BackColor = Color.White;
             label1.BackColor = Color.Transparent;
 
-            string filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Images";
-            files = Directory.GetFiles(filePath);
+            string filePathNotResized = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Photos\NotResized";
+            filesNotResized = Directory.GetFiles(filePathNotResized);
 
-            pictureBox1.Image = Image.FromFile(files[c]);
-            pictureBox5.Image = Image.FromFile(files[c]);
-            pictureBox3.Image = Image.FromFile(files[c]);
-            pictureBox4.Image = Image.FromFile(files[c]);
+            string filePathBrightened = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Photos\Brightened";
+            filesBrightened = Directory.GetFiles(filePathBrightened);
 
-            label1.Text = c + 1 + " out of " + files.Length + " images \n";
+            string filePathDarked = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Photos\Darked";
+            filesDarked = Directory.GetFiles(filePathDarked);
+
+            string filePathHighlyBrightened = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Photos\HighlyBrightened";
+            filesHighlyBrightened = Directory.GetFiles(filePathHighlyBrightened);
+
+            pictureBox1.Image = Image.FromFile(filesNotResized[c]);
+            pictureBox5.Image = Image.FromFile(filesBrightened[c]);
+            pictureBox3.Image = Image.FromFile(filesDarked[c]);
+            pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
+
+            label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";
         }
 
 
@@ -82,12 +96,12 @@ namespace breastcancer
             {
                 c--;
                 buttonNext.Enabled = true;
-                label1.Text = c + 1 + " out of " + files.Length + " images \n" + files[c];
+                label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n" + filesNotResized[c];
 
-                pictureBox1.Image = Image.FromFile(files[c]);
-                pictureBox5.Image = Image.FromFile(files[c]);
-                pictureBox3.Image = Image.FromFile(files[c]);
-                pictureBox4.Image = Image.FromFile(files[c]);
+                pictureBox1.Image = Image.FromFile(filesNotResized[c]);
+                pictureBox5.Image = Image.FromFile(filesBrightened[c]);
+                pictureBox3.Image = Image.FromFile(filesDarked[c]);
+                pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
             }
         }
 
@@ -109,7 +123,7 @@ namespace breastcancer
             dataList.Add(new Data()
             {
                 ImageId = id,// w,//get last image id from json file then ++ and assign
-                ImageName = files[c],
+                ImageName = filesNotResized[c],
                 Diagnosis = diagnosisInt,
                 Comment = textBoxComment.Text,
                 DoctorId = 1
@@ -121,10 +135,6 @@ namespace breastcancer
 
 
 
-
-
-
-
             //reseting
             textBoxComment.Text = "";
 
@@ -132,18 +142,18 @@ namespace breastcancer
             radioButtonPotential.Checked = false;
             radioButtonNegative.Checked = false;
 
-            if (c == files.Length - 1)
+            if (c == filesNotResized.Length - 1)
                 buttonNext.Enabled = false;
             else
             {
                 c++;
                 buttonPrevious.Enabled = true;
-                label1.Text = c + 1 + " out of " + files.Length + " images \n";// + files[c];
+                label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + files[c];
 
-                pictureBox1.Image = Image.FromFile(files[c]);
-                pictureBox5.Image = Image.FromFile(files[c]);
-                pictureBox3.Image = Image.FromFile(files[c]);
-                pictureBox4.Image = Image.FromFile(files[c]);
+                pictureBox1.Image = Image.FromFile(filesNotResized[c]);
+                pictureBox5.Image = Image.FromFile(filesBrightened[c]);
+                pictureBox3.Image = Image.FromFile(filesDarked[c]);
+                pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
             }
         }
 
@@ -162,14 +172,14 @@ namespace breastcancer
             diagnosisInt = 3;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             new Form4().Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

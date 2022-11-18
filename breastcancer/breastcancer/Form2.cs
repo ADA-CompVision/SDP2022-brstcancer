@@ -203,9 +203,9 @@ namespace breastcancer
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            pictureBox3.Image = Image.FromFile(filesNotResized[c]);
-            pictureBox4.Image = Image.FromFile(filesBrightened[c]);
-            pictureBox1.Image = Image.FromFile(filesDarked[c]);
+            pictureBox1.Image = Image.FromFile(filesNotResized[c]);
+            pictureBox3.Image = Image.FromFile(filesBrightened[c]);
+            pictureBox4.Image = Image.FromFile(filesDarked[c]);
             pictureBox5.Image = Image.FromFile(filesHighlyBrightened[c]);
         }
 
@@ -213,9 +213,9 @@ namespace breastcancer
         {
 
             pictureBox3.Image = Image.FromFile(filesNotResized[c]);
-            pictureBox4.Image = Image.FromFile(filesBrightened[c]);
+            pictureBox5.Image = Image.FromFile(filesBrightened[c]);
             pictureBox1.Image = Image.FromFile(filesDarked[c]);
-            pictureBox5.Image = Image.FromFile(filesHighlyBrightened[c]);
+            pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
         }
 
         private void pictureBox3_DoubleClick(object sender, EventArgs e)

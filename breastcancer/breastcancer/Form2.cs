@@ -14,21 +14,34 @@ namespace breastcancer
 {
     public partial class Form2 : Form
     {
-        public Form2()
-        {
-            InitializeComponent();
-        }
+        List<Data> dataList = new List<Data>();
+
+        int ii = 0;
         int c = 0;
         int diagnosisInt = 0;
         string[] filesNotResized;
         string[] filesBrightened;
         string[] filesDarked;
         string[] filesHighlyBrightened;
-        Control control = new Control();
+        string filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
+        string jsonData;
+       
 
+        Control control = new Control();
+        public Form2()
+        {
+            InitializeComponent();
+        }
 
         private void Form2_Load(object sender, EventArgs e)
         {
+
+            // Read existing json data
+            jsonData = System.IO.File.ReadAllText(filePath);
+            // De-serialize to object or create new list
+            dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
+                                  ?? new List<Data>();
+
             this.KeyPreview = true;
 
             this.WindowState = FormWindowState.Maximized;
@@ -149,25 +162,38 @@ namespace breastcancer
             }
         }
 
+        private void JsonSave()
+        {
+
+            // Update json data string
+            jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
+            System.IO.File.WriteAllText(filePath, jsonData);
+
+        }
         private void buttonNextFunction()
         {
+            ii++;
             if (radioButtonNegative.Checked == false && radioButtonPositive.Checked == false && radioButtonPotential.Checked == false)
             {
                 MessageBox.Show("You need to choose one option");
             }
             else
             {
+                /*
+                //addJsonToList();
                 var filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
                 // Read existing json data
                 var jsonData = System.IO.File.ReadAllText(filePath);
                 // De-serialize to object or create new list
                 var dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
-                                      ?? new List<Data>();
+                                      ?? new List<Data>();*/
                 int id = 1;
                 if (dataList.Count > 0)
                 {
                     id = dataList.Max(x => x.ImageId) + 1;
                 }
+
+
 
                 // Add any new data
                 dataList.Add(new Data()
@@ -180,12 +206,12 @@ namespace breastcancer
                 });
 
                 // Update json data string
-                jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
-                System.IO.File.WriteAllText(filePath, jsonData);
+                //jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
+                //System.IO.File.WriteAllText(filePath, jsonData);
 
+                JsonSave();
 
-
-                //reseting
+                //reseting function yaz bura
                 textBoxComment.Text = "";
 
                 radioButtonPositive.Checked = false;
@@ -209,37 +235,78 @@ namespace breastcancer
         }
         private void buttonPreviousFunction()
         {
-            var filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
-            // Read existing json data
-            var jsonData = System.IO.File.ReadAllText(filePath);
-            // De-serialize to object or create new list
-            var dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
-                                  ?? new List<Data>();
-            int id = 1;
-            if (dataList.Count > 0)
-            {
-                id = dataList.Max(x => x.ImageId) + 1;
-            }
+            //var filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
+            //// Read existing json data
+            //var jsonData = System.IO.File.ReadAllText(filePath);
+            //// De-serialize to object or create new list
+            //var dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
+            //                      ?? new List<Data>();
 
-            // Add any new data
-            dataList.Add(new Data()
+
+
+            ii--;
+
+
+            var item = dataList[ii];
+            this.textBoxComment.Text = item.Comment;
+            
+            if(item.Diagnosis == 1)
             {
-                ImageId = id,// w,//get last image id from json file then ++ and assign
-                             //ImageName
-                Diagnosis = diagnosisInt,
-                Comment = textBoxComment.Text,
-                DoctorId = 1
-            });
+                this.radioButtonPositive.Checked = true;
+            }
+            else if (item.Diagnosis == 2)
+            {
+                this.radioButtonPotential.Checked = true;
+            }
+            else if (item.Diagnosis == 3)
+            {
+                this.radioButtonNegative.Checked = true;
+            }
+            //foreach (var item in dataList)
+            //{
+
+            //    if (item.ImageId == 0)
+            //    {
+            //        item.Diagnosis = diagnosisInt;
+            //        item.Comment = textBoxComment.Text;
+            //    }
+            //}
+
+
+
+
+
+
+
+
+
+            //int id = 1;
+
+            //if (dataList.Count > 0)
+            //{
+            //    id = dataList.Max(x => x.ImageId) + 1;
+            //}
+
+
+
+            //// Add any new data
+            //dataList.Add(new Data()
+            //{
+            //    ImageId = id,// w,//get last image id from json file then ++ and assign
+            //    ImageName = filesNotResized[c],
+            //    Diagnosis = diagnosisInt,
+            //    Comment = textBoxComment.Text,
+            //    DoctorId = 1
+            //});
 
             // Update json data string
             jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
             System.IO.File.WriteAllText(filePath, jsonData);
 
-
-            textBoxComment.Text = "";
-            radioButtonPositive.Checked = false;
-            radioButtonPotential.Checked = false;
-            radioButtonNegative.Checked = false;
+            //textBoxComment.Text = "";
+            //radioButtonPositive.Checked = false;
+            //radioButtonPotential.Checked = false;
+            //radioButtonNegative.Checked = false;
 
             if (c == 0)
                 buttonPrevious.Enabled = false;
@@ -255,6 +322,35 @@ namespace breastcancer
                 pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
             }
         }
+        private void addJsonToList()
+        {
+            //var filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
+            //// Read existing json data
+            //var jsonData = System.IO.File.ReadAllText(filePath);
+            //// De-serialize to object or create new list
+            //var dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
+            //                      ?? new List<Data>();
+            //int id = 1;
+            //if (dataList.Count > 0)
+            //{
+            //    id = dataList.Max(x => x.ImageId) + 1;
+            //}
+
+
+
+            //// Add any new data
+            //dataList.Add(new Data()
+            //{
+            //    ImageId = id,// w,//get last image id from json file then ++ and assign
+            //    ImageName = filesNotResized[c],
+            //    Diagnosis = diagnosisInt,
+            //    Comment = textBoxComment.Text,
+            //    DoctorId = 1
+            //});
+
+            //// Update json data string
+            //jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
+            //System.IO.File.WriteAllText(filePath, jsonData);
+        }
     }
-}
 }

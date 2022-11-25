@@ -1,24 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Narmina\\Documents\\BreastCancer\\breastcancer\\breastcancer\\breastcancer.csproj": {}
+    "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\breastcancer\\breastcancer\\breastcancer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Narmina\\Documents\\BreastCancer\\breastcancer\\breastcancer\\breastcancer.csproj": {
+    "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\breastcancer\\breastcancer\\breastcancer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Narmina\\Documents\\BreastCancer\\breastcancer\\breastcancer\\breastcancer.csproj",
+        "projectUniqueName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\breastcancer\\breastcancer\\breastcancer.csproj",
         "projectName": "breastcancer",
-        "projectPath": "C:\\Users\\Narmina\\Documents\\BreastCancer\\breastcancer\\breastcancer\\breastcancer.csproj",
-        "packagesPath": "C:\\Users\\Narmina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Narmina\\Documents\\BreastCancer\\breastcancer\\breastcancer\\obj\\",
+        "projectPath": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\breastcancer\\breastcancer\\breastcancer.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\breastcancer\\breastcancer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Narmina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -39,14 +42,19 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Newtonsoft.Json.Bson": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -58,7 +66,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

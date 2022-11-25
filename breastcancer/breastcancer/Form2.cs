@@ -24,10 +24,13 @@ namespace breastcancer
         string[] filesBrightened;
         string[] filesDarked;
         string[] filesHighlyBrightened;
+        Control control = new Control();
 
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
+
             this.WindowState = FormWindowState.Maximized;
             this.BackColor = BackColor = Color.White;
             label1.BackColor = Color.Transparent;
@@ -114,61 +117,7 @@ namespace breastcancer
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            if (radioButtonNegative.Checked == false && radioButtonPositive.Checked == false && radioButtonPotential.Checked == false)
-            {
-                MessageBox.Show("You need to choose one option");
-            }
-            else
-            {
-                var filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
-                // Read existing json data
-                var jsonData = System.IO.File.ReadAllText(filePath);
-                // De-serialize to object or create new list
-                var dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
-                                      ?? new List<Data>();
-                int id = 1;
-                if (dataList.Count > 0)
-                {
-                    id = dataList.Max(x => x.ImageId) + 1;
-                }
-
-                // Add any new data
-                dataList.Add(new Data()
-                {
-                    ImageId = id,// w,//get last image id from json file then ++ and assign
-                    ImageName = filesNotResized[c],
-                    Diagnosis = diagnosisInt,
-                    Comment = textBoxComment.Text,
-                    DoctorId = 1
-                });
-
-                // Update json data string
-                jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
-                System.IO.File.WriteAllText(filePath, jsonData);
-
-
-
-                //reseting
-                textBoxComment.Text = "";
-
-                radioButtonPositive.Checked = false;
-                radioButtonPotential.Checked = false;
-                radioButtonNegative.Checked = false;
-
-                if (c == filesNotResized.Length - 1)
-                    buttonNext.Enabled = false;
-                else
-                {
-                    c++;
-                    buttonPrevious.Enabled = true;
-                    label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + files[c];
-
-                    pictureBox1.Image = Image.FromFile(filesNotResized[c]);
-                    pictureBox5.Image = Image.FromFile(filesBrightened[c]);
-                    pictureBox3.Image = Image.FromFile(filesDarked[c]);
-                    pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
-                }
-            }
+            buttonNextFunction();
         }
         private void radioButtonPositive_CheckedChanged_1(object sender, EventArgs e)
         {
@@ -233,6 +182,160 @@ namespace breastcancer
         private void pictureBox5_DoubleClick(object sender, EventArgs e)
         {
             new Form4().Show();
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // string a = "100";
+            //if (e.KeyCode == Keys.Up)
+            //{
+            //    this.buttonUp.Focus();
+
+            //}
+            //else if (e.KeyCode == Keys.Down)
+            //{
+            //    this.buttonDown.Focus();
+            //}
+            //else if (e.KeyCode == Keys.Right)
+            //{
+            //    buttonNextFunction();
+
+            //    //                this.buttonNext.Focus();
+            //    //control.TabIndex = 5;
+            //    //control.Focus();
+            //    //buttonNext_Click(sender, e);
+
+            //}
+            //else if (e.KeyCode == Keys.Left)
+            //{
+            //    this.buttonPrevious.Focus();
+            //    /// buttonPrevious_Click(sender, e);
+            //}
+
+            //    if (e.KeyChar == (char)Keys.Right)
+            //    {
+            //        buttonNextFunction();
+
+            //        //this.buttonNext.Focus();
+            //        //control.TabIndex = 5;
+
+            //    }
+            //    else if (e.KeyChar == (char)Keys.Left)
+            //    {
+            //      //  this.buttonPrevious.Focus();
+            //        //control.TabIndex = 6;
+
+            //    }
+            //    else if (e.KeyChar == (char)Keys.Up)
+            //    {
+            //        ///this.buttonUp.Focus();
+            //        //control.TabIndex = 907;
+            //    }
+            //    else if (e.KeyChar == (char)Keys.Down)
+            //    {
+            //    //    this.buttonDown.Focus();
+            //      //  control.TabIndex = 906;
+            //    }
+        }
+
+        private void Form2_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                this.buttonUp.Focus();
+
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                this.buttonDown.Focus();
+            }
+            else if (e.KeyCode == Keys.Right)
+            {
+                buttonNextFunction();
+                this.buttonNext.Focus();
+
+                //radioButtonNegative.Focus() = false;
+                //radioButtonPositive.Focus() = false;
+                //radioButtonPotential.Focus() = false;
+                //textBoxComment.Focus() = false;
+
+                //                this.buttonNext.Focus();
+                //control.TabIndex = 5;
+                //control.Focus();
+                //buttonNext_Click(sender, e);
+
+            }
+            else if (e.KeyCode == Keys.Left)
+            {
+                this.buttonPrevious.Focus();
+                /// buttonPrevious_Click(sender, e);
+            }
+        }
+
+
+        private void buttonNextFunction()
+        {
+            if (radioButtonNegative.Checked == false && radioButtonPositive.Checked == false && radioButtonPotential.Checked == false)
+            {
+                MessageBox.Show("You need to choose one option");
+            }
+            else
+            {
+                var filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
+                // Read existing json data
+                var jsonData = System.IO.File.ReadAllText(filePath);
+                // De-serialize to object or create new list
+                var dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
+                                      ?? new List<Data>();
+                int id = 1;
+                if (dataList.Count > 0)
+                {
+                    id = dataList.Max(x => x.ImageId) + 1;
+                }
+
+                // Add any new data
+                dataList.Add(new Data()
+                {
+                    ImageId = id,// w,//get last image id from json file then ++ and assign
+                    ImageName = filesNotResized[c],
+                    Diagnosis = diagnosisInt,
+                    Comment = textBoxComment.Text,
+                    DoctorId = 1
+                });
+
+                // Update json data string
+                jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
+                System.IO.File.WriteAllText(filePath, jsonData);
+
+
+
+                //reseting
+                textBoxComment.Text = "";
+
+                radioButtonPositive.Checked = false;
+                radioButtonPotential.Checked = false;
+                radioButtonNegative.Checked = false;
+
+                if (c == filesNotResized.Length - 1)
+                    buttonNext.Enabled = false;
+                else
+                {
+                    c++;
+                    buttonPrevious.Enabled = true;
+                    label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + files[c];
+
+                    pictureBox1.Image = Image.FromFile(filesNotResized[c]);
+                    pictureBox5.Image = Image.FromFile(filesBrightened[c]);
+                    pictureBox3.Image = Image.FromFile(filesDarked[c]);
+                    pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
+                }
+            }
 
         }
     }

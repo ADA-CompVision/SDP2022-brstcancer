@@ -41,8 +41,8 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.textBoxComment = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonDown = new System.Windows.Forms.Button();
+            this.buttonUp = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ribbon)).BeginInit();
@@ -68,6 +68,7 @@
             this.radioButtonPositive.Name = "radioButtonPositive";
             this.radioButtonPositive.Size = new System.Drawing.Size(66, 19);
             this.radioButtonPositive.TabIndex = 300;
+            this.radioButtonPositive.TabStop = true;
             this.radioButtonPositive.Text = "Positive";
             this.radioButtonPositive.UseVisualStyleBackColor = true;
             this.radioButtonPositive.CheckedChanged += new System.EventHandler(this.radioButtonPositive_CheckedChanged_1);
@@ -77,7 +78,7 @@
             this.buttonPrevious.Location = new System.Drawing.Point(1022, 547);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(75, 23);
-            this.buttonPrevious.TabIndex = 6;
+            this.buttonPrevious.TabIndex = 299;
             this.buttonPrevious.Text = "Previous";
             this.buttonPrevious.UseVisualStyleBackColor = true;
             this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
@@ -87,7 +88,7 @@
             this.buttonNext.Location = new System.Drawing.Point(1123, 547);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
-            this.buttonNext.TabIndex = 5;
+            this.buttonNext.TabIndex = 298;
             this.buttonNext.Text = "Next";
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
@@ -98,7 +99,7 @@
             this.label1.Location = new System.Drawing.Point(1097, 628);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 8;
+            this.label1.TabIndex = 801;
             this.label1.Text = "label1";
             // 
             // radioButtonPotential
@@ -108,6 +109,7 @@
             this.radioButtonPotential.Name = "radioButtonPotential";
             this.radioButtonPotential.Size = new System.Drawing.Size(72, 19);
             this.radioButtonPotential.TabIndex = 800;
+            this.radioButtonPotential.TabStop = true;
             this.radioButtonPotential.Text = "Potential";
             this.radioButtonPotential.UseVisualStyleBackColor = true;
             this.radioButtonPotential.CheckedChanged += new System.EventHandler(this.radioButtonPotential_CheckedChanged);
@@ -119,6 +121,7 @@
             this.radioButtonNegative.Name = "radioButtonNegative";
             this.radioButtonNegative.Size = new System.Drawing.Size(72, 19);
             this.radioButtonNegative.TabIndex = 900;
+            this.radioButtonNegative.TabStop = true;
             this.radioButtonNegative.Text = "Negative";
             this.radioButtonNegative.UseVisualStyleBackColor = true;
             this.radioButtonNegative.CheckedChanged += new System.EventHandler(this.radioButtonNegative_CheckedChanged);
@@ -152,6 +155,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 904;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             this.pictureBox4.DoubleClick += new System.EventHandler(this.pictureBox4_DoubleClick);
             // 
             // pictureBox5
@@ -171,26 +175,27 @@
             this.textBoxComment.Name = "textBoxComment";
             this.textBoxComment.Size = new System.Drawing.Size(227, 111);
             this.textBoxComment.TabIndex = 905;
+            this.textBoxComment.TabStop = false;
             // 
-            // button1
+            // buttonDown
             // 
-            this.button1.Location = new System.Drawing.Point(34, 346);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 47);
-            this.button1.TabIndex = 906;
-            this.button1.Text = "Down";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonDown.Location = new System.Drawing.Point(34, 346);
+            this.buttonDown.Name = "buttonDown";
+            this.buttonDown.Size = new System.Drawing.Size(50, 47);
+            this.buttonDown.TabIndex = 801;
+            this.buttonDown.Text = "Down";
+            this.buttonDown.UseVisualStyleBackColor = true;
+            this.buttonDown.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // buttonUp
             // 
-            this.button2.Location = new System.Drawing.Point(34, 163);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 48);
-            this.button2.TabIndex = 907;
-            this.button2.Text = "Up";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonUp.Location = new System.Drawing.Point(34, 163);
+            this.buttonUp.Name = "buttonUp";
+            this.buttonUp.Size = new System.Drawing.Size(50, 48);
+            this.buttonUp.TabIndex = 302;
+            this.buttonUp.Text = "Up";
+            this.buttonUp.UseVisualStyleBackColor = true;
+            this.buttonUp.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -198,7 +203,7 @@
             this.label2.Location = new System.Drawing.Point(998, 369);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 15);
-            this.label2.TabIndex = 908;
+            this.label2.TabIndex = 301;
             this.label2.Text = "Add comment";
             // 
             // Form2
@@ -207,8 +212,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 749);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonDown);
+            this.Controls.Add(this.buttonUp);
             this.Controls.Add(this.textBoxComment);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox5);
@@ -222,8 +227,11 @@
             this.Controls.Add(this.radioButtonPositive);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form2_KeyPress);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form2_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -247,8 +255,8 @@
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
         private TextBox textBoxComment;
-        private Button button1;
-        private Button button2;
+        private Button buttonDown;
+        private Button buttonUp;
         private Label label2;
     }
 }

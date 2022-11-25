@@ -158,6 +158,7 @@ namespace breastcancer
             }
             else if (e.KeyCode == Keys.Left)
             {
+                buttonPreviousFunction();
                 this.buttonPrevious.Focus();
             }
         }

@@ -25,7 +25,7 @@ namespace breastcancer
         string[] filesHighlyBrightened;
         string filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
         string jsonData;
-       
+
 
         Control control = new Control();
         public Form2()
@@ -172,85 +172,137 @@ namespace breastcancer
         }
         private void buttonNextFunction()
         {
-            ii++;
             if (radioButtonNegative.Checked == false && radioButtonPositive.Checked == false && radioButtonPotential.Checked == false)
             {
                 MessageBox.Show("You need to choose one option");
             }
             else
             {
-                /*
-                //addJsonToList();
-                var filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
-                // Read existing json data
-                var jsonData = System.IO.File.ReadAllText(filePath);
-                // De-serialize to object or create new list
-                var dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
-                                      ?? new List<Data>();*/
+
                 int id = 1;
-                if (dataList.Count > 0)
+
+                //if (dataList.Count > 0)
+                //{
+                //    id = dataList.Max(x => x.ImageId) + 1;
+                //}
+
+                if (ii == dataList.Count || dataList.Count == 0)
                 {
-                    id = dataList.Max(x => x.ImageId) + 1;
+                    id = dataList.Count + 1;
+
+
+                    // Add any new data
+                    dataList.Add(new Data()
+                    {
+                        ImageId = id,// w,//get last image id from json file then ++ and assign
+                        ImageName = filesNotResized[c],
+                        Diagnosis = diagnosisInt,
+                        Comment = textBoxComment.Text,
+                        DoctorId = 1
+                    });
+
+                    textBoxComment.Text = "";
+
+                    radioButtonPositive.Checked = false;
+                    radioButtonPotential.Checked = false;
+                    radioButtonNegative.Checked = false;
+
+                    if (c == filesNotResized.Length - 1)
+                        buttonNext.Enabled = false;
+                    else
+                    {
+                        c++;
+                        buttonPrevious.Enabled = true;
+                        label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + files[c];
+
+                        pictureBox1.Image = Image.FromFile(filesNotResized[c]);
+                        pictureBox5.Image = Image.FromFile(filesBrightened[c]);
+                        pictureBox3.Image = Image.FromFile(filesDarked[c]);
+                        pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
+                    }
                 }
-
-
-
-                // Add any new data
-                dataList.Add(new Data()
+                else
                 {
-                    ImageId = id,// w,//get last image id from json file then ++ and assign
-                    ImageName = filesNotResized[c],
-                    Diagnosis = diagnosisInt,
-                    Comment = textBoxComment.Text,
-                    DoctorId = 1
-                });
+                    //update
+                    Update();
+                }
+                JsonSave();
+
+                ii++;
+
+
+
+
+
+
+
 
                 // Update json data string
                 //jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
                 //System.IO.File.WriteAllText(filePath, jsonData);
 
-                JsonSave();
 
                 //reseting function yaz bura
-                textBoxComment.Text = "";
+                //if (ii == dataList.Count)
+                //{
+                //    textBoxComment.Text = "";
 
-                radioButtonPositive.Checked = false;
-                radioButtonPotential.Checked = false;
-                radioButtonNegative.Checked = false;
+                //    radioButtonPositive.Checked = false;
+                //    radioButtonPotential.Checked = false;
+                //    radioButtonNegative.Checked = false;
 
-                if (c == filesNotResized.Length - 1)
-                    buttonNext.Enabled = false;
-                else
-                {
-                    c++;
-                    buttonPrevious.Enabled = true;
-                    label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + files[c];
+                //    if (c == filesNotResized.Length - 1)
+                //        buttonNext.Enabled = false;
+                //    else
+                //    {
+                //        c++;
+                //        buttonPrevious.Enabled = true;
+                //        label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + files[c];
 
-                    pictureBox1.Image = Image.FromFile(filesNotResized[c]);
-                    pictureBox5.Image = Image.FromFile(filesBrightened[c]);
-                    pictureBox3.Image = Image.FromFile(filesDarked[c]);
-                    pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
-                }
+                //        pictureBox1.Image = Image.FromFile(filesNotResized[c]);
+                //        pictureBox5.Image = Image.FromFile(filesBrightened[c]);
+                //        pictureBox3.Image = Image.FromFile(filesDarked[c]);
+                //        pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
+                //    }
+                //JsonSave();
+
+                // }
+                // ii++;
+
             }
+        }
+
+        private void Update()
+        {
+            //update
+            var item = dataList[ii];
+
+            item.Comment = this.textBoxComment.Text;
+
+            if (this.radioButtonPositive.Checked)
+            {
+                item.Diagnosis = 1;
+            }
+
+            else if (this.radioButtonPotential.Checked)
+            {
+                item.Diagnosis = 2;
+            }
+
+            else if (this.radioButtonNegative.Checked)
+            {
+                item.Diagnosis = 3;
+            }
+
         }
         private void buttonPreviousFunction()
         {
-            //var filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
-            //// Read existing json data
-            //var jsonData = System.IO.File.ReadAllText(filePath);
-            //// De-serialize to object or create new list
-            //var dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
-            //                      ?? new List<Data>();
-
-
-
             ii--;
-
 
             var item = dataList[ii];
             this.textBoxComment.Text = item.Comment;
-            
-            if(item.Diagnosis == 1)
+
+            if (item.Diagnosis == 1)
             {
                 this.radioButtonPositive.Checked = true;
             }
@@ -262,51 +314,13 @@ namespace breastcancer
             {
                 this.radioButtonNegative.Checked = true;
             }
-            //foreach (var item in dataList)
-            //{
-
-            //    if (item.ImageId == 0)
-            //    {
-            //        item.Diagnosis = diagnosisInt;
-            //        item.Comment = textBoxComment.Text;
-            //    }
-            //}
+            Update();
+            JsonSave();
 
 
 
 
 
-
-
-
-
-            //int id = 1;
-
-            //if (dataList.Count > 0)
-            //{
-            //    id = dataList.Max(x => x.ImageId) + 1;
-            //}
-
-
-
-            //// Add any new data
-            //dataList.Add(new Data()
-            //{
-            //    ImageId = id,// w,//get last image id from json file then ++ and assign
-            //    ImageName = filesNotResized[c],
-            //    Diagnosis = diagnosisInt,
-            //    Comment = textBoxComment.Text,
-            //    DoctorId = 1
-            //});
-
-            // Update json data string
-            jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
-            System.IO.File.WriteAllText(filePath, jsonData);
-
-            //textBoxComment.Text = "";
-            //radioButtonPositive.Checked = false;
-            //radioButtonPotential.Checked = false;
-            //radioButtonNegative.Checked = false;
 
             if (c == 0)
                 buttonPrevious.Enabled = false;

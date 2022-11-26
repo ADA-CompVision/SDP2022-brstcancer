@@ -19,6 +19,7 @@ namespace breastcancer
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            //it is a test
             this.WindowState = FormWindowState.Maximized;
             this.BackColor = BackColor = Color.White;
             //label7.Text = "This program was developed by three ADA University students: Asiman Mammadzada, Minura Hajisoy, Rumiyya Alili and Narmina Mahmudova as a part of their research topic The aim of the program is to connect healthcare and technology as doctors are facing difficulties working with image data as well as contribute to the early detection of breast cancer and empower women who are going through recovery process.";

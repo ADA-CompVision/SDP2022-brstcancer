@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\OneDrive - ADA University\\Homework\\Fall2022\\SDP\\breastcancer\\breastcancer\\breastcancer.csproj": {}
+    "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\breastcancer\\breastcancer\\breastcancer.csproj": {}
   },
   "projects": {
-    "E:\\OneDrive - ADA University\\Homework\\Fall2022\\SDP\\breastcancer\\breastcancer\\breastcancer.csproj": {
+    "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\breastcancer\\breastcancer\\breastcancer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\OneDrive - ADA University\\Homework\\Fall2022\\SDP\\breastcancer\\breastcancer\\breastcancer.csproj",
+        "projectUniqueName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\breastcancer\\breastcancer\\breastcancer.csproj",
         "projectName": "breastcancer",
-        "projectPath": "E:\\OneDrive - ADA University\\Homework\\Fall2022\\SDP\\breastcancer\\breastcancer\\breastcancer.csproj",
+        "projectPath": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\breastcancer\\breastcancer\\breastcancer.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "E:\\OneDrive - ADA University\\Homework\\Fall2022\\SDP\\breastcancer\\breastcancer\\obj\\",
+        "outputPath": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\breastcancer\\breastcancer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -42,6 +42,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Newtonsoft.Json.Bson": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

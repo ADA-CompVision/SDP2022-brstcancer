@@ -14,17 +14,26 @@ namespace breastcancer
 {
     public partial class Form2 : Form
     {
+        Point downPoint, upPoint;
+
+
         List<Data> dataList = new List<Data>();
 
         int ii = 0;
+        int jj = 0;
+        int prev = 0;
         int c = 0;
         int diagnosisInt = 0;
         string[] filesNotResized;
         string[] filesBrightened;
         string[] filesDarked;
         string[] filesHighlyBrightened;
+        string[] filesColor1, filesColor2, filesColor3, filesColor4, filesColor5, filesResizedTo511;
         string filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
         string jsonData;
+
+        //string fullPath = Path.GetFullPath(filePath).TrimEnd(Path.DirectorySeparatorChar);
+        //string projectName = fullPath.Split(Path.DirectorySeparatorChar).Last();
 
 
         Control control = new Control();
@@ -48,22 +57,48 @@ namespace breastcancer
             this.BackColor = BackColor = Color.White;
             label1.BackColor = Color.Transparent;
 
-            string filePathNotResized = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Photos\NotResized";
-            filesNotResized = Directory.GetFiles(filePathNotResized);
-
-            string filePathBrightened = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Photos\Brightened";
+            string filePathBrightened = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Brightened";
             filesBrightened = Directory.GetFiles(filePathBrightened);
 
-            string filePathDarked = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Photos\Darked";
-            filesDarked = Directory.GetFiles(filePathDarked);
+            string filePathColor1 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color1";
+            filesColor1 = Directory.GetFiles(filePathColor1);
 
-            string filePathHighlyBrightened = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Photos\HighlyBrightened";
+            string filePathColor2 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color2";
+            filesColor2 = Directory.GetFiles(filePathColor2);
+
+            string filePathColor3 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color3";
+            filesColor3 = Directory.GetFiles(filePathColor3);
+
+            string filePathColor4 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color4";
+            filesColor4 = Directory.GetFiles(filePathColor4);
+
+            string filePathColor5 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color5";
+            filesColor5 = Directory.GetFiles(filePathColor5);
+
+            string filePathHighlyBrightened = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\HighlyBrightened";
             filesHighlyBrightened = Directory.GetFiles(filePathHighlyBrightened);
 
-            pictureBox1.Image = Image.FromFile(filesNotResized[c]);
-            pictureBox5.Image = Image.FromFile(filesBrightened[c]);
-            pictureBox3.Image = Image.FromFile(filesDarked[c]);
-            pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
+            string filePathNotResized = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\NotResized";
+            filesNotResized = Directory.GetFiles(filePathNotResized);
+
+            string filePathResizedTo255 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo255";
+            filesBrightened = Directory.GetFiles(filePathResizedTo255);
+
+            string filePathResizedTo511 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo511";
+            filesResizedTo511 = Directory.GetFiles(filePathResizedTo511);
+
+            string filePathResizedTo1000 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo1000";
+            filesHighlyBrightened = Directory.GetFiles(filePathResizedTo1000);
+
+            string filePathResizedTo1023 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo1023";
+            filesHighlyBrightened = Directory.GetFiles(filePathResizedTo1023);
+
+            pictureBox3.Image = Image.FromFile(filesNotResized[c]);
+            pictureBox4.Image = Image.FromFile(filesBrightened[c]);
+            //  pictureBox5.Image = Image.FromFile(filesDarked[c]);
+            pictureBox1.Image = Image.FromFile(filesHighlyBrightened[c]);
+            //  pictureBox2.Image = Image.FromFile(filesDarked[c]);
+            pictureBox6.Image = Image.FromFile(filesHighlyBrightened[c]);
 
             label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";
         }
@@ -171,8 +206,91 @@ namespace breastcancer
             System.IO.File.WriteAllText(filePath, jsonData);
 
         }
+
+
+
+
+
+
+        public void drawEllipse(PictureBox pb, int x, int y, int w, int h, float Bwidth)
+        {
+            //refresh the picture box
+            pb.Refresh();
+            //create a graphics object
+            Graphics g = pb.CreateGraphics();
+            //create a pen object
+            Pen p = new Pen(Color.Red, Bwidth);
+            //draw Ellipse
+            g.DrawEllipse(p, x, y, w, h);
+            //dispose pen and graphics object
+            //p.Dispose();
+            //g.Dispose();
+        }
+        int x, y, x0, x1, y0,y1;
+        public void DrawRectangleFloat(PaintEventArgs e)
+        {
+
+            // Create pen.
+            Pen pen = new Pen(Color.Red, 3);
+
+            // Create location and size of rectangle.
+            //float x = 0.0F;
+            //float y = 0.0F;
+            float width = 200.0F;
+            float height = 200.0F;
+
+            // Draw rectangle to screen.
+            //e.Graphics.DrawRectangle(blackPen, x, y, width, height);
+
+            // int x, y;
+            //Pen pen = new Pen(Color.Red);
+            //Rectangle rect = new Rectangle();
+            pictureBox3.CreateGraphics().DrawRectangle(pen, x, y, 25, 52);
+        }
+
+
+
+        private void pictureBox3_MouseClick(object sender, MouseEventArgs e)
+        {
+            //x = e.X;
+            //y = e.Y;
+            //Pen pen = new Pen(Color.Red, 3);
+            //pictureBox3.CreateGraphics().DrawRectangle(pen, x, y, 50, 52);
+        }
+
+        private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
+        {
+            base.OnMouseUp(e);
+            upPoint = e.Location;
+            //CreateShape();
+            //pictureBox3.CreateGraphics().DrawRectangle(pen, 20, 30, 25, 52);
+            Pen pen = new Pen(Color.Red, 3);
+
+            Rectangle rect = new Rectangle(downPoint.X, downPoint.Y, upPoint.X - downPoint.X, upPoint.Y - downPoint.Y);
+            pictureBox3.CreateGraphics().DrawRectangle(pen, rect);
+            //Rect rectangle = new Rect() { rect = rect };
+            this.Invalidate();
+            //MessageBox.Show("UP " + upPoint.ToString());
+
+        }
+
+        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
+        {
+            downPoint = e.Location;
+            //MessageBox.Show("Down "+ downPoint.ToString());
+        }
+
+        private void buttonPen_Click(object sender, EventArgs e)
+        {
+            //  int x, y;
+            Pen pen = new Pen(Color.Red);
+            Rectangle rect = new Rectangle();
+            pictureBox3.CreateGraphics().DrawRectangle(pen, 20, 30, 25, 52);
+        }
+
         private void buttonNextFunction()
         {
+            prev = 0;
             if (radioButtonNegative.Checked == false && radioButtonPositive.Checked == false && radioButtonPotential.Checked == false)
             {
                 MessageBox.Show("You need to choose one option");
@@ -196,11 +314,13 @@ namespace breastcancer
                     dataList.Add(new Data()
                     {
                         ImageId = id,// w,//get last image id from json file then ++ and assign
-                        ImageName = filesNotResized[c],
+                        ImageName = filesNotResized[c].TrimEnd('\\'),
                         Diagnosis = diagnosisInt,
                         Comment = textBoxComment.Text,
                         DoctorId = 1
                     });
+                    JsonSave();
+
 
                     textBoxComment.Text = "";
 
@@ -225,9 +345,32 @@ namespace breastcancer
                 else
                 {
                     //update
-                    Update();
+                    int d = 0;
+                    var item = dataList[ii];
+                    this.textBoxComment.Text = item.Comment;
+
+                    if (item.Diagnosis == 1)
+                    {
+                        this.radioButtonPositive.Checked = true;
+                        d = 1;
+                    }
+                    else if (item.Diagnosis == 2)
+                    {
+                        this.radioButtonPotential.Checked = true;
+                        d = 2;
+                    }
+                    else if (item.Diagnosis == 3)
+                    {
+                        this.radioButtonNegative.Checked = true;
+                        d = 3;
+                    }
+
+                    if (item.Comment != this.textBoxComment.Text || item.Diagnosis != d)
+                    {
+                        Update(ii);
+                        JsonSave();
+                    }
                 }
-                JsonSave();
 
                 ii++;
 
@@ -273,10 +416,10 @@ namespace breastcancer
             }
         }
 
-        private void Update()
+        private void Update(int i)
         {
             //update
-            var item = dataList[ii];
+            var item = dataList[i];
 
             item.Comment = this.textBoxComment.Text;
 
@@ -298,35 +441,54 @@ namespace breastcancer
         }
         private void buttonPreviousFunction()
         {
-            ii--;
-
-            var item = dataList[ii];
-            this.textBoxComment.Text = item.Comment;
-
-            if (item.Diagnosis == 1)
-            {
-                this.radioButtonPositive.Checked = true;
-            }
-            else if (item.Diagnosis == 2)
-            {
-                this.radioButtonPotential.Checked = true;
-            }
-            else if (item.Diagnosis == 3)
-            {
-                this.radioButtonNegative.Checked = true;
-            }
-            Update();
-            JsonSave();
-
-
-
-
-
 
             if (c == 0)
                 buttonPrevious.Enabled = false;
             else
             {
+                prev--;
+                int d = 0;
+                ii--;
+                jj = ii + 1;
+                var item = dataList[ii];
+                this.textBoxComment.Text = item.Comment;
+
+                if (item.Diagnosis == 1)
+                {
+                    this.radioButtonPositive.Checked = true;
+                    d = 1;
+                }
+                else if (item.Diagnosis == 2)
+                {
+                    this.radioButtonPotential.Checked = true;
+                    d = 2;
+                }
+                else if (item.Diagnosis == 3)
+                {
+                    this.radioButtonNegative.Checked = true;
+                    d = 3;
+                }
+
+                if (prev == -1)
+                {
+                    item = dataList[ii];
+                }
+                if (prev < -1)
+                {
+                    item = dataList[jj];
+                }
+
+                if (item.Comment != this.textBoxComment.Text || item.Diagnosis != d)
+                {
+                    Update(jj);
+                    JsonSave();
+                }
+
+
+
+
+
+
                 c--;
                 buttonNext.Enabled = true;
                 label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + filesNotResized[c];
@@ -366,6 +528,11 @@ namespace breastcancer
             //// Update json data string
             //jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
             //System.IO.File.WriteAllText(filePath, jsonData);
+        }
+
+        private void textBoxComment_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

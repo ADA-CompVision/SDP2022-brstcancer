@@ -14,9 +14,9 @@ namespace breastcancer
 {
     public partial class Form2 : Form
     {
-        Point downPoint, upPoint;
-
-
+        Point LocationXY, LocationX1Y1;
+        Rectangle rect;
+        bool IsMouseDown = false;
         List<Data> dataList = new List<Data>();
 
         int ii = 0;
@@ -212,72 +212,50 @@ namespace breastcancer
 
 
 
-        public void drawEllipse(PictureBox pb, int x, int y, int w, int h, float Bwidth)
+        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
         {
-            //refresh the picture box
-            pb.Refresh();
-            //create a graphics object
-            Graphics g = pb.CreateGraphics();
-            //create a pen object
-            Pen p = new Pen(Color.Red, Bwidth);
-            //draw Ellipse
-            g.DrawEllipse(p, x, y, w, h);
-            //dispose pen and graphics object
-            //p.Dispose();
-            //g.Dispose();
-        }
-        int x, y, x0, x1, y0,y1;
-        public void DrawRectangleFloat(PaintEventArgs e)
-        {
+            IsMouseDown = true;
+            LocationXY = e.Location;
 
-            // Create pen.
-            Pen pen = new Pen(Color.Red, 3);
-
-            // Create location and size of rectangle.
-            //float x = 0.0F;
-            //float y = 0.0F;
-            float width = 200.0F;
-            float height = 200.0F;
-
-            // Draw rectangle to screen.
-            //e.Graphics.DrawRectangle(blackPen, x, y, width, height);
-
-            // int x, y;
-            //Pen pen = new Pen(Color.Red);
-            //Rectangle rect = new Rectangle();
-            pictureBox3.CreateGraphics().DrawRectangle(pen, x, y, 25, 52);
         }
 
-
-
-        private void pictureBox3_MouseClick(object sender, MouseEventArgs e)
+        private void pictureBox3_MouseMove(object sender, MouseEventArgs e)
         {
-            //x = e.X;
-            //y = e.Y;
-            //Pen pen = new Pen(Color.Red, 3);
-            //pictureBox3.CreateGraphics().DrawRectangle(pen, x, y, 50, 52);
+            if (IsMouseDown == true)
+            {
+                LocationX1Y1 = e.Location;
+                Refresh();
+            }
         }
 
         private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
         {
-            base.OnMouseUp(e);
-            upPoint = e.Location;
-            //CreateShape();
-            //pictureBox3.CreateGraphics().DrawRectangle(pen, 20, 30, 25, 52);
-            Pen pen = new Pen(Color.Red, 3);
-
-            Rectangle rect = new Rectangle(downPoint.X, downPoint.Y, upPoint.X - downPoint.X, upPoint.Y - downPoint.Y);
-            pictureBox3.CreateGraphics().DrawRectangle(pen, rect);
-            //Rect rectangle = new Rect() { rect = rect };
-            this.Invalidate();
-            //MessageBox.Show("UP " + upPoint.ToString());
-
+            if (IsMouseDown == true)
+            {
+                LocationX1Y1 = e.Location;
+                IsMouseDown = false;
+            }
         }
 
-        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
+        private void pictureBox3_Paint(object sender, PaintEventArgs e)
         {
-            downPoint = e.Location;
-            //MessageBox.Show("Down "+ downPoint.ToString());
+            if (rect != null)
+            {
+                e.Graphics.DrawRectangle(Pens.Red, GetRect());
+                String filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Labeled\imgg.png";
+                pictureBox3.Image.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
+            }
+        }
+        private Rectangle GetRect()
+        {
+            rect = new Rectangle();
+            rect.X = Math.Min(LocationXY.X, LocationX1Y1.X);
+            rect.Y = Math.Min(LocationXY.Y, LocationX1Y1.Y);
+
+            rect.Width = Math.Abs(LocationXY.X - LocationX1Y1.X);
+            rect.Height = Math.Abs(LocationXY.Y - LocationX1Y1.Y);
+
+            return rect;
         }
 
         private void buttonPen_Click(object sender, EventArgs e)

@@ -242,8 +242,15 @@ namespace breastcancer
             if (rect != null)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
+                Rectangle rect1 = pictureBox3.ClientRectangle;
+
+                Bitmap bmp = new Bitmap(rect1.Width, rect1.Height);
+                pictureBox3.DrawToBitmap(bmp, rect1);
+               // pictureBox3.DrawToBitmap(bmp, rect);
                 String filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Labeled\imgg.png";
-                pictureBox3.Image.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
+                bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
+
+                //pictureBox3.Image.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
         private Rectangle GetRect()

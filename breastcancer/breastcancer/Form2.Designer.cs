@@ -81,7 +81,7 @@
             // 
             // buttonPrevious
             // 
-            this.buttonPrevious.Location = new System.Drawing.Point(156, 677);
+            this.buttonPrevious.Location = new System.Drawing.Point(151, 605);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(75, 23);
             this.buttonPrevious.TabIndex = 299;
@@ -91,7 +91,7 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(19, 677);
+            this.buttonNext.Location = new System.Drawing.Point(43, 605);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 298;
@@ -151,7 +151,7 @@
             // 
             // textBoxComment
             // 
-            this.textBoxComment.Location = new System.Drawing.Point(19, 385);
+            this.textBoxComment.Location = new System.Drawing.Point(34, 385);
             this.textBoxComment.Multiline = true;
             this.textBoxComment.Name = "textBoxComment";
             this.textBoxComment.Size = new System.Drawing.Size(227, 111);
@@ -184,7 +184,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(19, 362);
+            this.label2.Location = new System.Drawing.Point(34, 362);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 17);
             this.label2.TabIndex = 301;
@@ -275,7 +275,7 @@
             this.panel1.Controls.Add(this.buttonPrevious);
             this.panel1.Location = new System.Drawing.Point(994, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(311, 725);
+            this.panel1.Size = new System.Drawing.Size(311, 672);
             this.panel1.TabIndex = 914;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
@@ -290,7 +290,7 @@
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Location = new System.Drawing.Point(19, 132);
+            this.panel2.Location = new System.Drawing.Point(34, 132);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(232, 142);
             this.panel2.TabIndex = 915;
@@ -377,7 +377,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(10, 11);
+            this.label10.Location = new System.Drawing.Point(34, 61);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(145, 21);
             this.label10.TabIndex = 916;

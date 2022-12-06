@@ -264,7 +264,6 @@ namespace breastcancer
 
             return rect;
         }
-
         private void buttonPen_Click(object sender, EventArgs e)
         {
             //  int x, y;

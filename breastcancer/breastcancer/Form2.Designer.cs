@@ -44,8 +44,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.buttonRect = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -56,9 +54,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(80, 379);
+            this.pictureBox1.Location = new System.Drawing.Point(113, 386);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(292, 331);
+            this.pictureBox1.Size = new System.Drawing.Size(280, 351);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -131,10 +129,10 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(80, 25);
+            this.pictureBox3.Location = new System.Drawing.Point(113, 24);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(292, 331);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.Size = new System.Drawing.Size(280, 352);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 902;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox3_Paint);
@@ -145,9 +143,9 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(394, 25);
+            this.pictureBox4.Location = new System.Drawing.Point(412, 24);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(292, 331);
+            this.pictureBox4.Size = new System.Drawing.Size(280, 351);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 904;
             this.pictureBox4.TabStop = false;
@@ -155,9 +153,9 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(708, 25);
+            this.pictureBox5.Location = new System.Drawing.Point(708, 21);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(292, 331);
+            this.pictureBox5.Size = new System.Drawing.Size(280, 351);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 903;
             this.pictureBox5.TabStop = false;
@@ -204,47 +202,27 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(394, 379);
+            this.pictureBox2.Location = new System.Drawing.Point(412, 386);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(292, 331);
+            this.pictureBox2.Size = new System.Drawing.Size(280, 351);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 907;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(708, 379);
+            this.pictureBox6.Location = new System.Drawing.Point(708, 386);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(292, 331);
+            this.pictureBox6.Size = new System.Drawing.Size(280, 351);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 906;
             this.pictureBox6.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1019, 630);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 47);
-            this.button1.TabIndex = 908;
-            this.button1.Text = "Down";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // buttonRect
-            // 
-            this.buttonRect.Location = new System.Drawing.Point(1112, 674);
-            this.buttonRect.Name = "buttonRect";
-            this.buttonRect.Size = new System.Drawing.Size(75, 23);
-            this.buttonRect.TabIndex = 909;
-            this.buttonRect.Text = "button2";
-            this.buttonRect.UseVisualStyleBackColor = true;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 749);
-            this.Controls.Add(this.buttonRect);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.label2);
@@ -294,7 +272,5 @@
         private Label label2;
         private PictureBox pictureBox2;
         private PictureBox pictureBox6;
-        private Button button1;
-        private Button buttonRect;
     }
 }

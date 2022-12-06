@@ -46,7 +46,15 @@ namespace breastcancer
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            panel1.BackColor = Color.FromArgb(80, 80, 80, 80);
+            radioButtonNegative.BackColor = Color.Transparent;
+            radioButtonNegative.ForeColor = Color.White;
+            radioButtonPositive.BackColor = Color.Transparent;
+            radioButtonPositive.ForeColor = Color.White;
+            radioButtonPotential.BackColor = Color.Transparent;
+            radioButtonPotential.ForeColor = Color.White;
+            label9.BackColor = Color.Transparent;
+            label9.ForeColor = Color.White;
             // Read existing json data
             jsonData = System.IO.File.ReadAllText(filePath);
             // De-serialize to object or create new list
@@ -56,7 +64,7 @@ namespace breastcancer
             this.KeyPreview = true;
 
             this.WindowState = FormWindowState.Maximized;
-            this.BackColor = BackColor = Color.White;
+            this.BackColor = Color.FromArgb(41, 40, 40);
             label1.BackColor = Color.Transparent;
 
             string filePathBrightened = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Brightened";
@@ -275,9 +283,9 @@ namespace breastcancer
                 // Bitmap bmp = new Bitmap(2800, 3518, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
 
 
-                pictureBox3.DrawToBitmap(bmp, rect1);
+                pictureBox4.DrawToBitmap(bmp, rect1);
                 // pictureBox3.DrawToBitmap(bmp, rect);
-                String filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Labeled\imgg.png";
+                String filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Labeled\imgg4.png";
 
                 bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
             }
@@ -306,6 +314,38 @@ namespace breastcancer
                 Refresh();
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            IntPtr ptr = NativeMethods.CreateRoundRectRgn(20, 20, this.panel1.Width, this.panel1.Height, 30, 30); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
+            this.panel1.Region = System.Drawing.Region.FromHrgn(ptr);
+            NativeMethods.DeleteObject(ptr);
+        }
+        #region Make draggable
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                NativeMethods.ReleaseCapture();
+                NativeMethods.SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+        #endregion
+
+        //private void pictureBox3_MouseHover(object sender, EventArgs e)
+        //{
+        //    // pictureBox3.BackColor = Color.White;
+        //    this.pictureBox3.BorderStyle = BorderStyle.Fixed3D;
+
+        //}
+
+        //private void pictureBox3_MouseLeave(object sender, EventArgs e)
+        //{
+        //    this.pictureBox3.BackColor = Color.Black;
+        //}
 
         private Rectangle GetRect()
         {

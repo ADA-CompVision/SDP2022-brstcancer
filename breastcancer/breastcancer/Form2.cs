@@ -70,8 +70,19 @@ namespace breastcancer
             labelMark.BackColor = Color.Transparent;
             labelMark.ForeColor = Color.White;
 
+            textBoxComment.Text = "Write a comment...";
+            textBoxComment.ForeColor = Color.White;
+            textBoxComment.BackColor = Color.FromArgb(55, 55, 55);
+
             labelDComment.ForeColor = Color.White;
             labelDComment.BackColor = Color.Transparent;
+            //this.textBoxComment.BorderStyle = BorderStyle.None;
+            //this.FormBorderStyle = FormBorderStyle.None;
+           // this.textBoxComment.Region = System.Drawing.Region.FromHrgn(NativeMethods.CreateRoundRectRgn(5, 5, Width, Height, 30, 30));
+
+            IntPtr ptr = NativeMethods.CreateRoundRectRgn(20, 20, this.textBoxComment.Width, this.textBoxComment.Height, 30, 30); //play with these values till you are happy
+            this.textBoxComment.Region = System.Drawing.Region.FromHrgn(ptr);
+            NativeMethods.DeleteObject(ptr);
 
             // Read existing json data
             jsonData = System.IO.File.ReadAllText(filePath);
@@ -358,6 +369,14 @@ namespace breastcancer
             NativeMethods.DeleteObject(ptr);
         }
 
+        private void textBoxComment_Resize(object sender, EventArgs e)
+        {
+            //base.OnResize(e);
+            //IntPtr ptr = NativeMethods.CreateRoundRectRgn(20, 20, this.Width, this.Height, 30, 30); //play with these values till you are happy
+            //this.textBoxComment.Region = System.Drawing.Region.FromHrgn(ptr);
+            //NativeMethods.DeleteObject(ptr);
+        }
+
 
         #region Make draggable
 
@@ -373,7 +392,7 @@ namespace breastcancer
         }
         #endregion
 
-        //private void pictureBox3_MouseHover(object sender, EventArgs e)
+        //private void (object sender, EventArgs e)
         //{
         //    // pictureBox3.BackColor = Color.White;
         //    this.pictureBox3.BorderStyle = BorderStyle.Fixed3D;

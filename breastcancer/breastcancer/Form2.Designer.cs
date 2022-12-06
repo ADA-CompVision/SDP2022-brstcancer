@@ -109,14 +109,14 @@
             // 
             // textBoxComment
             // 
-            this.textBoxComment.Location = new System.Drawing.Point(34, 385);
+            this.textBoxComment.Location = new System.Drawing.Point(21, 397);
             this.textBoxComment.Multiline = true;
             this.textBoxComment.Name = "textBoxComment";
-            this.textBoxComment.Size = new System.Drawing.Size(227, 111);
+            this.textBoxComment.Size = new System.Drawing.Size(289, 201);
             this.textBoxComment.TabIndex = 905;
             this.textBoxComment.TabStop = false;
-            this.textBoxComment.Text = "Write a comment...";
             this.textBoxComment.TextChanged += new System.EventHandler(this.textBoxComment_TextChanged);
+            this.textBoxComment.Resize += new System.EventHandler(this.textBoxComment_Resize);
             // 
             // buttonDown
             // 

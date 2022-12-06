@@ -46,26 +46,39 @@ namespace breastcancer
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            panel1.BackColor = Color.FromArgb(80, 80, 80, 80);
-            radioButtonNegative.BackColor = Color.Transparent;
+
+
+            //label1.BackColor = Color.Transparent;
+            //label10.BackColor = Color.Transparent;
+            //label10.ForeColor = Color.White;
+            //label9.BackColor = Color.Transparent;
+            //label9.ForeColor = Color.White;
+
+
+            this.WindowState = FormWindowState.Maximized;
+            this.KeyPreview = true;
+            this.BackColor = Color.FromArgb(34, 34, 34);
+
+            panel1.BackColor = Color.FromArgb(45, 45, 45);
+            panel2.BackColor = Color.FromArgb(55, 55, 55);
+            radioButtonNegative.BackColor = Color.FromArgb(55, 55, 55);
             radioButtonNegative.ForeColor = Color.White;
-            radioButtonPositive.BackColor = Color.Transparent;
+            radioButtonPositive.BackColor = Color.FromArgb(55, 55, 55);
             radioButtonPositive.ForeColor = Color.White;
-            radioButtonPotential.BackColor = Color.Transparent;
+            radioButtonPotential.BackColor = Color.FromArgb(55, 55, 55);
             radioButtonPotential.ForeColor = Color.White;
-            label9.BackColor = Color.Transparent;
-            label9.ForeColor = Color.White;
+            labelMark.BackColor = Color.Transparent;
+            labelMark.ForeColor = Color.White;
+
+            labelDComment.ForeColor = Color.White;
+            labelDComment.BackColor = Color.Transparent;
+
             // Read existing json data
             jsonData = System.IO.File.ReadAllText(filePath);
             // De-serialize to object or create new list
             dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
                                   ?? new List<Data>();
 
-            this.KeyPreview = true;
-
-            this.WindowState = FormWindowState.Maximized;
-            this.BackColor = Color.FromArgb(41, 40, 40);
-            label1.BackColor = Color.Transparent;
 
 
             string filePathBrightened = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Brightened";
@@ -117,6 +130,9 @@ namespace breastcancer
             pictureBox1.Image = Image.FromFile(filesDarked[c]);
             pictureBox2.Image = Image.FromFile(filesResizedTo255[c]);
             pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
+            pictureBox7.Image = Image.FromFile(filesResizedTo1000[c]);
+            pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
+
 
             label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";
         }
@@ -329,6 +345,19 @@ namespace breastcancer
             this.panel1.Region = System.Drawing.Region.FromHrgn(ptr);
             NativeMethods.DeleteObject(ptr);
         }
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            IntPtr ptr = NativeMethods.CreateRoundRectRgn(20, 20, this.panel2.Width, this.panel2.Height, 30, 30); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
+            this.panel2.Region = System.Drawing.Region.FromHrgn(ptr);
+            NativeMethods.DeleteObject(ptr);
+        }
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+            IntPtr ptr = NativeMethods.CreateRoundRectRgn(20, 20, this.panel3.Width, this.panel3.Height, 30, 30); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
+            this.panel3.Region = System.Drawing.Region.FromHrgn(ptr);
+            NativeMethods.DeleteObject(ptr);
+        }
+
 
         #region Make draggable
 

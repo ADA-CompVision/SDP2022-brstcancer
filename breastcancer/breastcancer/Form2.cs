@@ -30,7 +30,7 @@ namespace breastcancer
         string[] filesBrightened;
         string[] filesDarked;
         string[] filesHighlyBrightened;
-        string[] filesColor1, filesColor2, filesColor3, filesColor4, filesColor5, filesResizedTo511;
+        string[] filesColor1, filesColor2, filesColor3, filesColor4, filesColor5, filesResizedTo511, filesResizedTo255, filesResizedTo1000, filesResizedTo1023;
         string filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
         string jsonData;
 
@@ -67,6 +67,7 @@ namespace breastcancer
             this.BackColor = Color.FromArgb(41, 40, 40);
             label1.BackColor = Color.Transparent;
 
+
             string filePathBrightened = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Brightened";
             filesBrightened = Directory.GetFiles(filePathBrightened);
 
@@ -85,30 +86,37 @@ namespace breastcancer
             string filePathColor5 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color5";
             filesColor5 = Directory.GetFiles(filePathColor5);
 
+            //darked
+            string filePathDarked = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Darked";
+            filesDarked = Directory.GetFiles(filePathDarked);
+
+            //HighlyBrightened
             string filePathHighlyBrightened = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\HighlyBrightened";
             filesHighlyBrightened = Directory.GetFiles(filePathHighlyBrightened);
 
+            //need notresized here
             string filePathNotResized = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\NotResized";
             filesNotResized = Directory.GetFiles(filePathNotResized);
 
+            //Resizedto255        
             string filePathResizedTo255 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo255";
-            filesBrightened = Directory.GetFiles(filePathResizedTo255);
+            filesResizedTo255 = Directory.GetFiles(filePathResizedTo255);
 
             string filePathResizedTo511 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo511";
             filesResizedTo511 = Directory.GetFiles(filePathResizedTo511);
 
             string filePathResizedTo1000 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo1000";
-            filesHighlyBrightened = Directory.GetFiles(filePathResizedTo1000);
+            filesResizedTo1000 = Directory.GetFiles(filePathResizedTo1000);
 
             string filePathResizedTo1023 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo1023";
-            filesHighlyBrightened = Directory.GetFiles(filePathResizedTo1023);
+            filesResizedTo1023 = Directory.GetFiles(filePathResizedTo1023);
 
             pictureBox3.Image = Image.FromFile(filesNotResized[c]);
             pictureBox4.Image = Image.FromFile(filesBrightened[c]);
-            //  pictureBox5.Image = Image.FromFile(filesDarked[c]);
-            pictureBox1.Image = Image.FromFile(filesHighlyBrightened[c]);
-            //  pictureBox2.Image = Image.FromFile(filesDarked[c]);
-            pictureBox6.Image = Image.FromFile(filesHighlyBrightened[c]);
+            pictureBox5.Image = Image.FromFile(filesHighlyBrightened[c]);
+            pictureBox1.Image = Image.FromFile(filesDarked[c]);
+            pictureBox2.Image = Image.FromFile(filesResizedTo255[c]);
+            pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
 
             label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";
         }
@@ -321,6 +329,7 @@ namespace breastcancer
             this.panel1.Region = System.Drawing.Region.FromHrgn(ptr);
             NativeMethods.DeleteObject(ptr);
         }
+
         #region Make draggable
 
         public const int WM_NCLBUTTONDOWN = 0xA1;

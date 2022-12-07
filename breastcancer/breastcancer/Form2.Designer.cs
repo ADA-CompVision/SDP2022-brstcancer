@@ -80,7 +80,7 @@
             // 
             // buttonPrevious
             // 
-            this.buttonPrevious.Location = new System.Drawing.Point(151, 605);
+            this.buttonPrevious.Location = new System.Drawing.Point(54, 615);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(75, 23);
             this.buttonPrevious.TabIndex = 299;
@@ -90,7 +90,7 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(43, 605);
+            this.buttonNext.Location = new System.Drawing.Point(163, 615);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 298;
@@ -120,7 +120,7 @@
             // 
             // buttonDown
             // 
-            this.buttonDown.Location = new System.Drawing.Point(929, 3);
+            this.buttonDown.Location = new System.Drawing.Point(932, 24);
             this.buttonDown.Name = "buttonDown";
             this.buttonDown.Size = new System.Drawing.Size(50, 47);
             this.buttonDown.TabIndex = 801;
@@ -130,7 +130,7 @@
             // 
             // buttonUp
             // 
-            this.buttonUp.Location = new System.Drawing.Point(855, 7);
+            this.buttonUp.Location = new System.Drawing.Point(855, 23);
             this.buttonUp.Name = "buttonUp";
             this.buttonUp.Size = new System.Drawing.Size(50, 48);
             this.buttonUp.TabIndex = 302;
@@ -141,19 +141,19 @@
             // labelNotes
             // 
             this.labelNotes.AutoSize = true;
-            this.labelNotes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelNotes.Location = new System.Drawing.Point(34, 362);
+            this.labelNotes.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelNotes.Location = new System.Drawing.Point(40, 386);
             this.labelNotes.Name = "labelNotes";
-            this.labelNotes.Size = new System.Drawing.Size(43, 17);
+            this.labelNotes.Size = new System.Drawing.Size(51, 20);
             this.labelNotes.TabIndex = 301;
             this.labelNotes.Text = "Notes";
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.labelNotes);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.labelDComment);
             this.panel1.Controls.Add(this.textBoxComment);
-            this.panel1.Controls.Add(this.labelNotes);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.buttonNext);
             this.panel1.Controls.Add(this.buttonPrevious);
@@ -265,10 +265,10 @@
             // labelDComment
             // 
             this.labelDComment.AutoSize = true;
-            this.labelDComment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelDComment.Location = new System.Drawing.Point(34, 61);
+            this.labelDComment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelDComment.Location = new System.Drawing.Point(40, 53);
             this.labelDComment.Name = "labelDComment";
-            this.labelDComment.Size = new System.Drawing.Size(173, 25);
+            this.labelDComment.Size = new System.Drawing.Size(184, 25);
             this.labelDComment.TabIndex = 916;
             this.labelDComment.Text = "Doctor\'s comments";
             // 
@@ -276,9 +276,9 @@
             // 
             this.panel3.Controls.Add(this.buttonDown);
             this.panel3.Controls.Add(this.buttonUp);
-            this.panel3.Location = new System.Drawing.Point(12, 637);
+            this.panel3.Location = new System.Drawing.Point(-12, 619);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(995, 63);
+            this.panel3.Size = new System.Drawing.Size(1040, 81);
             this.panel3.TabIndex = 919;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -468,6 +468,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(995, 637);
             this.panel4.TabIndex = 920;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // Form2
             // 

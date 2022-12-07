@@ -46,8 +46,6 @@ namespace breastcancer
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
-
             //label1.BackColor = Color.Transparent;
             //label10.BackColor = Color.Transparent;
             //label10.ForeColor = Color.White;
@@ -61,6 +59,8 @@ namespace breastcancer
 
             panel1.BackColor = Color.FromArgb(45, 45, 45);
             panel2.BackColor = Color.FromArgb(55, 55, 55);
+            panel3.BackColor = Color.FromArgb(45, 45, 45);
+
             radioButtonNegative.BackColor = Color.FromArgb(55, 55, 55);
             radioButtonNegative.ForeColor = Color.White;
             radioButtonPositive.BackColor = Color.FromArgb(55, 55, 55);
@@ -76,9 +76,12 @@ namespace breastcancer
 
             labelDComment.ForeColor = Color.White;
             labelDComment.BackColor = Color.Transparent;
+
+            labelNotes.ForeColor = Color.White;
+            labelNotes.BackColor = Color.Transparent;
             //this.textBoxComment.BorderStyle = BorderStyle.None;
             //this.FormBorderStyle = FormBorderStyle.None;
-           // this.textBoxComment.Region = System.Drawing.Region.FromHrgn(NativeMethods.CreateRoundRectRgn(5, 5, Width, Height, 30, 30));
+            // this.textBoxComment.Region = System.Drawing.Region.FromHrgn(NativeMethods.CreateRoundRectRgn(5, 5, Width, Height, 30, 30));
 
             IntPtr ptr = NativeMethods.CreateRoundRectRgn(20, 20, this.textBoxComment.Width, this.textBoxComment.Height, 30, 30); //play with these values till you are happy
             this.textBoxComment.Region = System.Drawing.Region.FromHrgn(ptr);
@@ -375,6 +378,11 @@ namespace breastcancer
             //IntPtr ptr = NativeMethods.CreateRoundRectRgn(20, 20, this.Width, this.Height, 30, 30); //play with these values till you are happy
             //this.textBoxComment.Region = System.Drawing.Region.FromHrgn(ptr);
             //NativeMethods.DeleteObject(ptr);
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
 

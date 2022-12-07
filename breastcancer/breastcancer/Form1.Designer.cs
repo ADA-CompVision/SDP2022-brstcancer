@@ -107,7 +107,7 @@
             this.buttonBrowse.Location = new System.Drawing.Point(709, 452);
             this.buttonBrowse.Name = "buttonBrowse";
             this.buttonBrowse.Size = new System.Drawing.Size(137, 37);
-            this.buttonBrowse.TabIndex = 8;
+            this.buttonBrowse.TabIndex = 1;
             this.buttonBrowse.Text = "Browse";
             this.buttonBrowse.UseVisualStyleBackColor = true;
             this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowse_Click);

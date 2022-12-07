@@ -46,13 +46,6 @@ namespace breastcancer
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            //label1.BackColor = Color.Transparent;
-            //label10.BackColor = Color.Transparent;
-            //label10.ForeColor = Color.White;
-            //label9.BackColor = Color.Transparent;
-            //label9.ForeColor = Color.White;
-
-
             this.WindowState = FormWindowState.Maximized;
             this.KeyPreview = true;
             this.BackColor = Color.FromArgb(34, 34, 34);
@@ -60,6 +53,7 @@ namespace breastcancer
             panel1.BackColor = Color.FromArgb(45, 45, 45);
             panel2.BackColor = Color.FromArgb(55, 55, 55);
             panel3.BackColor = Color.FromArgb(45, 45, 45);
+            panel4.BackColor = Color.FromArgb(45, 45, 45);
 
             radioButtonNegative.BackColor = Color.FromArgb(55, 55, 55);
             radioButtonNegative.ForeColor = Color.White;
@@ -83,7 +77,7 @@ namespace breastcancer
             //this.FormBorderStyle = FormBorderStyle.None;
             // this.textBoxComment.Region = System.Drawing.Region.FromHrgn(NativeMethods.CreateRoundRectRgn(5, 5, Width, Height, 30, 30));
 
-            IntPtr ptr = NativeMethods.CreateRoundRectRgn(20, 20, this.textBoxComment.Width, this.textBoxComment.Height, 30, 30); //play with these values till you are happy
+            IntPtr ptr = NativeMethods.CreateRoundRectRgn(2, 2, this.textBoxComment.Width, this.textBoxComment.Height, 5, 5); //play with these values till you are happy
             this.textBoxComment.Region = System.Drawing.Region.FromHrgn(ptr);
             NativeMethods.DeleteObject(ptr);
 
@@ -355,37 +349,28 @@ namespace breastcancer
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            IntPtr ptr = NativeMethods.CreateRoundRectRgn(20, 20, this.panel1.Width, this.panel1.Height, 30, 30); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
+            IntPtr ptr = NativeMethods.CreateRoundRectRgn(3, 3, this.panel1.Width, this.panel1.Height, 11, 11); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
             this.panel1.Region = System.Drawing.Region.FromHrgn(ptr);
             NativeMethods.DeleteObject(ptr);
         }
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            IntPtr ptr = NativeMethods.CreateRoundRectRgn(20, 20, this.panel2.Width, this.panel2.Height, 30, 30); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
+            IntPtr ptr = NativeMethods.CreateRoundRectRgn(3, 3, this.panel2.Width, this.panel2.Height, 11, 11); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
             this.panel2.Region = System.Drawing.Region.FromHrgn(ptr);
             NativeMethods.DeleteObject(ptr);
         }
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
-            IntPtr ptr = NativeMethods.CreateRoundRectRgn(20, 20, this.panel3.Width, this.panel3.Height, 30, 30); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
+            IntPtr ptr = NativeMethods.CreateRoundRectRgn(3, 3, this.panel3.Width, this.panel3.Height, 11, 11); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
             this.panel3.Region = System.Drawing.Region.FromHrgn(ptr);
             NativeMethods.DeleteObject(ptr);
         }
-
-        private void textBoxComment_Resize(object sender, EventArgs e)
-        {
-            //base.OnResize(e);
-            //IntPtr ptr = NativeMethods.CreateRoundRectRgn(20, 20, this.Width, this.Height, 30, 30); //play with these values till you are happy
-            //this.textBoxComment.Region = System.Drawing.Region.FromHrgn(ptr);
-            //NativeMethods.DeleteObject(ptr);
-        }
-
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
-
+            IntPtr ptr = NativeMethods.CreateRoundRectRgn(3, 3, this.panel4.Width, this.panel4.Height, 11, 11); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
+            this.panel4.Region = System.Drawing.Region.FromHrgn(ptr);
+            NativeMethods.DeleteObject(ptr);
         }
-
-
         #region Make draggable
 
         public const int WM_NCLBUTTONDOWN = 0xA1;

@@ -56,6 +56,7 @@ namespace breastcancer
 
             label2.AutoSize = false;
             label2.Height = 1;
+            label2.ForeColor = Color.FromArgb(161, 161, 161);
             label2.Width = 10000;
             label2.BorderStyle = BorderStyle.Fixed3D;
 
@@ -79,14 +80,43 @@ namespace breastcancer
             labelNotes.ForeColor = Color.White;
             labelNotes.BackColor = Color.Transparent;
 
-            label3.ForeColor = Color.WhiteSmoke;
-            label4.ForeColor = Color.WhiteSmoke;
-            label5.ForeColor = Color.WhiteSmoke;
-            label12.ForeColor = Color.WhiteSmoke;
-            label8.ForeColor = Color.WhiteSmoke;
-            label7.ForeColor = Color.WhiteSmoke;
-            label6.ForeColor = Color.WhiteSmoke;
-            label11.ForeColor = Color.WhiteSmoke;
+            // label3.ForeColor = Color.WhiteSmoke;
+            label3.ForeColor = Color.FromArgb(161, 161, 161);
+            label3.Text = "Not Resized";
+
+            //label4.ForeColor = Color.WhiteSmoke;
+            label4.ForeColor = Color.FromArgb(161, 161, 161);
+            label4.Text = "Brightened";
+
+            label5.ForeColor = Color.FromArgb(161, 161, 161);
+            label5.Text = "Highly Brightened";
+
+            label12.ForeColor = Color.FromArgb(161, 161, 161);
+            label12.Text = "Darkened";
+
+            label8.ForeColor = Color.FromArgb(161, 161, 161);
+            label8.Text = "Resized to 255";
+
+            label7.ForeColor = Color.FromArgb(161, 161, 161);
+            label7.Text = "Resized to 511";
+
+            label6.ForeColor = Color.FromArgb(161, 161, 161);
+            label6.Text = "Resized to 1000";
+
+            label11.ForeColor = Color.FromArgb(161, 161, 161);
+            label11.Text = "Resized to 1023";
+
+            buttonPrevious.ForeColor = Color.WhiteSmoke;
+            buttonPrevious.BackColor = Color.FromArgb(45, 45, 45);
+            IntPtr ptrPre = NativeMethods.CreateRoundRectRgn(2, 2, this.buttonPrevious.Width, this.buttonPrevious.Height, 5, 5);
+            this.buttonPrevious.Region = System.Drawing.Region.FromHrgn(ptrPre);
+            NativeMethods.DeleteObject(ptrPre);
+
+            buttonNext.ForeColor = Color.WhiteSmoke;
+            buttonNext.BackColor = Color.FromArgb(45, 45, 45);
+            IntPtr ptrNext = NativeMethods.CreateRoundRectRgn(2, 2, this.buttonNext.Width, this.buttonNext.Height, 5, 5);
+            this.buttonNext.Region = System.Drawing.Region.FromHrgn(ptrNext);
+            NativeMethods.DeleteObject(ptrNext);
 
 
             IntPtr ptr = NativeMethods.CreateRoundRectRgn(2, 2, this.textBoxComment.Width, this.textBoxComment.Height, 5, 5); //play with these values till you are happy

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.buttonPrevious = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -79,7 +80,7 @@
             // 
             // buttonPrevious
             // 
-            this.buttonPrevious.Location = new System.Drawing.Point(22, 604);
+            this.buttonPrevious.Location = new System.Drawing.Point(20, 632);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(135, 37);
             this.buttonPrevious.TabIndex = 299;
@@ -89,7 +90,7 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(166, 604);
+            this.buttonNext.Location = new System.Drawing.Point(164, 632);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(135, 37);
             this.buttonNext.TabIndex = 298;
@@ -100,7 +101,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 655);
+            this.label1.Location = new System.Drawing.Point(21, 661);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 15);
             this.label1.TabIndex = 801;
@@ -119,21 +120,23 @@
             // 
             // buttonDown
             // 
-            this.buttonDown.Location = new System.Drawing.Point(852, 623);
+            this.buttonDown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDown.BackgroundImage")));
+            this.buttonDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonDown.Location = new System.Drawing.Point(917, 632);
             this.buttonDown.Name = "buttonDown";
-            this.buttonDown.Size = new System.Drawing.Size(50, 47);
+            this.buttonDown.Size = new System.Drawing.Size(44, 44);
             this.buttonDown.TabIndex = 801;
-            this.buttonDown.Text = "Down";
             this.buttonDown.UseVisualStyleBackColor = true;
             this.buttonDown.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonUp
             // 
-            this.buttonUp.Location = new System.Drawing.Point(746, 620);
+            this.buttonUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUp.BackgroundImage")));
+            this.buttonUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonUp.Location = new System.Drawing.Point(867, 632);
             this.buttonUp.Name = "buttonUp";
-            this.buttonUp.Size = new System.Drawing.Size(78, 67);
+            this.buttonUp.Size = new System.Drawing.Size(44, 44);
             this.buttonUp.TabIndex = 302;
-            this.buttonUp.Text = "Up";
             this.buttonUp.UseVisualStyleBackColor = true;
             this.buttonUp.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -153,7 +156,6 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.labelDComment);
             this.panel1.Controls.Add(this.textBoxComment);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.buttonNext);
             this.panel1.Controls.Add(this.buttonPrevious);
             this.panel1.Location = new System.Drawing.Point(1034, 9);
@@ -442,6 +444,7 @@
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.buttonUp);
             this.panel4.Controls.Add(this.pictureBox7);
+            this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.pictureBox8);
             this.panel4.Controls.Add(this.label12);

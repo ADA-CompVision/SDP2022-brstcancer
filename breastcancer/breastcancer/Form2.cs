@@ -122,13 +122,15 @@ namespace breastcancer
             buttonUp.BackColor = Color.FromArgb(66, 66, 66);
             buttonUp.FlatStyle = FlatStyle.Flat;
             buttonUp.FlatAppearance.BorderSize = 0;
-            IntPtr ptrUp = NativeMethods.CreateRoundRectRgn(20, 20, this.buttonUp.Width - 1, this.buttonUp.Height - 1, 20, 20);
+            IntPtr ptrUp = NativeMethods.CreateRoundRectRgn(0, 0, this.buttonUp.Width + 1, this.buttonUp.Height + 1, 100, 100);
             this.buttonUp.Region = System.Drawing.Region.FromHrgn(ptrUp);
             NativeMethods.DeleteObject(ptrUp);
 
             buttonDown.ForeColor = Color.WhiteSmoke;
             buttonDown.BackColor = Color.FromArgb(66, 66, 66);
-            IntPtr ptrDown = NativeMethods.CreateRoundRectRgn(2, 2, this.buttonDown.Width, this.buttonDown.Height, 5, 5);
+            buttonDown.FlatStyle = FlatStyle.Flat;
+            buttonDown.FlatAppearance.BorderSize = 0;
+            IntPtr ptrDown = NativeMethods.CreateRoundRectRgn(0, 0, this.buttonDown.Width + 1, this.buttonDown.Height + 1, 100, 100);
             this.buttonDown.Region = System.Drawing.Region.FromHrgn(ptrDown);
             NativeMethods.DeleteObject(ptrDown);
 

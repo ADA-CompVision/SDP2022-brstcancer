@@ -43,7 +43,6 @@ namespace breastcancer
         {
             InitializeComponent();
         }
-
         private void Form2_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
@@ -52,8 +51,14 @@ namespace breastcancer
 
             panel1.BackColor = Color.FromArgb(45, 45, 45);
             panel2.BackColor = Color.FromArgb(55, 55, 55);
-            panel3.BackColor = Color.FromArgb(45, 45, 45);
+            //panel3.BackColor = Color.FromArgb(45, 45, 45);
             panel4.BackColor = Color.FromArgb(45, 45, 45);
+
+            label2.AutoSize = false;
+            label2.Height = 1;
+            label2.Width = 10000;
+            label2.BorderStyle = BorderStyle.Fixed3D;
+
 
             radioButtonNegative.BackColor = Color.FromArgb(55, 55, 55);
             radioButtonNegative.ForeColor = Color.White;
@@ -73,9 +78,16 @@ namespace breastcancer
 
             labelNotes.ForeColor = Color.White;
             labelNotes.BackColor = Color.Transparent;
-            //this.textBoxComment.BorderStyle = BorderStyle.None;
-            //this.FormBorderStyle = FormBorderStyle.None;
-            // this.textBoxComment.Region = System.Drawing.Region.FromHrgn(NativeMethods.CreateRoundRectRgn(5, 5, Width, Height, 30, 30));
+
+            label3.ForeColor = Color.WhiteSmoke;
+            label4.ForeColor = Color.WhiteSmoke;
+            label5.ForeColor = Color.WhiteSmoke;
+            label12.ForeColor = Color.WhiteSmoke;
+            label8.ForeColor = Color.WhiteSmoke;
+            label7.ForeColor = Color.WhiteSmoke;
+            label6.ForeColor = Color.WhiteSmoke;
+            label11.ForeColor = Color.WhiteSmoke;
+
 
             IntPtr ptr = NativeMethods.CreateRoundRectRgn(2, 2, this.textBoxComment.Width, this.textBoxComment.Height, 5, 5); //play with these values till you are happy
             this.textBoxComment.Region = System.Drawing.Region.FromHrgn(ptr);
@@ -150,7 +162,6 @@ namespace breastcancer
         {
             buttonPreviousFunction();
         }
-
         private void buttonNext_Click(object sender, EventArgs e)
         {
             buttonNextFunction();
@@ -159,17 +170,14 @@ namespace breastcancer
         {
             diagnosisInt = 1;
         }
-
         private void radioButtonPotential_CheckedChanged(object sender, EventArgs e)
         {
             diagnosisInt = 2;
         }
-
         private void radioButtonNegative_CheckedChanged(object sender, EventArgs e)
         {
             diagnosisInt = 3;
         }
-
         private void pictureBox1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             new Form4().Show();
@@ -193,7 +201,6 @@ namespace breastcancer
             pictureBox4.Image = Image.FromFile(filesDarked[c]);
             pictureBox5.Image = Image.FromFile(filesHighlyBrightened[c]);
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             pictureBox3.Image = Image.FromFile(filesNotResized[c]);
@@ -201,22 +208,18 @@ namespace breastcancer
             pictureBox1.Image = Image.FromFile(filesDarked[c]);
             pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
         }
-
         private void pictureBox3_DoubleClick(object sender, EventArgs e)
         {
             new Form4().Show();
         }
-
         private void pictureBox4_DoubleClick(object sender, EventArgs e)
         {
             new Form4().Show();
         }
-
         private void pictureBox5_DoubleClick(object sender, EventArgs e)
         {
             new Form4().Show();
         }
-
         private void Form2_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Up)
@@ -239,16 +242,13 @@ namespace breastcancer
                 this.buttonPrevious.Focus();
             }
         }
-
         private void JsonSave()
         {
 
             // Update json data string
             jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
             System.IO.File.WriteAllText(filePath, jsonData);
-
         }
-
         private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
         {
             IsMouseDown = true;
@@ -359,18 +359,30 @@ namespace breastcancer
             this.panel2.Region = System.Drawing.Region.FromHrgn(ptr);
             NativeMethods.DeleteObject(ptr);
         }
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-            IntPtr ptr = NativeMethods.CreateRoundRectRgn(3, 3, this.panel3.Width, this.panel3.Height, 11, 11); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
-            this.panel3.Region = System.Drawing.Region.FromHrgn(ptr);
-            NativeMethods.DeleteObject(ptr);
-        }
+        //private void panel3_Paint(object sender, PaintEventArgs e)
+        //{
+        //    IntPtr ptr = NativeMethods.CreateRoundRectRgn(3, 3, this.panel3.Width, this.panel3.Height, 11, 11); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
+        //    this.panel3.Region = System.Drawing.Region.FromHrgn(ptr);
+        //    NativeMethods.DeleteObject(ptr);
+        //}
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
             IntPtr ptr = NativeMethods.CreateRoundRectRgn(3, 3, this.panel4.Width, this.panel4.Height, 11, 11); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
             this.panel4.Region = System.Drawing.Region.FromHrgn(ptr);
             NativeMethods.DeleteObject(ptr);
         }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
         #region Make draggable
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -547,17 +559,14 @@ namespace breastcancer
             {
                 item.Diagnosis = 1;
             }
-
             else if (this.radioButtonPotential.Checked)
             {
                 item.Diagnosis = 2;
             }
-
             else if (this.radioButtonNegative.Checked)
             {
                 item.Diagnosis = 3;
             }
-
         }
         private void buttonPreviousFunction()
         {

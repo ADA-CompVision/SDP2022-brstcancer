@@ -46,7 +46,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.labelDComment = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -64,9 +63,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -106,6 +105,7 @@
             this.label1.Size = new System.Drawing.Size(38, 15);
             this.label1.TabIndex = 801;
             this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBoxComment
             // 
@@ -119,7 +119,7 @@
             // 
             // buttonDown
             // 
-            this.buttonDown.Location = new System.Drawing.Point(932, 24);
+            this.buttonDown.Location = new System.Drawing.Point(101, 321);
             this.buttonDown.Name = "buttonDown";
             this.buttonDown.Size = new System.Drawing.Size(50, 47);
             this.buttonDown.TabIndex = 801;
@@ -129,7 +129,7 @@
             // 
             // buttonUp
             // 
-            this.buttonUp.Location = new System.Drawing.Point(856, 7);
+            this.buttonUp.Location = new System.Drawing.Point(25, 304);
             this.buttonUp.Name = "buttonUp";
             this.buttonUp.Size = new System.Drawing.Size(50, 48);
             this.buttonUp.TabIndex = 302;
@@ -149,6 +149,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonDown);
+            this.panel1.Controls.Add(this.buttonUp);
             this.panel1.Controls.Add(this.labelNotes);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.labelDComment);
@@ -270,16 +272,6 @@
             this.labelDComment.Size = new System.Drawing.Size(184, 25);
             this.labelDComment.TabIndex = 916;
             this.labelDComment.Text = "Doctor\'s comments";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.buttonDown);
-            this.panel3.Controls.Add(this.buttonUp);
-            this.panel3.Location = new System.Drawing.Point(5, 624);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1023, 76);
-            this.panel3.TabIndex = 919;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // pictureBox2
             // 
@@ -447,6 +439,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.pictureBox7);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.pictureBox8);
@@ -465,9 +458,18 @@
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Location = new System.Drawing.Point(5, 9);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1023, 616);
+            this.panel4.Size = new System.Drawing.Size(1023, 690);
             this.panel4.TabIndex = 920;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(0, 615);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 15);
+            this.label2.TabIndex = 918;
+            this.label2.Text = "label2";
             // 
             // Form2
             // 
@@ -476,7 +478,6 @@
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1360, 711);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -487,7 +488,6 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -521,7 +521,6 @@
         private Button button1;
         private Button button2;
         private Label labelDComment;
-        private Panel panel3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox4;
         private Label label5;
@@ -539,5 +538,6 @@
         private Label label11;
         private PictureBox pictureBox7;
         private Panel panel4;
+        private Label label2;
     }
 }

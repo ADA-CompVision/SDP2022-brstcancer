@@ -11,18 +11,9 @@ namespace breastcancer
             this.WindowState = FormWindowState.Maximized;
             this.BackColor = Color.FromArgb(34, 34, 34);
 
-            //label1.ForeColor = Color.WhiteSmoke;
+            label1.ForeColor = Color.WhiteSmoke;
             label2.ForeColor = Color.FromArgb(126, 126, 126);
-
-            //button1.BackColor = Color.White;
-            //button1.ForeColor = Color.FromArgb(34, 34, 34);
-
-            //button2.BackColor = Color.FromArgb(34, 34, 34);
-            //button2.ForeColor = Color.White;
-            //IntPtr ptr1 = NativeMethods.CreateRoundRectRgn(2, 2, this.button2.Width, this.button2.Height, 2, 2); 
-            //this.button2.Region = System.Drawing.Region.FromHrgn(ptr1);
-            //NativeMethods.DeleteObject(ptr1);
-
+                     
             buttonAbout.ForeColor = Color.WhiteSmoke;
             buttonAbout.BackColor = Color.FromArgb(34, 34, 34);
             IntPtr ptr = NativeMethods.CreateRoundRectRgn(2, 2, this.buttonAbout.Width, this.buttonAbout.Height, 5, 5);
@@ -33,7 +24,6 @@ namespace breastcancer
             IntPtr ptr1 = NativeMethods.CreateRoundRectRgn(2, 2, this.buttonBrowse.Width, this.buttonBrowse.Height, 5, 5);
             this.buttonBrowse.Region = System.Drawing.Region.FromHrgn(ptr1);
             NativeMethods.DeleteObject(ptr1);
-
         }
         private void buttonAbout_Click(object sender, EventArgs e)
         {

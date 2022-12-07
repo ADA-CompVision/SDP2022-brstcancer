@@ -118,8 +118,22 @@ namespace breastcancer
             this.buttonNext.Region = System.Drawing.Region.FromHrgn(ptrNext);
             NativeMethods.DeleteObject(ptrNext);
 
+            buttonUp.ForeColor = Color.WhiteSmoke;
+            buttonUp.BackColor = Color.FromArgb(66, 66, 66);
+            buttonUp.FlatStyle = FlatStyle.Flat;
+            buttonUp.FlatAppearance.BorderSize = 0;
+            IntPtr ptrUp = NativeMethods.CreateRoundRectRgn(20, 20, this.buttonUp.Width - 1, this.buttonUp.Height - 1, 20, 20);
+            this.buttonUp.Region = System.Drawing.Region.FromHrgn(ptrUp);
+            NativeMethods.DeleteObject(ptrUp);
 
-            IntPtr ptr = NativeMethods.CreateRoundRectRgn(2, 2, this.textBoxComment.Width, this.textBoxComment.Height, 5, 5); //play with these values till you are happy
+            buttonDown.ForeColor = Color.WhiteSmoke;
+            buttonDown.BackColor = Color.FromArgb(66, 66, 66);
+            IntPtr ptrDown = NativeMethods.CreateRoundRectRgn(2, 2, this.buttonDown.Width, this.buttonDown.Height, 5, 5);
+            this.buttonDown.Region = System.Drawing.Region.FromHrgn(ptrDown);
+            NativeMethods.DeleteObject(ptrDown);
+
+
+            IntPtr ptr = NativeMethods.CreateRoundRectRgn(2, 2, this.textBoxComment.Width - 1, this.textBoxComment.Height - 1, 5, 5); //play with these values till you are happy
             this.textBoxComment.Region = System.Drawing.Region.FromHrgn(ptr);
             NativeMethods.DeleteObject(ptr);
 

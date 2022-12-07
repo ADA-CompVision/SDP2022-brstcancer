@@ -109,7 +109,7 @@
             // 
             // textBoxComment
             // 
-            this.textBoxComment.Location = new System.Drawing.Point(40, 349);
+            this.textBoxComment.Location = new System.Drawing.Point(40, 329);
             this.textBoxComment.Multiline = true;
             this.textBoxComment.Name = "textBoxComment";
             this.textBoxComment.Size = new System.Drawing.Size(246, 164);
@@ -129,9 +129,9 @@
             // 
             // buttonUp
             // 
-            this.buttonUp.Location = new System.Drawing.Point(762, 623);
+            this.buttonUp.Location = new System.Drawing.Point(746, 620);
             this.buttonUp.Name = "buttonUp";
-            this.buttonUp.Size = new System.Drawing.Size(50, 48);
+            this.buttonUp.Size = new System.Drawing.Size(78, 67);
             this.buttonUp.TabIndex = 302;
             this.buttonUp.Text = "Up";
             this.buttonUp.UseVisualStyleBackColor = true;

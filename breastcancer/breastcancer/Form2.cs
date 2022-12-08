@@ -577,10 +577,14 @@ namespace breastcancer
                         buttonPrevious.Enabled = true;
                         label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + files[c];
 
-                        pictureBox1.Image = Image.FromFile(filesNotResized[c]);
-                        pictureBox5.Image = Image.FromFile(filesBrightened[c]);
-                        pictureBox3.Image = Image.FromFile(filesDarked[c]);
-                        pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
+                        pictureBox3.Image = Image.FromFile(filesNotResized[c]);
+                        pictureBox4.Image = Image.FromFile(filesBrightened[c]);
+                        pictureBox5.Image = Image.FromFile(filesHighlyBrightened[c]);
+                        pictureBox7.Image = Image.FromFile(filesResizedTo1000[c]);
+                        pictureBox1.Image = Image.FromFile(filesDarked[c]);
+                        pictureBox2.Image = Image.FromFile(filesResizedTo255[c]);
+                        pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
+                        pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
                     }
                 }
                 else
@@ -731,10 +735,14 @@ namespace breastcancer
                 buttonNext.Enabled = true;
                 label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + filesNotResized[c];
 
-                pictureBox1.Image = Image.FromFile(filesNotResized[c]);
-                pictureBox5.Image = Image.FromFile(filesBrightened[c]);
-                pictureBox3.Image = Image.FromFile(filesDarked[c]);
-                pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
+                pictureBox3.Image = Image.FromFile(filesNotResized[c]);
+                pictureBox4.Image = Image.FromFile(filesBrightened[c]);
+                pictureBox5.Image = Image.FromFile(filesHighlyBrightened[c]);
+                pictureBox7.Image = Image.FromFile(filesResizedTo1000[c]);
+                pictureBox1.Image = Image.FromFile(filesDarked[c]);
+                pictureBox2.Image = Image.FromFile(filesResizedTo255[c]);
+                pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
+                pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
             }
         }
         private void addJsonToList()

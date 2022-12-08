@@ -64,6 +64,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonPencil = new System.Windows.Forms.Button();
             this.buttonQuestionM = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -123,7 +124,7 @@
             // 
             this.buttonDown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDown.BackgroundImage")));
             this.buttonDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonDown.Location = new System.Drawing.Point(951, 632);
+            this.buttonDown.Location = new System.Drawing.Point(951, 633);
             this.buttonDown.Name = "buttonDown";
             this.buttonDown.Size = new System.Drawing.Size(44, 44);
             this.buttonDown.TabIndex = 801;
@@ -441,6 +442,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.buttonPencil);
             this.panel4.Controls.Add(this.buttonQuestionM);
             this.panel4.Controls.Add(this.buttonDown);
             this.panel4.Controls.Add(this.label2);
@@ -467,6 +469,16 @@
             this.panel4.Size = new System.Drawing.Size(1016, 690);
             this.panel4.TabIndex = 920;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // buttonPencil
+            // 
+            this.buttonPencil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPencil.BackgroundImage")));
+            this.buttonPencil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonPencil.Location = new System.Drawing.Point(851, 632);
+            this.buttonPencil.Name = "buttonPencil";
+            this.buttonPencil.Size = new System.Drawing.Size(44, 44);
+            this.buttonPencil.TabIndex = 921;
+            this.buttonPencil.UseVisualStyleBackColor = true;
             // 
             // buttonQuestionM
             // 
@@ -557,5 +569,6 @@
         private Panel panel4;
         private Label label2;
         private Button buttonQuestionM;
+        private Button buttonPencil;
     }
 }

@@ -122,7 +122,7 @@ namespace breastcancer
             buttonUp.BackColor = Color.FromArgb(66, 66, 66);
             buttonUp.FlatStyle = FlatStyle.Flat;
             buttonUp.FlatAppearance.BorderSize = 0;
-            IntPtr ptrUp = NativeMethods.CreateRoundRectRgn(0, 0, this.buttonUp.Width + 1, this.buttonUp.Height + 1, 100, 100);
+            IntPtr ptrUp = NativeMethods.CreateRoundRectRgn(-1, -1, this.buttonUp.Width + 2, this.buttonUp.Height + 2, 100, 100);
             this.buttonUp.Region = System.Drawing.Region.FromHrgn(ptrUp);
             NativeMethods.DeleteObject(ptrUp);
 
@@ -130,7 +130,7 @@ namespace breastcancer
             buttonDown.BackColor = Color.FromArgb(66, 66, 66);
             buttonDown.FlatStyle = FlatStyle.Flat;
             buttonDown.FlatAppearance.BorderSize = 0;
-            IntPtr ptrDown = NativeMethods.CreateRoundRectRgn(0, 0, this.buttonDown.Width + 1, this.buttonDown.Height + 1, 100, 100);
+            IntPtr ptrDown = NativeMethods.CreateRoundRectRgn(-1, -1, this.buttonDown.Width + 2, this.buttonDown.Height + 2, 100, 100);
             this.buttonDown.Region = System.Drawing.Region.FromHrgn(ptrDown);
             NativeMethods.DeleteObject(ptrDown);
 
@@ -141,6 +141,14 @@ namespace breastcancer
             IntPtr ptrQues = NativeMethods.CreateRoundRectRgn(0, 0, this.buttonQuestionM.Width + 1, this.buttonQuestionM.Height + 1, 100, 100);
             this.buttonQuestionM.Region = System.Drawing.Region.FromHrgn(ptrQues);
             NativeMethods.DeleteObject(ptrQues);
+
+            buttonPencil.ForeColor = Color.FromArgb(161, 161, 161);
+            buttonPencil.BackColor = Color.FromArgb(66, 66, 66);
+            buttonPencil.FlatStyle = FlatStyle.Flat;
+            buttonPencil.FlatAppearance.BorderSize = 0;
+            IntPtr ptrPencil = NativeMethods.CreateRoundRectRgn(-1, -1, this.buttonPencil.Width + 2, this.buttonPencil.Height + 2, 100, 100);
+            this.buttonPencil.Region = System.Drawing.Region.FromHrgn(ptrPencil);
+            NativeMethods.DeleteObject(ptrPencil);
 
             IntPtr ptr = NativeMethods.CreateRoundRectRgn(2, 2, this.textBoxComment.Width - 1, this.textBoxComment.Height - 1, 5, 5); //play with these values till you are happy
             this.textBoxComment.Region = System.Drawing.Region.FromHrgn(ptr);

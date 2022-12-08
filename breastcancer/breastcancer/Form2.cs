@@ -432,16 +432,6 @@ namespace breastcancer
             this.panel4.Region = System.Drawing.Region.FromHrgn(ptr);
             NativeMethods.DeleteObject(ptr);
         }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
         public Cursor CreateCursor(Bitmap bitmap, Size size)
         {
             bitmap = new Bitmap(bitmap, size);
@@ -458,7 +448,8 @@ namespace breastcancer
             }
             else
             {
-                penClick = true;
+                this.Cursor = Cursors.Default;
+                penClick = false;
             }
             //var dlg = new OpenFileDialog();
           //  if (dlg.ShowDialog() == DialogResult.OK)

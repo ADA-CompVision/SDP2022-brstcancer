@@ -479,6 +479,7 @@
             this.buttonPencil.Size = new System.Drawing.Size(44, 44);
             this.buttonPencil.TabIndex = 921;
             this.buttonPencil.UseVisualStyleBackColor = true;
+            this.buttonPencil.Click += new System.EventHandler(this.buttonPencil_Click);
             // 
             // buttonQuestionM
             // 

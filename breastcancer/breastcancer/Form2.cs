@@ -442,6 +442,30 @@ namespace breastcancer
         {
 
         }
+        public Cursor CreateCursor(Bitmap bitmap, Size size)
+        {
+            bitmap = new Bitmap(bitmap, size);
+            return new Cursor(bitmap.GetHicon());
+        }
+        bool penClick = false;
+        private void buttonPencil_Click(object sender, EventArgs e)
+        {
+            if (!penClick)
+            {
+                var bitmap = (Bitmap)Image.FromFile(@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Logo\minipencil.png");//dlg.FileName);
+                this.Cursor = CreateCursor(bitmap, new Size(bitmap.Width / 15, bitmap.Height / 15));
+                penClick = true;
+            }
+            else
+            {
+                penClick = true;
+            }
+            //var dlg = new OpenFileDialog();
+          //  if (dlg.ShowDialog() == DialogResult.OK)
+           // {
+               
+          //  }
+        }
 
 
         #region Make draggable

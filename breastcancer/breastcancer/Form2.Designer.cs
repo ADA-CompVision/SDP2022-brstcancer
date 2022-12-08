@@ -64,6 +64,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonQuestionM = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -101,7 +102,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 661);
+            this.label1.Location = new System.Drawing.Point(158, 661);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 15);
             this.label1.TabIndex = 801;
@@ -122,7 +123,7 @@
             // 
             this.buttonDown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDown.BackgroundImage")));
             this.buttonDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonDown.Location = new System.Drawing.Point(917, 632);
+            this.buttonDown.Location = new System.Drawing.Point(951, 632);
             this.buttonDown.Name = "buttonDown";
             this.buttonDown.Size = new System.Drawing.Size(44, 44);
             this.buttonDown.TabIndex = 801;
@@ -133,7 +134,7 @@
             // 
             this.buttonUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUp.BackgroundImage")));
             this.buttonUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonUp.Location = new System.Drawing.Point(867, 632);
+            this.buttonUp.Location = new System.Drawing.Point(901, 632);
             this.buttonUp.Name = "buttonUp";
             this.buttonUp.Size = new System.Drawing.Size(44, 44);
             this.buttonUp.TabIndex = 302;
@@ -440,6 +441,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.buttonQuestionM);
             this.panel4.Controls.Add(this.buttonDown);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.buttonUp);
@@ -465,6 +467,17 @@
             this.panel4.Size = new System.Drawing.Size(1016, 690);
             this.panel4.TabIndex = 920;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // buttonQuestionM
+            // 
+            this.buttonQuestionM.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonQuestionM.BackgroundImage")));
+            this.buttonQuestionM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonQuestionM.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonQuestionM.Location = new System.Drawing.Point(24, 633);
+            this.buttonQuestionM.Name = "buttonQuestionM";
+            this.buttonQuestionM.Size = new System.Drawing.Size(44, 44);
+            this.buttonQuestionM.TabIndex = 921;
+            this.buttonQuestionM.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -543,5 +556,6 @@
         private PictureBox pictureBox7;
         private Panel panel4;
         private Label label2;
+        private Button buttonQuestionM;
     }
 }

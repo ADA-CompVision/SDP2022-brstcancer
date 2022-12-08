@@ -134,6 +134,13 @@ namespace breastcancer
             this.buttonDown.Region = System.Drawing.Region.FromHrgn(ptrDown);
             NativeMethods.DeleteObject(ptrDown);
 
+            buttonQuestionM.ForeColor = Color.FromArgb(161, 161, 161);
+            buttonQuestionM.BackColor = Color.FromArgb(66, 66, 66);
+            buttonQuestionM.FlatStyle = FlatStyle.Flat;
+            buttonQuestionM.FlatAppearance.BorderSize = 0;
+            IntPtr ptrQues = NativeMethods.CreateRoundRectRgn(0, 0, this.buttonQuestionM.Width + 1, this.buttonQuestionM.Height + 1, 100, 100);
+            this.buttonQuestionM.Region = System.Drawing.Region.FromHrgn(ptrQues);
+            NativeMethods.DeleteObject(ptrQues);
 
             IntPtr ptr = NativeMethods.CreateRoundRectRgn(2, 2, this.textBoxComment.Width - 1, this.textBoxComment.Height - 1, 5, 5); //play with these values till you are happy
             this.textBoxComment.Region = System.Drawing.Region.FromHrgn(ptr);

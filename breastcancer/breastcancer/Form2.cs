@@ -21,6 +21,7 @@ namespace breastcancer
         bool IsMouseDown = false;
         List<Data> dataList = new List<Data>();
         bool penClick = false;
+        bool downFlag = false;
 
         int ii = 0;
         int jj = 0;
@@ -698,6 +699,7 @@ namespace breastcancer
 
         private void buttonUp_Click(object sender, EventArgs e)
         {
+            downFlag = false;
             label3.Text = "Not Resized";
             label4.Text = "Brightened";
             label5.Text = "Highly Brightened";
@@ -722,6 +724,7 @@ namespace breastcancer
 
         private void buttonDown_Click(object sender, EventArgs e)
         {
+            downFlag = true;
             label3.Text = "Color 1";
             label4.Text = "Color 2";
             label5.Text = "Color 3";
@@ -781,6 +784,32 @@ namespace breastcancer
 
             return rect;
         }
+        private void downCheckFunction(bool downFlag)
+        {
+            if (!downFlag)
+            {
+                pictureBox3.Image = Image.FromFile(filesNotResized[c]);
+                pictureBox4.Image = Image.FromFile(filesBrightened[c]);
+                pictureBox5.Image = Image.FromFile(filesHighlyBrightened[c]);
+                pictureBox7.Image = Image.FromFile(filesResizedTo1000[c]);
+                pictureBox1.Image = Image.FromFile(filesDarked[c]);
+                pictureBox2.Image = Image.FromFile(filesResizedTo255[c]);
+                pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
+                pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
+            }
+            else
+            {
+                pictureBox3.Image = Image.FromFile(filesColor1[c]);
+                pictureBox4.Image = Image.FromFile(filesColor2[c]);
+                pictureBox5.Image = Image.FromFile(filesColor3[c]);
+                pictureBox7.Image = Image.FromFile(filesColor4[c]);
+                pictureBox1.Image = Image.FromFile(filesColor5[c]);
+                pictureBox2.Image = Image.FromFile(filesResizedTo255[c]);
+                pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
+                pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
+            }
+        }
+
         private void buttonNextFunction()
         {
             penClick = false;
@@ -830,14 +859,7 @@ namespace breastcancer
                         buttonPrevious.Enabled = true;
                         label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + files[c];
 
-                        pictureBox3.Image = Image.FromFile(filesNotResized[c]);
-                        pictureBox4.Image = Image.FromFile(filesBrightened[c]);
-                        pictureBox5.Image = Image.FromFile(filesHighlyBrightened[c]);
-                        pictureBox7.Image = Image.FromFile(filesResizedTo1000[c]);
-                        pictureBox1.Image = Image.FromFile(filesDarked[c]);
-                        pictureBox2.Image = Image.FromFile(filesResizedTo255[c]);
-                        pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
-                        pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
+                        downCheckFunction(downFlag);
                     }
                 }
                 else
@@ -988,14 +1010,8 @@ namespace breastcancer
                 buttonNext.Enabled = true;
                 label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + filesNotResized[c];
 
-                pictureBox3.Image = Image.FromFile(filesNotResized[c]);
-                pictureBox4.Image = Image.FromFile(filesBrightened[c]);
-                pictureBox5.Image = Image.FromFile(filesHighlyBrightened[c]);
-                pictureBox7.Image = Image.FromFile(filesResizedTo1000[c]);
-                pictureBox1.Image = Image.FromFile(filesDarked[c]);
-                pictureBox2.Image = Image.FromFile(filesResizedTo255[c]);
-                pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
-                pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
+                downCheckFunction(downFlag);
+
             }
         }
         private void addJsonToList()

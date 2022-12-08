@@ -80,6 +80,7 @@ namespace breastcancer
             labelNotes.ForeColor = Color.White;
             labelNotes.BackColor = Color.Transparent;
 
+            label1.ForeColor = Color.FromArgb(161, 161, 161);
             // label3.ForeColor = Color.WhiteSmoke;
             label3.ForeColor = Color.FromArgb(161, 161, 161);
             label3.Text = "Not Resized";
@@ -257,17 +258,49 @@ namespace breastcancer
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image = Image.FromFile(filesNotResized[c]);
-            pictureBox3.Image = Image.FromFile(filesBrightened[c]);
-            pictureBox4.Image = Image.FromFile(filesDarked[c]);
-            pictureBox5.Image = Image.FromFile(filesHighlyBrightened[c]);
+            label3.Text = "Color 1";
+            label4.Text = "Color 2";
+            label5.Text = "Color 3";
+            label12.Text = "Color 4";
+            label8.Text = "Color 5";
+            label7.Text = "Resized to 511";
+            label6.Text = "Resized to 1000";
+            label11.Text = "Resized to 1023";
+
+            pictureBox3.Image = Image.FromFile(filesColor1[c]);
+            pictureBox4.Image = Image.FromFile(filesColor2[c]);
+            pictureBox5.Image = Image.FromFile(filesColor3[c]);
+            pictureBox7.Image = Image.FromFile(filesColor4[c]);
+            pictureBox1.Image = Image.FromFile(filesColor5[c]);
+            pictureBox2.Image = Image.FromFile(filesResizedTo255[c]);
+            pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
+            pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
+
+
+            label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            label3.Text = "Not Resized";
+            label4.Text = "Brightened";
+            label5.Text = "Highly Brightened";
+            label12.Text = "Darkened";
+            label8.Text = "Resized to 255";
+            label7.Text = "Resized to 511";
+            label6.Text = "Resized to 1000";
+            label11.Text = "Resized to 1023";
+
             pictureBox3.Image = Image.FromFile(filesNotResized[c]);
-            pictureBox5.Image = Image.FromFile(filesBrightened[c]);
+            pictureBox4.Image = Image.FromFile(filesBrightened[c]);
+            pictureBox5.Image = Image.FromFile(filesHighlyBrightened[c]);
+            pictureBox7.Image = Image.FromFile(filesResizedTo1000[c]);
             pictureBox1.Image = Image.FromFile(filesDarked[c]);
-            pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
+            pictureBox2.Image = Image.FromFile(filesResizedTo255[c]);
+            pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
+            pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
+
+
+            label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";
         }
         private void pictureBox3_DoubleClick(object sender, EventArgs e)
         {
@@ -452,10 +485,10 @@ namespace breastcancer
                 penClick = false;
             }
             //var dlg = new OpenFileDialog();
-          //  if (dlg.ShowDialog() == DialogResult.OK)
-           // {
-               
-          //  }
+            //  if (dlg.ShowDialog() == DialogResult.OK)
+            // {
+
+            //  }
         }
 
 

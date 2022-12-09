@@ -117,6 +117,8 @@
             this.textBoxComment.Size = new System.Drawing.Size(246, 164);
             this.textBoxComment.TabIndex = 905;
             this.textBoxComment.TabStop = false;
+            this.textBoxComment.Enter += new System.EventHandler(this.textBoxComment_Enter);
+            this.textBoxComment.Leave += new System.EventHandler(this.textBoxComment_Leave);
             // 
             // buttonDown
             // 

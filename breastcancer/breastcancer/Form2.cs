@@ -22,6 +22,7 @@ namespace breastcancer
         List<Data> dataList = new List<Data>();
         bool penClick = false;
         bool downFlag = false;
+        string textCom = "Write a comment...";
 
         int ii = 0;
         int jj = 0;
@@ -58,8 +59,7 @@ namespace breastcancer
             radioButtonPotential.BackColor = Color.FromArgb(55, 55, 55);
             radioButtonPotential.ForeColor = Color.White;
 
-
-            textBoxComment.Text = "Write a comment...";
+            textBoxComment.Text = textCom;
             textBoxComment.ForeColor = Color.White;
             textBoxComment.BackColor = Color.FromArgb(55, 55, 55);
 
@@ -619,6 +619,23 @@ namespace breastcancer
         {
             diagnosisInt = 3;
         }
+
+        private void textBoxComment_Enter(object sender, EventArgs e)
+        {
+            if (this.textBoxComment.Text.Equals(textCom))
+            {
+                this.textBoxComment.Text = "";
+            }
+        }
+
+        private void textBoxComment_Leave(object sender, EventArgs e)
+        {
+            if (textBoxComment.Text.Equals(""))
+            {
+                textBoxComment.Text = textCom;
+            }
+        }
+
         private void pictureBox8_Paint(object sender, PaintEventArgs e)
         {
             if (rect != null && penClick)

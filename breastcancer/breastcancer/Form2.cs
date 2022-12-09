@@ -721,16 +721,9 @@ namespace breastcancer
             else
             {
                 int id = 1;
-
-                //if (dataList.Count > 0)
-                //{
-                //    id = dataList.Max(x => x.ImageId) + 1;
-                //}
-
                 if (ii == dataList.Count || dataList.Count == 0)
                 {
                     id = dataList.Count + 1;
-
 
                     // Add any new data
                     dataList.Add(new Data()
@@ -761,10 +754,14 @@ namespace breastcancer
 
                         downCheckFunction(downFlag);
                     }
+                    ii++;
                 }
                 else
                 {
-                    //update
+                    //
+                    Update(ii);
+                    JsonSave();
+                    ii++;
                     int d = 0;
                     var item = dataList[ii];
                     this.textBoxComment.Text = item.Comment;
@@ -785,19 +782,27 @@ namespace breastcancer
                         d = 3;
                     }
 
-                    if (item.Comment != this.textBoxComment.Text || item.Diagnosis != d)
+                    if (c == filesNotResized.Length - 1)
+                        buttonNext.Enabled = false;
+                    else
                     {
-                        Update(ii);
-                        JsonSave();
+                        c++;
+                        buttonPrevious.Enabled = true;
+                        label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + files[c];
+
+                        downCheckFunction(downFlag);
                     }
+
+                    //  if (item.Comment != this.textBoxComment.Text || item.Diagnosis != d)
+                    //  {
+
+                    //  }
+
+                    // ii++;
+
                 }
 
-                ii++;
-
-
-
-
-                EmeliyatNextPrew = true;
+                
 
 
 
@@ -916,14 +921,16 @@ namespace breastcancer
                 bool u1 = false;
                 if (ii >= dataList.Count())
                 {
-                    ii = dataList.Count - 1;
+                    //ii = dataList.Count - 1;
                     u1 = true;
                 }
-                //else
-                //{
-                //    Update(ii)
-                //    JsonSave();
-                //}
+                else
+                {
+                   // var item1 = 
+                    Update(ii);
+                    JsonSave();
+                }
+                ii--;
 
                 var item = dataList[ii];
                 this.textBoxComment.Text = item.Comment;
@@ -954,22 +961,22 @@ namespace breastcancer
                 //{
                 //    item = dataList[jj];
                 //}
-                if (!string.IsNullOrEmpty(textBoxComment.Text) && (radioButtonNegative.Checked == true || radioButtonPositive.Checked == true || radioButtonPotential.Checked == true))
-                {
-                    //if (!(item.Comment.Equals(this.textBoxComment.Text)) || item.Diagnosis != d)
-                    //{
+                //if (!string.IsNullOrEmpty(textBoxComment.Text) && (radioButtonNegative.Checked == true || radioButtonPositive.Checked == true || radioButtonPotential.Checked == true))
+                //{
+                //    //if (!(item.Comment.Equals(this.textBoxComment.Text)) || item.Diagnosis != d)
+                //    //{
                     
-                    Update(ii);
-                    JsonSave();
-                    //}
-                }
+                //    Update(ii);
+                //    JsonSave();
+                //    //}
+                //}
                 c--;
                 buttonNext.Enabled = true;
                 label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + filesNotResized[c];
 
                 downCheckFunction(downFlag);
-                if (!u1)
-                    ii--;
+                //if (!u1)
+                //    ii--;
             }
             if (prev > 0) prev--;
 

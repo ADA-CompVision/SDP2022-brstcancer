@@ -761,36 +761,65 @@ namespace breastcancer
                     //
                     Update(ii);
                     JsonSave();
-                    ii++;
-                    int d = 0;
-                    var item = dataList[ii];
-                    this.textBoxComment.Text = item.Comment;
+                    if (ii < dataList.Count)
+                    {
+                        ii++;
 
-                    if (item.Diagnosis == 1)
-                    {
-                        this.radioButtonPositive.Checked = true;
-                        d = 1;
-                    }
-                    else if (item.Diagnosis == 2)
-                    {
-                        this.radioButtonPotential.Checked = true;
-                        d = 2;
-                    }
-                    else if (item.Diagnosis == 3)
-                    {
-                        this.radioButtonNegative.Checked = true;
-                        d = 3;
-                    }
+                        int d = 0;
+                        if (ii != dataList.Count)
+                        {
+                            var item = dataList[ii];
+                            this.textBoxComment.Text = item.Comment;
 
-                    if (c == filesNotResized.Length - 1)
-                        buttonNext.Enabled = false;
-                    else
-                    {
-                        c++;
-                        buttonPrevious.Enabled = true;
-                        label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + files[c];
+                            if (item.Diagnosis == 1)
+                            {
+                                this.radioButtonPositive.Checked = true;
+                                d = 1;
+                            }
+                            else if (item.Diagnosis == 2)
+                            {
+                                this.radioButtonPotential.Checked = true;
+                                d = 2;
+                            }
+                            else if (item.Diagnosis == 3)
+                            {
+                                this.radioButtonNegative.Checked = true;
+                                d = 3;
+                            }
+                        }
+                        else
+                        {
+                            id = dataList.Count + 1;
 
-                        downCheckFunction(downFlag);
+                            // Add any new data
+                            dataList.Add(new Data()
+                            {
+                                ImageId = id,// w,//get last image id from json file then ++ and assign
+                                ImageName = filesNotResized[c].TrimEnd('\\'),
+                                Diagnosis = diagnosisInt,
+                                Comment = textBoxComment.Text,
+                                DoctorId = 1
+                            });
+                            JsonSave();
+
+
+                            textBoxComment.Text = "";
+
+                            radioButtonPositive.Checked = false;
+                            radioButtonPotential.Checked = false;
+                            radioButtonNegative.Checked = false;
+                        }
+                        if (c == filesNotResized.Length - 1)
+                            buttonNext.Enabled = false;
+                        else
+                        {
+                            c++;
+                            buttonPrevious.Enabled = true;
+                            label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + files[c];
+
+                            downCheckFunction(downFlag);
+                        }
+                        ii++;
                     }
 
                     //  if (item.Comment != this.textBoxComment.Text || item.Diagnosis != d)
@@ -802,7 +831,7 @@ namespace breastcancer
 
                 }
 
-                
+
 
 
 
@@ -926,7 +955,7 @@ namespace breastcancer
                 }
                 else
                 {
-                   // var item1 = 
+                    // var item1 = 
                     Update(ii);
                     JsonSave();
                 }
@@ -965,7 +994,7 @@ namespace breastcancer
                 //{
                 //    //if (!(item.Comment.Equals(this.textBoxComment.Text)) || item.Diagnosis != d)
                 //    //{
-                    
+
                 //    Update(ii);
                 //    JsonSave();
                 //    //}

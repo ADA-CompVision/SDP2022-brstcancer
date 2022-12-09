@@ -85,7 +85,7 @@
             this.buttonPrevious.Location = new System.Drawing.Point(20, 632);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(135, 37);
-            this.buttonPrevious.TabIndex = 299;
+            this.buttonPrevious.TabIndex = 297;
             this.buttonPrevious.Text = "Back";
             this.buttonPrevious.UseVisualStyleBackColor = true;
             this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
@@ -117,7 +117,6 @@
             this.textBoxComment.Size = new System.Drawing.Size(246, 164);
             this.textBoxComment.TabIndex = 905;
             this.textBoxComment.TabStop = false;
-            this.textBoxComment.TextChanged += new System.EventHandler(this.textBoxComment_TextChanged);
             // 
             // buttonDown
             // 
@@ -202,6 +201,7 @@
             this.radioButtonPositive.TabStop = true;
             this.radioButtonPositive.Text = "Positive";
             this.radioButtonPositive.UseVisualStyleBackColor = true;
+            this.radioButtonPositive.CheckedChanged += new System.EventHandler(this.radioButtonPositive_CheckedChanged);
             // 
             // radioButtonNegative
             // 
@@ -214,6 +214,7 @@
             this.radioButtonNegative.TabStop = true;
             this.radioButtonNegative.Text = "Negative";
             this.radioButtonNegative.UseVisualStyleBackColor = true;
+            this.radioButtonNegative.CheckedChanged += new System.EventHandler(this.radioButtonNegative_CheckedChanged);
             // 
             // radioButtonPotential
             // 
@@ -226,6 +227,7 @@
             this.radioButtonPotential.TabStop = true;
             this.radioButtonPotential.Text = "Potential";
             this.radioButtonPotential.UseVisualStyleBackColor = true;
+            this.radioButtonPotential.CheckedChanged += new System.EventHandler(this.radioButtonPotential_CheckedChanged);
             // 
             // textBox1
             // 

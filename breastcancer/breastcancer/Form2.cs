@@ -28,16 +28,11 @@ namespace breastcancer
         int prev = 0;
         int c = 0;
         int diagnosisInt = 0;
-        string[] filesNotResized;
-        string[] filesBrightened;
-        string[] filesDarked;
-        string[] filesHighlyBrightened;
+        string[] filesNotResized, filesBrightened, filesDarked, filesHighlyBrightened;
         string[] filesColor1, filesColor2, filesColor3, filesColor4, filesColor5, filesResizedTo511, filesResizedTo255, filesResizedTo1000, filesResizedTo1023;
         string filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
         string jsonData;
 
-        //string fullPath = Path.GetFullPath(filePath).TrimEnd(Path.DirectorySeparatorChar);
-        //string projectName = fullPath.Split(Path.DirectorySeparatorChar).Last();
 
 
         Control control = new Control();
@@ -199,18 +194,6 @@ namespace breastcancer
         {
             buttonNextFunction();
         }
-        private void radioButtonPositive_CheckedChanged_1(object sender, EventArgs e)
-        {
-            diagnosisInt = 1;
-        }
-        private void radioButtonPotential_CheckedChanged(object sender, EventArgs e)
-        {
-            diagnosisInt = 2;
-        }
-        private void radioButtonNegative_CheckedChanged(object sender, EventArgs e)
-        {
-            diagnosisInt = 3;
-        }
         private void pictureBox1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             new Form4().Show();
@@ -227,7 +210,6 @@ namespace breastcancer
         {
             new Form4().Show();
         }
-
         private void pictureBox3_DoubleClick(object sender, EventArgs e)
         {
             new Form4().Show();
@@ -245,21 +227,22 @@ namespace breastcancer
             if (e.KeyCode == Keys.Up)
             {
                 this.buttonUp.Focus();
-
+                buttonUpFunction();
             }
             else if (e.KeyCode == Keys.Down)
             {
                 this.buttonDown.Focus();
+                buttonDownFunction();
             }
             else if (e.KeyCode == Keys.Right)
             {
-                buttonNextFunction();
                 this.buttonNext.Focus();
+                buttonNextFunction();
             }
             else if (e.KeyCode == Keys.Left)
             {
-                buttonPreviousFunction();
                 this.buttonPrevious.Focus();
+                buttonPreviousFunction();
             }
         }
         private void JsonSave()
@@ -325,7 +308,6 @@ namespace breastcancer
                 //pictureBox3.Image.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
-
         private void pictureBox4_Paint(object sender, PaintEventArgs e)
         {
             if (rect != null && penClick)
@@ -344,7 +326,6 @@ namespace breastcancer
                 bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
-
         private void pictureBox4_MouseDown(object sender, MouseEventArgs e)
         {
             if (penClick)
@@ -353,7 +334,6 @@ namespace breastcancer
                 LocationXY = e.Location;
             }
         }
-
         private void pictureBox4_MouseUp(object sender, MouseEventArgs e)
         {
             if (IsMouseDown == true)
@@ -362,7 +342,6 @@ namespace breastcancer
                 IsMouseDown = false;
             }
         }
-
         private void pictureBox4_MouseMove(object sender, MouseEventArgs e)
         {
             if (IsMouseDown == true)
@@ -371,7 +350,6 @@ namespace breastcancer
                 Refresh();
             }
         }
-
         private void pictureBox5_MouseDown(object sender, MouseEventArgs e)
         {
             if (penClick)
@@ -380,7 +358,6 @@ namespace breastcancer
                 LocationXY = e.Location;
             }
         }
-
         private void pictureBox5_MouseMove(object sender, MouseEventArgs e)
         {
             if (IsMouseDown == true)
@@ -389,7 +366,6 @@ namespace breastcancer
                 Refresh();
             }
         }
-
         private void pictureBox5_MouseUp(object sender, MouseEventArgs e)
         {
             if (IsMouseDown == true)
@@ -398,7 +374,6 @@ namespace breastcancer
                 IsMouseDown = false;
             }
         }
-
         private void pictureBox5_Paint(object sender, PaintEventArgs e)
         {
             if (rect != null && penClick)
@@ -429,12 +404,6 @@ namespace breastcancer
             this.panel2.Region = System.Drawing.Region.FromHrgn(ptr);
             NativeMethods.DeleteObject(ptr);
         }
-        //private void panel3_Paint(object sender, PaintEventArgs e)
-        //{
-        //    IntPtr ptr = NativeMethods.CreateRoundRectRgn(3, 3, this.panel3.Width, this.panel3.Height, 11, 11); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
-        //    this.panel3.Region = System.Drawing.Region.FromHrgn(ptr);
-        //    NativeMethods.DeleteObject(ptr);
-        //}
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
             IntPtr ptr = NativeMethods.CreateRoundRectRgn(3, 3, this.panel4.Width, this.panel4.Height, 11, 11); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
@@ -446,7 +415,6 @@ namespace breastcancer
             bitmap = new Bitmap(bitmap, size);
             return new Cursor(bitmap.GetHicon());
         }
-
         private void pictureBox7_MouseDown(object sender, MouseEventArgs e)
         {
             if (penClick)
@@ -455,7 +423,6 @@ namespace breastcancer
                 LocationXY = e.Location;
             }
         }
-
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             if (penClick)
@@ -464,7 +431,6 @@ namespace breastcancer
                 LocationXY = e.Location;
             }
         }
-
         private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
         {
             if (penClick)
@@ -473,7 +439,6 @@ namespace breastcancer
                 LocationXY = e.Location;
             }
         }
-
         private void pictureBox6_MouseDown(object sender, MouseEventArgs e)
         {
             if (penClick)
@@ -482,7 +447,6 @@ namespace breastcancer
                 LocationXY = e.Location;
             }
         }
-
         private void pictureBox8_MouseDown(object sender, MouseEventArgs e)
         {
             if (penClick)
@@ -491,7 +455,6 @@ namespace breastcancer
                 LocationXY = e.Location;
             }
         }
-
         private void pictureBox7_MouseMove(object sender, MouseEventArgs e)
         {
             if (IsMouseDown == true)
@@ -500,7 +463,6 @@ namespace breastcancer
                 Refresh();
             }
         }
-
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             if (IsMouseDown == true)
@@ -509,7 +471,6 @@ namespace breastcancer
                 Refresh();
             }
         }
-
         private void pictureBox2_MouseMove(object sender, MouseEventArgs e)
         {
             if (IsMouseDown == true)
@@ -518,7 +479,6 @@ namespace breastcancer
                 Refresh();
             }
         }
-
         private void pictureBox6_MouseMove(object sender, MouseEventArgs e)
         {
             if (IsMouseDown == true)
@@ -527,7 +487,6 @@ namespace breastcancer
                 Refresh();
             }
         }
-
         private void pictureBox8_MouseMove(object sender, MouseEventArgs e)
         {
             if (IsMouseDown == true)
@@ -536,7 +495,6 @@ namespace breastcancer
                 Refresh();
             }
         }
-
         private void pictureBox7_MouseUp(object sender, MouseEventArgs e)
         {
             if (IsMouseDown == true)
@@ -545,7 +503,6 @@ namespace breastcancer
                 IsMouseDown = false;
             }
         }
-
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             if (IsMouseDown == true)
@@ -554,7 +511,6 @@ namespace breastcancer
                 IsMouseDown = false;
             }
         }
-
         private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
         {
             if (IsMouseDown == true)
@@ -563,7 +519,6 @@ namespace breastcancer
                 IsMouseDown = false;
             }
         }
-
         private void pictureBox6_MouseUp(object sender, MouseEventArgs e)
         {
             if (IsMouseDown == true)
@@ -572,7 +527,6 @@ namespace breastcancer
                 IsMouseDown = false;
             }
         }
-
         private void pictureBox8_MouseUp(object sender, MouseEventArgs e)
         {
             if (IsMouseDown == true)
@@ -581,7 +535,6 @@ namespace breastcancer
                 IsMouseDown = false;
             }
         }
-
         private void pictureBox7_Paint(object sender, PaintEventArgs e)
         {
             if (rect != null && penClick)
@@ -600,7 +553,6 @@ namespace breastcancer
                 bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
-
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
             if (rect != null && penClick)
@@ -619,7 +571,6 @@ namespace breastcancer
                 bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
-
         private void pictureBox2_Paint(object sender, PaintEventArgs e)
         {
             if (rect != null && penClick)
@@ -638,7 +589,10 @@ namespace breastcancer
                 bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
-
+        private void radioButtonPositive_CheckedChanged(object sender, EventArgs e)
+        {
+            diagnosisInt = 1;
+        }
         private void pictureBox6_Paint(object sender, PaintEventArgs e)
         {
             if (rect != null && penClick)
@@ -657,7 +611,14 @@ namespace breastcancer
                 bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
-
+        private void radioButtonPotential_CheckedChanged(object sender, EventArgs e)
+        {
+            diagnosisInt = 2;
+        }
+        private void radioButtonNegative_CheckedChanged(object sender, EventArgs e)
+        {
+            diagnosisInt = 3;
+        }
         private void pictureBox8_Paint(object sender, PaintEventArgs e)
         {
             if (rect != null && penClick)
@@ -676,7 +637,6 @@ namespace breastcancer
                 bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
-
         private void buttonPencil_Click(object sender, EventArgs e)
         {
             if (!penClick)
@@ -690,89 +650,15 @@ namespace breastcancer
                 this.Cursor = Cursors.Default;
                 penClick = false;
             }
-            //var dlg = new OpenFileDialog();
-            //  if (dlg.ShowDialog() == DialogResult.OK)
-            // {
-
-            //  }
         }
-
         private void buttonUp_Click(object sender, EventArgs e)
         {
-            downFlag = false;
-            label3.Text = "Not Resized";
-            label4.Text = "Brightened";
-            label5.Text = "Highly Brightened";
-            label12.Text = "Darkened";
-            label8.Text = "Resized to 255";
-            label7.Text = "Resized to 511";
-            label6.Text = "Resized to 1000";
-            label11.Text = "Resized to 1023";
-
-            pictureBox3.Image = Image.FromFile(filesNotResized[c]);
-            pictureBox4.Image = Image.FromFile(filesBrightened[c]);
-            pictureBox5.Image = Image.FromFile(filesHighlyBrightened[c]);
-            pictureBox7.Image = Image.FromFile(filesResizedTo1000[c]);
-            pictureBox1.Image = Image.FromFile(filesDarked[c]);
-            pictureBox2.Image = Image.FromFile(filesResizedTo255[c]);
-            pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
-            pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
-
-
-            label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";
+            buttonUpFunction();
         }
-
         private void buttonDown_Click(object sender, EventArgs e)
         {
-            downFlag = true;
-            label3.Text = "Color 1";
-            label4.Text = "Color 2";
-            label5.Text = "Color 3";
-            label12.Text = "Color 4";
-            label8.Text = "Color 5";
-            label7.Text = "Resized to 511";
-            label6.Text = "Resized to 1000";
-            label11.Text = "Resized to 1023";
-
-            pictureBox3.Image = Image.FromFile(filesColor1[c]);
-            pictureBox4.Image = Image.FromFile(filesColor2[c]);
-            pictureBox5.Image = Image.FromFile(filesColor3[c]);
-            pictureBox7.Image = Image.FromFile(filesColor4[c]);
-            pictureBox1.Image = Image.FromFile(filesColor5[c]);
-            pictureBox2.Image = Image.FromFile(filesResizedTo255[c]);
-            pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
-            pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
-
-            label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";
+            buttonDownFunction();
         }
-
-
-        //#region Make draggable
-
-        //public const int WM_NCLBUTTONDOWN = 0xA1;
-        //public const int HT_CAPTION = 0x2;
-        //private void panel1_MouseDown(object sender, MouseEventArgs e)
-        //{
-        //    if (e.Button == MouseButtons.Left)
-        //    {
-        //        NativeMethods.ReleaseCapture();
-        //        NativeMethods.SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-        //    }
-        //}
-        //#endregion
-
-        //private void (object sender, EventArgs e)
-        //{
-        //    // pictureBox3.BackColor = Color.White;
-        //    this.pictureBox3.BorderStyle = BorderStyle.Fixed3D;
-
-        //}
-
-        //private void pictureBox3_MouseLeave(object sender, EventArgs e)
-        //{
-        //    this.pictureBox3.BackColor = Color.Black;
-        //}
-
         private Rectangle GetRect()
         {
             rect = new Rectangle();
@@ -809,7 +695,6 @@ namespace breastcancer
                 pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
             }
         }
-
         private void buttonNextFunction()
         {
             penClick = false;
@@ -935,7 +820,6 @@ namespace breastcancer
 
             }
         }
-
         private void Update(int i)
         {
             //update
@@ -955,6 +839,53 @@ namespace breastcancer
             {
                 item.Diagnosis = 3;
             }
+        }
+        private void buttonUpFunction()
+        {
+            downFlag = false;
+            label3.Text = "Not Resized";
+            label4.Text = "Brightened";
+            label5.Text = "Highly Brightened";
+            label12.Text = "Darkened";
+            label8.Text = "Resized to 255";
+            label7.Text = "Resized to 511";
+            label6.Text = "Resized to 1000";
+            label11.Text = "Resized to 1023";
+
+            pictureBox3.Image = Image.FromFile(filesNotResized[c]);
+            pictureBox4.Image = Image.FromFile(filesBrightened[c]);
+            pictureBox5.Image = Image.FromFile(filesHighlyBrightened[c]);
+            pictureBox7.Image = Image.FromFile(filesResizedTo1000[c]);
+            pictureBox1.Image = Image.FromFile(filesDarked[c]);
+            pictureBox2.Image = Image.FromFile(filesResizedTo255[c]);
+            pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
+            pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
+
+
+            label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";
+        }
+        private void buttonDownFunction()
+        {
+            downFlag = true;
+            label3.Text = "Color 1";
+            label4.Text = "Color 2";
+            label5.Text = "Color 3";
+            label12.Text = "Color 4";
+            label8.Text = "Color 5";
+            label7.Text = "Resized to 511";
+            label6.Text = "Resized to 1000";
+            label11.Text = "Resized to 1023";
+
+            pictureBox3.Image = Image.FromFile(filesColor1[c]);
+            pictureBox4.Image = Image.FromFile(filesColor2[c]);
+            pictureBox5.Image = Image.FromFile(filesColor3[c]);
+            pictureBox7.Image = Image.FromFile(filesColor4[c]);
+            pictureBox1.Image = Image.FromFile(filesColor5[c]);
+            pictureBox2.Image = Image.FromFile(filesResizedTo255[c]);
+            pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
+            pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
+
+            label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";
         }
         private void buttonPreviousFunction()
         {
@@ -1016,37 +947,34 @@ namespace breastcancer
         }
         private void addJsonToList()
         {
-            //var filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
-            //// Read existing json data
-            //var jsonData = System.IO.File.ReadAllText(filePath);
-            //// De-serialize to object or create new list
-            //var dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
-            //                      ?? new List<Data>();
-            //int id = 1;
-            //if (dataList.Count > 0)
-            //{
-            //    id = dataList.Max(x => x.ImageId) + 1;
-            //}
+            /* //var filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
+             //// Read existing json data
+             //var jsonData = System.IO.File.ReadAllText(filePath);
+             //// De-serialize to object or create new list
+             //var dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
+             //                      ?? new List<Data>();
+             //int id = 1;
+             //if (dataList.Count > 0)
+             //{
+             //    id = dataList.Max(x => x.ImageId) + 1;
+             //}
 
 
 
-            //// Add any new data
-            //dataList.Add(new Data()
-            //{
-            //    ImageId = id,// w,//get last image id from json file then ++ and assign
-            //    ImageName = filesNotResized[c],
-            //    Diagnosis = diagnosisInt,
-            //    Comment = textBoxComment.Text,
-            //    DoctorId = 1
-            //});
+             //// Add any new data
+             //dataList.Add(new Data()
+             //{
+             //    ImageId = id,// w,//get last image id from json file then ++ and assign
+             //    ImageName = filesNotResized[c],
+             //    Diagnosis = diagnosisInt,
+             //    Comment = textBoxComment.Text,
+             //    DoctorId = 1
+             //});
 
-            //// Update json data string
-            //jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
-            //System.IO.File.WriteAllText(filePath, jsonData);
-        }
-        private void textBoxComment_TextChanged(object sender, EventArgs e)
-        {
-
+             //// Update json data string
+             //jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
+             //System.IO.File.WriteAllText(filePath, jsonData);
+            */
         }
     }
 }

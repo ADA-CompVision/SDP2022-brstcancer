@@ -1,0 +1,23 @@
+[
+  {
+    "ImageId": 1,
+    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Augmentation\\NotResized\\image0.jpg",
+    "Diagnosis": 1,
+    "Comment": "pos1",
+    "DoctorId": 1
+  },
+  {
+    "ImageId": 2,
+    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Augmentation\\NotResized\\image1.jpg",
+    "Diagnosis": 2,
+    "Comment": "pot2",
+    "DoctorId": 1
+  },
+  {
+    "ImageId": 3,
+    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Augmentation\\NotResized\\image10.jpg",
+    "Diagnosis": 3,
+    "Comment": "neg3",
+    "DoctorId": 1
+  }
+]

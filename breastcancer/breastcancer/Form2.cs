@@ -23,11 +23,13 @@ namespace breastcancer
         bool penClick = false;
         bool downFlag = false;
         string textCom = "Write a comment...";
+        string textEmp = "";
 
         int ii = 0;
         int jj = 0;
         int prev = 0;
         int c = 0;
+        bool EmeliyatNextPrew = true;  // true Next; false Prew
         int diagnosisInt = 0;
         string[] filesNotResized, filesBrightened, filesDarked, filesHighlyBrightened;
         string[] filesColor1, filesColor2, filesColor3, filesColor4, filesColor5, filesResizedTo511, filesResizedTo255, filesResizedTo1000, filesResizedTo1023;
@@ -43,7 +45,6 @@ namespace breastcancer
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-
             this.WindowState = FormWindowState.Maximized;
             this.KeyPreview = true;
             this.BackColor = Color.FromArgb(34, 34, 34);
@@ -619,15 +620,13 @@ namespace breastcancer
         {
             diagnosisInt = 3;
         }
-
         private void textBoxComment_Enter(object sender, EventArgs e)
         {
             if (this.textBoxComment.Text.Equals(textCom))
             {
-                this.textBoxComment.Text = "";
+                this.textBoxComment.Text = textEmp;
             }
         }
-
         private void textBoxComment_Leave(object sender, EventArgs e)
         {
             if (textBoxComment.Text.Equals(""))
@@ -635,7 +634,6 @@ namespace breastcancer
                 textBoxComment.Text = textCom;
             }
         }
-
         private void pictureBox8_Paint(object sender, PaintEventArgs e)
         {
             if (rect != null && penClick)
@@ -799,7 +797,7 @@ namespace breastcancer
 
 
 
-
+                EmeliyatNextPrew = true;
 
 
 
@@ -907,14 +905,26 @@ namespace breastcancer
         private void buttonPreviousFunction()
         {
             penClick = false;
+
             if (c == 0)
                 buttonPrevious.Enabled = false;
             else
             {
-                prev--;
                 int d = 0;
-                ii--;
-                jj = ii + 1;
+                //  ii--;
+                // jj = ii + 1;
+                bool u1 = false;
+                if (ii >= dataList.Count())
+                {
+                    ii = dataList.Count - 1;
+                    u1 = true;
+                }
+                //else
+                //{
+                //    Update(ii)
+                //    JsonSave();
+                //}
+
                 var item = dataList[ii];
                 this.textBoxComment.Text = item.Comment;
 
@@ -934,33 +944,37 @@ namespace breastcancer
                     d = 3;
                 }
 
-                if (prev == -1)
-                {
-                    item = dataList[ii];
-                }
-                if (prev < -1)
-                {
-                    item = dataList[jj];
-                }
+                item = dataList[ii];
 
-                if (item.Comment != this.textBoxComment.Text || item.Diagnosis != d)
+                //if (prev == -1)
+                //{
+                //    item = dataList[ii];
+                //}
+                //if (prev < -1)
+                //{
+                //    item = dataList[jj];
+                //}
+                if (!string.IsNullOrEmpty(textBoxComment.Text) && (radioButtonNegative.Checked == true || radioButtonPositive.Checked == true || radioButtonPotential.Checked == true))
                 {
-                    Update(jj);
+                    //if (!(item.Comment.Equals(this.textBoxComment.Text)) || item.Diagnosis != d)
+                    //{
+                    
+                    Update(ii);
                     JsonSave();
+                    //}
                 }
-
-
-
-
-
-
                 c--;
                 buttonNext.Enabled = true;
                 label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + filesNotResized[c];
 
                 downCheckFunction(downFlag);
-
+                if (!u1)
+                    ii--;
             }
+            if (prev > 0) prev--;
+
+            EmeliyatNextPrew = false;
+
         }
         private void addJsonToList()
         {

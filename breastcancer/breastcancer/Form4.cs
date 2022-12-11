@@ -12,44 +12,20 @@ namespace breastcancer
 {
     public partial class Form4 : Form
     {
+        int picNum4;
+
         public Form4()
         {
             InitializeComponent();
+            this.picNum4 = Form2.picNum;
         }
 
         int c = 0;
         string[] files;
 
-
-        //PictureBox pictureBox;
-        //Pen m_penRed = new Pen(Color.Red, 2f);
-        //Rectangle m_rectangle = new Rectangle(10, 100, 30, 30);
-
-        //public Form1()
-        //{
-        //    // Add a picturebox for testing
-        //    pictureBox = new PictureBox();
-        //    pictureBox.Image = Bitmap.FromFile(@"E:\OneDrive - ADA University\Homework\Fall2022\SDP\Images\image0.png"); // Use a valid image path
-        //    pictureBox.Dock = DockStyle.Fill;
-        //    Controls.Add(pictureBox);
-        //    // Add a Paint event handler
-        //    pictureBox.Paint += m_picturebox_Paint;
-
-        //    pictureBox.Image.Save(@"E:\OneDrive - ADA University\Homework\Fall2022\SDP\Images\imgAAA.png");
-        //}
-
-        //void m_picturebox_Paint(object sender, PaintEventArgs e)
-        //{
-
-        //    e.Graphics.DrawRectangle(m_penRed, m_rectangle);
-        //}
-        // This example creates a PictureBox control on the form and draws to it.
-        // This example assumes that the Form_Load event handler method is
-        // connected to the Load event of the form.
-
-        // private PictureBox pictureBox1 = new PictureBox();
-        // Cache font instead of recreating font objects each time we paint.
         private Font fnt = new Font("Arial", 10);
+        string filepath;
+
         //private void Form1_Load(object sender, EventArgs e)
         //{
         //    // Dock the PictureBox to the form and set its background to white.
@@ -81,11 +57,47 @@ namespace breastcancer
         {
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             this.WindowState = FormWindowState.Maximized;
-            this.BackColor = BackColor = Color.White;
+            this.BackColor = Color.FromArgb(34, 34, 34);
+          //  string filePath;// = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Photos\NotResized";
 
 
-            string filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Photos\NotResized";
-            files = Directory.GetFiles(filePath);
+            string filePathBrightened = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Brightened";
+          //  filesBrightened = Directory.GetFiles(filePathBrightened);
+            string filePathColor1 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color1";
+           // filesColor1 = Directory.GetFiles(filePathColor1);
+            string filePathColor2 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color2";
+            //filesColor2 = Directory.GetFiles(filePathColor2);
+            string filePathColor3 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color3";
+    //        filesColor3 = Directory.GetFiles(filePathColor3);
+            string filePathColor4 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color4";
+      //      filesColor4 = Directory.GetFiles(filePathColor4);
+            string filePathColor5 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color5";
+        //    filesColor5 = Directory.GetFiles(filePathColor5);
+            string filePathDarked = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Darked";
+          //  filesDarked = Directory.GetFiles(filePathDarked);
+            string filePathHighlyBrightened = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\HighlyBrightened";
+    //        filesHighlyBrightened = Directory.GetFiles(filePathHighlyBrightened);
+            string filePathNotResized = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\NotResized";
+      //      filesNotResized = Directory.GetFiles(filePathNotResized);
+            string filePathResizedTo255 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo255";
+        //    filesResizedTo255 = Directory.GetFiles(filePathResizedTo255);
+            string filePathResizedTo511 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo511";
+          //  filesResizedTo511 = Directory.GetFiles(filePathResizedTo511);
+            string filePathResizedTo1000 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo1000";
+     //       filesResizedTo1000 = Directory.GetFiles(filePathResizedTo1000);
+            string filePathResizedTo1023 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo1023";
+            //     filesResizedTo1023 = Directory.GetFiles(filePathResizedTo1023);
+
+            //switch (picNum4)
+            //{
+            //    case 0:
+            //        filepath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Brightened";
+            //    case 1:
+            //        filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color1";
+
+            //}
+            filepath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color1";
+            files = Directory.GetFiles(filepath);
 
             pictureBox1.Image = Image.FromFile(files[c]);
         }

@@ -36,6 +36,8 @@ namespace breastcancer
         string filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
         string jsonData;
 
+        public static int picNum = 0;
+
 
 
         Control control = new Control();
@@ -197,30 +199,37 @@ namespace breastcancer
         }
         private void pictureBox1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            picNum = 1;
             new Form4().Show();
         }
         private void pictureBox3_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            picNum = 2;
             new Form4().Show();
         }
         private void pictureBox4_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            picNum = 3;
             new Form4().Show();
         }
         private void pictureBox5_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            picNum = 4;
             new Form4().Show();
         }
         private void pictureBox3_DoubleClick(object sender, EventArgs e)
         {
+            picNum = 5;
             new Form4().Show();
         }
         private void pictureBox4_DoubleClick(object sender, EventArgs e)
         {
+            picNum = 6;
             new Form4().Show();
         }
         private void pictureBox5_DoubleClick(object sender, EventArgs e)
         {
+            picNum = 7;
             new Form4().Show();
         }
         private void Form2_KeyUp(object sender, KeyEventArgs e)
@@ -282,49 +291,15 @@ namespace breastcancer
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox3.ClientRectangle;
-
-                Bitmap bmp = new Bitmap(rect1.Width, rect1.Height);
-                // Bitmap bmp = new Bitmap(2800, 3518, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
-
-
-                pictureBox3.DrawToBitmap(bmp, rect1);
-                // pictureBox3.DrawToBitmap(bmp, rect);
-                String filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Labeled\imgg.png";
-                //bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
-
-                //using (Bitmap bitmap = (Bitmap)Image.FromFile(filePath))
-                //{
-                //    using (Bitmap newBitmap = new Bitmap(bitmap))
-                //    {
-                //        newBitmap.SetResolution(2800, 3518);
-
-                //        newBitmap.Save(@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Labeled\imggNNN.png", System.Drawing.Imaging.ImageFormat.Png);
-                //    }
-                //}
-                //bmp = ResizeImage(pictureBox3.Image, 2800, 3518);
-                // bmp.SetResolution(pictureBox3.Image.HorizontalResolution, pictureBox3.Image.VerticalResolution);
-
-                bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
-
-                //pictureBox3.Image.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
         private void pictureBox4_Paint(object sender, PaintEventArgs e)
         {
+
             if (rect != null && penClick)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox4.ClientRectangle;
-
-                Bitmap bmp = new Bitmap(rect1.Width, rect1.Height);
-                // Bitmap bmp = new Bitmap(2800, 3518, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
-
-
-                pictureBox4.DrawToBitmap(bmp, rect1);
-                // pictureBox3.DrawToBitmap(bmp, rect);
-                String filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Labeled\imgg4.png";
-
-                bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
         private void pictureBox4_MouseDown(object sender, MouseEventArgs e)
@@ -377,20 +352,11 @@ namespace breastcancer
         }
         private void pictureBox5_Paint(object sender, PaintEventArgs e)
         {
+
             if (rect != null && penClick)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox5.ClientRectangle;
-
-                Bitmap bmp = new Bitmap(rect1.Width, rect1.Height);
-                // Bitmap bmp = new Bitmap(2800, 3518, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
-
-
-                pictureBox5.DrawToBitmap(bmp, rect1);
-                // pictureBox3.DrawToBitmap(bmp, rect);
-                String filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Labeled\imgg5.png";
-
-                bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -538,78 +504,42 @@ namespace breastcancer
         }
         private void pictureBox7_Paint(object sender, PaintEventArgs e)
         {
+
             if (rect != null && penClick)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox7.ClientRectangle;
-
-                Bitmap bmp = new Bitmap(rect1.Width, rect1.Height);
-                // Bitmap bmp = new Bitmap(2800, 3518, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
-
-
-                pictureBox7.DrawToBitmap(bmp, rect1);
-                // pictureBox3.DrawToBitmap(bmp, rect);
-                String filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Labeled\imgg7.png";
-
-                bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
+
             if (rect != null && penClick)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox1.ClientRectangle;
-
-                Bitmap bmp = new Bitmap(rect1.Width, rect1.Height);
-                // Bitmap bmp = new Bitmap(2800, 3518, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
-
-
-                pictureBox1.DrawToBitmap(bmp, rect1);
-                // pictureBox3.DrawToBitmap(bmp, rect);
-                String filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Labeled\imgg1.png";
-
-                bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
         private void pictureBox2_Paint(object sender, PaintEventArgs e)
         {
+
             if (rect != null && penClick)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox2.ClientRectangle;
-
-                Bitmap bmp = new Bitmap(rect1.Width, rect1.Height);
-                // Bitmap bmp = new Bitmap(2800, 3518, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
-
-
-                pictureBox2.DrawToBitmap(bmp, rect1);
-                // pictureBox3.DrawToBitmap(bmp, rect);
-                String filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Labeled\imgg2.png";
-
-                bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
-        private void radioButtonPositive_CheckedChanged(object sender, EventArgs e)
+            private void radioButtonPositive_CheckedChanged(object sender, EventArgs e)
         {
             diagnosisInt = 1;
         }
         private void pictureBox6_Paint(object sender, PaintEventArgs e)
         {
+
             if (rect != null && penClick)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox6.ClientRectangle;
-
-                Bitmap bmp = new Bitmap(rect1.Width, rect1.Height);
-                // Bitmap bmp = new Bitmap(2800, 3518, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
-
-
-                pictureBox6.DrawToBitmap(bmp, rect1);
-                // pictureBox3.DrawToBitmap(bmp, rect);
-                String filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Labeled\imgg6.png";
-
-                bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
         private void radioButtonPotential_CheckedChanged(object sender, EventArgs e)
@@ -634,22 +564,20 @@ namespace breastcancer
                 textBoxComment.Text = textCom;
             }
         }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Update(ii);
+            JsonSave();
+        }
+
         private void pictureBox8_Paint(object sender, PaintEventArgs e)
         {
+
             if (rect != null && penClick)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox8.ClientRectangle;
-
-                Bitmap bmp = new Bitmap(rect1.Width, rect1.Height);
-                // Bitmap bmp = new Bitmap(2800, 3518, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
-
-
-                pictureBox8.DrawToBitmap(bmp, rect1);
-                // pictureBox3.DrawToBitmap(bmp, rect);
-                String filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Labeled\imgg8.png";
-
-                bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
         private void buttonPencil_Click(object sender, EventArgs e)
@@ -732,9 +660,14 @@ namespace breastcancer
                         ImageName = filesNotResized[c].TrimEnd('\\'),
                         Diagnosis = diagnosisInt,
                         Comment = textBoxComment.Text,
-                        DoctorId = 1
+                        DoctorId = 1,
+                        RectX1 = LocationXY.X * 13,
+                        RectY1 = LocationXY.Y * 13,
+                        RectX2 = LocationX1Y1.X * 13,
+                        RectY2 = LocationX1Y1.Y * 13
                     });
-                    JsonSave();
+             //       Update();
+               //     JsonSave();
 
 
                     textBoxComment.Text = "";
@@ -759,8 +692,8 @@ namespace breastcancer
                 else
                 {
                     //
-                    Update(ii);
-                    JsonSave();
+                   // Update(ii);
+                //    JsonSave();
                     if (ii < dataList.Count)
                     {
                         ii++;
@@ -798,9 +731,13 @@ namespace breastcancer
                                 ImageName = filesNotResized[c].TrimEnd('\\'),
                                 Diagnosis = diagnosisInt,
                                 Comment = textBoxComment.Text,
-                                DoctorId = 1
+                                DoctorId = 1,
+                                RectX1 = LocationXY.X,
+                                RectY1 = LocationXY.Y,
+                                RectX2 = LocationX1Y1.X,
+                                RectY2 = LocationX1Y1.Y
                             });
-                            JsonSave();
+                 //           JsonSave();
 
 
                             textBoxComment.Text = "";
@@ -888,6 +825,10 @@ namespace breastcancer
             {
                 item.Diagnosis = 3;
             }
+            item.RectX1 = LocationXY.X;
+            item.RectY1 = LocationXY.Y;
+            item.RectX2 = LocationX1Y1.X;
+            item.RectY2 = LocationX1Y1.Y;
         }
         private void buttonUpFunction()
         {
@@ -953,12 +894,12 @@ namespace breastcancer
                     //ii = dataList.Count - 1;
                     u1 = true;
                 }
-                else
-                {
-                    // var item1 = 
-                    Update(ii);
-                    JsonSave();
-                }
+                //else
+                //{
+                //    // var item1 = 
+                //    Update(ii);
+                //    JsonSave();
+                //}
                 ii--;
 
                 var item = dataList[ii];
@@ -982,23 +923,22 @@ namespace breastcancer
 
                 item = dataList[ii];
 
-                //if (prev == -1)
-                //{
-                //    item = dataList[ii];
-                //}
-                //if (prev < -1)
-                //{
-                //    item = dataList[jj];
-                //}
-                //if (!string.IsNullOrEmpty(textBoxComment.Text) && (radioButtonNegative.Checked == true || radioButtonPositive.Checked == true || radioButtonPotential.Checked == true))
-                //{
-                //    //if (!(item.Comment.Equals(this.textBoxComment.Text)) || item.Diagnosis != d)
-                //    //{
-
-                //    Update(ii);
-                //    JsonSave();
-                //    //}
-                //}
+                /*if (prev == -1)
+                {
+                    item = dataList[ii];
+                }
+                if (prev < -1)
+                {
+                    item = dataList[jj];
+                }
+                if (!string.IsNullOrEmpty(textBoxComment.Text) && (radioButtonNegative.Checked == true || radioButtonPositive.Checked == true || radioButtonPotential.Checked == true))
+                {
+                    if (!(item.Comment.Equals(this.textBoxComment.Text)) || item.Diagnosis != d)
+                    {
+                                    Update(ii);
+                    JsonSave();
+                    }
+                }*/
                 c--;
                 buttonNext.Enabled = true;
                 label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + filesNotResized[c];

@@ -182,9 +182,6 @@ namespace breastcancer
                 str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" + "\n";
             MessageBox.Show(str);
             drawPicAll(c);
-            ////drawPic(pictureBox1, c);
-
-
         }
 
 
@@ -210,43 +207,6 @@ namespace breastcancer
 
 
         }
-        /*  private void pictureBox3_MouseDoubleClick(object sender, MouseEventArgs e)
-          {
-              picNum = 0;
-              new Form4().Show();
-          }
-          private void pictureBox4_MouseDoubleClick(object sender, MouseEventArgs e)
-          {
-              picNum = 1;
-              new Form4().Show();
-          }
-          private void pictureBox5_MouseDoubleClick(object sender, MouseEventArgs e)
-          {
-              picNum = 2;
-              new Form4().Show();
-          }
-          private void pictureBox1_MouseDoubleClick(object sender, MouseEventArgs e)
-          {
-              picNum = 1;
-              new Form4().Show();
-          }
-          private void pictureBox3_DoubleClick(object sender, EventArgs e)
-          {
-              picNum = 0;
-              new Form4().Show();
-          }
-          private void pictureBox4_DoubleClick(object sender, EventArgs e)
-          {
-              picNum = 6;
-              new Form4().Show();
-          }
-          private void pictureBox5_DoubleClick(object sender, EventArgs e)
-          {
-              picNum = 7;
-              new Form4().Show();
-          }*/
-
-
         private void Form2_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Up)
@@ -580,8 +540,6 @@ namespace breastcancer
                 textBoxComment.Text = textCom;
             }
         }
-
-
         private void pictureBox1_DoubleClick(object sender, EventArgs e)
         {
             picNum = 0;
@@ -617,9 +575,6 @@ namespace breastcancer
             picNum = 6;
             new Form4().Show();
         }
-
-
-
         private void pictureBox8_DoubleClick(object sender, EventArgs e)
         {
             picNum = 6;
@@ -682,16 +637,12 @@ namespace breastcancer
             drawPic(pictureBox6, c);
             drawPic(pictureBox7, c);
             drawPic(pictureBox8, c);
-
         }
         private void drawPic(PictureBox pb, int n)
         {
-            //....
             Graphics g = pb.CreateGraphics();
             g.DrawRectangle(Pens.Red, new Rectangle(dataList[n].RectX1, dataList[n].RectY1, dataList[n].RectX2 - dataList[n].RectX1, dataList[n].RectY2 - dataList[n].RectY1));
             Rectangle rect1 = pb.ClientRectangle;
-
-            //....
         }
         private void downCheckFunction(bool downFlag)
         {
@@ -999,24 +950,7 @@ namespace breastcancer
 
                 item = dataList[ii];
 
-                // Graphics g = this.CreateGraphics();
-
-                // Color col = new Color();
-                // col = Color.Red;
-
-
-                // SolidBrush br = new SolidBrush(Color.Red);
-                //// SolidBrush Brosh80 = new SolidBrush(myRgbColor80);
-                //// SolidBrush Brosh90 = new SolidBrush(myRgbColor90);
-                // /////////////////////////////////////////////////////
-                // g.FillRectangle(rect, item.RectX1, item.RectY1, item.RectX2-item.RectX1, item.RectY2-item.RectY1);
-
-
-                // control.Invalidate();
-                //this.InvokePaint(this, new PaintEventArgs(this.CreateGraphics(), this.DisplayRectangle));
-                //control.InvokePaint(Control c, PaintEventArgs e);
-                //control.Refresh();
-                //   pictureBox1.Invalidate();
+               
                 /*if (prev == -1)
                 {
                     item = dataList[ii];

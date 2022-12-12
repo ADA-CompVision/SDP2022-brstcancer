@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using breastcancer.Service;
 
 namespace breastcancer
 {
@@ -15,13 +16,14 @@ namespace breastcancer
         int ii = 0;
         int prev = 0;
         int d = 0;
-        public static int c = 0;
         int diagnosisInt = 0;
         string[] filesNotResized, filesBrightened, filesDarked, filesHighlyBrightened;
         string[] filesColor1, filesColor2, filesColor3, filesColor4, filesColor5, filesResizedTo511, filesResizedTo255, filesResizedTo1000, filesResizedTo1023;
         string filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
         string jsonData;
 
+        public static int c = 0;
+        public static int j;  //when clicked gets the j's value of the list
         public static int picNum;
         public static bool downFlag = false;
 
@@ -546,42 +548,50 @@ namespace breastcancer
         private void pictureBox1_DoubleClick(object sender, EventArgs e)
         {
             picNum = 0;
-            new Form4().Show();
+            Form4 frm4 = new Form4();
+            frm4.Show();
         }
         private void pictureBox2_DoubleClick(object sender, EventArgs e)
         {
             picNum = 1;
-            new Form4().Show();
+            Form4 frm4 = new Form4();
+            frm4.Show();
         }
         private void pictureBox3_DoubleClick(object sender, EventArgs e)
         {
             picNum = 2;
-            new Form4().Show();
+            Form4 frm4 = new Form4();
+            frm4.Show();
         }
         private void pictureBox4_DoubleClick(object sender, EventArgs e)
         {
             picNum = 3;
-            new Form4().Show();
+            Form4 frm4 = new Form4();
+            frm4.Show();
         }
         private void pictureBox5_DoubleClick(object sender, EventArgs e)
         {
             picNum = 4;
-            new Form4().Show();
+            Form4 frm4 = new Form4();
+            frm4.Show();
         }
         private void pictureBox6_DoubleClick(object sender, EventArgs e)
         {
             picNum = 5;
-            new Form4().Show();
+            Form4 frm4 = new Form4();
+            frm4.Show();
         }
         private void pictureBox7_DoubleClick(object sender, EventArgs e)
         {
             picNum = 6;
-            new Form4().Show();
+            Form4 frm4 = new Form4();
+            frm4.Show();
         }
         private void pictureBox8_DoubleClick(object sender, EventArgs e)
         {
             picNum = 6;
-            new Form4().Show();
+            Form4 frm4 = new Form4();
+            frm4.Show();
         }
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -900,6 +910,35 @@ namespace breastcancer
                 //    ii--;
             }
             if (prev > 0) prev--;
+        }
+
+        private void CreateStaticData(int i)
+        {
+            j = i;
+            var item1 = dataList[i];
+            StaticData.DataList1.ImageId = item1.ImageId;
+            StaticData.DataList1.DoctorId = item1.DoctorId;
+            StaticData.DataList1.Diagnosis = item1.Diagnosis;
+            StaticData.DataList1.Comment = item1.Comment;
+            StaticData.DataList1.RectX1 = item1.RectX1;
+            StaticData.DataList1.RectY1 = item1.RectY1;
+            StaticData.DataList1.RectX2 = item1.RectX2;
+            StaticData.DataList1.RectY2 = item1.RectY2;
+        }
+        private void CopyStaticDataToDataList()
+        {
+            if (j < dataList.Count)
+            {
+                var item1 = dataList[j];
+                item1.ImageId = StaticData.DataList1.ImageId;
+                item1.DoctorId = StaticData.DataList1.DoctorId;
+                item1.Diagnosis = StaticData.DataList1.Diagnosis;
+                item1.Comment = StaticData.DataList1.Comment;
+                item1.RectX1 = StaticData.DataList1.RectX1;
+                item1.RectY1 = StaticData.DataList1.RectY1;
+                item1.RectX2 = StaticData.DataList1.RectX2;
+                item1.RectY2 = StaticData.DataList1.RectY2;
+            }
         }
     }
 }

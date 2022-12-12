@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace breastcancer
 {
-    internal class Data
+    public class Data
     {
         public int ImageId { get; set; }
         public String ImageName { get; set; }

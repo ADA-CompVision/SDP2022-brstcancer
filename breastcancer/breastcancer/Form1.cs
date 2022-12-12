@@ -13,7 +13,7 @@ namespace breastcancer
 
             label1.ForeColor = Color.WhiteSmoke;
             label2.ForeColor = Color.FromArgb(126, 126, 126);
-                     
+
             buttonAbout.ForeColor = Color.WhiteSmoke;
             buttonAbout.BackColor = Color.FromArgb(34, 34, 34);
             IntPtr ptr = NativeMethods.CreateRoundRectRgn(2, 2, this.buttonAbout.Width, this.buttonAbout.Height, 5, 5);
@@ -27,11 +27,14 @@ namespace breastcancer
         }
         private void buttonAbout_Click(object sender, EventArgs e)
         {
-            new Form3().Show();
+            Form3 frm3 = new Form3();
+            frm3.Show();
         }
         private void buttonBrowse_Click(object sender, EventArgs e)
         {
-            new Form2().Show();
+            //new Form2().Show();
+            Form2 frm2 = new Form2();
+            frm2.Show();
         }
     }
 }

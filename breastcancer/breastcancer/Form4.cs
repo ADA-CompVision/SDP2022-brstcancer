@@ -38,6 +38,11 @@ namespace breastcancer
             panel1.BackColor = Color.FromArgb(45, 45, 45);
             panel4.BackColor = Color.FromArgb(45, 45, 45);
 
+            label2.AutoSize = false;
+            label2.Height = 1;
+            label2.ForeColor = Color.FromArgb(161, 161, 161);
+            label2.Width = 10000;
+            label2.BorderStyle = BorderStyle.Fixed3D;
 
             string filePathBrightened = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Brightened";
             string filePathColor1 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color1";
@@ -169,6 +174,14 @@ namespace breastcancer
             this.panel4.Region = System.Drawing.Region.FromHrgn(ptr);
             NativeMethods.DeleteObject(ptr);
         }
+
+        //private void drawPic(PictureBox pb, int n)
+        //{
+        //    Graphics g = pb.CreateGraphics();
+
+        //    g.DrawRectangle(Pens.Red, new Rectangle(dataList[n].RectX1, dataList[n].RectY1, dataList[n].RectX2 - dataList[n].RectX1, dataList[n].RectY2 - dataList[n].RectY1));
+        //    Rectangle rect1 = pb.ClientRectangle;
+        //}
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {

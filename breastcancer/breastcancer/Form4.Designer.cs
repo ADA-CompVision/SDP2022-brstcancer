@@ -320,6 +320,8 @@
             this.ClientSize = new System.Drawing.Size(1370, 694);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form4";
             this.Text = "Form4";
             this.Load += new System.EventHandler(this.Form4_Load);

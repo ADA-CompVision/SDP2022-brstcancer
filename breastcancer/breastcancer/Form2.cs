@@ -14,7 +14,8 @@ namespace breastcancer
 
         int ii = 0;
         int prev = 0;
-        int c = 0;
+        int d = 0;
+        public static int c = 0;
         int diagnosisInt = 0;
         string[] filesNotResized, filesBrightened, filesDarked, filesHighlyBrightened;
         string[] filesColor1, filesColor2, filesColor3, filesColor4, filesColor5, filesResizedTo511, filesResizedTo255, filesResizedTo1000, filesResizedTo1023;
@@ -204,6 +205,8 @@ namespace breastcancer
                 str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" + "\n";
 
             MessageBox.Show(str);
+            if (c != dataList.Count)
+                drawPicAll(c);
 
 
         }
@@ -642,6 +645,7 @@ namespace breastcancer
         private void drawPic(PictureBox pb, int n)
         {
             Graphics g = pb.CreateGraphics();
+
             g.DrawRectangle(Pens.Red, new Rectangle(dataList[n].RectX1, dataList[n].RectY1, dataList[n].RectX2 - dataList[n].RectX1, dataList[n].RectY2 - dataList[n].RectY1));
             Rectangle rect1 = pb.ClientRectangle;
         }
@@ -699,8 +703,6 @@ namespace breastcancer
                         RectY2 = LocationX1Y1.Y * 13
                     });
                     Update(ii);
-                    // JsonSave();test delete
-
 
                     textBoxComment.Text = "";
 
@@ -723,15 +725,11 @@ namespace breastcancer
                 }
                 else
                 {
-                    int d = 0;
-
                     Update(ii);
                     ii++;
                     if (ii < dataList.Count)
                     {
-
                         var item = dataList[ii];
-
 
                         this.textBoxComment.Text = item.Comment;
 
@@ -771,45 +769,15 @@ namespace breastcancer
                         radioButtonPositive.Checked = false;
                         radioButtonPotential.Checked = false;
                         radioButtonNegative.Checked = false;
+
+                        //added later
+                        c++;
+                        buttonPrevious.Enabled = true;
+                        label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + files[c];
+
+                        downCheckFunction(downFlag);
                     }
                 }
-
-
-
-
-
-                // Update json data string
-                //jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
-                //System.IO.File.WriteAllText(filePath, jsonData);
-
-
-                //reseting function yaz bura
-                //if (ii == dataList.Count)
-                //{
-                //    textBoxComment.Text = "";
-
-                //    radioButtonPositive.Checked = false;
-                //    radioButtonPotential.Checked = false;
-                //    radioButtonNegative.Checked = false;
-
-                //    if (c == filesNotResized.Length - 1)
-                //        buttonNext.Enabled = false;
-                //    else
-                //    {
-                //        c++;
-                //        buttonPrevious.Enabled = true;
-                //        label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + files[c];
-
-                //        pictureBox1.Image = Image.FromFile(filesNotResized[c]);
-                //        pictureBox5.Image = Image.FromFile(filesBrightened[c]);
-                //        pictureBox3.Image = Image.FromFile(filesDarked[c]);
-                //        pictureBox4.Image = Image.FromFile(filesHighlyBrightened[c]);
-                //    }
-                //JsonSave();
-
-                // }
-                // ii++;
-
             }
         }
         private void Update(int i)
@@ -891,7 +859,6 @@ namespace breastcancer
                 buttonPrevious.Enabled = false;
             else
             {
-                int d = 0;
                 if (ii >= dataList.Count())
                 {
                     //ii = dataList.Count - 1;
@@ -924,23 +891,6 @@ namespace breastcancer
 
                 item = dataList[ii];
 
-
-                /*if (prev == -1)
-                {
-                    item = dataList[ii];
-                }
-                if (prev < -1)
-                {
-                    item = dataList[jj];
-                }
-                if (!string.IsNullOrEmpty(textBoxComment.Text) && (radioButtonNegative.Checked == true || radioButtonPositive.Checked == true || radioButtonPotential.Checked == true))
-                {
-                    if (!(item.Comment.Equals(this.textBoxComment.Text)) || item.Diagnosis != d)
-                    {
-                                    Update(ii);
-                    JsonSave();
-                    }
-                }*/
                 c--;
                 buttonNext.Enabled = true;
                 label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + filesNotResized[c];

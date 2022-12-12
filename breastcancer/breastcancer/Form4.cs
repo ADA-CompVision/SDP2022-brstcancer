@@ -14,14 +14,16 @@ namespace breastcancer
     {
         int picNum4;
         bool downFlag4;
+        int c4;
+
         public Form4()
         {
             InitializeComponent();
             this.picNum4 = Form2.picNum;
             this.downFlag4 = Form2.downFlag;
+            this.c4 = Form2.c;
         }
 
-        int c = 0;
         string[] files;
 
         private Font fnt = new Font("Arial", 10);
@@ -133,7 +135,7 @@ namespace breastcancer
             }
 
             files = Directory.GetFiles(filepath);
-            pictureBox1.Image = Image.FromFile(files[c]);
+            pictureBox1.Image = Image.FromFile(files[c4]);
         }
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {

@@ -183,7 +183,7 @@ namespace breastcancer
             buttonPreviousFunction();
             for (int n = 0; n < dataList.Count; n++)
                 str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" + "\n";
-            MessageBox.Show(str);
+            MessageBox.Show(" ");
             drawPicAll(c);
         }
 
@@ -548,6 +548,7 @@ namespace breastcancer
         private void pictureBox1_DoubleClick(object sender, EventArgs e)
         {
             picNum = 0;
+            CreateStaticData(ii);
             Form4 frm4 = new Form4();
             frm4.Show();
         }
@@ -626,6 +627,12 @@ namespace breastcancer
         {
             buttonUpFunction();
         }
+
+        private void Form2_Activated(object sender, EventArgs e)
+        {
+            CopyStaticDataToDataList();
+        }
+
         private void buttonDown_Click(object sender, EventArgs e)
         {
             buttonDownFunction();
@@ -927,7 +934,7 @@ namespace breastcancer
         }
         private void CopyStaticDataToDataList()
         {
-            if (j < dataList.Count)
+            if (j < dataList.Count && StaticData.DataList1.Diagnosis != 0)
             {
                 var item1 = dataList[j];
                 item1.ImageId = StaticData.DataList1.ImageId;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using breastcancer.Service;
 
 namespace breastcancer
 {
@@ -19,6 +20,7 @@ namespace breastcancer
         public Form4()
         {
             InitializeComponent();
+            
             this.picNum4 = Form2.picNum;
             this.downFlag4 = Form2.downFlag;
             this.c4 = Form2.c;
@@ -141,6 +143,7 @@ namespace breastcancer
 
             files = Directory.GetFiles(filepath);
             pictureBox1.Image = Image.FromFile(files[c4]);
+            drawPic(c4);
         }
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
@@ -175,13 +178,13 @@ namespace breastcancer
             NativeMethods.DeleteObject(ptr);
         }
 
-        //private void drawPic(PictureBox pb, int n)
-        //{
-        //    Graphics g = pb.CreateGraphics();
+        private void drawPic(int n)
+        {
+            Graphics g = pictureBox1.CreateGraphics();
 
-        //    g.DrawRectangle(Pens.Red, new Rectangle(dataList[n].RectX1, dataList[n].RectY1, dataList[n].RectX2 - dataList[n].RectX1, dataList[n].RectY2 - dataList[n].RectY1));
-        //    Rectangle rect1 = pb.ClientRectangle;
-        //}
+            g.DrawRectangle(Pens.Red, new Rectangle(StaticData.DataList1.RectX1, StaticData.DataList1.RectY1, StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1, StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1));
+            Rectangle rect1 = pictureBox1.ClientRectangle;
+        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {

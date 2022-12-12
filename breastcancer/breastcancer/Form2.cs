@@ -181,6 +181,9 @@ namespace breastcancer
             for (int n = 0; n < dataList.Count; n++)
                 str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" + "\n";
             MessageBox.Show(str);
+            drawPicAll(c);
+            ////drawPic(pictureBox1, c);
+
 
         }
         private void buttonNext_Click(object sender, EventArgs e)
@@ -601,7 +604,7 @@ namespace breastcancer
             new Form4().Show();
         }
 
-       
+
 
         private void pictureBox8_DoubleClick(object sender, EventArgs e)
         {
@@ -654,6 +657,27 @@ namespace breastcancer
             rect.Height = Math.Abs(LocationXY.Y - LocationX1Y1.Y);
 
             return rect;
+        }
+        private void drawPicAll(int c)
+        {
+            drawPic(pictureBox1, c);
+            drawPic(pictureBox2, c);
+            drawPic(pictureBox3, c);
+            drawPic(pictureBox4, c);
+            drawPic(pictureBox5, c);
+            drawPic(pictureBox6, c);
+            drawPic(pictureBox7, c);
+            drawPic(pictureBox8, c);
+
+        }
+        private void drawPic(PictureBox pb, int n)
+        {
+            //....
+            Graphics g = pb.CreateGraphics();
+            g.DrawRectangle(Pens.Red, new Rectangle(dataList[n].RectX1, dataList[n].RectY1, dataList[n].RectX2 - dataList[n].RectX1, dataList[n].RectY2 - dataList[n].RectY1));
+            Rectangle rect1 = pb.ClientRectangle;
+
+            //....
         }
         private void downCheckFunction(bool downFlag)
         {
@@ -961,6 +985,24 @@ namespace breastcancer
 
                 item = dataList[ii];
 
+                // Graphics g = this.CreateGraphics();
+
+                // Color col = new Color();
+                // col = Color.Red;
+
+
+                // SolidBrush br = new SolidBrush(Color.Red);
+                //// SolidBrush Brosh80 = new SolidBrush(myRgbColor80);
+                //// SolidBrush Brosh90 = new SolidBrush(myRgbColor90);
+                // /////////////////////////////////////////////////////
+                // g.FillRectangle(rect, item.RectX1, item.RectY1, item.RectX2-item.RectX1, item.RectY2-item.RectY1);
+
+
+                // control.Invalidate();
+                //this.InvokePaint(this, new PaintEventArgs(this.CreateGraphics(), this.DisplayRectangle));
+                //control.InvokePaint(Control c, PaintEventArgs e);
+                //control.Refresh();
+                //   pictureBox1.Invalidate();
                 /*if (prev == -1)
                 {
                     item = dataList[ii];

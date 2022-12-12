@@ -33,6 +33,10 @@ namespace breastcancer
             this.WindowState = FormWindowState.Maximized;
             this.BackColor = Color.FromArgb(34, 34, 34);
 
+            panel1.BackColor = Color.FromArgb(45, 45, 45);
+            panel4.BackColor = Color.FromArgb(45, 45, 45);
+
+
             string filePathBrightened = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Brightened";
             string filePathColor1 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color1";
             string filePathColor2 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color2";
@@ -50,57 +54,86 @@ namespace breastcancer
             if (picNum4 == 0)
             {
                 if (!downFlag4)
+                {
                     filepath = filePathNotResized;
+                    label3.Text = "Not Resized";
+                }
                 else
+                {
                     filepath = filePathColor1;
+                    label3.Text = "Color1";
+                }
             }
             else if (picNum4 == 1)
             {
                 if (!downFlag4)
+                {
                     filepath = filePathBrightened;
+                    label3.Text = "Brightened";
+                }
                 else
+                {
                     filepath = filePathColor2;
+                    label3.Text = "Color2";
+                }
             }
             else if (picNum4 == 2)
             {
                 if (!downFlag4)
+                {
                     filepath = filePathHighlyBrightened;
+                    label3.Text = "Highly Brightened";
+                }
                 else
+                {
                     filepath = filePathColor3;
+                    label3.Text = "Color3";
+                }
             }
             else if (picNum4 == 3)
             {
                 if (!downFlag4)
+                {
                     filepath = filePathDarked;
+                    label3.Text = "Darkened";
+                }
                 else
+                {
                     filepath = filePathColor4;
+                    label3.Text = "Color4";
+                }
             }
             else if (picNum4 == 4)
             {
                 if (!downFlag4)
+                {
                     filepath = filePathResizedTo255;
+                    label3.Text = "Resized To 255";
+                }
                 else
+                {
                     filepath = filePathColor5;
+                    label3.Text = "Color5";
+                }
             }
             else if (picNum4 == 5)
             {
                 filepath = filePathResizedTo511;
+                label3.Text = "Resized To 511";
             }
             else if (picNum4 == 6)
             {
                 filepath = filePathResizedTo1000;
+                label3.Text = "Resized To 1000";
             }
             else if (picNum4 == 7)
             {
                 filepath = filePathResizedTo1023;
+                label3.Text = "Resized To 1023";
             }
 
             files = Directory.GetFiles(filepath);
             pictureBox1.Image = Image.FromFile(files[c]);
-        }
-        private void pictureBox1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            this.Close();
         }
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
@@ -126,6 +159,25 @@ namespace breastcancer
                 pictureBox1.Width += Convert.ToInt32(pictureBox1.Width * e.Delta / 1000);
                 pictureBox1.Height += Convert.ToInt32(pictureBox1.Height * e.Delta / 1000);
             }
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+            IntPtr ptr = NativeMethods.CreateRoundRectRgn(3, 3, this.panel4.Width, this.panel4.Height, 11, 11); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
+            this.panel4.Region = System.Drawing.Region.FromHrgn(ptr);
+            NativeMethods.DeleteObject(ptr);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            IntPtr ptr = NativeMethods.CreateRoundRectRgn(3, 3, this.panel1.Width, this.panel1.Height, 11, 11); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
+            this.panel1.Region = System.Drawing.Region.FromHrgn(ptr);
+            NativeMethods.DeleteObject(ptr);
+        }
+
+        private void pictureBox1_DoubleClick(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

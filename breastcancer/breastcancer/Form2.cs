@@ -187,14 +187,14 @@ namespace breastcancer
 
         //private void buttonPreviousFunctionDraw()
         //{
-            //this function is gonna work in the next updates after checking the lists
-            //buttonPreviousFunction();
-            //string str = "";
+        //this function is gonna work in the next updates after checking the lists
+        //buttonPreviousFunction();
+        //string str = "";
 
-            //for (int n = 0; n < dataList.Count; n++)
-            //    str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" + "\n";
-            //MessageBox.Show(str);
-            //drawPicAll(c);
+        //for (int n = 0; n < dataList.Count; n++)
+        //    str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" + "\n";
+        //MessageBox.Show(str);
+        //drawPicAll(c);
         //}
         private void buttonNext_Click(object sender, EventArgs e)
         {
@@ -582,7 +582,8 @@ namespace breastcancer
         }
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Update(ii - 1);
+            if ((radioButtonNegative.Checked == true || radioButtonPositive.Checked == true || radioButtonPotential.Checked == true))
+                Update(ii);
             JsonSave();
         }
         private void pictureBox8_Paint(object sender, PaintEventArgs e)
@@ -680,7 +681,7 @@ namespace breastcancer
             else
             {
                 int id = 1;
-                if (dataList.Count == 0 || ii == dataList.Count)
+                if (dataList.Count == 0 || ii == (dataList.Count))
                 {
                     id = dataList.Count + 1;
 
@@ -703,7 +704,6 @@ namespace breastcancer
 
                     textBoxComment.Text = "";
 
-
                     radioButtonPositive.Checked = false;
                     radioButtonPotential.Checked = false;
                     radioButtonNegative.Checked = false;
@@ -723,64 +723,34 @@ namespace breastcancer
                 }
                 else
                 {
+                    int d = 0;
 
-                    //Update(ii); doesnt work
-                    // JsonSave();test delete
+                    Update(ii);
+                    ii++;
                     if (ii < dataList.Count)
                     {
-                        //ii++;
 
-                        int d = 0;
-                        if (ii != dataList.Count)
+                        var item = dataList[ii];
+
+
+                        this.textBoxComment.Text = item.Comment;
+
+                        if (item.Diagnosis == 1)
                         {
-                            var item = dataList[ii];
-                            this.textBoxComment.Text = item.Comment;
-
-                            if (item.Diagnosis == 1)
-                            {
-                                this.radioButtonPositive.Checked = true;
-                                d = 1;
-                            }
-                            else if (item.Diagnosis == 2)
-                            {
-                                this.radioButtonPotential.Checked = true;
-                                d = 2;
-                            }
-                            else if (item.Diagnosis == 3)
-                            {
-                                this.radioButtonNegative.Checked = true;
-                                d = 3;
-                            }
-
+                            this.radioButtonPositive.Checked = true;
+                            d = 1;
                         }
-                        /*else
+                        else if (item.Diagnosis == 2)
                         {
-                            id = dataList.Count + 1;
+                            this.radioButtonPotential.Checked = true;
+                            d = 2;
+                        }
+                        else if (item.Diagnosis == 3)
+                        {
+                            this.radioButtonNegative.Checked = true;
+                            d = 3;
+                        }
 
-                            // Add any new data
-                            dataList.Add(new Data()
-                            {
-                                ImageId = id,// w,//get last image id from json file then ++ and assign
-                                ImageName = filesNotResized[c].TrimEnd('\\'),
-                                Diagnosis = diagnosisInt,
-                                Comment = textBoxComment.Text,
-                                DoctorId = 1,
-                                RectX1 = LocationXY.X,
-                                RectY1 = LocationXY.Y,
-                                RectX2 = LocationX1Y1.X,
-                                RectY2 = LocationX1Y1.Y
-                            });
-                            Update(ii);
-                            JsonSave();
-
-
-
-                            textBoxComment.Text = "";
-
-                            radioButtonPositive.Checked = false;
-                            radioButtonPotential.Checked = false;
-                            radioButtonNegative.Checked = false;
-                        }*/
                         if (c == filesNotResized.Length - 1)
                             buttonNext.Enabled = false;
                         else
@@ -791,8 +761,16 @@ namespace breastcancer
 
                             downCheckFunction(downFlag);
                         }
-                        Update(ii);
-                        ii++;
+                    }
+                    else
+                    {
+                        //end of file so we are clearing the data
+
+                        textBoxComment.Text = "";
+
+                        radioButtonPositive.Checked = false;
+                        radioButtonPotential.Checked = false;
+                        radioButtonNegative.Checked = false;
                     }
                 }
 
@@ -914,13 +892,9 @@ namespace breastcancer
             else
             {
                 int d = 0;
-                //  ii--;
-                // jj = ii + 1;
-                bool u1 = false;
                 if (ii >= dataList.Count())
                 {
                     //ii = dataList.Count - 1;
-                    u1 = true;
                 }
                 else
                 {
@@ -950,7 +924,7 @@ namespace breastcancer
 
                 item = dataList[ii];
 
-               
+
                 /*if (prev == -1)
                 {
                     item = dataList[ii];

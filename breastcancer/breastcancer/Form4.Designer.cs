@@ -122,7 +122,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(423, 466);
+            this.label3.Location = new System.Drawing.Point(44, 374);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 15);
             this.label3.TabIndex = 908;
@@ -131,12 +131,13 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox1.Location = new System.Drawing.Point(423, 193);
+            this.pictureBox1.Location = new System.Drawing.Point(342, 13);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(215, 270);
+            this.pictureBox1.Size = new System.Drawing.Size(467, 586);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
             // 
             // panel4
             // 
@@ -152,6 +153,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1016, 690);
             this.panel4.TabIndex = 922;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // labelMark
             // 
@@ -262,6 +264,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(314, 691);
             this.panel1.TabIndex = 921;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // labelNotes
             // 

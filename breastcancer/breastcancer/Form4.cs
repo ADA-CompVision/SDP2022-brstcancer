@@ -64,50 +64,18 @@ namespace breastcancer
 
 
             string filePathBrightened = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Brightened";
-            //  filesBrightened = Directory.GetFiles(filePathBrightened);
             string filePathColor1 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color1";
-            // filesColor1 = Directory.GetFiles(filePathColor1);
             string filePathColor2 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color2";
-            //filesColor2 = Directory.GetFiles(filePathColor2);
             string filePathColor3 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color3";
-            //        filesColor3 = Directory.GetFiles(filePathColor3);
             string filePathColor4 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color4";
-            //      filesColor4 = Directory.GetFiles(filePathColor4);
             string filePathColor5 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color5";
-            //    filesColor5 = Directory.GetFiles(filePathColor5);
             string filePathDarked = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Darked";
-            //  filesDarked = Directory.GetFiles(filePathDarked);
             string filePathHighlyBrightened = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\HighlyBrightened";
-            //        filesHighlyBrightened = Directory.GetFiles(filePathHighlyBrightened);
             string filePathNotResized = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\NotResized";
-            //      filesNotResized = Directory.GetFiles(filePathNotResized);
             string filePathResizedTo255 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo255";
-            //    filesResizedTo255 = Directory.GetFiles(filePathResizedTo255);
             string filePathResizedTo511 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo511";
-            //  filesResizedTo511 = Directory.GetFiles(filePathResizedTo511);
             string filePathResizedTo1000 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo1000";
-            //       filesResizedTo1000 = Directory.GetFiles(filePathResizedTo1000);
             string filePathResizedTo1023 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo1023";
-            //     filesResizedTo1023 = Directory.GetFiles(filePathResizedTo1023);
-
-
-            //pictureBox3.Image = Image.FromFile(filesColor1[c]);
-            //pictureBox4.Image = Image.FromFile(filesColor2[c]);
-            //pictureBox5.Image = Image.FromFile(filesColor3[c]);
-            //pictureBox7.Image = Image.FromFile(filesColor4[c]);
-            //pictureBox1.Image = Image.FromFile(filesColor5[c]);
-            //pictureBox2.Image = Image.FromFile(filesResizedTo255[c]);
-            //pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
-            //pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
-
-            //pictureBox3.Image = Image.FromFile(filesNotResized[c]);
-            //pictureBox4.Image = Image.FromFile(filesBrightened[c]);
-            //pictureBox5.Image = Image.FromFile(filesHighlyBrightened[c]);
-            //pictureBox7.Image = Image.FromFile(filesResizedTo1000[c]);
-            //pictureBox1.Image = Image.FromFile(filesDarked[c]);
-            //pictureBox2.Image = Image.FromFile(filesResizedTo255[c]);
-            //pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
-            //pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
 
             if (picNum4 == 0)
             {

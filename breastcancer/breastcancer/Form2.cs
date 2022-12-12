@@ -186,6 +186,19 @@ namespace breastcancer
 
 
         }
+
+
+        //private void buttonPreviousFunctionDraw()
+        //{
+            //this function is gonna work in the next updates after checking the lists
+            //buttonPreviousFunction();
+            //string str = "";
+
+            //for (int n = 0; n < dataList.Count; n++)
+            //    str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" + "\n";
+            //MessageBox.Show(str);
+            //drawPicAll(c);
+        //}
         private void buttonNext_Click(object sender, EventArgs e)
         {
             string str = "";
@@ -194,6 +207,7 @@ namespace breastcancer
                 str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" + "\n";
 
             MessageBox.Show(str);
+
 
         }
         /*  private void pictureBox3_MouseDoubleClick(object sender, MouseEventArgs e)

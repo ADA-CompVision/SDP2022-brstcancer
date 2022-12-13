@@ -183,7 +183,7 @@ namespace breastcancer
             buttonPreviousFunction();
             for (int n = 0; n < dataList.Count; n++)
                 str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" + "\n";
-            MessageBox.Show(" ");
+            MessageBox.Show(str);
             drawPicAll(c);
         }
 
@@ -548,6 +548,7 @@ namespace breastcancer
         private void pictureBox1_DoubleClick(object sender, EventArgs e)
         {
             picNum = 0;
+            AddToDataList();
             CreateStaticData(ii);
             Form4 frm4 = new Form4();
             frm4.Show();
@@ -555,42 +556,56 @@ namespace breastcancer
         private void pictureBox2_DoubleClick(object sender, EventArgs e)
         {
             picNum = 1;
+            AddToDataList();
+            CreateStaticData(ii);
             Form4 frm4 = new Form4();
             frm4.Show();
         }
         private void pictureBox3_DoubleClick(object sender, EventArgs e)
         {
             picNum = 2;
+            AddToDataList();
+            CreateStaticData(ii);
             Form4 frm4 = new Form4();
             frm4.Show();
         }
         private void pictureBox4_DoubleClick(object sender, EventArgs e)
         {
             picNum = 3;
+            AddToDataList();
+            CreateStaticData(ii);
             Form4 frm4 = new Form4();
             frm4.Show();
         }
         private void pictureBox5_DoubleClick(object sender, EventArgs e)
         {
             picNum = 4;
+            AddToDataList();
+            CreateStaticData(ii);
             Form4 frm4 = new Form4();
             frm4.Show();
         }
         private void pictureBox6_DoubleClick(object sender, EventArgs e)
         {
             picNum = 5;
+            AddToDataList();
+            CreateStaticData(ii);
             Form4 frm4 = new Form4();
             frm4.Show();
         }
         private void pictureBox7_DoubleClick(object sender, EventArgs e)
         {
             picNum = 6;
+            AddToDataList();
+            CreateStaticData(ii);
             Form4 frm4 = new Form4();
             frm4.Show();
         }
         private void pictureBox8_DoubleClick(object sender, EventArgs e)
         {
             picNum = 6;
+            AddToDataList();
+            CreateStaticData(ii);
             Form4 frm4 = new Form4();
             frm4.Show();
         }
@@ -689,6 +704,33 @@ namespace breastcancer
                 pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
                 pictureBox7.Image = Image.FromFile(filesResizedTo1000[c]);
                 pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
+            }
+        }
+
+        private void AddToDataList()
+        {
+            if (ii >= dataList.Count)
+            {
+                int id = 1;
+
+                if (dataList.Count == 0 || ii == (dataList.Count))
+                {
+                    id = dataList.Count + 1;
+
+                    // Add any new data
+                    dataList.Add(new Data()
+                    {
+                        ImageId = id,// w,//get last image id from json file then ++ and assign
+                        ImageName = filesNotResized[c].TrimEnd('\\'),
+                        Diagnosis = diagnosisInt,
+                        Comment = textBoxComment.Text,
+                        DoctorId = 1,
+                        RectX1 = LocationXY.X * 13,
+                        RectY1 = LocationXY.Y * 13,
+                        RectX2 = LocationX1Y1.X * 13,
+                        RectY2 = LocationX1Y1.Y * 13
+                    });
+                }
             }
         }
         private void buttonNextFunction()

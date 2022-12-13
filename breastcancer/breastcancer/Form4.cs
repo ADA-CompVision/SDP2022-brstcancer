@@ -16,11 +16,15 @@ namespace breastcancer
         int picNum4;
         bool downFlag4;
         int c4;
+        // Rectangle rect;
+
+        int sx1, sy1, sw, sh;
+
 
         public Form4()
         {
             InitializeComponent();
-            
+
             this.picNum4 = Form2.picNum;
             this.downFlag4 = Form2.downFlag;
             this.c4 = Form2.c;
@@ -143,7 +147,7 @@ namespace breastcancer
 
             files = Directory.GetFiles(filepath);
             pictureBox1.Image = Image.FromFile(files[c4]);
-            drawPic(c4);
+            drawPic();//c4);
         }
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
@@ -178,13 +182,35 @@ namespace breastcancer
             NativeMethods.DeleteObject(ptr);
         }
 
-        private void drawPic(int n)
+        //private Rectangle GetRect()
+        //{
+        //    rect = new Rectangle();
+        //    rect.X = Math.Min(LocationXY.X, LocationX1Y1.X);
+        //    rect.Y = Math.Min(LocationXY.Y, LocationX1Y1.Y);
+
+        //    rect.Width = Math.Abs(LocationXY.X - LocationX1Y1.X);
+        //    rect.Height = Math.Abs(LocationXY.Y - LocationX1Y1.Y);
+
+        //    return rect;
+        //}
+
+        private void drawPic()//PictureBox pb, int n)
         {
             Graphics g = pictureBox1.CreateGraphics();
 
+            // g.DrawRectangle(Pens.Red, new Rectangle(dataList[n].RectX1, dataList[n].RectY1, dataList[n].RectX2 - dataList[n].RectX1, dataList[n].RectY2 - dataList[n].RectY1));
             g.DrawRectangle(Pens.Red, new Rectangle(StaticData.DataList1.RectX1, StaticData.DataList1.RectY1, StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1, StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1));
+
             Rectangle rect1 = pictureBox1.ClientRectangle;
         }
+
+        //private void drawPic()//int n)
+        //{
+        //    Graphics g = pictureBox1.CreateGraphics();
+
+        //    g.DrawRectangle(Pens.Red, new Rectangle(StaticData.DataList1.RectX1, StaticData.DataList1.RectY1, StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1, StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1));
+        //    Rectangle rect1 = pictureBox1.ClientRectangle;
+        //}
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -196,6 +222,21 @@ namespace breastcancer
         private void pictureBox1_DoubleClick(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+            sx1 = (int)(StaticData.DataList1.RectX1 / 6);
+            sy1 = (int)(StaticData.DataList1.RectY1 / 6);
+            sw = (int)((StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1) / 6);
+            sh = (int)((StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1) / 6);
+            // e.Graphics.DrawRectangle(Pens.Red, new Rectangle(205, 203, 153, 171));
+            e.Graphics.DrawRectangle(Pens.Red, new Rectangle(sx1, sy1, sw, sh));//StaticData.DataList1.RectX1, StaticData.DataList1.RectY1, StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1, StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1));
+
+            // e.Graphics.DrawRectangle(Pens.Red, GetRect());
+            Rectangle rect1 = pictureBox1.ClientRectangle;
+
+
         }
     }
 }

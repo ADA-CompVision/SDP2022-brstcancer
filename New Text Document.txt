@@ -1,0 +1,117 @@
+            if (picNum4 == 0)
+            {
+                if (!downFlag4)
+                {
+                    filepath = filePathNotResized;
+                    label3.Text = "Not Resized";
+                }
+                else
+                {
+                    filepath = filePathColor1;
+                    label3.Text = "Color1";
+                }
+            }
+            else if (picNum4 == 1)
+            {
+                if (!downFlag4)
+                {
+                    filepath = filePathBrightened;
+                    label3.Text = "Brightened";
+                }
+                else
+                {
+                    filepath = filePathColor2;
+                    label3.Text = "Color2";
+                }
+            }
+            else if (picNum4 == 2)
+            {
+                if (!downFlag4)
+                {
+                    filepath = filePathHighlyBrightened;
+                    label3.Text = "Highly Brightened";
+                }
+                else
+                {
+                    filepath = filePathColor3;
+                    label3.Text = "Color3";
+                }
+            }
+            else if (picNum4 == 3)
+            {
+                if (!downFlag4)
+                {
+                    filepath = filePathDarked;
+                    label3.Text = "Darkened";
+                }
+                else
+                {
+                    filepath = filePathColor4;
+                    label3.Text = "Color4";
+                }
+            }
+            else if (picNum4 == 4)
+            {
+                if (!downFlag4)
+                {
+                    filepath = filePathResizedTo255;
+                    label3.Text = "Resized To 255";
+                }
+                else
+                {
+                    filepath = filePathColor5;
+                    label3.Text = "Color5";
+                }
+            }
+            else if (picNum4 == 5)
+            {
+                if (!downFlag4)
+                {
+                    filepath = filePathResizedTo511;
+                    label3.Text = "Resized To 511";
+                }
+                else
+                {
+                    filepath = filePathColor1_600;
+                    label3.Text = "1 Resized To 600";
+                }
+            }
+            else if (picNum4 == 6)
+            {
+                if (downFlag4)
+                {
+                    filepath = filePathColor2_600;
+                    label3.Text = "2 Resized To 600";
+                }
+                else
+                {
+                    filepath = filePathResizedTo1000;
+                    label3.Text = "Resized To 511";
+                }
+            }
+            else if (picNum4 == 7)
+            {
+                if (!downFlag4)
+                {
+                    filepath = filePathResizedTo1023;
+                    label3.Text = "Resized To 1023";
+                }
+                else
+                {
+                    filepath = filePathColor3_600;
+                    label3.Text = "3 Resized To 600";
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+ string filePathColor1_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color1_600";
+            string filePathColor2_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color2_600";
+            string filePathColor3_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color3_600";

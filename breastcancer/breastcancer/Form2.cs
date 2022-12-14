@@ -17,7 +17,7 @@ namespace breastcancer
         int prev = 0;
         int d = 0;
         int diagnosisInt = 0;
-        string[] filesNotResized, filesBrightened, filesDarked, filesHighlyBrightened;
+        string[] filesNotResized, filesBrightened, filesDarked, filesHighlyBrightened, filesColor1_600, filesColor2_600, filesColor3_600;
         string[] filesColor1, filesColor2, filesColor3, filesColor4, filesColor5, filesResizedTo511, filesResizedTo255, filesResizedTo1000, filesResizedTo1023;
         string filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
         string jsonData;
@@ -66,7 +66,7 @@ namespace breastcancer
             labelNotes.BackColor = Color.Transparent;
             label1.ForeColor = Color.FromArgb(161, 161, 161);
             label3.ForeColor = Color.FromArgb(161, 161, 161);
-            label3.Text = "Not Resized";
+            label3.Text = "Original";
             label4.ForeColor = Color.FromArgb(161, 161, 161);
             label4.Text = "Brightened";
             label5.ForeColor = Color.FromArgb(161, 161, 161);
@@ -142,10 +142,16 @@ namespace breastcancer
             filesBrightened = Directory.GetFiles(filePathBrightened);
             string filePathColor1 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color1";
             filesColor1 = Directory.GetFiles(filePathColor1);
+            string filePathColor1_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color1_600";
+            filesColor1_600 = Directory.GetFiles(filePathColor1_600);
             string filePathColor2 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color2";
             filesColor2 = Directory.GetFiles(filePathColor2);
+            string filePathColor2_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color2_600";
+            filesColor2_600 = Directory.GetFiles(filePathColor2_600);
             string filePathColor3 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color3";
             filesColor3 = Directory.GetFiles(filePathColor3);
+            string filePathColor3_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color3_600";
+            filesColor3_600 = Directory.GetFiles(filePathColor3_600);
             string filePathColor4 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color4";
             filesColor4 = Directory.GetFiles(filePathColor4);
             string filePathColor5 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color5";
@@ -209,8 +215,6 @@ namespace breastcancer
             MessageBox.Show(str);
             if (c != dataList.Count)
                 drawPicAll(c);
-
-
         }
         private void Form2_KeyUp(object sender, KeyEventArgs e)
         {
@@ -642,12 +646,10 @@ namespace breastcancer
         {
             buttonUpFunction();
         }
-
         private void Form2_Activated(object sender, EventArgs e)
         {
             CopyStaticDataToDataList();
         }
-
         private void buttonDown_Click(object sender, EventArgs e)
         {
             buttonDownFunction();
@@ -679,7 +681,7 @@ namespace breastcancer
             Graphics g = pb.CreateGraphics();
 
             g.DrawRectangle(Pens.Red, new Rectangle(dataList[n].RectX1, dataList[n].RectY1, dataList[n].RectX2 - dataList[n].RectX1, dataList[n].RectY2 - dataList[n].RectY1));
-            Rectangle rect1 = pb.ClientRectangle;
+           // Rectangle rect1 = pb.ClientRectangle;
         }
         private void downCheckFunction(bool downFlag)
         {
@@ -701,12 +703,11 @@ namespace breastcancer
                 pictureBox3.Image = Image.FromFile(filesColor3[c]);
                 pictureBox4.Image = Image.FromFile(filesColor4[c]);
                 pictureBox5.Image = Image.FromFile(filesColor5[c]);
-                pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
-                pictureBox7.Image = Image.FromFile(filesResizedTo1000[c]);
-                pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
+                pictureBox6.Image = Image.FromFile(filesColor1_600[c]);
+                pictureBox7.Image = Image.FromFile(filesColor2_600[c]);
+                pictureBox8.Image = Image.FromFile(filesColor3_600[c]);
             }
         }
-
         private void AddToDataList()
         {
             if (ii >= dataList.Count)
@@ -895,18 +896,18 @@ namespace breastcancer
             label5.Text = "Color 3";
             label12.Text = "Color 4";
             label8.Text = "Color 5";
-            label7.Text = "Resized to 511";
-            label6.Text = "Resized to 1000";
-            label11.Text = "Resized to 1023";
+            label7.Text = "1 Resized to 600";
+            label6.Text = "2 Resized to 600";
+            label11.Text = "3 Resized to 600";
 
             pictureBox1.Image = Image.FromFile(filesColor1[c]);
             pictureBox2.Image = Image.FromFile(filesColor2[c]);
             pictureBox3.Image = Image.FromFile(filesColor3[c]);
             pictureBox4.Image = Image.FromFile(filesColor4[c]);
             pictureBox5.Image = Image.FromFile(filesColor5[c]);
-            pictureBox6.Image = Image.FromFile(filesResizedTo511[c]);
-            pictureBox7.Image = Image.FromFile(filesResizedTo1000[c]);
-            pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
+            pictureBox6.Image = Image.FromFile(filesColor1_600[c]);
+            pictureBox7.Image = Image.FromFile(filesColor2_600[c]);
+            pictureBox8.Image = Image.FromFile(filesColor3_600[c]);
 
             label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";
         }
@@ -960,7 +961,6 @@ namespace breastcancer
             }
             if (prev > 0) prev--;
         }
-
         private void CreateStaticData(int i)
         {
             j = i;

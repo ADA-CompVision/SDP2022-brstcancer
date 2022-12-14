@@ -54,6 +54,9 @@ namespace breastcancer
             string filePathColor1 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color1";
             string filePathColor2 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color2";
             string filePathColor3 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color3";
+            string filePathColor1_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color1_600";
+            string filePathColor2_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color2_600";
+            string filePathColor3_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color3_600";
             string filePathColor4 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color4";
             string filePathColor5 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color5";
             string filePathDarked = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Darked";
@@ -131,18 +134,42 @@ namespace breastcancer
             }
             else if (picNum4 == 5)
             {
-                filepath = filePathResizedTo511;
-                label3.Text = "Resized To 511";
+                if (!downFlag4)
+                {
+                    filepath = filePathResizedTo511;
+                    label3.Text = "Resized To 511";
+                }
+                else
+                {
+                    filepath = filePathColor1_600;
+                    label3.Text = "1 Resized To 600";
+                }
             }
             else if (picNum4 == 6)
             {
-                filepath = filePathResizedTo1000;
-                label3.Text = "Resized To 1000";
+                if (downFlag4)
+                {
+                    filepath = filePathColor2_600;
+                    label3.Text = "2 Resized To 600";
+                }
+                else
+                {
+                    filepath = filePathResizedTo1000;
+                    label3.Text = "Resized To 511";
+                }
             }
             else if (picNum4 == 7)
             {
-                filepath = filePathResizedTo1023;
-                label3.Text = "Resized To 1023";
+                if (!downFlag4)
+                {
+                    filepath = filePathResizedTo1023;
+                    label3.Text = "Resized To 1023";
+                }
+                else
+                {
+                    filepath = filePathColor3_600;
+                    label3.Text = "3 Resized To 600";
+                }
             }
 
             files = Directory.GetFiles(filepath);

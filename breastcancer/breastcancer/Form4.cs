@@ -263,27 +263,27 @@ namespace breastcancer
 
         }
 
-        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
-        {
-        //    if (e.Delta != 0)
-        //    {
-        //        if (e.Delta <= 0)
-        //        {
-        //            //set minimum size to zoom
-        //            if (pictureBox1.Width < 50)
-        //                // lbl_Zoom.Text = pictureBox1.Image.Size; 
-        //                return;
-        //        }
-        //        else
-        //        {
-        //            //set maximum size to zoom
-        //            if (pictureBox1.Width > 1000)
-        //                return;
-        //        }
-        //        pictureBox1.Width += Convert.ToInt32(pictureBox1.Width * e.Delta / 1000);
-        //        pictureBox1.Height += Convert.ToInt32(pictureBox1.Height * e.Delta / 1000);
-        //    }
-        }
+        /* private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+         {
+         //    if (e.Delta != 0)
+         //    {
+         //        if (e.Delta <= 0)
+         //        {
+         //            //set minimum size to zoom
+         //            if (pictureBox1.Width < 50)
+         //                // lbl_Zoom.Text = pictureBox1.Image.Size; 
+         //                return;
+         //        }
+         //        else
+         //        {
+         //            //set maximum size to zoom
+         //            if (pictureBox1.Width > 1000)
+         //                return;
+         //        }
+         //        pictureBox1.Width += Convert.ToInt32(pictureBox1.Width * e.Delta / 1000);
+         //        pictureBox1.Height += Convert.ToInt32(pictureBox1.Height * e.Delta / 1000);
+         //    }
+         }*/
 
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
@@ -306,11 +306,23 @@ namespace breastcancer
 
         private void drawPic()//PictureBox pb, int n)
         {
-            Graphics g = pictureBox1.CreateGraphics();
+
 
             // g.DrawRectangle(Pens.Red, new Rectangle(dataList[n].RectX1, dataList[n].RectY1, dataList[n].RectX2 - dataList[n].RectX1, dataList[n].RectY2 - dataList[n].RectY1));
-            g.DrawRectangle(Pens.Red, new Rectangle(StaticData.DataList1.RectX1, StaticData.DataList1.RectY1, StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1, StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1));
+            // g.DrawRectangle(Pens.Red, new Rectangle(StaticData.DataList1.RectX1, StaticData.DataList1.RectY1, StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1, StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1));
 
+
+
+            sx1 = (int)(StaticData.DataList1.RectX1 / 6);
+            sy1 = (int)(StaticData.DataList1.RectY1 / 6);
+            sw = (int)((StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1) / 6);
+            sh = (int)((StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1) / 6);
+            Graphics g = pictureBox1.CreateGraphics();
+
+            // e.Graphics.DrawRectangle(Pens.Red, new Rectangle(205, 203, 153, 171));
+            g.DrawRectangle(Pens.Red, new Rectangle(sx1, sy1, sw, sh));//StaticData.DataList1.RectX1, StaticData.DataList1.RectY1, StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1, StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1));
+
+            // e.Graphics.DrawRectangle(Pens.Red, GetRect());
             Rectangle rect1 = pictureBox1.ClientRectangle;
         }
 
@@ -365,7 +377,7 @@ namespace breastcancer
             sh = (int)((StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1) / 6);
             // e.Graphics.DrawRectangle(Pens.Red, new Rectangle(205, 203, 153, 171));
             e.Graphics.DrawRectangle(Pens.Red, new Rectangle(sx1, sy1, sw, sh));//StaticData.DataList1.RectX1, StaticData.DataList1.RectY1, StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1, StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1));
-             
+
             // e.Graphics.DrawRectangle(Pens.Red, GetRect());
             Rectangle rect1 = pictureBox1.ClientRectangle;
 

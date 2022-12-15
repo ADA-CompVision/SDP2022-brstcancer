@@ -609,7 +609,7 @@ namespace breastcancer
         }
         private void pictureBox8_DoubleClick(object sender, EventArgs e)
         {
-            picNum = 6;
+            picNum = 7;
             AddToDataList();
             CreateStaticData(ii);
             Form4 frm4 = new Form4();

@@ -265,24 +265,24 @@ namespace breastcancer
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Delta != 0)
-            {
-                if (e.Delta <= 0)
-                {
-                    //set minimum size to zoom
-                    if (pictureBox1.Width < 50)
-                        // lbl_Zoom.Text = pictureBox1.Image.Size; 
-                        return;
-                }
-                else
-                {
-                    //set maximum size to zoom
-                    if (pictureBox1.Width > 1000)
-                        return;
-                }
-                pictureBox1.Width += Convert.ToInt32(pictureBox1.Width * e.Delta / 1000);
-                pictureBox1.Height += Convert.ToInt32(pictureBox1.Height * e.Delta / 1000);
-            }
+        //    if (e.Delta != 0)
+        //    {
+        //        if (e.Delta <= 0)
+        //        {
+        //            //set minimum size to zoom
+        //            if (pictureBox1.Width < 50)
+        //                // lbl_Zoom.Text = pictureBox1.Image.Size; 
+        //                return;
+        //        }
+        //        else
+        //        {
+        //            //set maximum size to zoom
+        //            if (pictureBox1.Width > 1000)
+        //                return;
+        //        }
+        //        pictureBox1.Width += Convert.ToInt32(pictureBox1.Width * e.Delta / 1000);
+        //        pictureBox1.Height += Convert.ToInt32(pictureBox1.Height * e.Delta / 1000);
+        //    }
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -365,7 +365,7 @@ namespace breastcancer
             sh = (int)((StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1) / 6);
             // e.Graphics.DrawRectangle(Pens.Red, new Rectangle(205, 203, 153, 171));
             e.Graphics.DrawRectangle(Pens.Red, new Rectangle(sx1, sy1, sw, sh));//StaticData.DataList1.RectX1, StaticData.DataList1.RectY1, StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1, StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1));
-
+             
             // e.Graphics.DrawRectangle(Pens.Red, GetRect());
             Rectangle rect1 = pictureBox1.ClientRectangle;
 

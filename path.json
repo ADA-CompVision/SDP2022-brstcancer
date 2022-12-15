@@ -1,0 +1,24 @@
+[
+  {
+    "ImageId": 1,
+    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Augmentation\\NotResized\\image0.jpg",
+    "Diagnosis": 3,
+    "RectX1": 34,
+    "RectX2": 96,
+    "RectY1": 77,
+    "RectY2": 169,
+    "Comment": "Write a comment...",
+    "DoctorId": 1
+  },
+  {
+    "ImageId": 2,
+    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Augmentation\\NotResized\\image1.jpg",
+    "Diagnosis": 2,
+    "RectX1": 34,
+    "RectX2": 96,
+    "RectY1": 77,
+    "RectY2": 169,
+    "Comment": "",
+    "DoctorId": 1
+  }
+]

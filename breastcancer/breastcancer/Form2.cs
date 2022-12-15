@@ -187,41 +187,34 @@ namespace breastcancer
         }
         private void buttonPrevious_Click(object sender, EventArgs e)
         {
-            //  string str = "";
-            // buttonPreviousFunctionDraw();
+            string str = "";
             buttonPreviousFunction();
-            if (dataList[c].RectX1 != 0)
-                btnNavLR = true;
-            //for (int n = 0; n < dataList.Count; n++)
-            //    str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" + "\n";
-            //MessageBox.Show(str);
-            // if (c != 0)
-            // Console.WriteLine("Going back");
+            for (int n = 0; n < dataList.Count; n++)
+                str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" + "\n";
+            MessageBox.Show(str);
             drawPicAll(c);
         }
 
 
-        private void buttonPreviousFunctionDraw()
-        {
-            //this function is gonna work in the next updates after checking the lists
-            buttonPreviousFunction();
-            drawPicAll(c);
-        }
-        private void buttonNextFunctionDraw()
-        {
-            //this function is gonna work in the next updates after checking the lists
-            buttonNextFunction();
-            drawPicAll(c);
-        }
+        //private void buttonPreviousFunctionDraw()
+        //{
+        //this function is gonna work in the next updates after checking the lists
+        //buttonPreviousFunction();
+        //string str = "";
+
+        //for (int n = 0; n < dataList.Count; n++)
+        //    str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" + "\n";
+        //MessageBox.Show(str);
+        //drawPicAll(c);
+        //}
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            // buttonNextFunctionDraw();
-            //string str = "";
+            string str = "";
             buttonNextFunction();
-            ////for (int n = 0; n < dataList.Count; n++)
-            ////    str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" + "\n";
+            for (int n = 0; n < dataList.Count; n++)
+                str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" + "\n";
 
-            ////MessageBox.Show(str);
+            MessageBox.Show(str);
             if (c != dataList.Count)
                 drawPicAll(c);
         }
@@ -242,16 +235,11 @@ namespace breastcancer
                 //if(!this.textBoxComment.Focus())
                 this.buttonNext.Focus();
                 buttonNextFunction();
-                drawPicAll(c);
-                //buttonNextFunctionDraw();
             }
             else if (e.KeyCode == Keys.Left)
             {
                 this.buttonPrevious.Focus();
                 buttonPreviousFunction();
-                drawPicAll(c);
-
-                //buttonNextFunctionDraw();
             }
         }
         private void JsonSave()
@@ -621,7 +609,7 @@ namespace breastcancer
         }
         private void pictureBox8_DoubleClick(object sender, EventArgs e)
         {
-            picNum = 7;
+            picNum = 6;
             AddToDataList();
             CreateStaticData(ii);
             Form4 frm4 = new Form4();
@@ -695,7 +683,8 @@ namespace breastcancer
         private void drawPic(PictureBox pb, int n)
         {
             Graphics g = pb.CreateGraphics();
-            g.DrawRectangle(Pens.Red, new Rectangle(6 * dataList[n].RectX1, dataList[n].RectY1, dataList[n].RectX2 - dataList[n].RectX1, dataList[n].RectY2 - dataList[n].RectY1));
+
+            g.DrawRectangle(Pens.Red, new Rectangle(dataList[n].RectX1, dataList[n].RectY1, dataList[n].RectX2 - dataList[n].RectX1, dataList[n].RectY2 - dataList[n].RectY1));
             // Rectangle rect1 = pb.ClientRectangle;
         }
         private void downCheckFunction(bool downFlag)
@@ -747,13 +736,6 @@ namespace breastcancer
                         RectY2 = LocationX1Y1.Y * 13
                     });
                 }
-            }
-            else
-            {
-                dataList[ii].RectX1 = LocationXY.X * 13;
-                dataList[ii].RectY1 = LocationXY.Y * 13;
-                dataList[ii].RectX2 = LocationX1Y1.X * 13;
-                dataList[ii].RectY2 = LocationX1Y1.Y * 13;
             }
         }
         private void buttonNextFunction()
@@ -882,10 +864,10 @@ namespace breastcancer
             {
                 item.Diagnosis = 3;
             }
-            item.RectX1 = LocationXY.X * 6;
-            item.RectY1 = LocationXY.Y * 6;
-            item.RectX2 = LocationX1Y1.X * 6;
-            item.RectY2 = LocationX1Y1.Y * 6;
+            item.RectX1 = LocationXY.X;
+            item.RectY1 = LocationXY.Y;
+            item.RectX2 = LocationX1Y1.X;
+            item.RectY2 = LocationX1Y1.Y;
         }
         private void buttonUpFunction()
         {

@@ -262,10 +262,7 @@ namespace breastcancer
 
 
         }
-        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
-        {
 
-        }
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Delta != 0)

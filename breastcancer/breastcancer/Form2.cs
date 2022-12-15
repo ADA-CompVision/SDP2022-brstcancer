@@ -272,7 +272,7 @@ namespace breastcancer
         }
         private void pictureBox3_Paint(object sender, PaintEventArgs e)
         {
-            if (rect != null && penClick)
+            if (rect != null)// && penClick)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox3.ClientRectangle;
@@ -281,7 +281,7 @@ namespace breastcancer
         private void pictureBox4_Paint(object sender, PaintEventArgs e)
         {
 
-            if (rect != null && penClick)
+            if (rect != null)// && penClick)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox4.ClientRectangle;
@@ -338,7 +338,7 @@ namespace breastcancer
         private void pictureBox5_Paint(object sender, PaintEventArgs e)
         {
 
-            if (rect != null && penClick)
+            if (rect != null)// && penClick)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox5.ClientRectangle;
@@ -490,7 +490,7 @@ namespace breastcancer
         private void pictureBox7_Paint(object sender, PaintEventArgs e)
         {
 
-            if (rect != null && penClick)
+            if (rect != null)// && penClick)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox7.ClientRectangle;
@@ -499,7 +499,7 @@ namespace breastcancer
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
 
-            if (rect != null && penClick)
+            if (rect != null)// && penClick)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox1.ClientRectangle;
@@ -508,7 +508,7 @@ namespace breastcancer
         private void pictureBox2_Paint(object sender, PaintEventArgs e)
         {
 
-            if (rect != null && penClick)
+            if (rect != null)// && penClick)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox2.ClientRectangle;
@@ -521,7 +521,7 @@ namespace breastcancer
         private void pictureBox6_Paint(object sender, PaintEventArgs e)
         {
 
-            if (rect != null && penClick)
+            if (rect != null)// && penClick)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox6.ClientRectangle;
@@ -622,7 +622,7 @@ namespace breastcancer
         private void pictureBox8_Paint(object sender, PaintEventArgs e)
         {
 
-            if (rect != null && penClick)
+            if (rect != null)// && penClick)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox8.ClientRectangle;
@@ -681,7 +681,7 @@ namespace breastcancer
             Graphics g = pb.CreateGraphics();
 
             g.DrawRectangle(Pens.Red, new Rectangle(dataList[n].RectX1, dataList[n].RectY1, dataList[n].RectX2 - dataList[n].RectX1, dataList[n].RectY2 - dataList[n].RectY1));
-           // Rectangle rect1 = pb.ClientRectangle;
+            // Rectangle rect1 = pb.ClientRectangle;
         }
         private void downCheckFunction(bool downFlag)
         {

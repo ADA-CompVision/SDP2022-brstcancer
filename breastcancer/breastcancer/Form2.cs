@@ -5,7 +5,7 @@ namespace breastcancer
 {
     public partial class Form2 : Form
     {
-        Point LocationXY, LocationX1Y1;
+        public static Point LocationXY, LocationX1Y1;
         Rectangle rect;
         bool IsMouseDown = false;
         List<Data> dataList = new List<Data>();

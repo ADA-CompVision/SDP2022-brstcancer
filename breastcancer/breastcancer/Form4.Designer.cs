@@ -68,6 +68,7 @@
             this.buttonPencil.Size = new System.Drawing.Size(44, 44);
             this.buttonPencil.TabIndex = 921;
             this.buttonPencil.UseVisualStyleBackColor = true;
+           // this.buttonPencil.Click += new System.EventHandler(this.buttonPencil_Click);
             // 
             // buttonQuestionM
             // 
@@ -139,6 +140,7 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
+       //     this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             // 
             // panel4
             // 
@@ -307,6 +309,7 @@
             this.buttonNext.TabIndex = 298;
             this.buttonNext.Text = "Next";
             this.buttonNext.UseVisualStyleBackColor = true;
+          //  this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // buttonPrevious
             // 

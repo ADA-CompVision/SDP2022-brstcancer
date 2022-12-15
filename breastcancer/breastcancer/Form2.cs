@@ -13,6 +13,8 @@ namespace breastcancer
         string textCom = "Write a comment...";
         string textEmp = "";
 
+        bool btnNavLR = true;
+
         int ii = 0;
         int prev = 0;
         int d = 0;
@@ -272,7 +274,7 @@ namespace breastcancer
         }
         private void pictureBox3_Paint(object sender, PaintEventArgs e)
         {
-            if (rect != null)// && penClick)
+            if (rect != null && btnNavLR)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox3.ClientRectangle;
@@ -281,7 +283,7 @@ namespace breastcancer
         private void pictureBox4_Paint(object sender, PaintEventArgs e)
         {
 
-            if (rect != null)// && penClick)
+            if (rect != null && btnNavLR)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox4.ClientRectangle;
@@ -338,7 +340,7 @@ namespace breastcancer
         private void pictureBox5_Paint(object sender, PaintEventArgs e)
         {
 
-            if (rect != null)// && penClick)
+            if (rect != null && btnNavLR)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox5.ClientRectangle;
@@ -490,7 +492,7 @@ namespace breastcancer
         private void pictureBox7_Paint(object sender, PaintEventArgs e)
         {
 
-            if (rect != null)// && penClick)
+            if (rect != null && btnNavLR)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox7.ClientRectangle;
@@ -499,7 +501,7 @@ namespace breastcancer
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
 
-            if (rect != null)// && penClick)
+            if (rect != null && btnNavLR)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox1.ClientRectangle;
@@ -508,7 +510,7 @@ namespace breastcancer
         private void pictureBox2_Paint(object sender, PaintEventArgs e)
         {
 
-            if (rect != null)// && penClick)
+            if (rect != null && btnNavLR)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox2.ClientRectangle;
@@ -521,7 +523,7 @@ namespace breastcancer
         private void pictureBox6_Paint(object sender, PaintEventArgs e)
         {
 
-            if (rect != null)// && penClick)
+            if (rect != null && btnNavLR)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox6.ClientRectangle;
@@ -622,7 +624,7 @@ namespace breastcancer
         private void pictureBox8_Paint(object sender, PaintEventArgs e)
         {
 
-            if (rect != null)// && penClick)
+            if (rect != null && btnNavLR)
             {
                 e.Graphics.DrawRectangle(Pens.Red, GetRect());
                 Rectangle rect1 = pictureBox8.ClientRectangle;
@@ -630,6 +632,8 @@ namespace breastcancer
         }
         private void buttonPencil_Click(object sender, EventArgs e)
         {
+            btnNavLR = true;
+
             if (!penClick)
             {
                 var bitmap = (Bitmap)Image.FromFile(@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Logo\minipencil.png");//dlg.FileName);
@@ -737,6 +741,7 @@ namespace breastcancer
         private void buttonNextFunction()
         {
             penClick = false;
+            btnNavLR = false;
             prev = 0;
             if (radioButtonNegative.Checked == false && radioButtonPositive.Checked == false && radioButtonPotential.Checked == false)
             {
@@ -866,6 +871,7 @@ namespace breastcancer
         }
         private void buttonUpFunction()
         {
+            btnNavLR = true;
             downFlag = false;
             label3.Text = "Not Resized";
             label4.Text = "Brightened";
@@ -891,6 +897,8 @@ namespace breastcancer
         private void buttonDownFunction()
         {
             downFlag = true;
+            btnNavLR = true;
+
             label3.Text = "Color 1";
             label4.Text = "Color 2";
             label5.Text = "Color 3";
@@ -914,6 +922,8 @@ namespace breastcancer
         private void buttonPreviousFunction()
         {
             penClick = false;
+            btnNavLR = false;
+
 
             if (c == 0)
                 buttonPrevious.Enabled = false;

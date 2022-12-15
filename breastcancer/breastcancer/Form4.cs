@@ -67,6 +67,56 @@ namespace breastcancer
             string filePathResizedTo1000 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo1000";
             string filePathResizedTo1023 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo1023";
 
+
+            buttonPrevious.ForeColor = Color.WhiteSmoke;
+            buttonPrevious.BackColor = Color.FromArgb(45, 45, 45);
+            IntPtr ptrPre = NativeMethods.CreateRoundRectRgn(2, 2, this.buttonPrevious.Width, this.buttonPrevious.Height, 5, 5);
+            this.buttonPrevious.Region = System.Drawing.Region.FromHrgn(ptrPre);
+            NativeMethods.DeleteObject(ptrPre);
+
+            buttonNext.ForeColor = Color.WhiteSmoke;
+            buttonNext.BackColor = Color.FromArgb(45, 45, 45);
+            IntPtr ptrNext = NativeMethods.CreateRoundRectRgn(2, 2, this.buttonNext.Width, this.buttonNext.Height, 5, 5);
+            this.buttonNext.Region = System.Drawing.Region.FromHrgn(ptrNext);
+            NativeMethods.DeleteObject(ptrNext);
+
+            buttonUp.ForeColor = Color.WhiteSmoke;
+            buttonUp.BackColor = Color.FromArgb(66, 66, 66);
+            buttonUp.FlatStyle = FlatStyle.Flat;
+            buttonUp.FlatAppearance.BorderSize = 0;
+            IntPtr ptrUp = NativeMethods.CreateRoundRectRgn(-1, -1, this.buttonUp.Width + 2, this.buttonUp.Height + 2, 100, 100);
+            this.buttonUp.Region = System.Drawing.Region.FromHrgn(ptrUp);
+            NativeMethods.DeleteObject(ptrUp);
+
+            buttonDown.ForeColor = Color.WhiteSmoke;
+            buttonDown.BackColor = Color.FromArgb(66, 66, 66);
+            buttonDown.FlatStyle = FlatStyle.Flat;
+            buttonDown.FlatAppearance.BorderSize = 0;
+            IntPtr ptrDown = NativeMethods.CreateRoundRectRgn(-1, -1, this.buttonDown.Width + 2, this.buttonDown.Height + 2, 100, 100);
+            this.buttonDown.Region = System.Drawing.Region.FromHrgn(ptrDown);
+            NativeMethods.DeleteObject(ptrDown);
+
+            buttonQuestionM.ForeColor = Color.FromArgb(161, 161, 161);
+            buttonQuestionM.BackColor = Color.FromArgb(66, 66, 66);
+            buttonQuestionM.FlatStyle = FlatStyle.Flat;
+            buttonQuestionM.FlatAppearance.BorderSize = 0;
+            IntPtr ptrQues = NativeMethods.CreateRoundRectRgn(0, 0, this.buttonQuestionM.Width + 1, this.buttonQuestionM.Height + 1, 100, 100);
+            this.buttonQuestionM.Region = System.Drawing.Region.FromHrgn(ptrQues);
+            NativeMethods.DeleteObject(ptrQues);
+
+            buttonPencil.ForeColor = Color.FromArgb(161, 161, 161);
+            buttonPencil.BackColor = Color.FromArgb(66, 66, 66);
+            buttonPencil.FlatStyle = FlatStyle.Flat;
+            buttonPencil.FlatAppearance.BorderSize = 0;
+            IntPtr ptrPencil = NativeMethods.CreateRoundRectRgn(-1, -1, this.buttonPencil.Width + 2, this.buttonPencil.Height + 2, 100, 100);
+            this.buttonPencil.Region = System.Drawing.Region.FromHrgn(ptrPencil);
+            NativeMethods.DeleteObject(ptrPencil);
+
+            IntPtr ptr = NativeMethods.CreateRoundRectRgn(2, 2, this.textBoxComment.Width - 1, this.textBoxComment.Height - 1, 5, 5); //play with these values till you are happy
+            this.textBoxComment.Region = System.Drawing.Region.FromHrgn(ptr);
+            NativeMethods.DeleteObject(ptr);
+
+
             if (picNum4 == 0)
             {
                 if (!downFlag4)
@@ -175,6 +225,8 @@ namespace breastcancer
             files = Directory.GetFiles(filepath);
             pictureBox1.Image = Image.FromFile(files[c4]);
             drawPic();//c4);
+
+
         }
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {

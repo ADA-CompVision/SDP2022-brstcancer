@@ -544,7 +544,7 @@ namespace breastcancer
         }
         private void textBoxComment_Leave(object sender, EventArgs e)
         {
-            if (textBoxComment.Text.Equals(""))
+            if (textBoxComment.Text.Equals(textEmp))
             {
                 textBoxComment.Text = textCom;
             }

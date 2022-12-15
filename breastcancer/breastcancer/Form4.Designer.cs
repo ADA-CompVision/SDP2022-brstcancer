@@ -122,7 +122,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(44, 374);
+            this.label3.Location = new System.Drawing.Point(548, 662);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 15);
             this.label3.TabIndex = 908;
@@ -252,6 +252,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(246, 163);
             this.panel2.TabIndex = 915;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel1
             // 
@@ -295,6 +296,8 @@
             this.textBoxComment.Size = new System.Drawing.Size(246, 164);
             this.textBoxComment.TabIndex = 905;
             this.textBoxComment.TabStop = false;
+            this.textBoxComment.Enter += new System.EventHandler(this.textBoxComment_Enter);
+            this.textBoxComment.Leave += new System.EventHandler(this.textBoxComment_Leave);
             // 
             // buttonNext
             // 

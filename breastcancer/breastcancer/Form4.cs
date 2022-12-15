@@ -19,6 +19,8 @@ namespace breastcancer
         // Rectangle rect;
 
         int sx1, sy1, sw, sh;
+        string textCom = "Write a comment...";
+        string textEmp = "";
 
 
         public Form4()
@@ -39,7 +41,37 @@ namespace breastcancer
         {
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             this.WindowState = FormWindowState.Maximized;
+            this.KeyPreview = true;
             this.BackColor = Color.FromArgb(34, 34, 34);
+
+            panel1.BackColor = Color.FromArgb(45, 45, 45);
+            panel2.BackColor = Color.FromArgb(55, 55, 55);
+            panel4.BackColor = Color.FromArgb(45, 45, 45);
+
+            radioButtonNegative.BackColor = Color.FromArgb(55, 55, 55);
+            radioButtonNegative.ForeColor = Color.White;
+            radioButtonPositive.BackColor = Color.FromArgb(55, 55, 55);
+            radioButtonPositive.ForeColor = Color.White;
+            radioButtonPotential.BackColor = Color.FromArgb(55, 55, 55);
+            radioButtonPotential.ForeColor = Color.White;
+
+            textBoxComment.Text = textCom;
+            textBoxComment.ForeColor = Color.White;
+            textBoxComment.BackColor = Color.FromArgb(55, 55, 55);
+
+            label2.AutoSize = false;
+            label2.Height = 1;
+            label2.ForeColor = Color.FromArgb(161, 161, 161);
+            label2.Width = 10000;
+            label2.BorderStyle = BorderStyle.Fixed3D;
+            labelMark.BackColor = Color.Transparent;
+            labelMark.ForeColor = Color.White;
+            labelDComment.ForeColor = Color.White;
+            labelDComment.BackColor = Color.Transparent;
+            labelNotes.ForeColor = Color.White;
+            labelNotes.BackColor = Color.Transparent;
+            label1.ForeColor = Color.FromArgb(161, 161, 161);
+            label3.ForeColor = Color.FromArgb(161, 161, 161);
 
             panel1.BackColor = Color.FromArgb(45, 45, 45);
             panel4.BackColor = Color.FromArgb(45, 45, 45);
@@ -224,6 +256,8 @@ namespace breastcancer
 
             files = Directory.GetFiles(filepath);
             pictureBox1.Image = Image.FromFile(files[c4]);
+            label1.Text = filepath.TrimStart('\\');
+
             drawPic();//c4);
 
 
@@ -281,6 +315,29 @@ namespace breastcancer
             g.DrawRectangle(Pens.Red, new Rectangle(StaticData.DataList1.RectX1, StaticData.DataList1.RectY1, StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1, StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1));
 
             Rectangle rect1 = pictureBox1.ClientRectangle;
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            IntPtr ptr = NativeMethods.CreateRoundRectRgn(3, 3, this.panel2.Width, this.panel2.Height, 11, 11); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
+            this.panel2.Region = System.Drawing.Region.FromHrgn(ptr);
+            NativeMethods.DeleteObject(ptr);
+        }
+
+        private void textBoxComment_Enter(object sender, EventArgs e)
+        {
+            if (this.textBoxComment.Text.Equals(textCom))
+            {
+                this.textBoxComment.Text = textEmp;
+            }
+        }
+
+        private void textBoxComment_Leave(object sender, EventArgs e)
+        {
+            if (textBoxComment.Text.Equals(textEmp))
+            {
+                textBoxComment.Text = textCom;
+            }
         }
 
         //private void drawPic()//int n)

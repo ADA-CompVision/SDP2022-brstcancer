@@ -309,7 +309,7 @@ namespace breastcancer
             Graphics g = pictureBox1.CreateGraphics();
 
             // g.DrawRectangle(Pens.Red, new Rectangle(dataList[n].RectX1, dataList[n].RectY1, dataList[n].RectX2 - dataList[n].RectX1, dataList[n].RectY2 - dataList[n].RectY1));
-            g.DrawRectangle(Pens.Red, new Rectangle(StaticData.DataList1.RectX1, StaticData.DataList1.RectY1, StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1, StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1));
+            g.DrawRectangle(Pens.Red, new Rectangle(StaticData.DataList1.RectX1 / 6, StaticData.DataList1.RectY1 / 6, (StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1) / 6, (StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1) / 6));
 
             Rectangle rect1 = pictureBox1.ClientRectangle;
         }
@@ -364,7 +364,8 @@ namespace breastcancer
             sw = (int)((StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1) / 6);
             sh = (int)((StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1) / 6);
             // e.Graphics.DrawRectangle(Pens.Red, new Rectangle(205, 203, 153, 171));
-            e.Graphics.DrawRectangle(Pens.Red, new Rectangle(sx1, sy1, sw, sh));//StaticData.DataList1.RectX1, StaticData.DataList1.RectY1, StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1, StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1));
+            Pen pen = new Pen(Color.Red, 3);
+            e.Graphics.DrawRectangle(pen, new Rectangle(sx1, sy1, sw, sh));//StaticData.DataList1.RectX1, StaticData.DataList1.RectY1, StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1, StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1));
 
             // e.Graphics.DrawRectangle(Pens.Red, GetRect());
             Rectangle rect1 = pictureBox1.ClientRectangle;

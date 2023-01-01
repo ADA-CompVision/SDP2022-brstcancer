@@ -3,6 +3,11 @@ using breastcancer.Service;
 
 namespace breastcancer
 {
+
+    //2800x3518 sekil olcusu
+    //215x270 picbobx olcusu
+    //13 e bolub seyapmisiq
+    //form4 de size 467, 586   yeni 2800/6
     public partial class Form2 : Form
     {
         public static Point LocationXY, LocationX1Y1;
@@ -29,12 +34,16 @@ namespace breastcancer
         public static int picNum;
         public static bool downFlag = false;
 
-        Control control = new Control();
+        //Control control = new Control();
         public Form2()
         {
             InitializeComponent();
         }
         private void Form2_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+        private void LoadData()
         {
             this.WindowState = FormWindowState.Maximized;
             this.KeyPreview = true;
@@ -68,7 +77,7 @@ namespace breastcancer
             labelNotes.BackColor = Color.Transparent;
             label1.ForeColor = Color.FromArgb(161, 161, 161);
             label3.ForeColor = Color.FromArgb(161, 161, 161);
-            label3.Text = "Original";
+            label3.Text = "Not Resized";
             label4.ForeColor = Color.FromArgb(161, 161, 161);
             label4.Text = "Brightened";
             label5.ForeColor = Color.FromArgb(161, 161, 161);
@@ -76,7 +85,7 @@ namespace breastcancer
             label12.ForeColor = Color.FromArgb(161, 161, 161);
             label12.Text = "Darkened";
             label8.ForeColor = Color.FromArgb(161, 161, 161);
-            label8.Text = "Resized to 255";
+            label8.Text = "Original";
             label7.ForeColor = Color.FromArgb(161, 161, 161);
             label7.Text = "Resized to 511";
             label6.ForeColor = Color.FromArgb(161, 161, 161);
@@ -184,14 +193,21 @@ namespace breastcancer
             pictureBox8.Image = Image.FromFile(filesResizedTo1023[c]);
 
             label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";
+
+
+            if (c == 0) //changed it here
+                buttonPrevious.Enabled = false;
         }
         private void buttonPrevious_Click(object sender, EventArgs e)
         {
+            pictureBox1.Invalidate();
             string str = "";
             buttonPreviousFunction();
             for (int n = 0; n < dataList.Count; n++)
-                str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" + "\n";
+                str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" +
+                   "rectx1: " + dataList[n].RectX1 + "\nrectX2: " + dataList[n].RectX2 + "\nrecty1:" + dataList[n].RectY1 + "\nrecty2" + dataList[n].RectY2;
             MessageBox.Show(str);
+            // MessageBox.Show(c.ToString());
             drawPicAll(c);
         }
 
@@ -209,10 +225,12 @@ namespace breastcancer
         //}
         private void buttonNext_Click(object sender, EventArgs e)
         {
+            // pictureBox1.Invalidate();
             string str = "";
             buttonNextFunction();
             for (int n = 0; n < dataList.Count; n++)
-                str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" + "\n";
+                str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" +
+                   "rectx1: " + dataList[n].RectX1 + "\nrectX2: " + dataList[n].RectX2 + "\nrecty1:" + dataList[n].RectY1 + "\nrecty2" + dataList[n].RectY2;
 
             MessageBox.Show(str);
             if (c != dataList.Count)
@@ -274,19 +292,20 @@ namespace breastcancer
         }
         private void pictureBox3_Paint(object sender, PaintEventArgs e)
         {
-            if (rect != null && btnNavLR)
+            if (rect.Width != 0 && btnNavLR)
             {
-                e.Graphics.DrawRectangle(Pens.Red, GetRect());
-                Rectangle rect1 = pictureBox3.ClientRectangle;
+                Pen pen = new Pen(Color.Red, 3);
+                e.Graphics.DrawRectangle(pen, GetRect());
+                Rectangle rect1 = pictureBox2.ClientRectangle;
             }
         }
         private void pictureBox4_Paint(object sender, PaintEventArgs e)
         {
-
-            if (rect != null && btnNavLR)
+            if (rect.Width != 0 && btnNavLR)
             {
-                e.Graphics.DrawRectangle(Pens.Red, GetRect());
-                Rectangle rect1 = pictureBox4.ClientRectangle;
+                Pen pen = new Pen(Color.Red, 3);
+                e.Graphics.DrawRectangle(pen, GetRect());
+                Rectangle rect1 = pictureBox2.ClientRectangle;
             }
         }
         private void pictureBox4_MouseDown(object sender, MouseEventArgs e)
@@ -339,11 +358,11 @@ namespace breastcancer
         }
         private void pictureBox5_Paint(object sender, PaintEventArgs e)
         {
-
-            if (rect != null && btnNavLR)
+            if (rect.Width != 0 && btnNavLR)
             {
-                e.Graphics.DrawRectangle(Pens.Red, GetRect());
-                Rectangle rect1 = pictureBox5.ClientRectangle;
+                Pen pen = new Pen(Color.Red, 3);
+                e.Graphics.DrawRectangle(pen, GetRect());
+                Rectangle rect1 = pictureBox2.ClientRectangle;
             }
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -491,11 +510,11 @@ namespace breastcancer
         }
         private void pictureBox7_Paint(object sender, PaintEventArgs e)
         {
-
             if (rect != null && btnNavLR)
             {
-                e.Graphics.DrawRectangle(Pens.Red, GetRect());
-                Rectangle rect1 = pictureBox7.ClientRectangle;
+                Pen pen = new Pen(Color.Red, 3);
+                e.Graphics.DrawRectangle(pen, GetRect());
+                Rectangle rect1 = pictureBox2.ClientRectangle;
             }
         }
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
@@ -503,16 +522,17 @@ namespace breastcancer
 
             if (rect != null && btnNavLR)
             {
-                e.Graphics.DrawRectangle(Pens.Red, GetRect());
+                Pen pen = new Pen(Color.Red, 3);
+                e.Graphics.DrawRectangle(pen, GetRect());
                 Rectangle rect1 = pictureBox1.ClientRectangle;
             }
         }
         private void pictureBox2_Paint(object sender, PaintEventArgs e)
         {
-
             if (rect != null && btnNavLR)
             {
-                e.Graphics.DrawRectangle(Pens.Red, GetRect());
+                Pen pen = new Pen(Color.Red, 3);
+                e.Graphics.DrawRectangle(pen, GetRect());
                 Rectangle rect1 = pictureBox2.ClientRectangle;
             }
         }
@@ -522,11 +542,11 @@ namespace breastcancer
         }
         private void pictureBox6_Paint(object sender, PaintEventArgs e)
         {
-
             if (rect != null && btnNavLR)
             {
-                e.Graphics.DrawRectangle(Pens.Red, GetRect());
-                Rectangle rect1 = pictureBox6.ClientRectangle;
+                Pen pen = new Pen(Color.Red, 3);
+                e.Graphics.DrawRectangle(pen, GetRect());
+                Rectangle rect1 = pictureBox2.ClientRectangle;
             }
         }
         private void radioButtonPotential_CheckedChanged(object sender, EventArgs e)
@@ -623,11 +643,11 @@ namespace breastcancer
         }
         private void pictureBox8_Paint(object sender, PaintEventArgs e)
         {
-
-            if (rect != null && btnNavLR)
+            if (rect.Width != 0 && btnNavLR)
             {
-                e.Graphics.DrawRectangle(Pens.Red, GetRect());
-                Rectangle rect1 = pictureBox8.ClientRectangle;
+                Pen pen = new Pen(Color.Red, 3);
+                e.Graphics.DrawRectangle(pen, GetRect());
+                Rectangle rect1 = pictureBox2.ClientRectangle;
             }
         }
         private void buttonPencil_Click(object sender, EventArgs e)
@@ -669,23 +689,28 @@ namespace breastcancer
 
             return rect;
         }
-        private void drawPicAll(int c)
+        private void drawPicAll(int le)
         {
-            drawPic(pictureBox1, c);
-            drawPic(pictureBox2, c);
-            drawPic(pictureBox3, c);
-            drawPic(pictureBox4, c);
-            drawPic(pictureBox5, c);
-            drawPic(pictureBox6, c);
-            drawPic(pictureBox7, c);
-            drawPic(pictureBox8, c);
+            drawPic(pictureBox1, le);
+            drawPic(pictureBox2, le);
+            drawPic(pictureBox3, le);
+            drawPic(pictureBox4, le);
+            drawPic(pictureBox5, le);
+            drawPic(pictureBox6, le);
+            drawPic(pictureBox7, le);
+            drawPic(pictureBox8, le);
         }
         private void drawPic(PictureBox pb, int n)
         {
             Graphics g = pb.CreateGraphics();
-
-            g.DrawRectangle(Pens.Red, new Rectangle(dataList[n].RectX1, dataList[n].RectY1, dataList[n].RectX2 - dataList[n].RectX1, dataList[n].RectY2 - dataList[n].RectY1));
-            // Rectangle rect1 = pb.ClientRectangle;
+            Pen pen = new Pen(Color.Red, 3);
+            //           n--;
+            String stro;
+            stro = "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" +
+                               "rectx1: " + dataList[n].RectX1 + "\nrectX2: " + dataList[n].RectX2 + "\nrecty1:" + dataList[n].RectY1 + "\nrecty2" + dataList[n].RectY2;
+            MessageBox.Show(stro);
+            g.DrawRectangle(pen, new Rectangle(dataList[n].RectX1 / 13, dataList[n].RectY1 / 13, (dataList[n].RectX2 - dataList[n].RectX1) / 13, (dataList[n].RectY2 - dataList[n].RectY1) / 13));
+            //Rectangle rect1 = pb.ClientRectangle;
         }
         private void downCheckFunction(bool downFlag)
         {
@@ -736,6 +761,18 @@ namespace breastcancer
                         RectY2 = LocationX1Y1.Y * 13
                     });
                 }
+            }
+            else
+            {
+                //var item = dataList[ii];
+                //item.RectX1 = item.RectX1 * 13;
+                //item.RectY1 = item.RectY1 * 13;
+                //item.RectX2 = item.RectX2 * 13;
+                //item.RectY2 = item.RectY2 * 13;
+                //LocationXY.X = 0;
+                //LocationXY.Y = 0;
+                //LocationX1Y1.X = 0;
+                //LocationX1Y1.Y = 0;
             }
         }
         private void buttonNextFunction()
@@ -829,7 +866,7 @@ namespace breastcancer
                     {
                         //end of file so we are clearing the data
 
-                        textBoxComment.Text = "";
+                        textBoxComment.Text = textEmp;
 
                         radioButtonPositive.Checked = false;
                         radioButtonPotential.Checked = false;
@@ -864,10 +901,14 @@ namespace breastcancer
             {
                 item.Diagnosis = 3;
             }
-            item.RectX1 = LocationXY.X;
-            item.RectY1 = LocationXY.Y;
-            item.RectX2 = LocationX1Y1.X;
-            item.RectY2 = LocationX1Y1.Y;
+            item.RectX1 = LocationXY.X * 13;
+            item.RectY1 = LocationXY.Y * 13;
+            item.RectX2 = LocationX1Y1.X * 13;
+            item.RectY2 = LocationX1Y1.Y * 13;
+            LocationXY.X = 0;
+            LocationXY.Y = 0;
+            LocationX1Y1.X = 0;
+            LocationX1Y1.Y = 0;
         }
         private void buttonUpFunction()
         {
@@ -877,7 +918,7 @@ namespace breastcancer
             label4.Text = "Brightened";
             label5.Text = "Highly Brightened";
             label12.Text = "Darkened";
-            label8.Text = "Resized to 255";
+            label8.Text = "Original";
             label7.Text = "Resized to 511";
             label6.Text = "Resized to 1000";
             label11.Text = "Resized to 1023";
@@ -923,9 +964,7 @@ namespace breastcancer
         {
             penClick = false;
             btnNavLR = false;
-
-
-            if (c == 0)
+            if (c == 0) //changed it here
                 buttonPrevious.Enabled = false;
             else
             {
@@ -960,16 +999,24 @@ namespace breastcancer
                 }
 
                 item = dataList[ii];
+                //  MessageBox.Show(c.ToString());
+                // if (dataList[c - 1].RectX1 == 0)
+                //   btnNavLR = false;
 
+                // drawPicAll(c);
                 c--;
                 buttonNext.Enabled = true;
                 label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + filesNotResized[c];
+                                                                                         //    MessageBox.Show(c.ToString());
 
                 downCheckFunction(downFlag);
                 //if (!u1)
                 //    ii--;
             }
             if (prev > 0) prev--;
+            if (c == 0) //changed it here
+                buttonPrevious.Enabled = false;
+
         }
         private void CreateStaticData(int i)
         {

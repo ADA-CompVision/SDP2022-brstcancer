@@ -457,6 +457,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.buttonPencil);
             this.panel4.Controls.Add(this.buttonQuestionM);
             this.panel4.Controls.Add(this.buttonDown);
@@ -473,7 +474,6 @@
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.pictureBox6);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label5);

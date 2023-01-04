@@ -33,8 +33,6 @@ namespace breastcancer
         public static int j;  //when clicked gets the j's value of the list
         public static int picNum;
         public static bool downFlag = false;
-
-        //Control control = new Control();
         public Form2()
         {
             InitializeComponent();
@@ -200,37 +198,16 @@ namespace breastcancer
         }
         private void buttonPrevious_Click(object sender, EventArgs e)
         {
-            ////pictureBox1.Invalidate();
-            //pictureBox1.Hide();
-            //pictureBox1.Show();
             string str = "";
             buttonPreviousFunction();
             drawPic();
-            //pictureBox1.Refresh();
             //for (int n = 0; n < dataList.Count; n++)
             //    str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" +
             //       "rectx1: " + dataList[n].RectX1 + "\nrectX2: " + dataList[n].RectX2 + "\nrecty1:" + dataList[n].RectY1 + "\nrecty2" + dataList[n].RectY2;
             //MessageBox.Show(str);
-            // MessageBox.Show(c.ToString());
-           // drawPicAll(c);
         }
-
-
-        //private void buttonPreviousFunctionDraw()
-        //{
-        //this function is gonna work in the next updates after checking the lists
-        //buttonPreviousFunction();
-        //string str = "";
-
-        //for (int n = 0; n < dataList.Count; n++)
-        //    str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" + "\n";
-        //MessageBox.Show(str);
-        //drawPicAll(c);
-        //}
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            // pictureBox1.Invalidate();
-            pictureBox1.Refresh();
             string str = "";
             buttonNextFunction();
             //for (int n = 0; n < dataList.Count; n++)
@@ -240,7 +217,6 @@ namespace breastcancer
             //MessageBox.Show(str);
             if (c != dataList.Count)
                 drawPic();
-                    //  drawPicAll(c);
         }
         private void Form2_KeyUp(object sender, KeyEventArgs e)
         {
@@ -864,6 +840,10 @@ namespace breastcancer
                             this.radioButtonNegative.Checked = true;
                             d = 3;
                         }
+                        LocationXY.X = item.RectX1 / 13; //////////added later
+                        LocationXY.Y = item.RectY1 / 13;
+                        LocationX1Y1.X = item.RectX2 / 13;
+                        LocationX1Y1.Y = item.RectY2 / 13;
 
                         if (c == filesNotResized.Length - 1)
                             buttonNext.Enabled = false;
@@ -915,11 +895,11 @@ namespace breastcancer
             {
                 item.Diagnosis = 3;
             }
-            item.RectX1 = LocationXY.X * 13;
-            item.RectY1 = LocationXY.Y * 13;
-            item.RectX2 = LocationX1Y1.X * 13;
-            item.RectY2 = LocationX1Y1.Y * 13;
-            if (ii == dataList.Count)
+            //item.RectX1 = LocationXY.X * 13;
+            //item.RectY1 = LocationXY.Y * 13;
+            //item.RectX2 = LocationX1Y1.X * 13;
+            //item.RectY2 = LocationX1Y1.Y * 13;
+            if (ii == dataList.Count - 1)
             {
                 LocationXY.X = 0;
                 LocationXY.Y = 0;
@@ -987,12 +967,10 @@ namespace breastcancer
             {
                 if (ii >= dataList.Count())
                 {
-                    //ii = dataList.Count - 1;
                 }
                 else
                 {
                     Update(ii);
-                    //JsonSave();test
                 }
                 ii--;
 
@@ -1020,19 +998,13 @@ namespace breastcancer
                 LocationXY.Y = item.RectY1/13;
                 LocationX1Y1.X = item.RectX2/13;
                 LocationX1Y1.Y = item.RectY2/13;
-                //  MessageBox.Show(c.ToString());
-                // if (dataList[c - 1].RectX1 == 0)
-                //   btnNavLR = false;
-
-                // drawPicAll(c);
+               
                 c--;
                 buttonNext.Enabled = true;
                 label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + filesNotResized[c];
                                                                                          //    MessageBox.Show(c.ToString());
 
                 downCheckFunction(downFlag);
-                //if (!u1)
-                //    ii--;
             }
             if (prev > 0) prev--;
             if (c == 0) //changed it here

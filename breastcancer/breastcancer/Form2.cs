@@ -200,15 +200,19 @@ namespace breastcancer
         }
         private void buttonPrevious_Click(object sender, EventArgs e)
         {
-            pictureBox1.Invalidate();
+            ////pictureBox1.Invalidate();
+            //pictureBox1.Hide();
+            //pictureBox1.Show();
             string str = "";
             buttonPreviousFunction();
-            for (int n = 0; n < dataList.Count; n++)
-                str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" +
-                   "rectx1: " + dataList[n].RectX1 + "\nrectX2: " + dataList[n].RectX2 + "\nrecty1:" + dataList[n].RectY1 + "\nrecty2" + dataList[n].RectY2;
-            MessageBox.Show(str);
+            drawPic();
+            //pictureBox1.Refresh();
+            //for (int n = 0; n < dataList.Count; n++)
+            //    str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" +
+            //       "rectx1: " + dataList[n].RectX1 + "\nrectX2: " + dataList[n].RectX2 + "\nrecty1:" + dataList[n].RectY1 + "\nrecty2" + dataList[n].RectY2;
+            //MessageBox.Show(str);
             // MessageBox.Show(c.ToString());
-            drawPicAll(c);
+           // drawPicAll(c);
         }
 
 
@@ -226,15 +230,17 @@ namespace breastcancer
         private void buttonNext_Click(object sender, EventArgs e)
         {
             // pictureBox1.Invalidate();
+            pictureBox1.Refresh();
             string str = "";
             buttonNextFunction();
-            for (int n = 0; n < dataList.Count; n++)
-                str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" +
-                   "rectx1: " + dataList[n].RectX1 + "\nrectX2: " + dataList[n].RectX2 + "\nrecty1:" + dataList[n].RectY1 + "\nrecty2" + dataList[n].RectY2;
+            //for (int n = 0; n < dataList.Count; n++)
+            //    str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" +
+            //       "rectx1: " + dataList[n].RectX1 + "\nrectX2: " + dataList[n].RectX2 + "\nrecty1:" + dataList[n].RectY1 + "\nrecty2" + dataList[n].RectY2;
 
-            MessageBox.Show(str);
+            //MessageBox.Show(str);
             if (c != dataList.Count)
-                drawPicAll(c);
+                drawPic();
+                    //  drawPicAll(c);
         }
         private void Form2_KeyUp(object sender, KeyEventArgs e)
         {
@@ -519,12 +525,14 @@ namespace breastcancer
         }
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-
             if (rect != null && btnNavLR)
             {
                 Pen pen = new Pen(Color.Red, 3);
                 e.Graphics.DrawRectangle(pen, GetRect());
                 Rectangle rect1 = pictureBox1.ClientRectangle;
+
+                //pictureBox1.Invalidate(rect1);
+                //pictureBox1.Update();
             }
         }
         private void pictureBox2_Paint(object sender, PaintEventArgs e)
@@ -691,26 +699,30 @@ namespace breastcancer
         }
         private void drawPicAll(int le)
         {
-            drawPic(pictureBox1, le);
-            drawPic(pictureBox2, le);
-            drawPic(pictureBox3, le);
-            drawPic(pictureBox4, le);
-            drawPic(pictureBox5, le);
-            drawPic(pictureBox6, le);
-            drawPic(pictureBox7, le);
-            drawPic(pictureBox8, le);
+            //drawPic(pictureBox1, le);
+            //drawPic(pictureBox2, le);
+            //drawPic(pictureBox3, le);
+            //drawPic(pictureBox4, le);
+            //drawPic(pictureBox5, le);
+            //drawPic(pictureBox6, le);
+            //drawPic(pictureBox7, le);
+            //drawPic(pictureBox8, le);
         }
-        private void drawPic(PictureBox pb, int n)
+        private void drawPic()//PictureBox pb, int n)
         {
-            Graphics g = pb.CreateGraphics();
-            Pen pen = new Pen(Color.Red, 3);
-            //           n--;
-            String stro;
-            stro = "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" +
-                               "rectx1: " + dataList[n].RectX1 + "\nrectX2: " + dataList[n].RectX2 + "\nrecty1:" + dataList[n].RectY1 + "\nrecty2" + dataList[n].RectY2;
-            MessageBox.Show(stro);
-            g.DrawRectangle(pen, new Rectangle(dataList[n].RectX1 / 13, dataList[n].RectY1 / 13, (dataList[n].RectX2 - dataList[n].RectX1) / 13, (dataList[n].RectY2 - dataList[n].RectY1) / 13));
+            //Graphics g = pb.CreateGraphics();
+            //Pen pen = new Pen(Color.Red, 3);
+            ////           n--;
+            ////String stro;
+            ////stro = "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" +
+            ////                   "rectx1: " + dataList[n].RectX1 + "\nrectX2: " + dataList[n].RectX2 + "\nrecty1:" + dataList[n].RectY1 + "\nrecty2" + dataList[n].RectY2;
+            ////MessageBox.Show(stro);
+            //g.DrawRectangle(pen, new Rectangle(dataList[n].RectX1 / 13, dataList[n].RectY1 / 13, (dataList[n].RectX2 - dataList[n].RectX1) / 13, (dataList[n].RectY2 - dataList[n].RectY1) / 13));
             //Rectangle rect1 = pb.ClientRectangle;
+            //pb.Invalidate();
+            //pb.Update();
+            btnNavLR = true;
+            
         }
         private void downCheckFunction(bool downFlag)
         {
@@ -739,8 +751,10 @@ namespace breastcancer
         }
         private void AddToDataList()
         {
+            int cou = 0;
             if (ii >= dataList.Count)
             {
+                cou++;
                 int id = 1;
 
                 if (dataList.Count == 0 || ii == (dataList.Count))
@@ -764,11 +778,11 @@ namespace breastcancer
             }
             else
             {
-                //var item = dataList[ii];
-                //item.RectX1 = item.RectX1 * 13;
-                //item.RectY1 = item.RectY1 * 13;
-                //item.RectX2 = item.RectX2 * 13;
-                //item.RectY2 = item.RectY2 * 13;
+                var item = dataList[ii];
+                item.RectX1 = LocationXY.X * 13;
+                item.RectY1 = LocationXY.Y * 13;
+                item.RectX2 = LocationX1Y1.X * 13;
+                item.RectY2 = LocationX1Y1.Y * 13;
                 //LocationXY.X = 0;
                 //LocationXY.Y = 0;
                 //LocationX1Y1.X = 0;
@@ -806,7 +820,7 @@ namespace breastcancer
                     });
                     Update(ii);
 
-                    textBoxComment.Text = "";
+                    textBoxComment.Text = textEmp;
 
                     radioButtonPositive.Checked = false;
                     radioButtonPotential.Checked = false;
@@ -905,10 +919,13 @@ namespace breastcancer
             item.RectY1 = LocationXY.Y * 13;
             item.RectX2 = LocationX1Y1.X * 13;
             item.RectY2 = LocationX1Y1.Y * 13;
-            LocationXY.X = 0;
-            LocationXY.Y = 0;
-            LocationX1Y1.X = 0;
-            LocationX1Y1.Y = 0;
+            if (ii == dataList.Count)
+            {
+                LocationXY.X = 0;
+                LocationXY.Y = 0;
+                LocationX1Y1.X = 0;
+                LocationX1Y1.Y = 0;
+            }
         }
         private void buttonUpFunction()
         {
@@ -999,6 +1016,10 @@ namespace breastcancer
                 }
 
                 item = dataList[ii];
+                LocationXY.X = item.RectX1/13;
+                LocationXY.Y = item.RectY1/13;
+                LocationX1Y1.X = item.RectX2/13;
+                LocationX1Y1.Y = item.RectY2/13;
                 //  MessageBox.Show(c.ToString());
                 // if (dataList[c - 1].RectX1 == 0)
                 //   btnNavLR = false;

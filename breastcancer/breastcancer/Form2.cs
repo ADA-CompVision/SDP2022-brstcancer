@@ -155,8 +155,13 @@ namespace breastcancer
             filesColor1_600 = Directory.GetFiles(filePathColor1_600);
             string filePathColor2 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color2";
             filesColor2 = Directory.GetFiles(filePathColor2);
-            string filePathColor2_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color2_600";
+
+
+
+            string filePathColor2_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color1_255";//"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color2_600";
             filesColor2_600 = Directory.GetFiles(filePathColor2_600);
+
+
             string filePathColor3 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color3";
             filesColor3 = Directory.GetFiles(filePathColor3);
             string filePathColor3_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color3_600";
@@ -698,7 +703,7 @@ namespace breastcancer
             //pb.Invalidate();
             //pb.Update();
             btnNavLR = true;
-            
+
         }
         private void downCheckFunction(bool downFlag)
         {
@@ -994,11 +999,11 @@ namespace breastcancer
                 }
 
                 item = dataList[ii];
-                LocationXY.X = item.RectX1/13;
-                LocationXY.Y = item.RectY1/13;
-                LocationX1Y1.X = item.RectX2/13;
-                LocationX1Y1.Y = item.RectY2/13;
-               
+                LocationXY.X = item.RectX1 / 13;
+                LocationXY.Y = item.RectY1 / 13;
+                LocationX1Y1.X = item.RectX2 / 13;
+                LocationX1Y1.Y = item.RectY2 / 13;
+
                 c--;
                 buttonNext.Enabled = true;
                 label1.Text = c + 1 + " out of " + filesNotResized.Length + " images \n";// + filesNotResized[c];

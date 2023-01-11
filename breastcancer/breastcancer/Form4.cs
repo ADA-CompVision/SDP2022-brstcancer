@@ -87,7 +87,7 @@ namespace breastcancer
             string filePathColor2 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color2";
             string filePathColor3 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color3";
             string filePathColor1_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color1_600";
-            string filePathColor2_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color2_600";
+            string filePathColor2_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color1_255";// "E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color2_600";
             string filePathColor3_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color3_600";
             string filePathColor4 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color4";
             string filePathColor5 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color5";

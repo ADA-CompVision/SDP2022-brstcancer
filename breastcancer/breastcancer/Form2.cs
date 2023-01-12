@@ -70,6 +70,8 @@ namespace breastcancer
             labelMark.ForeColor = Color.White;
             labelDComment.ForeColor = Color.White;
             labelDComment.BackColor = Color.Transparent;
+            labelMa.ForeColor = Color.White;
+            labelMa.BackColor = Color.Transparent;
             labelNotes.ForeColor = Color.White;
             labelNotes.BackColor = Color.Transparent;
             label1.ForeColor = Color.FromArgb(161, 161, 161);

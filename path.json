@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "ImageId": 1,
+    "ImageName": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Augmentation\\Original\\image_000.jpg",
+    "Diagnosis": 2,
+    "RectX1": 0,
+    "RectX2": 0,
+    "RectY1": 0,
+    "RectY2": 0,
+    "Comment": "Write a comment...",
+    "DoctorId": 1
+  }
+]

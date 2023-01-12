@@ -59,6 +59,7 @@
             this.buttonPencil = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.labelMa = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -70,9 +71,9 @@
             // 
             // buttonPrevious
             // 
-            this.buttonPrevious.Location = new System.Drawing.Point(7, 633);
+            this.buttonPrevious.Location = new System.Drawing.Point(20, 622);
             this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(120, 37);
+            this.buttonPrevious.Size = new System.Drawing.Size(110, 37);
             this.buttonPrevious.TabIndex = 297;
             this.buttonPrevious.Text = "Back";
             this.buttonPrevious.UseVisualStyleBackColor = true;
@@ -80,9 +81,9 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(130, 633);
+            this.buttonNext.Location = new System.Drawing.Point(136, 622);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(120, 37);
+            this.buttonNext.Size = new System.Drawing.Size(110, 37);
             this.buttonNext.TabIndex = 298;
             this.buttonNext.Text = "Next";
             this.buttonNext.UseVisualStyleBackColor = true;
@@ -228,7 +229,7 @@
             // 
             this.labelDComment.AutoSize = true;
             this.labelDComment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelDComment.Location = new System.Drawing.Point(19, 63);
+            this.labelDComment.Location = new System.Drawing.Point(20, 49);
             this.labelDComment.Name = "labelDComment";
             this.labelDComment.Size = new System.Drawing.Size(184, 25);
             this.labelDComment.TabIndex = 916;
@@ -237,7 +238,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox2.Location = new System.Drawing.Point(288, 128);
+            this.pictureBox2.Location = new System.Drawing.Point(282, 146);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(255, 320);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -252,7 +253,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox4.Location = new System.Drawing.Point(832, 127);
+            this.pictureBox4.Location = new System.Drawing.Point(823, 145);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(255, 320);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -267,7 +268,7 @@
             // labelRightM
             // 
             this.labelRightM.AutoSize = true;
-            this.labelRightM.Location = new System.Drawing.Point(561, 461);
+            this.labelRightM.Location = new System.Drawing.Point(552, 479);
             this.labelRightM.Name = "labelRightM";
             this.labelRightM.Size = new System.Drawing.Size(106, 15);
             this.labelRightM.TabIndex = 910;
@@ -276,7 +277,7 @@
             // labelLeft
             // 
             this.labelLeft.AutoSize = true;
-            this.labelLeft.Location = new System.Drawing.Point(288, 461);
+            this.labelLeft.Location = new System.Drawing.Point(282, 479);
             this.labelLeft.Name = "labelLeft";
             this.labelLeft.Size = new System.Drawing.Size(84, 15);
             this.labelLeft.TabIndex = 909;
@@ -285,7 +286,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox3.Location = new System.Drawing.Point(561, 128);
+            this.pictureBox3.Location = new System.Drawing.Point(552, 146);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(255, 320);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -301,7 +302,7 @@
             // 
             this.labelRight.AutoSize = true;
             this.labelRight.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelRight.Location = new System.Drawing.Point(18, 461);
+            this.labelRight.Location = new System.Drawing.Point(11, 479);
             this.labelRight.Name = "labelRight";
             this.labelRight.Size = new System.Drawing.Size(92, 15);
             this.labelRight.TabIndex = 908;
@@ -310,7 +311,7 @@
             // labelLeftM
             // 
             this.labelLeftM.AutoSize = true;
-            this.labelLeftM.Location = new System.Drawing.Point(832, 461);
+            this.labelLeftM.Location = new System.Drawing.Point(823, 479);
             this.labelLeftM.Name = "labelLeftM";
             this.labelLeftM.Size = new System.Drawing.Size(98, 15);
             this.labelLeftM.TabIndex = 916;
@@ -329,9 +330,9 @@
             // 
             this.buttonUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUp.BackgroundImage")));
             this.buttonUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonUp.Location = new System.Drawing.Point(958, 631);
+            this.buttonUp.Location = new System.Drawing.Point(972, 615);
             this.buttonUp.Name = "buttonUp";
-            this.buttonUp.Size = new System.Drawing.Size(44, 44);
+            this.buttonUp.Size = new System.Drawing.Size(50, 50);
             this.buttonUp.TabIndex = 302;
             this.buttonUp.UseVisualStyleBackColor = true;
             this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
@@ -339,7 +340,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(0, 615);
+            this.label2.Location = new System.Drawing.Point(0, 590);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 15);
             this.label2.TabIndex = 918;
@@ -349,9 +350,9 @@
             // 
             this.buttonDown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDown.BackgroundImage")));
             this.buttonDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonDown.Location = new System.Drawing.Point(1008, 632);
+            this.buttonDown.Location = new System.Drawing.Point(1028, 615);
             this.buttonDown.Name = "buttonDown";
-            this.buttonDown.Size = new System.Drawing.Size(44, 44);
+            this.buttonDown.Size = new System.Drawing.Size(50, 50);
             this.buttonDown.TabIndex = 801;
             this.buttonDown.UseVisualStyleBackColor = true;
             this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
@@ -361,9 +362,9 @@
             this.buttonQuestionM.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonQuestionM.BackgroundImage")));
             this.buttonQuestionM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonQuestionM.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonQuestionM.Location = new System.Drawing.Point(11, 633);
+            this.buttonQuestionM.Location = new System.Drawing.Point(11, 615);
             this.buttonQuestionM.Name = "buttonQuestionM";
-            this.buttonQuestionM.Size = new System.Drawing.Size(44, 44);
+            this.buttonQuestionM.Size = new System.Drawing.Size(50, 50);
             this.buttonQuestionM.TabIndex = 921;
             this.buttonQuestionM.UseVisualStyleBackColor = true;
             // 
@@ -371,9 +372,9 @@
             // 
             this.buttonPencil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPencil.BackgroundImage")));
             this.buttonPencil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonPencil.Location = new System.Drawing.Point(908, 631);
+            this.buttonPencil.Location = new System.Drawing.Point(916, 615);
             this.buttonPencil.Name = "buttonPencil";
-            this.buttonPencil.Size = new System.Drawing.Size(44, 44);
+            this.buttonPencil.Size = new System.Drawing.Size(50, 50);
             this.buttonPencil.TabIndex = 921;
             this.buttonPencil.UseVisualStyleBackColor = true;
             this.buttonPencil.Click += new System.EventHandler(this.buttonPencil_Click);
@@ -381,7 +382,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 128);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 146);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(255, 320);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -395,6 +396,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.labelMa);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.buttonPencil);
             this.panel4.Controls.Add(this.buttonQuestionM);
@@ -414,6 +416,16 @@
             this.panel4.Size = new System.Drawing.Size(1090, 690);
             this.panel4.TabIndex = 920;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // labelMa
+            // 
+            this.labelMa.AutoSize = true;
+            this.labelMa.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelMa.Location = new System.Drawing.Point(11, 49);
+            this.labelMa.Name = "labelMa";
+            this.labelMa.Size = new System.Drawing.Size(141, 25);
+            this.labelMa.TabIndex = 922;
+            this.labelMa.Text = "Mammograms";
             // 
             // Form2
             // 
@@ -475,5 +487,6 @@
         private Button buttonPencil;
         private PictureBox pictureBox1;
         private Panel panel4;
+        private Label labelMa;
     }
 }

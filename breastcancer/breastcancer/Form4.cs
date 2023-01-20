@@ -16,13 +16,9 @@ namespace breastcancer
         int picNum4;
         bool downFlag4;
         int c4;
-        // Rectangle rect;
-
         int sx1, sy1, sw, sh;
         string textCom = "Write a comment...";
-        string textEmp = "";
-
-
+        string textEmp = String.Empty;
         public Form4()
         {
             InitializeComponent();
@@ -82,23 +78,8 @@ namespace breastcancer
             label2.Width = 10000;
             label2.BorderStyle = BorderStyle.Fixed3D;
 
-            string filePathBrightened = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Brightened";
-            string filePathColor1 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color1";
-            string filePathColor2 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color2";
-            string filePathColor3 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color3";
-            string filePathColor1_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color1_600";
-            string filePathColor2_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color1_255";// "E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color2_600";
-            string filePathColor3_600 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color3_600";
-            string filePathColor4 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color4";
-            string filePathColor5 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Color5";
-            string filePathDarked = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Darked";
-            string filePathHighlyBrightened = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\HighlyBrightened";
-            string filePathNotResized = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\NotResized";
-            string filePathResizedTo255 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo255";
-            string filePathResizedTo511 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo511";
-            string filePathResizedTo1000 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo1000";
-            string filePathResizedTo1023 = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\ResizedTo1023";
-
+            string filePathOriginal = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Original";
+            string filePathColored = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Colorized";
 
             buttonPrevious.ForeColor = Color.WhiteSmoke;
             buttonPrevious.BackColor = Color.FromArgb(45, 45, 45);
@@ -148,119 +129,56 @@ namespace breastcancer
             this.textBoxComment.Region = System.Drawing.Region.FromHrgn(ptr);
             NativeMethods.DeleteObject(ptr);
 
-
-            if (picNum4 == 0)
+            if (!downFlag4)
             {
-                if (!downFlag4)
-                {
-                    filepath = filePathNotResized;
-                    label3.Text = "Not Resized";
-                }
-                else
-                {
-                    filepath = filePathColor1;
-                    label3.Text = "Color1";
-                }
+                filepath = filePathOriginal;
+                label3.Text = "Original";
             }
-            else if (picNum4 == 1)
+            else
             {
-                if (!downFlag4)
-                {
-                    filepath = filePathBrightened;
-                    label3.Text = "Brightened";
-                }
-                else
-                {
-                    filepath = filePathColor2;
-                    label3.Text = "Color2";
-                }
-            }
-            else if (picNum4 == 2)
-            {
-                if (!downFlag4)
-                {
-                    filepath = filePathHighlyBrightened;
-                    label3.Text = "Highly Brightened";
-                }
-                else
-                {
-                    filepath = filePathColor3;
-                    label3.Text = "Color3";
-                }
-            }
-            else if (picNum4 == 3)
-            {
-                if (!downFlag4)
-                {
-                    filepath = filePathDarked;
-                    label3.Text = "Darkened";
-                }
-                else
-                {
-                    filepath = filePathColor4;
-                    label3.Text = "Color4";
-                }
-            }
-            else if (picNum4 == 4)
-            {
-                if (!downFlag4)
-                {
-                    filepath = filePathResizedTo255;
-                    label3.Text = "Resized To 255";
-                }
-                else
-                {
-                    filepath = filePathColor5;
-                    label3.Text = "Color5";
-                }
-            }
-            else if (picNum4 == 5)
-            {
-                if (!downFlag4)
-                {
-                    filepath = filePathResizedTo511;
-                    label3.Text = "Resized To 511";
-                }
-                else
-                {
-                    filepath = filePathColor1_600;
-                    label3.Text = "1 Resized To 600";
-                }
-            }
-            else if (picNum4 == 6)
-            {
-                if (downFlag4)
-                {
-                    filepath = filePathColor2_600;
-                    label3.Text = "2 Resized To 600";
-                }
-                else
-                {
-                    filepath = filePathResizedTo1000;
-                    label3.Text = "Resized To 511";
-                }
-            }
-            else if (picNum4 == 7)
-            {
-                if (!downFlag4)
-                {
-                    filepath = filePathResizedTo1023;
-                    label3.Text = "Resized To 1023";
-                }
-                else
-                {
-                    filepath = filePathColor3_600;
-                    label3.Text = "3 Resized To 600";
-                }
+                filepath = filePathColored;
+                label3.Text = "Colored";
             }
 
             files = Directory.GetFiles(filepath);
-            pictureBox1.Image = Image.FromFile(files[c4]);
+
+            if (picNum4 == 0)
+            {
+                pictureBox1.Image = Image.FromFile(files[c4]);
+
+                sx1 = (int)(StaticData.DataList1.Rect1X1 / 6);
+                sy1 = (int)(StaticData.DataList1.Rect1Y1 / 6);
+                sw = (int)((StaticData.DataList1.Rect1X2 - StaticData.DataList1.Rect1X1) / 6);
+                sh = (int)((StaticData.DataList1.Rect1Y2 - StaticData.DataList1.Rect1Y1) / 6);
+            }
+            else if (picNum4 == 1)
+            {
+                pictureBox1.Image = Image.FromFile(files[c4 + 1]);
+                sx1 = (int)(StaticData.DataList1.Rect2X1 / 6);
+                sy1 = (int)(StaticData.DataList1.Rect2Y1 / 6);
+                sw = (int)((StaticData.DataList1.Rect2X2 - StaticData.DataList1.Rect2X1) / 6);
+                sh = (int)((StaticData.DataList1.Rect2Y2 - StaticData.DataList1.Rect2Y1) / 6);
+            }
+            else if (picNum4 == 2)
+            {
+                pictureBox1.Image = Image.FromFile(files[c4 + 2]);
+                sx1 = (int)(StaticData.DataList1.Rect3X1 / 6);
+                sy1 = (int)(StaticData.DataList1.Rect3Y1 / 6);
+                sw = (int)((StaticData.DataList1.Rect3X2 - StaticData.DataList1.Rect3X1) / 6);
+                sh = (int)((StaticData.DataList1.Rect3Y2 - StaticData.DataList1.Rect3Y1) / 6);
+            }
+            else if (picNum4 == 3)
+            {
+                pictureBox1.Image = Image.FromFile(files[c4 + 3]);
+                sx1 = (int)(StaticData.DataList1.Rect4X1 / 6);
+                sy1 = (int)(StaticData.DataList1.Rect4Y1 / 6);
+                sw = (int)((StaticData.DataList1.Rect4X2 - StaticData.DataList1.Rect4X1) / 6);
+                sh = (int)((StaticData.DataList1.Rect4Y2 - StaticData.DataList1.Rect4Y1) / 6);
+            }
+
             label1.Text = filepath.TrimStart('\\');
 
-            drawPic();//c4);
-
-
+          //  drawPic();
         }
 
         //private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
@@ -306,12 +224,12 @@ namespace breastcancer
 
         private void drawPic()//PictureBox pb, int n)
         {
-            Graphics g = pictureBox1.CreateGraphics();
+            //    Graphics g = pictureBox1.CreateGraphics();
 
-            // g.DrawRectangle(Pens.Red, new Rectangle(dataList[n].RectX1, dataList[n].RectY1, dataList[n].RectX2 - dataList[n].RectX1, dataList[n].RectY2 - dataList[n].RectY1));
-            g.DrawRectangle(Pens.Red, new Rectangle(StaticData.DataList1.RectX1 / 6, StaticData.DataList1.RectY1 / 6, (StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1) / 6, (StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1) / 6));
+            //    // g.DrawRectangle(Pens.Red, new Rectangle(dataList[n].RectX1, dataList[n].RectY1, dataList[n].RectX2 - dataList[n].RectX1, dataList[n].RectY2 - dataList[n].RectY1));
+            //    g.DrawRectangle(Pens.Red, new Rectangle(StaticData.DataList1.Rect1X1 / 6, StaticData.DataList1.RectY1 / 6, (StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1) / 6, (StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1) / 6));
 
-            Rectangle rect1 = this.pictureBox1.ClientRectangle;
+            //    Rectangle rect1 = this.pictureBox1.ClientRectangle;
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -336,15 +254,6 @@ namespace breastcancer
                 textBoxComment.Text = textCom;
             }
         }
-
-        //private void drawPic()//int n)
-        //{
-        //    Graphics g = pictureBox1.CreateGraphics();
-
-        //    g.DrawRectangle(Pens.Red, new Rectangle(StaticData.DataList1.RectX1, StaticData.DataList1.RectY1, StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1, StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1));
-        //    Rectangle rect1 = pictureBox1.ClientRectangle;
-        //}
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             IntPtr ptr = NativeMethods.CreateRoundRectRgn(3, 3, this.panel1.Width, this.panel1.Height, 11, 11); // _BoarderRaduis can be adjusted to your needs, try 15 to start.
@@ -359,18 +268,12 @@ namespace breastcancer
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-            sx1 = (int)(StaticData.DataList1.RectX1 / 6);
-            sy1 = (int)(StaticData.DataList1.RectY1 / 6);
-            sw = (int)((StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1) / 6);
-            sh = (int)((StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1) / 6);
             // e.Graphics.DrawRectangle(Pens.Red, new Rectangle(205, 203, 153, 171));
             Pen pen = new Pen(Color.Red, 3);
             e.Graphics.DrawRectangle(pen, new Rectangle(sx1, sy1, sw, sh));//StaticData.DataList1.RectX1, StaticData.DataList1.RectY1, StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1, StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1));
 
             // e.Graphics.DrawRectangle(Pens.Red, GetRect());
             Rectangle rect1 = this.pictureBox1.ClientRectangle;
-
-
         }
     }
 }

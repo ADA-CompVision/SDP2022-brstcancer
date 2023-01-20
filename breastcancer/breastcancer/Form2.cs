@@ -5,11 +5,16 @@ namespace breastcancer
 {
     //2800x3518 sekil olcusu
     //215x270 picbobx olcusu
-    //13 e bolub seyapmisiq
+    //13 e bolub seyapmisiq                      11e boleceyik
     //form4 de size 467, 586   yeni 2800/6
     public partial class Form2 : Form
     {
-        public static Point LocationXY, LocationX1Y1;
+        //kohne public static Point LocationXY, LocationX1Y1;
+        //teze
+        public static Point Location1XY, Location2XY, Location3XY, Location4XY;
+        public static Point Location1X1Y1, Location2X1Y1, Location3X1Y1, Location4X1Y1;
+        public bool[] PictureBoxClicked = new bool[4];
+        //teze end
         Rectangle rect;
         bool IsMouseDown = false;
         List<Data> dataList = new List<Data>();
@@ -42,6 +47,11 @@ namespace breastcancer
         }
         private void LoadData()
         {
+            PictureBoxClicked[0] = false;
+            PictureBoxClicked[1] = false;
+            PictureBoxClicked[2] = false;
+            PictureBoxClicked[3] = false;
+
             this.WindowState = FormWindowState.Maximized;
             this.KeyPreview = true;
             this.BackColor = Color.FromArgb(34, 34, 34);
@@ -157,10 +167,10 @@ namespace breastcancer
             string str = "";
             buttonPreviousFunction();
             drawPic();
-            for (int n = 0; n < dataList.Count; n++)
-                str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" +
-                   "rectx1: " + dataList[n].RectX1 + "\nrectX2: " + dataList[n].RectX2 + "\nrecty1:" + dataList[n].RectY1 + "\nrecty2" + dataList[n].RectY2;
-            MessageBox.Show(str);
+            //for (int n = 0; n < dataList.Count; n++)
+            //    str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" +
+            //       "rectx1: " + dataList[n].RectX1 + "\nrectX2: " + dataList[n].RectX2 + "\nrecty1:" + dataList[n].RectY1 + "\nrecty2" + dataList[n].RectY2;
+            //MessageBox.Show(str);
         }
         private void buttonNext_Click(object sender, EventArgs e)
         {
@@ -168,11 +178,11 @@ namespace breastcancer
             if (c + 4 == fileCount)
                 buttonNext.Enabled = false;
             buttonNextFunction();
-            for (int n = 0; n < dataList.Count; n++)
-                str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" +
-                   "rectx1: " + dataList[n].RectX1 + "\nrectX2: " + dataList[n].RectX2 + "\nrecty1:" + dataList[n].RectY1 + "\nrecty2" + dataList[n].RectY2;
+            //for (int n = 0; n < dataList.Count; n++)
+            //    str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" +
+            //       "rectx1: " + dataList[n].RectX1 + "\nrectX2: " + dataList[n].RectX2 + "\nrecty1:" + dataList[n].RectY1 + "\nrecty2" + dataList[n].RectY2;
 
-            MessageBox.Show(str);
+            //MessageBox.Show(str);
             if (c != dataList.Count)
                 drawPic();
             if (c + 4 == fileCount)
@@ -210,17 +220,18 @@ namespace breastcancer
         }
         private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
         {
+            PictureBoxClicked[2] = true;
             if (penClick)
             {
                 IsMouseDown = true;
-                LocationXY = e.Location;
+                Location3XY = e.Location;
             }
         }
         private void pictureBox3_MouseMove(object sender, MouseEventArgs e)
         {
             if (IsMouseDown == true)
             {
-                LocationX1Y1 = e.Location;
+                Location3X1Y1 = e.Location;
                 Refresh();
             }
         }
@@ -228,41 +239,42 @@ namespace breastcancer
         {
             if (IsMouseDown == true)
             {
-                LocationX1Y1 = e.Location;
+                Location3X1Y1 = e.Location;
                 IsMouseDown = false;
             }
         }
         private void pictureBox3_Paint(object sender, PaintEventArgs e)
         {
-            if (rect.Width != 0 && btnNavLR)
+            if (btnNavLR && PictureBoxClicked[2] == true)
             {
                 Pen pen = new Pen(Color.Red, 3);
-                e.Graphics.DrawRectangle(pen, GetRect());
-                Rectangle rect1 = pictureBox2.ClientRectangle;
+                e.Graphics.DrawRectangle(pen, GetRect(Location3XY, Location3X1Y1));
+                Rectangle rect1 = pictureBox3.ClientRectangle;
             }
         }
         private void pictureBox4_Paint(object sender, PaintEventArgs e)
         {
-            if (rect.Width != 0 && btnNavLR)
+            if (btnNavLR && PictureBoxClicked[3] == true)
             {
                 Pen pen = new Pen(Color.Red, 3);
-                e.Graphics.DrawRectangle(pen, GetRect());
-                Rectangle rect1 = pictureBox2.ClientRectangle;
+                e.Graphics.DrawRectangle(pen, GetRect(Location4XY, Location4X1Y1));
+                Rectangle rect1 = pictureBox4.ClientRectangle;
             }
         }
         private void pictureBox4_MouseDown(object sender, MouseEventArgs e)
         {
+            PictureBoxClicked[3] = true;
             if (penClick)
             {
                 IsMouseDown = true;
-                LocationXY = e.Location;
+                Location4XY = e.Location;
             }
         }
         private void pictureBox4_MouseUp(object sender, MouseEventArgs e)
         {
             if (IsMouseDown == true)
             {
-                LocationX1Y1 = e.Location;
+                Location4X1Y1 = e.Location;
                 IsMouseDown = false;
             }
         }
@@ -270,41 +282,8 @@ namespace breastcancer
         {
             if (IsMouseDown == true)
             {
-                LocationX1Y1 = e.Location;
+                Location4X1Y1 = e.Location;
                 Refresh();
-            }
-        }
-        private void pictureBox5_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (penClick)
-            {
-                IsMouseDown = true;
-                LocationXY = e.Location;
-            }
-        }
-        private void pictureBox5_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (IsMouseDown == true)
-            {
-                LocationX1Y1 = e.Location;
-                Refresh();
-            }
-        }
-        private void pictureBox5_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (IsMouseDown == true)
-            {
-                LocationX1Y1 = e.Location;
-                IsMouseDown = false;
-            }
-        }
-        private void pictureBox5_Paint(object sender, PaintEventArgs e)
-        {
-            if (rect.Width != 0 && btnNavLR)
-            {
-                Pen pen = new Pen(Color.Red, 3);
-                e.Graphics.DrawRectangle(pen, GetRect());
-                Rectangle rect1 = pictureBox2.ClientRectangle;
             }
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -332,25 +311,27 @@ namespace breastcancer
         }
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
+            PictureBoxClicked[0] = true;
             if (penClick)
             {
                 IsMouseDown = true;
-                LocationXY = e.Location;
+                Location1XY = e.Location;
             }
         }
         private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
         {
+            PictureBoxClicked[1] = true;
             if (penClick)
             {
                 IsMouseDown = true;
-                LocationXY = e.Location;
+                Location2XY = e.Location;
             }
         }
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             if (IsMouseDown == true)
             {
-                LocationX1Y1 = e.Location;
+                Location1X1Y1 = e.Location;
                 Refresh();
             }
         }
@@ -358,7 +339,7 @@ namespace breastcancer
         {
             if (IsMouseDown == true)
             {
-                LocationX1Y1 = e.Location;
+                Location2X1Y1 = e.Location;
                 Refresh();
             }
         }
@@ -366,7 +347,7 @@ namespace breastcancer
         {
             if (IsMouseDown == true)
             {
-                LocationX1Y1 = e.Location;
+                Location1X1Y1 = e.Location;
                 IsMouseDown = false;
             }
         }
@@ -374,16 +355,16 @@ namespace breastcancer
         {
             if (IsMouseDown == true)
             {
-                LocationX1Y1 = e.Location;
+                Location2X1Y1 = e.Location;
                 IsMouseDown = false;
             }
         }
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-            if (rect != null && btnNavLR)
+            if (rect != null && btnNavLR && PictureBoxClicked[0] == true)
             {
                 Pen pen = new Pen(Color.Red, 3);
-                e.Graphics.DrawRectangle(pen, GetRect());
+                e.Graphics.DrawRectangle(pen, GetRect(Location1XY, Location1X1Y1));
                 Rectangle rect1 = pictureBox1.ClientRectangle;
 
                 //pictureBox1.Invalidate(rect1);
@@ -392,10 +373,10 @@ namespace breastcancer
         }
         private void pictureBox2_Paint(object sender, PaintEventArgs e)
         {
-            if (rect != null && btnNavLR)
+            if (rect != null && btnNavLR && PictureBoxClicked[1] == true)
             {
                 Pen pen = new Pen(Color.Red, 3);
-                e.Graphics.DrawRectangle(pen, GetRect());
+                e.Graphics.DrawRectangle(pen, GetRect(Location2XY, Location2X1Y1));
                 Rectangle rect1 = pictureBox2.ClientRectangle;
             }
         }
@@ -491,8 +472,28 @@ namespace breastcancer
         {
             buttonDownFunction();
         }
-        private Rectangle GetRect()
+        private Rectangle GetRect(Point LocationXY, Point LocationX1Y1)
         {
+            /*if (PictureBoxClicked[0] == true)
+            {
+                LocationXY = Location1XY;
+                LocationX1Y1 = Location1X1Y1;
+            }
+            else if (PictureBoxClicked[1] == true)
+            {
+                LocationXY = Location2XY;
+                LocationX1Y1 = Location2X1Y1;
+            }
+            else if (PictureBoxClicked[2] == true)
+            {
+                LocationXY = Location3XY;
+                LocationX1Y1 = Location3X1Y1;
+            }
+            else if (PictureBoxClicked[3] == true)
+            {
+                LocationXY = Location4XY;
+                LocationX1Y1 = Location4X1Y1;
+            }*/
             rect = new Rectangle();
             rect.X = Math.Min(LocationXY.X, LocationX1Y1.X);
             rect.Y = Math.Min(LocationXY.Y, LocationX1Y1.Y);
@@ -502,7 +503,6 @@ namespace breastcancer
 
             return rect;
         }
-
         private void drawPic()
         {
             btnNavLR = true;
@@ -534,30 +534,67 @@ namespace breastcancer
 
                 if (dataList.Count == 0 || ii == (dataList.Count))
                 {
-                    id = dataList.Count + 1;
-
+                    id = dataList.Count * 4 + 1;
                     // Add any new data
                     dataList.Add(new Data()
                     {
-                        ImageId = id,// w,//get last image id from json file then ++ and assign
-                        ImageName = filesOriginal[c].TrimEnd('\\'),
+                        Image1Id = id,// w,//get last image id from json file then ++ and assign
+                        Image2Id = id + 1,
+                        Image3Id = id + 2,
+                        Image4Id = id + 3,
+                        Image1Name = filesOriginal[c].TrimEnd('\\'),
+                        Image2Name = filesOriginal[c + 1].TrimEnd('\\'),
+                        Image3Name = filesOriginal[c + 2].TrimEnd('\\'),
+                        Image4Name = filesOriginal[c + 3].TrimEnd('\\'),
                         Diagnosis = diagnosisInt,
                         Comment = textBoxComment.Text,
                         DoctorId = 1,
-                        RectX1 = LocationXY.X * 13,
-                        RectY1 = LocationXY.Y * 13,
-                        RectX2 = LocationX1Y1.X * 13,
-                        RectY2 = LocationX1Y1.Y * 13
+                        Rect1X1 = Location1XY.X * 11,
+                        Rect1Y1 = Location1XY.Y * 11,       // bun uda indi bagladim
+                        Rect1X2 = Location1X1Y1.X * 11,
+                        Rect1Y2 = Location1X1Y1.Y * 11,
+
+                        Rect2X1 = Location1XY.X * 11,
+                        Rect2Y1 = Location1XY.Y * 11,       // bun uda indi bagladim
+                        Rect2X2 = Location1X1Y1.X * 11,
+                        Rect2Y2 = Location1X1Y1.Y * 11,
+
+                        Rect3X1 = Location1XY.X * 11,
+                        Rect3Y1 = Location1XY.Y * 11,       // bun uda indi bagladim
+                        Rect3X2 = Location1X1Y1.X * 11,
+                        Rect3Y2 = Location1X1Y1.Y * 11,
+
+                        Rect4X1 = Location1XY.X * 11,
+                        Rect4Y1 = Location1XY.Y * 11,       // bun uda indi bagladim
+                        Rect4X2 = Location1X1Y1.X * 11,
+                        Rect4Y2 = Location1X1Y1.Y * 11,
                     });
                 }
             }
             else
             {
                 var item = dataList[ii];
-                item.RectX1 = LocationXY.X * 13;
-                item.RectY1 = LocationXY.Y * 13;
-                item.RectX2 = LocationX1Y1.X * 13;
-                item.RectY2 = LocationX1Y1.Y * 13;
+                item.Rect1X1 = Location1XY.X * 11;
+                item.Rect1Y1 = Location1XY.Y * 11;
+                item.Rect1X2 = Location1X1Y1.X * 11;
+                item.Rect1Y2 = Location1X1Y1.Y * 11; //indi bagladim
+
+                item.Rect2X1 = Location2XY.X * 11;
+                item.Rect2Y1 = Location2XY.Y * 11;
+                item.Rect2X2 = Location2X1Y1.X * 11;
+                item.Rect2Y2 = Location2X1Y1.Y * 11; //indi bagladim
+
+                item.Rect3X1 = Location3XY.X * 11;
+                item.Rect3Y1 = Location3XY.Y * 11;
+                item.Rect3X2 = Location3X1Y1.X * 11;
+                item.Rect3Y2 = Location3X1Y1.Y * 11; //indi bagladim
+
+                item.Rect4X1 = Location4XY.X * 11;
+                item.Rect4Y1 = Location4XY.Y * 11;
+                item.Rect4X2 = Location4X1Y1.X * 11;
+                item.Rect4Y2 = Location4X1Y1.Y * 11; //indi bagladim
+
+
                 //LocationXY.X = 0;
                 //LocationXY.Y = 0;
                 //LocationX1Y1.X = 0;
@@ -578,20 +615,45 @@ namespace breastcancer
                 int id = 1;
                 if (dataList.Count == 0 || ii == (dataList.Count))
                 {
-                    id = dataList.Count + 1;
+                    id = dataList.Count * 4 + 1;
 
                     // Add any new data
                     dataList.Add(new Data()
                     {
-                        ImageId = id,// w,//get last image id from json file then ++ and assign
-                        ImageName = filesOriginal[c].TrimEnd('\\'),
+                        Image1Id = id,// w,//get last image id from json file then ++ and assign
+                        Image1Name = filesOriginal[c].TrimEnd('\\'),
+
+                        Image2Id = id + 1,// w,//get last image id from json file then ++ and assign
+                        Image2Name = filesOriginal[c + 1].TrimEnd('\\'),
+
+                        Image3Id = id + 2,// w,//get last image id from json file then ++ and assign
+                        Image3Name = filesOriginal[c + 2].TrimEnd('\\'),
+
+                        Image4Id = id + 3,// w,//get last image id from json file then ++ and assign
+                        Image4Name = filesOriginal[c + 3].TrimEnd('\\'),
+
                         Diagnosis = diagnosisInt,
                         Comment = textBoxComment.Text,
                         DoctorId = 1,
-                        RectX1 = LocationXY.X * 13,
-                        RectY1 = LocationXY.Y * 13,
-                        RectX2 = LocationX1Y1.X * 13,
-                        RectY2 = LocationX1Y1.Y * 13
+                        Rect1X1 = Location1XY.X * 11,       //bunu da bagladim su an
+                        Rect1Y1 = Location1XY.Y * 11,
+                        Rect1X2 = Location1X1Y1.X * 11,
+                        Rect1Y2 = Location1X1Y1.Y * 11,
+
+                        Rect2X1 = Location2XY.X * 11,       //bunu da bagladim su an
+                        Rect2Y1 = Location2XY.Y * 11,
+                        Rect2X2 = Location2X1Y1.X * 11,
+                        Rect2Y2 = Location2X1Y1.Y * 11,
+
+                        Rect3X1 = Location3XY.X * 11,       //bunu da bagladim su an
+                        Rect3Y1 = Location3XY.Y * 11,
+                        Rect3X2 = Location3X1Y1.X * 11,
+                        Rect3Y2 = Location3X1Y1.Y * 11,
+
+                        Rect4X1 = Location4XY.X * 11,       //bunu da bagladim su an
+                        Rect4Y1 = Location4XY.Y * 11,
+                        Rect4X2 = Location4X1Y1.X * 11,
+                        Rect4Y2 = Location4X1Y1.Y * 11
                     });
                     Update(ii);
 
@@ -639,10 +701,25 @@ namespace breastcancer
                             this.radioButtonNegative.Checked = true;
                             d = 3;
                         }
-                        LocationXY.X = item.RectX1 / 13; //////////added later
-                        LocationXY.Y = item.RectY1 / 13;
-                        LocationX1Y1.X = item.RectX2 / 13;
-                        LocationX1Y1.Y = item.RectY2 / 13;
+                        Location1XY.X = item.Rect1X1 / 11; //////////added later
+                        Location1XY.Y = item.Rect1Y1 / 11;
+                        Location1X1Y1.X = item.Rect1X2 / 11;          // indi bagladim bunu da acacam
+                        Location1X1Y1.Y = item.Rect1Y2 / 11;
+
+                        Location2XY.X = item.Rect2X1 / 11; //////////added later
+                        Location2XY.Y = item.Rect2Y1 / 11;
+                        Location2X1Y1.X = item.Rect2X2 / 11;          // indi bagladim bunu da acacam
+                        Location2X1Y1.Y = item.Rect2Y2 / 11;
+
+                        Location3XY.X = item.Rect3X1 / 11; //////////added later
+                        Location3XY.Y = item.Rect3Y1 / 11;
+                        Location3X1Y1.X = item.Rect3X2 / 11;          // indi bagladim bunu da acacam
+                        Location3X1Y1.Y = item.Rect3Y2 / 11;
+
+                        Location4XY.X = item.Rect4X1 / 11; //////////added later
+                        Location4XY.Y = item.Rect4Y1 / 11;
+                        Location4X1Y1.X = item.Rect4X2 / 11;          // indi bagladim bunu da acacam
+                        Location4X1Y1.Y = item.Rect4Y2 / 11;
 
                         if (c == filesOriginal.Length - 1)
                             buttonNext.Enabled = false;
@@ -700,10 +777,25 @@ namespace breastcancer
             //item.RectY2 = LocationX1Y1.Y * 13;
             if (ii == dataList.Count - 1)
             {
-                LocationXY.X = 0;
-                LocationXY.Y = 0;
-                LocationX1Y1.X = 0;
-                LocationX1Y1.Y = 0;
+                Location1XY.X = 0;
+                Location1XY.Y = 0; // indi bagladim aciq olmalidi
+                Location1X1Y1.X = 0;
+                Location1X1Y1.Y = 0;
+
+                Location2XY.X = 0;
+                Location2XY.Y = 0; // indi bagladim aciq olmalidi
+                Location2X1Y1.X = 0;
+                Location2X1Y1.Y = 0;
+
+                Location3XY.X = 0;
+                Location3XY.Y = 0; // indi bagladim aciq olmalidi
+                Location3X1Y1.X = 0;
+                Location3X1Y1.Y = 0;
+
+                Location4XY.X = 0;
+                Location4XY.Y = 0; // indi bagladim aciq olmalidi
+                Location4X1Y1.X = 0;
+                Location4X1Y1.Y = 0;
             }
         }
         private void buttonUpFunction()
@@ -777,10 +869,25 @@ namespace breastcancer
                 }
 
                 item = dataList[ii];
-                LocationXY.X = item.RectX1 / 13;
-                LocationXY.Y = item.RectY1 / 13;
-                LocationX1Y1.X = item.RectX2 / 13;
-                LocationX1Y1.Y = item.RectY2 / 13;
+                Location1XY.X = item.Rect1X1 / 11;
+                Location1XY.Y = item.Rect1Y1 / 11;      // indi bagladim
+                Location1X1Y1.X = item.Rect1X2 / 11;
+                Location1X1Y1.Y = item.Rect1Y2 / 11;
+
+                Location2XY.X = item.Rect2X1 / 11;
+                Location2XY.Y = item.Rect2Y1 / 11;      // indi bagladim
+                Location2X1Y1.X = item.Rect2X2 / 11;
+                Location2X1Y1.Y = item.Rect2Y2 / 11;
+
+                Location3XY.X = item.Rect3X1 / 11;
+                Location3XY.Y = item.Rect3Y1 / 11;      // indi bagladim
+                Location3X1Y1.X = item.Rect3X2 / 11;
+                Location3X1Y1.Y = item.Rect3Y2 / 11;
+
+                Location4XY.X = item.Rect4X1 / 11;
+                Location4XY.Y = item.Rect4Y1 / 11;      // indi bagladim
+                Location4X1Y1.X = item.Rect4X2 / 11;
+                Location4X1Y1.Y = item.Rect4Y2 / 11;
 
                 c -= 4;
                 buttonNext.Enabled = true;
@@ -798,28 +905,64 @@ namespace breastcancer
         {
             j = i;
             var item1 = dataList[i];
-            StaticData.DataList1.ImageId = item1.ImageId;
+            StaticData.DataList1.Image1Id = item1.Image1Id;
             StaticData.DataList1.DoctorId = item1.DoctorId;
             StaticData.DataList1.Diagnosis = item1.Diagnosis;
             StaticData.DataList1.Comment = item1.Comment;
-            StaticData.DataList1.RectX1 = item1.RectX1;
-            StaticData.DataList1.RectY1 = item1.RectY1;
-            StaticData.DataList1.RectX2 = item1.RectX2;
-            StaticData.DataList1.RectY2 = item1.RectY2;
+            StaticData.DataList1.Rect1X1 = item1.Rect1X1;
+            StaticData.DataList1.Rect1Y1 = item1.Rect1Y1;
+            StaticData.DataList1.Rect1X2 = item1.Rect1X2;
+            StaticData.DataList1.Rect1Y2 = item1.Rect1Y2;
+
+            StaticData.DataList1.Image2Id = item1.Image2Id;
+            StaticData.DataList1.Rect2X1 = item1.Rect2X1;
+            StaticData.DataList1.Rect2Y1 = item1.Rect2Y1;
+            StaticData.DataList1.Rect2X2 = item1.Rect2X2;
+            StaticData.DataList1.Rect2Y2 = item1.Rect2Y2;
+
+            StaticData.DataList1.Image3Id = item1.Image3Id;
+            StaticData.DataList1.Rect3X1 = item1.Rect3X1;
+            StaticData.DataList1.Rect3Y1 = item1.Rect3Y1;
+            StaticData.DataList1.Rect3X2 = item1.Rect3X2;
+            StaticData.DataList1.Rect3Y2 = item1.Rect3Y2;
+
+            StaticData.DataList1.Image4Id = item1.Image4Id;
+            StaticData.DataList1.Rect4X1 = item1.Rect4X1;
+            StaticData.DataList1.Rect4Y1 = item1.Rect4Y1;
+            StaticData.DataList1.Rect4X2 = item1.Rect4X2;
+            StaticData.DataList1.Rect4Y2 = item1.Rect4Y2;
         }
         private void CopyStaticDataToDataList()
         {
             if (j < dataList.Count && StaticData.DataList1.Diagnosis != 0)
             {
                 var item1 = dataList[j];
-                item1.ImageId = StaticData.DataList1.ImageId;
                 item1.DoctorId = StaticData.DataList1.DoctorId;
                 item1.Diagnosis = StaticData.DataList1.Diagnosis;
                 item1.Comment = StaticData.DataList1.Comment;
-                item1.RectX1 = StaticData.DataList1.RectX1;
-                item1.RectY1 = StaticData.DataList1.RectY1;
-                item1.RectX2 = StaticData.DataList1.RectX2;
-                item1.RectY2 = StaticData.DataList1.RectY2;
+                item1.Image1Id = StaticData.DataList1.Image1Id;
+                item1.Rect1X1 = StaticData.DataList1.Rect1X1;
+                item1.Rect1Y1 = StaticData.DataList1.Rect1Y1;
+                item1.Rect1X2 = StaticData.DataList1.Rect1X2;
+                item1.Rect1Y2 = StaticData.DataList1.Rect1Y2;
+
+                item1.Image2Id = StaticData.DataList1.Image2Id;
+                item1.Rect2X1 = StaticData.DataList1.Rect2X1;
+                item1.Rect2Y1 = StaticData.DataList1.Rect2Y1;
+                item1.Rect2X2 = StaticData.DataList1.Rect2X2;
+                item1.Rect2Y2 = StaticData.DataList1.Rect2Y2;
+
+                item1.Image3Id = StaticData.DataList1.Image3Id;
+                item1.Rect3X1 = StaticData.DataList1.Rect3X1;
+                item1.Rect3Y1 = StaticData.DataList1.Rect3Y1;
+                item1.Rect3X2 = StaticData.DataList1.Rect3X2;
+                item1.Rect3Y2 = StaticData.DataList1.Rect3Y2;
+
+                item1.Image4Id = StaticData.DataList1.Image4Id;
+                item1.Rect4X1 = StaticData.DataList1.Rect4X1;
+                item1.Rect4Y1 = StaticData.DataList1.Rect4Y1;
+                item1.Rect4X2 = StaticData.DataList1.Rect4X2;
+                item1.Rect4Y2 = StaticData.DataList1.Rect4Y2;
             }
         }
     }

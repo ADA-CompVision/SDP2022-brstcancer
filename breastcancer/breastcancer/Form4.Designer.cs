@@ -63,12 +63,11 @@
             // 
             this.buttonPencil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPencil.BackgroundImage")));
             this.buttonPencil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonPencil.Location = new System.Drawing.Point(851, 632);
+            this.buttonPencil.Location = new System.Drawing.Point(905, 631);
             this.buttonPencil.Name = "buttonPencil";
             this.buttonPencil.Size = new System.Drawing.Size(44, 44);
             this.buttonPencil.TabIndex = 921;
             this.buttonPencil.UseVisualStyleBackColor = true;
-           // this.buttonPencil.Click += new System.EventHandler(this.buttonPencil_Click);
             // 
             // buttonQuestionM
             // 
@@ -85,7 +84,7 @@
             // 
             this.buttonDown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDown.BackgroundImage")));
             this.buttonDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonDown.Location = new System.Drawing.Point(951, 633);
+            this.buttonDown.Location = new System.Drawing.Point(1005, 632);
             this.buttonDown.Name = "buttonDown";
             this.buttonDown.Size = new System.Drawing.Size(44, 44);
             this.buttonDown.TabIndex = 801;
@@ -104,7 +103,7 @@
             // 
             this.buttonUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUp.BackgroundImage")));
             this.buttonUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonUp.Location = new System.Drawing.Point(901, 632);
+            this.buttonUp.Location = new System.Drawing.Point(955, 631);
             this.buttonUp.Name = "buttonUp";
             this.buttonUp.Size = new System.Drawing.Size(44, 44);
             this.buttonUp.TabIndex = 302;
@@ -140,7 +139,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
-       //     this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             // 
             // panel4
             // 
@@ -152,9 +150,9 @@
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Location = new System.Drawing.Point(17, 2);
+            this.panel4.Location = new System.Drawing.Point(5, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1016, 690);
+            this.panel4.Size = new System.Drawing.Size(1087, 698);
             this.panel4.TabIndex = 922;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -250,9 +248,9 @@
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Location = new System.Drawing.Point(40, 103);
+            this.panel2.Location = new System.Drawing.Point(19, 109);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(246, 163);
+            this.panel2.Size = new System.Drawing.Size(227, 153);
             this.panel2.TabIndex = 915;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -264,17 +262,17 @@
             this.panel1.Controls.Add(this.textBoxComment);
             this.panel1.Controls.Add(this.buttonNext);
             this.panel1.Controls.Add(this.buttonPrevious);
-            this.panel1.Location = new System.Drawing.Point(1039, 2);
+            this.panel1.Location = new System.Drawing.Point(1098, 9);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(314, 691);
-            this.panel1.TabIndex = 921;
+            this.panel1.Size = new System.Drawing.Size(258, 691);
+            this.panel1.TabIndex = 914;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // labelNotes
             // 
             this.labelNotes.AutoSize = true;
             this.labelNotes.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelNotes.Location = new System.Drawing.Point(40, 306);
+            this.labelNotes.Location = new System.Drawing.Point(19, 306);
             this.labelNotes.Name = "labelNotes";
             this.labelNotes.Size = new System.Drawing.Size(51, 20);
             this.labelNotes.TabIndex = 301;
@@ -284,7 +282,7 @@
             // 
             this.labelDComment.AutoSize = true;
             this.labelDComment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelDComment.Location = new System.Drawing.Point(40, 53);
+            this.labelDComment.Location = new System.Drawing.Point(20, 49);
             this.labelDComment.Name = "labelDComment";
             this.labelDComment.Size = new System.Drawing.Size(184, 25);
             this.labelDComment.TabIndex = 916;
@@ -292,10 +290,10 @@
             // 
             // textBoxComment
             // 
-            this.textBoxComment.Location = new System.Drawing.Point(40, 329);
+            this.textBoxComment.Location = new System.Drawing.Point(19, 368);
             this.textBoxComment.Multiline = true;
             this.textBoxComment.Name = "textBoxComment";
-            this.textBoxComment.Size = new System.Drawing.Size(246, 164);
+            this.textBoxComment.Size = new System.Drawing.Size(227, 153);
             this.textBoxComment.TabIndex = 905;
             this.textBoxComment.TabStop = false;
             this.textBoxComment.Enter += new System.EventHandler(this.textBoxComment_Enter);
@@ -303,19 +301,18 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(164, 632);
+            this.buttonNext.Location = new System.Drawing.Point(136, 622);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(135, 37);
+            this.buttonNext.Size = new System.Drawing.Size(110, 37);
             this.buttonNext.TabIndex = 298;
             this.buttonNext.Text = "Next";
             this.buttonNext.UseVisualStyleBackColor = true;
-          //  this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // buttonPrevious
             // 
-            this.buttonPrevious.Location = new System.Drawing.Point(20, 632);
+            this.buttonPrevious.Location = new System.Drawing.Point(17, 622);
             this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(135, 37);
+            this.buttonPrevious.Size = new System.Drawing.Size(110, 37);
             this.buttonPrevious.TabIndex = 297;
             this.buttonPrevious.Text = "Back";
             this.buttonPrevious.UseVisualStyleBackColor = true;
@@ -324,7 +321,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 694);
+            this.ClientSize = new System.Drawing.Size(1370, 724);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;

@@ -42,3 +42,4 @@ E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\breastcancer\breastcanc
 E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.pdb
 E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.genruntimeconfig.cache
 E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\ref\breastcancer.dll
+E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.FormZoom.resources

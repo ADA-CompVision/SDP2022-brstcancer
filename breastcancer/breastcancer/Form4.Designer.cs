@@ -68,6 +68,7 @@
             this.buttonPencil.Size = new System.Drawing.Size(44, 44);
             this.buttonPencil.TabIndex = 921;
             this.buttonPencil.UseVisualStyleBackColor = true;
+            this.buttonPencil.Click += new System.EventHandler(this.buttonPencil_Click);
             // 
             // buttonQuestionM
             // 
@@ -150,9 +151,9 @@
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Location = new System.Drawing.Point(5, 2);
+            this.panel4.Location = new System.Drawing.Point(5, 9);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1087, 698);
+            this.panel4.Size = new System.Drawing.Size(1087, 691);
             this.panel4.TabIndex = 922;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -177,6 +178,7 @@
             this.radioButtonPositive.TabStop = true;
             this.radioButtonPositive.Text = "Positive";
             this.radioButtonPositive.UseVisualStyleBackColor = true;
+            this.radioButtonPositive.CheckedChanged += new System.EventHandler(this.radioButtonPositive_CheckedChanged);
             // 
             // radioButtonNegative
             // 

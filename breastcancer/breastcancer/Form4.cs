@@ -13,6 +13,8 @@ namespace breastcancer
 {
     public partial class Form4 : Form
     {
+        bool btnNavLR = false;
+        bool penClick = false;
         int picNum4;
         bool downFlag4;
         int c4;
@@ -178,7 +180,7 @@ namespace breastcancer
 
             label1.Text = filepath.TrimStart('\\');
 
-          //  drawPic();
+            //  drawPic();
         }
 
         //private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
@@ -253,6 +255,34 @@ namespace breastcancer
             {
                 textBoxComment.Text = textCom;
             }
+        }
+
+        private void radioButtonPositive_CheckedChanged(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void buttonPencil_Click(object sender, EventArgs e)
+        {
+            btnNavLR = true;
+
+            if (!penClick)
+            {
+                var bitmap = (Bitmap)Image.FromFile(@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Logo\minipencil.png");//dlg.FileName);
+                this.Cursor = CreateCursor(bitmap, new Size(bitmap.Width / 15, bitmap.Height / 15));
+                penClick = true;
+            }
+            else
+            {
+                this.Cursor = Cursors.Default;
+                penClick = false;
+            }
+        }
+        public Cursor CreateCursor(Bitmap bitmap, Size size)
+        {
+            bitmap = new Bitmap(bitmap, size);
+            return new Cursor(bitmap.GetHicon());
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {

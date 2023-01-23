@@ -411,32 +411,40 @@ namespace breastcancer
             picNum = 0;
             AddToDataList();
             CreateStaticData(ii);
-            Form4 frm4 = new Form4();
-            frm4.Show();
+            int width = pictureBox1.Width;
+            int height = pictureBox1.Height;
+            FormZoom formZoom = new FormZoom(width, height);
+            formZoom.Show();
         }
         private void pictureBox2_DoubleClick(object sender, EventArgs e)
         {
             picNum = 1;
             AddToDataList();
             CreateStaticData(ii);
-            Form4 frm4 = new Form4();
-            frm4.Show();
+            int width = pictureBox2.Width;
+            int height = pictureBox2.Height;
+            FormZoom formZoom = new FormZoom(width, height); 
+            formZoom.Show();
         }
         private void pictureBox3_DoubleClick(object sender, EventArgs e)
         {
             picNum = 2;
             AddToDataList();
             CreateStaticData(ii);
-            Form4 frm4 = new Form4();
-            frm4.Show();
+            int width = pictureBox3.Width;
+            int height = pictureBox3.Height;
+            FormZoom formZoom = new FormZoom(width, height); 
+            formZoom.Show();
         }
         private void pictureBox4_DoubleClick(object sender, EventArgs e)
         {
             picNum = 3;
             AddToDataList();
             CreateStaticData(ii);
-            Form4 frm4 = new Form4();
-            frm4.Show();
+            int width = pictureBox4.Width;
+            int height = pictureBox4.Height;
+            FormZoom formZoom = new FormZoom(width, height); 
+            formZoom.Show();
         }
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -608,7 +616,10 @@ namespace breastcancer
             prev = 0;
             if (radioButtonNegative.Checked == false && radioButtonPositive.Checked == false && radioButtonPotential.Checked == false)
             {
-                //MessageBox.Show("You need to choose one option");
+                string message = "You need to choose one option!";
+                string title = "Close Window";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
             }
             else
             {

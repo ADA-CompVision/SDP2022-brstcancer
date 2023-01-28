@@ -1,1 +1,31 @@
-[]
+[
+  {
+    "Diagnosis": 0,
+    "Comment": "Write a comment...",
+    "DoctorId": 1,
+    "Image1Id": 1,
+    "Image1Name": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Augmentation\\Original\\image_000.jpg",
+    "Rect1X1": 671,
+    "Rect1X2": 1089,
+    "Rect1Y1": 1694,
+    "Rect1Y2": 1947,
+    "Image2Id": 2,
+    "Image2Name": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Augmentation\\Original\\image_001.jpg",
+    "Rect2X1": 1639,
+    "Rect2X2": 2002,
+    "Rect2Y1": 1694,
+    "Rect2Y2": 2002,
+    "Image3Id": 3,
+    "Image3Name": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Augmentation\\Original\\image_002.jpg",
+    "Rect3X1": 418,
+    "Rect3X2": 913,
+    "Rect3Y1": 1694,
+    "Rect3Y2": 1815,
+    "Image4Id": 4,
+    "Image4Name": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\Augmentation\\Original\\image_003.jpg",
+    "Rect4X1": 561,
+    "Rect4X2": 858,
+    "Rect4Y1": 1232,
+    "Rect4Y2": 1584
+  }
+]

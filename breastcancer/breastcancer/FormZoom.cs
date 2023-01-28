@@ -48,7 +48,7 @@ namespace breastcancer
         }
 
         private Font fnt = new Font("Arial", 10);
-        string filepath;
+        string filepath, pathJson, pathCol, pathOri, filePath;
 
         private void FormZoom_Load(object sender, EventArgs e)
         {
@@ -58,9 +58,21 @@ namespace breastcancer
             this.KeyPreview = true;
             this.BackColor = Color.FromArgb(34, 34, 34);
 
+            string directory = Directory.GetCurrentDirectory();
+            MessageBox.Show(directory);
+            var parentName = Directory.GetParent(directory).FullName;
+            parentName = Directory.GetParent(parentName).FullName;
+            parentName = Directory.GetParent(parentName).FullName;
+            parentName = Directory.GetParent(parentName).FullName;
+            parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
+            pathJson = parentName + "\\path.json";
+            pathCol = parentName + "\\Augmentation\\Colorized";
+            pathOri = parentName + "\\Augmentation\\Original";
+            filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
 
-            string filePathOriginal = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Original";
-            string filePathColored = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Colorized";
+
+            string filePathOriginal = pathOri;//@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Original";
+            string filePathColored = pathCol;//@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Colorized";
 
 
             if (!downFlag4)
@@ -75,8 +87,8 @@ namespace breastcancer
             }
 
             files = Directory.GetFiles(filepath);
-            int divX = pictureBox1.Size.Width / width;
-            int divY = pictureBox1.Size.Height / height;
+            int divX = pictureBox1.ClientSize.Width / width;//.Image.Width;// / width;
+            int divY = pictureBox1.ClientSize.Height / height;// pictureBox1.Image.Height;// / height;
 
             //sx1 = (int)(StaticData.DataList1.Rect1X2 - StaticData.DataList1.Rect1X1) / pictureBox1.Size.Width;
             //sy1 = (int)(StaticData.DataList1.Rect1Y2 - StaticData.DataList1.Rect1Y1) / pictureBox1.Size.Height;
@@ -88,10 +100,15 @@ namespace breastcancer
             {
                 pictureBox1.Image = Image.FromFile(files[c4]);
 
-                sx1 = (int)(StaticData.DataList1.Rect1X1 * divX)/11;
-                sy1 = (int)(StaticData.DataList1.Rect1Y1 * divY)/11;
-                sw = (int)((StaticData.DataList1.Rect1X2 - StaticData.DataList1.Rect1X1) * divX)/11;
+                sx1 = (int)(StaticData.DataList1.Rect1X1 * divX) / 11;
+                sy1 = (int)(StaticData.DataList1.Rect1Y1 * divY) / 11;
+                sw = (int)((StaticData.DataList1.Rect1X2 - StaticData.DataList1.Rect1X1) * divX) / 11;
                 sh = (int)((StaticData.DataList1.Rect1Y2 - StaticData.DataList1.Rect1Y1) * divY) / 11;
+                //MessageBox.Show("locax", pictureBox1.Location.X.ToString());
+                //MessageBox.Show("size ", pictureBox1.Size.Width.ToString());
+                //MessageBox.Show("size h", pictureBox1.Size.Height.ToString());
+
+                //MessageBox.Show(sw.ToString());
             }
             else if (picNum4 == 1)
             {

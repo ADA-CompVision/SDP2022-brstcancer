@@ -79,6 +79,17 @@ namespace breastcancer
             label2.ForeColor = Color.FromArgb(161, 161, 161);
             label2.Width = 10000;
             label2.BorderStyle = BorderStyle.Fixed3D;
+            string directory = Directory.GetCurrentDirectory();
+            MessageBox.Show(directory);
+            var parentName = Directory.GetParent(directory).FullName;
+            parentName = Directory.GetParent(parentName).FullName;
+            parentName = Directory.GetParent(parentName).FullName;
+            parentName = Directory.GetParent(parentName).FullName;
+            parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
+            //pathJson = parentName + "\\path.json";
+            //pathCol = parentName + "\\Augmentation\\Colorized";
+            //pathOri = parentName + "\\Augmentation\\Original";
+            //filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
 
             string filePathOriginal = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Original";
             string filePathColored = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Colorized";

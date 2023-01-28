@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 using breastcancer.Service;
+using System.Reflection;
+using System.Diagnostics;
 
 namespace breastcancer
 {
@@ -30,19 +32,47 @@ namespace breastcancer
         int diagnosisInt = 0;
         int fileCount;
         string[] filesOriginal, filesColored;
-        string filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
+
+
+        /***********************************
+         * 
+         * string exeFile = new System.Uri(Assembly.GetEntryAssembly().CodeBase).AbsolutePath;
+           string Dir = Path.GetDirectoryName(exeFile);
+           string path = Path.GetFullPath(Path.Combine(Dir, @"..\..\Help\Help.txt"));
+           System.Diagnostics.Process.Start(path);
+         */
+
+        // string exeFile = new System.Uri(Assembly.GetEntryAssembly().CodeBase).AbsolutePath;
+        //string Dir = Path.GetDirectoryName(exeFile);
+        //s/tring path = Path.GetFullPath(Path.Combine(Dir, @"..\..\SDP2022-brstcancer\path.json"));
+        //System.Diagnostics.Process.Start(path);
+
+
+        // string filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
         string jsonData;
 
         public static int c = 0;
         public static int j;  //when clicked gets the j's value of the list
         public static int picNum;
         public static bool downFlag = false;
+        string pathJson, pathCol, pathOri, filePath;
         public Form2()
         {
             InitializeComponent();
         }
         private void Form2_Load(object sender, EventArgs e)
         {
+            string directory = Directory.GetCurrentDirectory();
+            var parentName = Directory.GetParent(directory).FullName;
+            parentName = Directory.GetParent(parentName).FullName;
+            parentName = Directory.GetParent(parentName).FullName;
+            parentName = Directory.GetParent(parentName).FullName;
+            parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
+            pathJson = parentName + "\\path.json";
+            pathCol = parentName + "\\Augmentation\\Colorized";
+            pathOri = parentName + "\\Augmentation\\Original";
+            filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
+
             LoadData();
         }
         private void LoadData()
@@ -144,12 +174,12 @@ namespace breastcancer
             dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
                                   ?? new List<Data>();
 
-            string filePathOriginal = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Original";
-            filesOriginal = Directory.GetFiles(filePathOriginal);
-            string filePathColored = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Colorized";
-            filesColored = Directory.GetFiles(filePathColored);
+            //string filePathOriginal = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Original";
+            filesOriginal = Directory.GetFiles(pathOri);
+            //string filePathColored = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Colorized";
+            filesColored = Directory.GetFiles(pathCol);//filePathColored);
 
-            fileCount = Directory.GetFiles(filePathOriginal).Length;
+            fileCount = Directory.GetFiles(pathOri).Length;//filePathOriginal).Length;
 
             pictureBox1.Image = Image.FromFile(filesOriginal[c]);
             pictureBox2.Image = Image.FromFile(filesOriginal[c + 1]);
@@ -423,7 +453,7 @@ namespace breastcancer
             CreateStaticData(ii);
             int width = pictureBox2.Width;
             int height = pictureBox2.Height;
-            FormZoom formZoom = new FormZoom(width, height); 
+            FormZoom formZoom = new FormZoom(width, height);
             formZoom.Show();
         }
         private void pictureBox3_DoubleClick(object sender, EventArgs e)
@@ -433,7 +463,7 @@ namespace breastcancer
             CreateStaticData(ii);
             int width = pictureBox3.Width;
             int height = pictureBox3.Height;
-            FormZoom formZoom = new FormZoom(width, height); 
+            FormZoom formZoom = new FormZoom(width, height);
             formZoom.Show();
         }
         private void pictureBox4_DoubleClick(object sender, EventArgs e)
@@ -443,7 +473,7 @@ namespace breastcancer
             CreateStaticData(ii);
             int width = pictureBox4.Width;
             int height = pictureBox4.Height;
-            FormZoom formZoom = new FormZoom(width, height); 
+            FormZoom formZoom = new FormZoom(width, height);
             formZoom.Show();
         }
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)

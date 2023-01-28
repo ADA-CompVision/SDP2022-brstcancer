@@ -72,7 +72,6 @@
             this.label4.Size = new System.Drawing.Size(649, 25);
             this.label4.TabIndex = 8;
             this.label4.Text = "How to reduce your chance of developing breast cancer, or surviving it?";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label6
             // 
@@ -84,7 +83,6 @@
             this.label6.Size = new System.Drawing.Size(423, 147);
             this.label6.TabIndex = 10;
             this.label6.Text = resources.GetString("label6.Text");
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -96,7 +94,6 @@
             this.label7.Size = new System.Drawing.Size(846, 125);
             this.label7.TabIndex = 11;
             this.label7.Text = resources.GetString("label7.Text");
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -108,7 +105,6 @@
             this.label8.Size = new System.Drawing.Size(678, 168);
             this.label8.TabIndex = 12;
             this.label8.Text = resources.GetString("label8.Text");
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // Form3
             // 

@@ -169,7 +169,7 @@ namespace breastcancer
             NativeMethods.DeleteObject(ptr);
 
             // Read existing json data
-            jsonData = System.IO.File.ReadAllText(filePath);
+            jsonData = System.IO.File.ReadAllText(pathJson);
             // De-serialize to object or create new list
             dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
                                   ?? new List<Data>();
@@ -496,9 +496,7 @@ namespace breastcancer
                 parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
 
                 pathPencil = parentName + "\\Logo\\minipencil.png";
-
-
-
+        
                 var bitmap = (Bitmap)Image.FromFile("pathPencil");//dlg.FileName);
                 this.Cursor = CreateCursor(bitmap, new Size(bitmap.Width / 15, bitmap.Height / 15));
                 penClick = true;

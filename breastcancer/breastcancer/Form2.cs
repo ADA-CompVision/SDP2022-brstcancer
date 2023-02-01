@@ -55,7 +55,7 @@ namespace breastcancer
         public static int j;  //when clicked gets the j's value of the list
         public static int picNum;
         public static bool downFlag = false;
-        string pathJson, pathCol, pathOri, filePath;
+        string pathJson, pathCol, pathOri, filePath, pathPencil;
         public Form2()
         {
             InitializeComponent();
@@ -488,7 +488,18 @@ namespace breastcancer
 
             if (!penClick)
             {
-                var bitmap = (Bitmap)Image.FromFile(@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Logo\minipencil.png");//dlg.FileName);
+                string directory = Directory.GetCurrentDirectory();
+                var parentName = Directory.GetParent(directory).FullName;
+                parentName = Directory.GetParent(parentName).FullName;
+                parentName = Directory.GetParent(parentName).FullName;
+                parentName = Directory.GetParent(parentName).FullName;
+                parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
+
+                pathPencil = parentName + "\\Logo\\minipencil.png";
+
+
+
+                var bitmap = (Bitmap)Image.FromFile("pathPencil");//dlg.FileName);
                 this.Cursor = CreateCursor(bitmap, new Size(bitmap.Width / 15, bitmap.Height / 15));
                 penClick = true;
             }

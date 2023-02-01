@@ -32,9 +32,6 @@ namespace breastcancer
             pictureBox3.Image = Image.FromFile(pathLogoT);
 
 
-
-
-
             label1.ForeColor = Color.WhiteSmoke;
             label2.ForeColor = Color.FromArgb(126, 126, 126);
 

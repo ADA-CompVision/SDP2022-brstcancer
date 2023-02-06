@@ -20,6 +20,9 @@ namespace breastcancer
         Rectangle rect;
         bool IsMouseDown = false;
         List<Data> dataList = new List<Data>();
+
+        Data tempData = new Data();
+
         bool penClick = false;
         string textCom = "Write a comment...";
         string textEmp = "";
@@ -71,7 +74,7 @@ namespace breastcancer
             pathJson = parentName + "\\path.json";
             pathCol = parentName + "\\Augmentation\\Colorized";
             pathOri = parentName + "\\Augmentation\\Original";
-            filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
+            //filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
 
             LoadData();
         }
@@ -186,16 +189,102 @@ namespace breastcancer
             pictureBox3.Image = Image.FromFile(filesOriginal[c + 2]);
             pictureBox4.Image = Image.FromFile(filesOriginal[c + 3]);
 
+            ////////////////////
+            CheckIfWeHave();
+            ////////////////////
+
             label1.Text = c + 1 + " out of " + filesOriginal.Length / 4 + " images \n";
 
 
             if (c == 0) //changed it here
                 buttonPrevious.Enabled = false;
         }
+        int ch = 0;
+        private void CheckIfWeHave()
+        {
+            int jd = dataList.Count;
+            if (jd > ii)
+            {
+                var item = dataList[ch];
+
+                if (File.Exists(item.Image1Name.ToString()))
+                {
+                    // var item = dataList[ii];
+                    this.textBoxComment.Text = item.Comment;
+
+                    if (item.Diagnosis == 1)
+                    {
+                        this.radioButtonPositive.Checked = true;
+                        d = 1;
+                    }
+                    else if (item.Diagnosis == 2)
+                    {
+                        this.radioButtonPotential.Checked = true;
+                        d = 2;
+                    }
+                    else if (item.Diagnosis == 3)
+                    {
+                        this.radioButtonNegative.Checked = true;
+                        d = 3;
+                    }
+                    //MessageBox.Show(btnNavLR.ToString());
+                    //if (btnNavLR == false)
+                    //{
+                    Location1XY.X = item.Rect1X1 / 11;
+                    Location1XY.Y = item.Rect1Y1 / 11;      // indi bagladim
+                    Location1X1Y1.X = item.Rect1X2 / 11;
+                    Location1X1Y1.Y = item.Rect1Y2 / 11;
+                    PictureBoxClicked[0] = true;
+
+                    Location2XY.X = item.Rect2X1 / 11;
+                    Location2XY.Y = item.Rect2Y1 / 11;      // indi bagladim
+                    Location2X1Y1.X = item.Rect2X2 / 11;
+                    Location2X1Y1.Y = item.Rect2Y2 / 11;
+                    PictureBoxClicked[1] = true;
+
+                    Location3XY.X = item.Rect3X1 / 11;
+                    Location3XY.Y = item.Rect3Y1 / 11;      // indi bagladim
+                    Location3X1Y1.X = item.Rect3X2 / 11;
+                    Location3X1Y1.Y = item.Rect3Y2 / 11;
+                    PictureBoxClicked[2] = true;
+
+                    Location4XY.X = item.Rect4X1 / 11;
+                    Location4XY.Y = item.Rect4Y1 / 11;      // indi bagladim
+                    Location4X1Y1.X = item.Rect4X2 / 11;
+                    Location4X1Y1.Y = item.Rect4Y2 / 11;
+                    PictureBoxClicked[3] = true;
+                    //}
+                    //else
+                    //{
+                    //    item.Rect1X1 = Location1XY.X * 11;    //bunu da bagladim su an
+                    //    item.Rect1Y1 = Location1XY.Y * 11;
+                    //    item.Rect1X2 = Location1X1Y1.X * 11;
+                    //    item.Rect1Y2 = Location1X1Y1.Y * 11;
+
+                    //    item.Rect2X1 = Location2XY.X * 11;       //bunu da bagladim su an
+                    //    item.Rect2Y1 = Location2XY.Y * 11;
+                    //    item.Rect2X2 = Location2X1Y1.X * 11;
+                    //    item.Rect2Y2 = Location2X1Y1.Y * 11;
+
+                    //    item.Rect3X1 = Location3XY.X * 11; //bunu da bagladim su an
+                    //    item.Rect3Y1 = Location3XY.Y * 11;
+                    //    item.Rect3X2 = Location3X1Y1.X * 11;
+                    //    item.Rect3Y2 = Location3X1Y1.Y * 11;
+
+                    //    item.Rect4X1 = Location4XY.X * 11;       //bunu da bagladim su an
+                    //    item.Rect4Y1 = Location4XY.Y * 11;
+                    //    item.Rect4X2 = Location4X1Y1.X * 11;
+                    //    item.Rect4Y2 = Location4X1Y1.Y * 11;
+                    //}
+                    drawPic();
+                }
+            }
+        }
         private void buttonPrevious_Click(object sender, EventArgs e)
         {
             string str = "";
             buttonPreviousFunction();
+            //CheckIfWeHave();
             drawPic();
             //for (int n = 0; n < dataList.Count; n++)
             //    str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" +
@@ -208,6 +297,7 @@ namespace breastcancer
             if (c + 4 == fileCount)
                 buttonNext.Enabled = false;
             buttonNextFunction();
+            //CheckIfWeHave();
             //for (int n = 0; n < dataList.Count; n++)
             //    str += "id: " + dataList[n].ImageId.ToString() + "\n" + "comm: " + dataList[n].Comment.ToString() + "\n" + "diag: " + dataList[n].Diagnosis.ToString() + "\n" +
             //       "rectx1: " + dataList[n].RectX1 + "\nrectX2: " + dataList[n].RectX2 + "\nrecty1:" + dataList[n].RectY1 + "\nrecty2" + dataList[n].RectY2;
@@ -246,7 +336,7 @@ namespace breastcancer
         {
             // Update json data string
             jsonData = JsonConvert.SerializeObject(dataList, Formatting.Indented);
-            System.IO.File.WriteAllText(filePath, jsonData);
+            System.IO.File.WriteAllText(pathJson, jsonData);
         }
         private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
         {
@@ -255,6 +345,8 @@ namespace breastcancer
             {
                 IsMouseDown = true;
                 Location3XY = e.Location;
+                tempData.Rect3X1 = e.Location.X;
+                tempData.Rect3Y1 = e.Location.Y;
             }
         }
         private void pictureBox3_MouseMove(object sender, MouseEventArgs e)
@@ -262,6 +354,8 @@ namespace breastcancer
             if (IsMouseDown == true)
             {
                 Location3X1Y1 = e.Location;
+                tempData.Rect3X2 = e.Location.X;
+                tempData.Rect3Y2 = e.Location.Y;
                 Refresh();
             }
         }
@@ -270,6 +364,8 @@ namespace breastcancer
             if (IsMouseDown == true)
             {
                 Location3X1Y1 = e.Location;
+                tempData.Rect3X2 = e.Location.X;
+                tempData.Rect3Y2 = e.Location.Y;
                 IsMouseDown = false;
             }
         }
@@ -298,6 +394,8 @@ namespace breastcancer
             {
                 IsMouseDown = true;
                 Location4XY = e.Location;
+                tempData.Rect4X1 = e.Location.X;
+                tempData.Rect4Y1 = e.Location.Y;
             }
         }
         private void pictureBox4_MouseUp(object sender, MouseEventArgs e)
@@ -305,6 +403,8 @@ namespace breastcancer
             if (IsMouseDown == true)
             {
                 Location4X1Y1 = e.Location;
+                tempData.Rect4X2 = e.Location.X;
+                tempData.Rect4Y2 = e.Location.Y;
                 IsMouseDown = false;
             }
         }
@@ -313,6 +413,8 @@ namespace breastcancer
             if (IsMouseDown == true)
             {
                 Location4X1Y1 = e.Location;
+                tempData.Rect3X2 = e.Location.X;
+                tempData.Rect3Y2 = e.Location.Y;
                 Refresh();
             }
         }
@@ -346,6 +448,8 @@ namespace breastcancer
             {
                 IsMouseDown = true;
                 Location1XY = e.Location;
+                tempData.Rect1X1 = e.Location.X;
+                tempData.Rect1Y1 = e.Location.Y;
             }
         }
         private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
@@ -355,6 +459,8 @@ namespace breastcancer
             {
                 IsMouseDown = true;
                 Location2XY = e.Location;
+                tempData.Rect2X1 = e.Location.X;
+                tempData.Rect2Y1 = e.Location.Y;
             }
         }
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
@@ -362,6 +468,8 @@ namespace breastcancer
             if (IsMouseDown == true)
             {
                 Location1X1Y1 = e.Location;
+                tempData.Rect1X2 = e.Location.X;
+                tempData.Rect1Y2 = e.Location.Y;
                 Refresh();
             }
         }
@@ -370,6 +478,8 @@ namespace breastcancer
             if (IsMouseDown == true)
             {
                 Location2X1Y1 = e.Location;
+                tempData.Rect2X2 = e.Location.X;
+                tempData.Rect2Y2 = e.Location.Y;
                 Refresh();
             }
         }
@@ -378,6 +488,8 @@ namespace breastcancer
             if (IsMouseDown == true)
             {
                 Location1X1Y1 = e.Location;
+                tempData.Rect1X2 = e.Location.X;
+                tempData.Rect1Y2 = e.Location.Y;
                 IsMouseDown = false;
             }
         }
@@ -386,6 +498,8 @@ namespace breastcancer
             if (IsMouseDown == true)
             {
                 Location2X1Y1 = e.Location;
+                tempData.Rect2X2 = e.Location.X;
+                tempData.Rect2Y2 = e.Location.Y;
                 IsMouseDown = false;
             }
         }
@@ -496,8 +610,8 @@ namespace breastcancer
                 parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
 
                 pathPencil = parentName + "\\Logo\\minipencil.png";
-        
-                var bitmap = (Bitmap)Image.FromFile("pathPencil");//dlg.FileName);
+                MessageBox.Show(pathPencil);
+                var bitmap = (Bitmap)Image.FromFile(pathPencil);//dlg.FileName);
                 this.Cursor = CreateCursor(bitmap, new Size(bitmap.Width / 15, bitmap.Height / 15));
                 penClick = true;
             }
@@ -648,11 +762,76 @@ namespace breastcancer
                 //LocationX1Y1.Y = 0;
             }
         }
+        private void CheckTemp()
+        {
+            var curitem = dataList[ch];
+
+            if (tempData.Rect1X1 > 0)
+            {
+                curitem.Rect1X1 = tempData.Rect1X1 * 11;
+                curitem.Rect1X2 = tempData.Rect1X2 * 11;
+                curitem.Rect1Y1 = tempData.Rect1Y1 * 11;
+                curitem.Rect1Y2 = tempData.Rect1Y2 * 11;
+            }
+            if (tempData.Rect2X1 > 0)
+            {
+                curitem.Rect2X1 = tempData.Rect2X1 * 11;
+                curitem.Rect2X2 = tempData.Rect2X2 * 11;
+                curitem.Rect2Y1 = tempData.Rect2Y1 * 11;
+                curitem.Rect2Y2 = tempData.Rect2Y2 * 11;
+            }
+            if (tempData.Rect3X1 > 0)
+            {
+                curitem.Rect3X1 = tempData.Rect3X1 * 11;
+                curitem.Rect3X2 = tempData.Rect3X2 * 11;
+                curitem.Rect3Y1 = tempData.Rect3Y1 * 11;
+                curitem.Rect3Y2 = tempData.Rect3Y2 * 11;
+            }
+            if (tempData.Rect4X1 > 0)
+            {
+                curitem.Rect4X1 = tempData.Rect4X1 * 11;
+                curitem.Rect4X2 = tempData.Rect4X2 * 11;
+                curitem.Rect4Y1 = tempData.Rect4Y1 * 11;
+                curitem.Rect4Y2 = tempData.Rect4Y2 * 11;
+            }
+
+
+            tempData = new Data();
+        }
         private void buttonNextFunction()
         {
+            CheckIfWeHave();
             penClick = false;
             btnNavLR = false;
             prev = 0;
+
+            CheckTemp();
+
+            // var curitem = dataList.FirstOrDefault(x => x. == ch);
+            //if (curitem != null)
+            //{
+            //    curitem.Rect1X1 = Location1XY.X * 11;    //bunu da bagladim su an
+            //    curitem.Rect1Y1 = Location1XY.Y * 11;
+            //    curitem.Rect1X2 = Location1X1Y1.X * 11;
+            //    curitem.Rect1Y2 = Location1X1Y1.Y * 11;
+
+            //    curitem.Rect2X1 = Location2XY.X * 11;       //bunu da bagladim su an
+            //    curitem.Rect2Y1 = Location2XY.Y * 11;
+            //    curitem.Rect2X2 = Location2X1Y1.X * 11;
+            //    curitem.Rect2Y2 = Location2X1Y1.Y * 11;
+
+            //    curitem.Rect3X1 = Location3XY.X * 11; //bunu da bagladim su an
+            //    curitem.Rect3Y1 = Location3XY.Y * 11;
+            //    curitem.Rect3X2 = Location3X1Y1.X * 11;
+            //    curitem.Rect3Y2 = Location3X1Y1.Y * 11;
+
+            //    curitem.Rect4X1 = Location4XY.X * 11;       //bunu da bagladim su an
+            //    curitem.Rect4Y1 = Location4XY.Y * 11;
+            //    curitem.Rect4X2 = Location4X1Y1.X * 11;
+            //    curitem.Rect4Y2 = Location4X1Y1.Y * 11;
+
+            //}
+            ch++;
             if (radioButtonNegative.Checked == false && radioButtonPositive.Checked == false && radioButtonPotential.Checked == false)
             {
                 string message = "You need to choose one option!";
@@ -775,7 +954,7 @@ namespace breastcancer
                             buttonNext.Enabled = false;
                         else
                         {
-                            c++;
+                            c += 4;         ///////////////////////////////////////////yav baxaq gorek nolur
                             buttonPrevious.Enabled = true;
                             label1.Text = c + 1 + " out of " + filesOriginal.Length + " images \n";// + files[c];
 
@@ -886,6 +1065,14 @@ namespace breastcancer
         {
             penClick = false;
             btnNavLR = false;
+            CheckIfWeHave();
+            CheckTemp();
+
+
+            if (ch > 0)
+                ch--;
+
+
             if (c == 0) //changed it here
                 buttonPrevious.Enabled = false;
             else

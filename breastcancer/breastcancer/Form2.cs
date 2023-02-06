@@ -764,39 +764,43 @@ namespace breastcancer
         }
         private void CheckTemp()
         {
-            var curitem = dataList[ch];
+            int jd = dataList.Count;
+            if (jd > ii)
+            {
+                var curitem = dataList[ch];
 
-            if (tempData.Rect1X1 > 0)
-            {
-                curitem.Rect1X1 = tempData.Rect1X1 * 11;
-                curitem.Rect1X2 = tempData.Rect1X2 * 11;
-                curitem.Rect1Y1 = tempData.Rect1Y1 * 11;
-                curitem.Rect1Y2 = tempData.Rect1Y2 * 11;
-            }
-            if (tempData.Rect2X1 > 0)
-            {
-                curitem.Rect2X1 = tempData.Rect2X1 * 11;
-                curitem.Rect2X2 = tempData.Rect2X2 * 11;
-                curitem.Rect2Y1 = tempData.Rect2Y1 * 11;
-                curitem.Rect2Y2 = tempData.Rect2Y2 * 11;
-            }
-            if (tempData.Rect3X1 > 0)
-            {
-                curitem.Rect3X1 = tempData.Rect3X1 * 11;
-                curitem.Rect3X2 = tempData.Rect3X2 * 11;
-                curitem.Rect3Y1 = tempData.Rect3Y1 * 11;
-                curitem.Rect3Y2 = tempData.Rect3Y2 * 11;
-            }
-            if (tempData.Rect4X1 > 0)
-            {
-                curitem.Rect4X1 = tempData.Rect4X1 * 11;
-                curitem.Rect4X2 = tempData.Rect4X2 * 11;
-                curitem.Rect4Y1 = tempData.Rect4Y1 * 11;
-                curitem.Rect4Y2 = tempData.Rect4Y2 * 11;
-            }
+                if (tempData.Rect1X1 > 0)
+                {
+                    curitem.Rect1X1 = tempData.Rect1X1 * 11;
+                    curitem.Rect1X2 = tempData.Rect1X2 * 11;
+                    curitem.Rect1Y1 = tempData.Rect1Y1 * 11;
+                    curitem.Rect1Y2 = tempData.Rect1Y2 * 11;
+                }
+                if (tempData.Rect2X1 > 0)
+                {
+                    curitem.Rect2X1 = tempData.Rect2X1 * 11;
+                    curitem.Rect2X2 = tempData.Rect2X2 * 11;
+                    curitem.Rect2Y1 = tempData.Rect2Y1 * 11;
+                    curitem.Rect2Y2 = tempData.Rect2Y2 * 11;
+                }
+                if (tempData.Rect3X1 > 0)
+                {
+                    curitem.Rect3X1 = tempData.Rect3X1 * 11;
+                    curitem.Rect3X2 = tempData.Rect3X2 * 11;
+                    curitem.Rect3Y1 = tempData.Rect3Y1 * 11;
+                    curitem.Rect3Y2 = tempData.Rect3Y2 * 11;
+                }
+                if (tempData.Rect4X1 > 0)
+                {
+                    curitem.Rect4X1 = tempData.Rect4X1 * 11;
+                    curitem.Rect4X2 = tempData.Rect4X2 * 11;
+                    curitem.Rect4Y1 = tempData.Rect4Y1 * 11;
+                    curitem.Rect4Y2 = tempData.Rect4Y2 * 11;
+                }
 
 
-            tempData = new Data();
+                tempData = new Data();
+            }
         }
         private void buttonNextFunction()
         {

@@ -21,6 +21,7 @@ namespace breastcancer
         int sx1, sy1, sw, sh;
         string textCom = "Write a comment...";
         string textEmp = String.Empty;
+        string pathCol, pathOri, pathJson;
         public Form4()
         {
             InitializeComponent();
@@ -87,9 +88,16 @@ namespace breastcancer
             parentName = Directory.GetParent(parentName).FullName;
             parentName = Directory.GetParent(parentName).FullName;
 
-            string filePathOriginal = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Original";
-            string filePathColored = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Colorized";
+          
+            pathJson = parentName + "\\path.json";
+            pathCol = parentName + "\\Augmentation\\Colorized";
+            pathOri = parentName + "\\Augmentation\\Original";
+            //filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
 
+
+            string filePathOriginal = pathOri;//@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Original";
+            string filePathColored = pathCol;//@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Colorized";
+           
             buttonPrevious.ForeColor = Color.WhiteSmoke;
             buttonPrevious.BackColor = Color.FromArgb(45, 45, 45);
             IntPtr ptrPre = NativeMethods.CreateRoundRectRgn(2, 2, this.buttonPrevious.Width, this.buttonPrevious.Height, 5, 5);

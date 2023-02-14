@@ -6,8 +6,8 @@ using System.Diagnostics;
 namespace breastcancer
 {
     //2800x3518 sekil olcusu
-    //215x270 picbobx olcusu
-    //13 e bolub seyapmisiq                      11e boleceyik
+    //255x320 picbobx olcusu
+    //11 e bolub seyapmisiq                      11e boleceyik
     //form4 de size 467, 586   yeni 2800/6
     public partial class Form2 : Form
     {
@@ -557,8 +557,11 @@ namespace breastcancer
             CreateStaticData(ii);
             int width = pictureBox1.Width;
             int height = pictureBox1.Height;
-            FormZoom formZoom = new FormZoom(width, height);
-            formZoom.Show();
+            Form4 form4 = new Form4();
+            form4.Show();
+            //FormZoom formZoom = new FormZoom(width, height);
+            //formZoom.Show();
+
         }
         private void pictureBox2_DoubleClick(object sender, EventArgs e)
         {
@@ -567,8 +570,8 @@ namespace breastcancer
             CreateStaticData(ii);
             int width = pictureBox2.Width;
             int height = pictureBox2.Height;
-            FormZoom formZoom = new FormZoom(width, height);
-            formZoom.Show();
+            Form4 form4 = new Form4();
+            form4.Show();
         }
         private void pictureBox3_DoubleClick(object sender, EventArgs e)
         {
@@ -577,8 +580,8 @@ namespace breastcancer
             CreateStaticData(ii);
             int width = pictureBox3.Width;
             int height = pictureBox3.Height;
-            FormZoom formZoom = new FormZoom(width, height);
-            formZoom.Show();
+            Form4 form4 = new Form4();
+            form4.Show();
         }
         private void pictureBox4_DoubleClick(object sender, EventArgs e)
         {
@@ -587,8 +590,8 @@ namespace breastcancer
             CreateStaticData(ii);
             int width = pictureBox4.Width;
             int height = pictureBox4.Height;
-            FormZoom formZoom = new FormZoom(width, height);
-            formZoom.Show();
+            Form4 form4 = new Form4();
+            form4.Show();
         }
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -610,7 +613,7 @@ namespace breastcancer
                 parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
 
                 pathPencil = parentName + "\\Logo\\minipencil.png";
-                MessageBox.Show(pathPencil);
+                // MessageBox.Show(pathPencil);
                 var bitmap = (Bitmap)Image.FromFile(pathPencil);//dlg.FileName);
                 this.Cursor = CreateCursor(bitmap, new Size(bitmap.Width / 15, bitmap.Height / 15));
                 penClick = true;
@@ -1031,7 +1034,7 @@ namespace breastcancer
                 Location4X1Y1.Y = 0;
             }
         }
-        private void buttonUpFunction()
+        public void buttonUpFunction()
         {
             btnNavLR = true;
             downFlag = false;
@@ -1040,7 +1043,6 @@ namespace breastcancer
             //label5.Text = "Highly Brightened";
             //label12.Text = "Darkened";
 
-
             pictureBox1.Image = Image.FromFile(filesOriginal[c]);
             pictureBox2.Image = Image.FromFile(filesOriginal[c + 1]);
             pictureBox3.Image = Image.FromFile(filesOriginal[c + 2]);
@@ -1048,7 +1050,7 @@ namespace breastcancer
 
             label1.Text = c + 1 + " out of " + filesOriginal.Length + " images \n";
         }
-        private void buttonDownFunction()
+        public void buttonDownFunction()
         {
             downFlag = true;
             btnNavLR = true;

@@ -18,11 +18,7 @@ namespace breastcancer
             parentName = Directory.GetParent(parentName).FullName;
             parentName = Directory.GetParent(parentName).FullName;
             parentName = Directory.GetParent(parentName).FullName;
-            parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
-            //pathJson = parentName + "\\path.json";
-            //pathCol = parentName + "\\Augmentation\\Colorized";
-            //pathOri = parentName + "\\Augmentation\\Original";
-            //filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
+            parentName = Directory.GetParent(parentName).FullName;       
 
             string pathLogoR = parentName + "\\Logo\\ribbon.png";
             pictureBox2.Image = Image.FromFile(pathLogoR);

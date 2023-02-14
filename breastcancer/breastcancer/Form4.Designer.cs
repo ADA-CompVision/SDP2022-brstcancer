@@ -90,6 +90,7 @@
             this.buttonDown.Size = new System.Drawing.Size(44, 44);
             this.buttonDown.TabIndex = 801;
             this.buttonDown.UseVisualStyleBackColor = true;
+            this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
             // 
             // label2
             // 
@@ -109,6 +110,7 @@
             this.buttonUp.Size = new System.Drawing.Size(44, 44);
             this.buttonUp.TabIndex = 302;
             this.buttonUp.UseVisualStyleBackColor = true;
+            this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
             // 
             // label1
             // 
@@ -309,6 +311,7 @@
             this.buttonNext.TabIndex = 298;
             this.buttonNext.Text = "Next";
             this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // buttonPrevious
             // 
@@ -318,6 +321,7 @@
             this.buttonPrevious.TabIndex = 297;
             this.buttonPrevious.Text = "Back";
             this.buttonPrevious.UseVisualStyleBackColor = true;
+            this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
             // 
             // Form4
             // 
@@ -330,6 +334,7 @@
             this.MinimizeBox = false;
             this.Name = "Form4";
             this.Text = "Form4";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form4_FormClosing);
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);

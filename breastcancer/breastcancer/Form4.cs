@@ -30,7 +30,7 @@ namespace breastcancer
             this.c4 = Form2.c;
         }
 
-        string[] files;
+        string[] files, filesOriginal, filesColored;
 
         private Font fnt = new Font("Arial", 10);
         string filepath;
@@ -80,16 +80,12 @@ namespace breastcancer
             label2.Width = 10000;
             label2.BorderStyle = BorderStyle.Fixed3D;
             string directory = Directory.GetCurrentDirectory();
-            MessageBox.Show(directory);
+            //  MessageBox.Show(directory);
             var parentName = Directory.GetParent(directory).FullName;
             parentName = Directory.GetParent(parentName).FullName;
             parentName = Directory.GetParent(parentName).FullName;
             parentName = Directory.GetParent(parentName).FullName;
-            parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
-            //pathJson = parentName + "\\path.json";
-            //pathCol = parentName + "\\Augmentation\\Colorized";
-            //pathOri = parentName + "\\Augmentation\\Original";
-            //filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
+            parentName = Directory.GetParent(parentName).FullName;
 
             string filePathOriginal = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Original";
             string filePathColored = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Colorized";
@@ -154,6 +150,11 @@ namespace breastcancer
             }
 
             files = Directory.GetFiles(filepath);
+
+            filesOriginal = Directory.GetFiles(filePathOriginal);
+            //string filePathColored = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Colorized";
+            filesColored = Directory.GetFiles(filePathColored);//filePathColored);
+
 
             if (picNum4 == 0)
             {
@@ -271,30 +272,74 @@ namespace breastcancer
         private void radioButtonPositive_CheckedChanged(object sender, EventArgs e)
         {
             this.Close();
-
         }
 
         private void buttonPencil_Click(object sender, EventArgs e)
         {
-            btnNavLR = true;
+            this.Close();
+            //btnNavLR = true;
 
-            if (!penClick)
-            {
-                var bitmap = (Bitmap)Image.FromFile(@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Logo\minipencil.png");//dlg.FileName);
-                this.Cursor = CreateCursor(bitmap, new Size(bitmap.Width / 15, bitmap.Height / 15));
-                penClick = true;
-            }
-            else
-            {
-                this.Cursor = Cursors.Default;
-                penClick = false;
-            }
+            //if (!penClick)
+            //{
+            //    var bitmap = (Bitmap)Image.FromFile(@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Logo\minipencil.png");//dlg.FileName);
+            //    this.Cursor = CreateCursor(bitmap, new Size(bitmap.Width / 15, bitmap.Height / 15));
+            //    penClick = true;
+            //}
+            //else
+            //{
+            //    this.Cursor = Cursors.Default;
+            //    penClick = false;
+            //}
         }
         public Cursor CreateCursor(Bitmap bitmap, Size size)
         {
             bitmap = new Bitmap(bitmap, size);
             return new Cursor(bitmap.GetHicon());
         }
+
+        private void buttonPrevious_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonDown_Click(object sender, EventArgs e)
+        {
+            downFlag4 = true;
+            //labelRight.Text = "Not Resized";
+            //label4.Text = "Brightened";
+            //label5.Text = "Highly Brightened";
+            //label12.Text = "Darkened";
+
+            pictureBox1.Image = Image.FromFile(filesColored[c4]);
+        }
+
+        private void buttonUp_Click(object sender, EventArgs e)
+        {
+            //this.Close();
+
+
+           // btnNavLR = true;
+            downFlag4 = false;
+            //labelRight.Text = "Not Resized";
+            //label4.Text = "Brightened";
+            //label5.Text = "Highly Brightened";
+            //label12.Text = "Darkened";
+
+            pictureBox1.Image = Image.FromFile(filesOriginal[c4]);
+            
+            //label1.Text = c + 1 + " out of " + filesOriginal.Length + " images \n";
+        }
+
+        private void Form4_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //MessageBox.Show("")
+        }
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             IntPtr ptr = NativeMethods.CreateRoundRectRgn(3, 3, this.panel1.Width, this.panel1.Height, 11, 11); // _BoarderRaduis can be adjusted to your needs, try 15 to start.

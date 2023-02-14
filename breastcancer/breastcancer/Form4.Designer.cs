@@ -252,6 +252,7 @@
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button2);
+            this.panel2.Enabled = false;
             this.panel2.Location = new System.Drawing.Point(19, 109);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(227, 153);
@@ -294,6 +295,7 @@
             // 
             // textBoxComment
             // 
+            this.textBoxComment.Enabled = false;
             this.textBoxComment.Location = new System.Drawing.Point(19, 368);
             this.textBoxComment.Multiline = true;
             this.textBoxComment.Name = "textBoxComment";

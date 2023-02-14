@@ -315,7 +315,14 @@ namespace breastcancer
             //label5.Text = "Highly Brightened";
             //label12.Text = "Darkened";
 
-            pictureBox1.Image = Image.FromFile(filesColored[c4]);
+            if (picNum4 == 0)
+                pictureBox1.Image = Image.FromFile(filesColored[c4]);
+            else if (picNum4 == 1)
+                pictureBox1.Image = Image.FromFile(filesColored[c4 + 1]);
+            else if (picNum4 == 2)
+                pictureBox1.Image = Image.FromFile(filesColored[c4 + 2]);
+            else if (picNum4 == 3)
+                pictureBox1.Image = Image.FromFile(filesColored[c4 + 3]);
         }
 
         private void buttonUp_Click(object sender, EventArgs e)
@@ -323,15 +330,22 @@ namespace breastcancer
             //this.Close();
 
 
-           // btnNavLR = true;
+            // btnNavLR = true;
             downFlag4 = false;
             //labelRight.Text = "Not Resized";
             //label4.Text = "Brightened";
             //label5.Text = "Highly Brightened";
             //label12.Text = "Darkened";
 
-            pictureBox1.Image = Image.FromFile(filesOriginal[c4]);
-            
+            if (picNum4 == 0)
+                pictureBox1.Image = Image.FromFile(filesOriginal[c4]);
+            else if (picNum4 == 1)
+                pictureBox1.Image = Image.FromFile(filesOriginal[c4+1]);
+            else if (picNum4 == 2)
+                pictureBox1.Image = Image.FromFile(filesOriginal[c4+2]);
+            else if (picNum4 == 3)
+                pictureBox1.Image = Image.FromFile(filesOriginal[c4+3]);
+
             //label1.Text = c + 1 + " out of " + filesOriginal.Length + " images \n";
         }
 

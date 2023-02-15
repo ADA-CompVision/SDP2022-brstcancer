@@ -587,6 +587,7 @@ namespace breastcancer
             //    Update(ii);
             //}
             JsonSave();
+            Application.Exit();
         }
         private void buttonPencil_Click(object sender, EventArgs e)
         {
@@ -979,7 +980,7 @@ namespace breastcancer
         private void Update(int i)
         {
             //update
-              MessageBox.Show("i " + i.ToString() + " ii " + ii.ToString());
+            //MessageBox.Show("i " + i.ToString() + " ii " + ii.ToString());
 
             var item = dataList[i];
             //Console.WriteLine(i.ToString());
@@ -1082,7 +1083,7 @@ namespace breastcancer
                 }
                 if (ii > 0)
                     ii--;
-                MessageBox.Show(" ii " + ii.ToString());
+                // MessageBox.Show(" ii " + ii.ToString());
 
                 var item = dataList[ii];
                 this.textBoxComment.Text = item.Comment;

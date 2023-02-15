@@ -13,7 +13,7 @@ namespace breastcancer
 
             //label pink
             string directory = Directory.GetCurrentDirectory();
-            MessageBox.Show(directory);
+            //MessageBox.Show(directory);
             var parentName = Directory.GetParent(directory).FullName;
             parentName = Directory.GetParent(parentName).FullName;
             parentName = Directory.GetParent(parentName).FullName;

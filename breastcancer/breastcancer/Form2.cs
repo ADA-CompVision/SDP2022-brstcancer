@@ -29,27 +29,12 @@ namespace breastcancer
 
         bool btnNavLR = true;
 
-        int ii = 0;
+        int ii;// = 0;
         int prev = 0;
         int d = 0;
         int diagnosisInt = 0;
         int fileCount;
         string[] filesOriginal, filesColored;
-
-
-        /***********************************
-         * 
-         * string exeFile = new System.Uri(Assembly.GetEntryAssembly().CodeBase).AbsolutePath;
-           string Dir = Path.GetDirectoryName(exeFile);
-           string path = Path.GetFullPath(Path.Combine(Dir, @"..\..\Help\Help.txt"));
-           System.Diagnostics.Process.Start(path);
-         */
-
-        // string exeFile = new System.Uri(Assembly.GetEntryAssembly().CodeBase).AbsolutePath;
-        //string Dir = Path.GetDirectoryName(exeFile);
-        //s/tring path = Path.GetFullPath(Path.Combine(Dir, @"..\..\SDP2022-brstcancer\path.json"));
-        //System.Diagnostics.Process.Start(path);
-
 
         // string filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
         string jsonData;
@@ -80,6 +65,7 @@ namespace breastcancer
         }
         private void LoadData()
         {
+            ii = dataList.Count();
             PictureBoxClicked[0] = false;
             PictureBoxClicked[1] = false;
             PictureBoxClicked[2] = false;
@@ -595,8 +581,11 @@ namespace breastcancer
         }
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if ((radioButtonNegative.Checked == true || radioButtonPositive.Checked == true || radioButtonPotential.Checked == true))
-                Update(ii);
+            //if ((radioButtonNegative.Checked == true || radioButtonPositive.Checked == true || radioButtonPotential.Checked == true))
+            //{
+            //    MessageBox.Show(ii.ToString());
+            //    Update(ii);
+            //}
             JsonSave();
         }
         private void buttonPencil_Click(object sender, EventArgs e)
@@ -613,7 +602,6 @@ namespace breastcancer
                 parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
 
                 pathPencil = parentName + "\\Logo\\minipencil.png";
-                // MessageBox.Show(pathPencil);
                 var bitmap = (Bitmap)Image.FromFile(pathPencil);//dlg.FileName);
                 this.Cursor = CreateCursor(bitmap, new Size(bitmap.Width / 15, bitmap.Height / 15));
                 penClick = true;
@@ -991,8 +979,10 @@ namespace breastcancer
         private void Update(int i)
         {
             //update
-            var item = dataList[i];
+              MessageBox.Show("i " + i.ToString() + " ii " + ii.ToString());
 
+            var item = dataList[i];
+            //Console.WriteLine(i.ToString());
             item.Comment = this.textBoxComment.Text;
 
             if (this.radioButtonPositive.Checked)
@@ -1090,7 +1080,9 @@ namespace breastcancer
                 {
                     Update(ii);
                 }
-                ii--;
+                if (ii > 0)
+                    ii--;
+                MessageBox.Show(" ii " + ii.ToString());
 
                 var item = dataList[ii];
                 this.textBoxComment.Text = item.Comment;

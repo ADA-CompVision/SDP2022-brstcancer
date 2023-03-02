@@ -22,16 +22,16 @@ namespace breastcancer
         bool downFlag4;
         int c4;
         int sx1, sy1, sw, sh;
-        int width, height;
-        public FormZoom(int w, int h)
+        //int width, height;
+        public FormZoom()
         {
             InitializeComponent();
 
             this.picNum4 = Form2.picNum;
             this.downFlag4 = Form2.downFlag;
             this.c4 = Form2.c;
-            this.width = w;
-            this.height = h;
+            //this.width = w;
+            //this.height = h;
         }
 
 

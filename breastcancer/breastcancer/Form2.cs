@@ -538,44 +538,49 @@ namespace breastcancer
         }
         private void pictureBox1_DoubleClick(object sender, EventArgs e)
         {
+            // MessageBox.Show("Double clik to the zoomed photo to get back");
+
             picNum = 0;
             AddToDataList();
             CreateStaticData(ii);
-            int width = pictureBox1.Width;
-            int height = pictureBox1.Height;
+            //int width = pictureBox1.Width;
+            //int height = pictureBox1.Height;
             Form4 form4 = new Form4();
             form4.Show();
-            //FormZoom formZoom = new FormZoom(width, height);
+            //FormZoom formZoom = new FormZoom(wiheight);
             //formZoom.Show();
 
         }
         private void pictureBox2_DoubleClick(object sender, EventArgs e)
         {
+            //   MessageBox.Show("Double clik to the zoomed photo to get back");
             picNum = 1;
             AddToDataList();
             CreateStaticData(ii);
-            int width = pictureBox2.Width;
-            int height = pictureBox2.Height;
+            //int width = pictureBox2.Width;
+            //int height = pictureBox2.Height;
             Form4 form4 = new Form4();
             form4.Show();
         }
         private void pictureBox3_DoubleClick(object sender, EventArgs e)
         {
+            //  MessageBox.Show("Double clik to the zoomed photo to get back");
             picNum = 2;
             AddToDataList();
             CreateStaticData(ii);
-            int width = pictureBox3.Width;
-            int height = pictureBox3.Height;
+            //int width = pictureBox3.Width;
+            //int height = pictureBox3.Height;
             Form4 form4 = new Form4();
             form4.Show();
         }
         private void pictureBox4_DoubleClick(object sender, EventArgs e)
         {
+            // MessageBox.Show("Double clik to the zoomed photo to get back");
             picNum = 3;
             AddToDataList();
             CreateStaticData(ii);
-            int width = pictureBox4.Width;
-            int height = pictureBox4.Height;
+            //int width = pictureBox4.Width;
+            //int height = pictureBox4.Height;
             Form4 form4 = new Form4();
             form4.Show();
         }

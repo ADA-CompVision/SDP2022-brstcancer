@@ -18,7 +18,7 @@ namespace breastcancer
         int picNum4;
         bool downFlag4;
         int c4;
-        int sx1, sy1, sw, sh;
+        int sx1 = 0, sy1 = 0, sw = 0, sh = 0;
         string textCom = "Write a comment...";
         string textEmp = String.Empty;
         string pathCol, pathOri, pathJson;
@@ -88,7 +88,7 @@ namespace breastcancer
             parentName = Directory.GetParent(parentName).FullName;
             parentName = Directory.GetParent(parentName).FullName;
 
-          
+
             pathJson = parentName + "\\path.json";
             pathCol = parentName + "\\Augmentation\\Colorized";
             pathOri = parentName + "\\Augmentation\\Original";
@@ -97,7 +97,7 @@ namespace breastcancer
 
             string filePathOriginal = pathOri;//@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Original";
             string filePathColored = pathCol;//@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Colorized";
-           
+
             buttonPrevious.ForeColor = Color.WhiteSmoke;
             buttonPrevious.BackColor = Color.FromArgb(45, 45, 45);
             IntPtr ptrPre = NativeMethods.CreateRoundRectRgn(2, 2, this.buttonPrevious.Width, this.buttonPrevious.Height, 5, 5);
@@ -162,40 +162,99 @@ namespace breastcancer
             filesOriginal = Directory.GetFiles(filePathOriginal);
             //string filePathColored = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Colorized";
             filesColored = Directory.GetFiles(filePathColored);//filePathColored);
+            sx1 = 0;
+            sy1 = 0;
+            sw = 0;
+            sh = 0;
 
+            //if (picNum4 == 0)
+            //{
+            //    pictureBox1.Image = Image.FromFile(files[c4]);
+
+            //    sx1 = (int)(StaticData.DataList1.Rect1X1 / 6);
+            //    sy1 = (int)(StaticData.DataList1.Rect1Y1 / 6);
+            //    sw = (int)((StaticData.DataList1.Rect1X2 - StaticData.DataList1.Rect1X1) / 6);
+            //    sh = (int)((StaticData.DataList1.Rect1Y2 - StaticData.DataList1.Rect1Y1) / 6);
+            //}
+            //else if (picNum4 == 1)
+            //{
+            //    pictureBox1.Image = Image.FromFile(files[c4 + 1]);
+            //    sx1 = (int)(StaticData.DataList1.Rect2X1 / 6);
+            //    sy1 = (int)(StaticData.DataList1.Rect2Y1 / 6);
+            //    sw = (int)((StaticData.DataList1.Rect2X2 - StaticData.DataList1.Rect2X1) / 6);
+            //    sh = (int)((StaticData.DataList1.Rect2Y2 - StaticData.DataList1.Rect2Y1) / 6);
+            //}
+            //else if (picNum4 == 2)
+            //{
+            //    pictureBox1.Image = Image.FromFile(files[c4 + 2]);
+            //    sx1 = (int)(StaticData.DataList1.Rect3X1 / 6);
+            //    sy1 = (int)(StaticData.DataList1.Rect3Y1 / 6);
+            //    sw = (int)((StaticData.DataList1.Rect3X2 - StaticData.DataList1.Rect3X1) / 6);
+            //    sh = (int)((StaticData.DataList1.Rect3Y2 - StaticData.DataList1.Rect3Y1) / 6);
+            //}
+            //else if (picNum4 == 3)
+            //{
+            //    pictureBox1.Image = Image.FromFile(files[c4 + 3]);
+            //    sx1 = (int)(StaticData.DataList1.Rect4X1 / 6);
+            //    sy1 = (int)(StaticData.DataList1.Rect4Y1 / 6);
+            //    sw = (int)((StaticData.DataList1.Rect4X2 - StaticData.DataList1.Rect4X1) / 6);
+            //    sh = (int)((StaticData.DataList1.Rect4Y2 - StaticData.DataList1.Rect4Y1) / 6);
+            //}
 
             if (picNum4 == 0)
             {
+                btnNavLR = true;
                 pictureBox1.Image = Image.FromFile(files[c4]);
+                sx1 = (int)Math.Abs(StaticData.DataList1.Rect1X1 / 6);
+                sy1 = (int)Math.Abs(StaticData.DataList1.Rect1Y1 / 6);
+                sw = (int)Math.Abs((StaticData.DataList1.Rect1X2 - StaticData.DataList1.Rect1X1) / 6);
+                sh = (int)Math.Abs((StaticData.DataList1.Rect1Y2 - StaticData.DataList1.Rect1Y1) / 6);
 
-                sx1 = (int)(StaticData.DataList1.Rect1X1 / 6);
-                sy1 = (int)(StaticData.DataList1.Rect1Y1 / 6);
-                sw = (int)((StaticData.DataList1.Rect1X2 - StaticData.DataList1.Rect1X1) / 6);
-                sh = (int)((StaticData.DataList1.Rect1Y2 - StaticData.DataList1.Rect1Y1) / 6);
+                //sx1 = (int)(StaticData.DataList1.Rect1X1 * divX) / 11;
+                //sy1 = (int)(StaticData.DataList1.Rect1Y1 * divY) / 11;
+                //sw = (int)((StaticData.DataList1.Rect1X2 - StaticData.DataList1.Rect1X1) * divX) / 11;
+                //sh = (int)((StaticData.DataList1.Rect1Y2 - StaticData.DataList1.Rect1Y1) * divY) / 11;
+                //MessageBox.Show("locax", pictureBox1.Location.X.ToString());
+                //MessageBox.Show("size ", pictureBox1.Size.Width.ToString());
+                //MessageBox.Show("size h", pictureBox1.Size.Height.ToString());
+
+                MessageBox.Show("sw = " + sw.ToString() + " sh = " + sh.ToString());
             }
-            else if (picNum4 == 1)
+             if (picNum4 == 1)
             {
+                btnNavLR = true;
+
                 pictureBox1.Image = Image.FromFile(files[c4 + 1]);
                 sx1 = (int)(StaticData.DataList1.Rect2X1 / 6);
                 sy1 = (int)(StaticData.DataList1.Rect2Y1 / 6);
                 sw = (int)((StaticData.DataList1.Rect2X2 - StaticData.DataList1.Rect2X1) / 6);
                 sh = (int)((StaticData.DataList1.Rect2Y2 - StaticData.DataList1.Rect2Y1) / 6);
+                MessageBox.Show("sw = " + sw.ToString());
+
             }
-            else if (picNum4 == 2)
+             if (picNum4 == 2)
             {
+                btnNavLR = true;
+
                 pictureBox1.Image = Image.FromFile(files[c4 + 2]);
                 sx1 = (int)(StaticData.DataList1.Rect3X1 / 6);
                 sy1 = (int)(StaticData.DataList1.Rect3Y1 / 6);
                 sw = (int)((StaticData.DataList1.Rect3X2 - StaticData.DataList1.Rect3X1) / 6);
                 sh = (int)((StaticData.DataList1.Rect3Y2 - StaticData.DataList1.Rect3Y1) / 6);
+                MessageBox.Show("sw = " + sw.ToString());
+
             }
-            else if (picNum4 == 3)
+             if (picNum4 == 3)
             {
+                btnNavLR = true;
+
                 pictureBox1.Image = Image.FromFile(files[c4 + 3]);
                 sx1 = (int)(StaticData.DataList1.Rect4X1 / 6);
                 sy1 = (int)(StaticData.DataList1.Rect4Y1 / 6);
                 sw = (int)((StaticData.DataList1.Rect4X2 - StaticData.DataList1.Rect4X1) / 6);
                 sh = (int)((StaticData.DataList1.Rect4Y2 - StaticData.DataList1.Rect4Y1) / 6);
+                MessageBox.Show("sw = " + sw.ToString());
+
             }
 
             label1.Text = filepath.TrimStart('\\');
@@ -348,11 +407,11 @@ namespace breastcancer
             if (picNum4 == 0)
                 pictureBox1.Image = Image.FromFile(filesOriginal[c4]);
             else if (picNum4 == 1)
-                pictureBox1.Image = Image.FromFile(filesOriginal[c4+1]);
+                pictureBox1.Image = Image.FromFile(filesOriginal[c4 + 1]);
             else if (picNum4 == 2)
-                pictureBox1.Image = Image.FromFile(filesOriginal[c4+2]);
+                pictureBox1.Image = Image.FromFile(filesOriginal[c4 + 2]);
             else if (picNum4 == 3)
-                pictureBox1.Image = Image.FromFile(filesOriginal[c4+3]);
+                pictureBox1.Image = Image.FromFile(filesOriginal[c4 + 3]);
 
             //label1.Text = c + 1 + " out of " + filesOriginal.Length + " images \n";
         }
@@ -376,12 +435,15 @@ namespace breastcancer
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-            // e.Graphics.DrawRectangle(Pens.Red, new Rectangle(205, 203, 153, 171));
-            Pen pen = new Pen(Color.Red, 3);
-            e.Graphics.DrawRectangle(pen, new Rectangle(sx1, sy1, sw, sh));//StaticData.DataList1.RectX1, StaticData.DataList1.RectY1, StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1, StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1));
+            if (btnNavLR)
+            {
+                // e.Graphics.DrawRectangle(Pens.Red, new Rectangle(205, 203, 153, 171));
+                Pen pen = new Pen(Color.Red, 3);
+                e.Graphics.DrawRectangle(pen, new Rectangle(sx1, sy1, sw, sh));//StaticData.DataList1.RectX1, StaticData.DataList1.RectY1, StaticData.DataList1.RectX2 - StaticData.DataList1.RectX1, StaticData.DataList1.RectY2 - StaticData.DataList1.RectY1));
 
-            // e.Graphics.DrawRectangle(Pens.Red, GetRect());
-            Rectangle rect1 = this.pictureBox1.ClientRectangle;
+                // e.Graphics.DrawRectangle(Pens.Red, GetRect());
+                Rectangle rect1 = this.pictureBox1.ClientRectangle;
+            }
         }
     }
 }

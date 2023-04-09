@@ -9,6 +9,7 @@ using static IronPython.Modules._ast;
 using System.Linq;
 using IronPython.Runtime;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Xml.Linq;
 
 namespace breastcancer
 {
@@ -75,8 +76,6 @@ namespace breastcancer
 
 
             LoadData();
-
-
         }
 
         private void dcm_to_png()
@@ -93,9 +92,9 @@ namespace breastcancer
             psi.FileName = @"E:\User\anaconda3\python.exe";
 
             var script = parentName + "\\PyFiles\\dcm_to_png.py";               //@"E:\OneDrive\Desktop\dcm_to_png.py";
-                                                                       //var fname = parentName + "\\test.png";                              // @"E:\OneDrive\Desktop\test.png";
-                                                                       //var pth =  parentName+ "\\dicoms\\";              
-                                                                       //   MessageBox.Show(pth);
+                                                                                //var fname = parentName + "\\test.png";                              // @"E:\OneDrive\Desktop\test.png";
+                                                                                //var pth =  parentName+ "\\dicoms\\";              
+                                                                                //   MessageBox.Show(pth);
             psi.Arguments = $"\"{script}\"";             // \"{pth}\"";    // \"{filename}\"";
 
 
@@ -241,7 +240,7 @@ namespace breastcancer
 
 
             string[] dirs = Directory.GetDirectories(pathOri);
-           // MessageBox.Show(String.Join(Environment.NewLine, dirs));
+            // MessageBox.Show(String.Join(Environment.NewLine, dirs));
 
 
             //if (c == 0)
@@ -261,7 +260,7 @@ namespace breastcancer
             pictureBox3.Image = Image.FromFile(filesOriginal[2]);
             pictureBox4.Image = Image.FromFile(filesOriginal[3]);
             fileCount = dirs.Length;//Directory.GetFiles(dirs.Count);
-          //  MessageBox.Show("filecount: " + fileCount);
+                                    //  MessageBox.Show("filecount: " + fileCount);
             lbl_patient.Text = "Patient: " + dirs[ii];
             //c++;
             //ii++;
@@ -274,7 +273,7 @@ namespace breastcancer
             //pictureBox4.Image = Image.FromFile(filesOriginal[c + 3]);
 
             ////////////////////
-           // CheckIfWeHave();
+            // CheckIfWeHave();
             ////////////////////
 
             label1.Text = c + 1 + " out of " + filesOriginal.Length / 4 + " images \n";
@@ -379,10 +378,10 @@ namespace breastcancer
         private void buttonNext_Click(object sender, EventArgs e)
         {
 
-          //  MessageBox.Show(pathOri);
+            //  MessageBox.Show(pathOri);
 
             string[] dirs = Directory.GetDirectories(pathOri);
-          //  MessageBox.Show(String.Join(Environment.NewLine, dirs));
+            //  MessageBox.Show(String.Join(Environment.NewLine, dirs));
             // int cDirs = dirs.Length;
 
 
@@ -771,10 +770,10 @@ namespace breastcancer
         }
         private void buttonTest_Click(object sender, EventArgs e)
         {
-            //Console.WriteLine("Execute python process...");
-
-
+         
             run_cmd();
+            readText();
+
         }
         public void run_cmd()
         {
@@ -789,10 +788,25 @@ namespace breastcancer
             psi.FileName = @"E:\User\anaconda3\python.exe";
 
             var script = parentName + "\\PyFiles\\model_test.py";               //@"E:\OneDrive\Desktop\dcm_to_png.py";
-            var fname = parentName + "\\PyFiles\\test.png";                              // @"E:\OneDrive\Desktop\test.png";
             var filename = parentName + "\\PyFiles\\finalized_model.sav";       // @"E:\OneDrive\Desktop\finalized_model.sav";
+                                                                                // var fname1 = parentName + "\\PyFiles\\test.png";                              // @"E:\OneDrive\Desktop\test.png";
 
-            psi.Arguments = $"\"{script}\" \"{fname}\" \"{filename}\"";
+            string[] dirs = Directory.GetDirectories(pathOri);
+
+            filesOriginal = Directory.GetFiles(dirs[ii]);
+            var fname1 = filesOriginal[0];
+            var fname2 = filesOriginal[1];
+            var fname3 = filesOriginal[2];
+            var fname4 = filesOriginal[3];
+
+            MessageBox.Show(fname1.ToString());
+
+            psi.Arguments = $"\"{script}\" \"{fname1}\" \"{fname2}\" \"{fname3}\" \"{fname4}\" \"{filename}\"";
+
+
+
+
+            //psi.Arguments = $"\"{script}\" \"{fname}\" \"{filename}\"";
 
 
             psi.UseShellExecute = false;
@@ -824,7 +838,7 @@ namespace breastcancer
             try
             {
                 //Pass the file path and file name to the StreamReader constructor
-                StreamReader sr = new StreamReader("C:\\Sample.txt");
+                StreamReader sr = new StreamReader("pred.txt");
                 //Read the first line of text
                 line = sr.ReadLine();
                 //Continue to read until you reach end of file
@@ -832,6 +846,12 @@ namespace breastcancer
                 {
                     //write the line to console window
                     Console.WriteLine(line);
+                    string[] lblT = line.Split(' ');
+
+                    lbl_rp_prediction.Text = "Prediction: " + lblT[0];
+                    lbl_lp_prediction.Text = "Prediction: " + lblT[1];
+                    lbl_rpm_prediction.Text = "Prediction: " + lblT[2];
+                    lbl_lpm_prediction.Text = "Prediction: " + lblT[3];
                     //Read the next line
                     line = sr.ReadLine();
                 }
@@ -858,10 +878,10 @@ namespace breastcancer
             {
                 MessageBox.Show("c, ii: " + c + " " + ii);
                 // filesOriginal = Directory.GetFiles(dirs[ii]);
-               // MessageBox.Show("filesOri: " + filesOriginal[ii]);
+                // MessageBox.Show("filesOri: " + filesOriginal[ii]);
 
                 string[] dirs = Directory.GetDirectories(pathOri);
-               // MessageBox.Show(String.Join(Environment.NewLine, dirs));
+                // MessageBox.Show(String.Join(Environment.NewLine, dirs));
                 filesOriginal = Directory.GetFiles(dirs[c]);
                 pictureBox1.Image = Image.FromFile(filesOriginal[0]);
                 pictureBox2.Image = Image.FromFile(filesOriginal[1]);
@@ -869,9 +889,13 @@ namespace breastcancer
                 pictureBox4.Image = Image.FromFile(filesOriginal[3]);
                 fileCount = dirs.Length;//Directory.GetFiles(dirs.Count);
                 MessageBox.Show("filecount: " + fileCount);
-                
+
                 lbl_patient.Text = "Patient: " + dirs[c];
-                             
+                lbl_rp_prediction.Text = "Prediction: ";
+                lbl_lp_prediction.Text = "Prediction: ";
+                lbl_rpm_prediction.Text = "Prediction: ";
+                lbl_lpm_prediction.Text = "Prediction: ";
+
             }
             else
             {
@@ -1009,8 +1033,8 @@ namespace breastcancer
             // CheckTemp();
 
             ch++;
-            
-            
+
+
             if (radioButtonNegative.Checked == false && radioButtonPositive.Checked == false && radioButtonPotential.Checked == false)
             {
                 string message = "You need to choose one option!";
@@ -1024,7 +1048,7 @@ namespace breastcancer
                 if (dataList.Count == 0 || ii == (dataList.Count))
                 {
                     id = dataList.Count * 4 + 1;
-                   // MessageBox.Show("C; " + c);
+                    // MessageBox.Show("C; " + c);
 
 
                     // Add any new data

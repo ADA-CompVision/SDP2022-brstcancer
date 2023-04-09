@@ -59,6 +59,11 @@
             this.buttonPencil = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lbl_lpm_prediction = new System.Windows.Forms.Label();
+            this.lbl_rpm_prediction = new System.Windows.Forms.Label();
+            this.lbl_lp_prediction = new System.Windows.Forms.Label();
+            this.lbl_rp_prediction = new System.Windows.Forms.Label();
+            this.buttonTest = new System.Windows.Forms.Button();
             this.labelMa = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -396,6 +401,11 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.lbl_lpm_prediction);
+            this.panel4.Controls.Add(this.lbl_rpm_prediction);
+            this.panel4.Controls.Add(this.lbl_lp_prediction);
+            this.panel4.Controls.Add(this.lbl_rp_prediction);
+            this.panel4.Controls.Add(this.buttonTest);
             this.panel4.Controls.Add(this.labelMa);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.buttonPencil);
@@ -416,6 +426,57 @@
             this.panel4.Size = new System.Drawing.Size(1090, 690);
             this.panel4.TabIndex = 920;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // lbl_lpm_prediction
+            // 
+            this.lbl_lpm_prediction.AutoSize = true;
+            this.lbl_lpm_prediction.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_lpm_prediction.Location = new System.Drawing.Point(823, 506);
+            this.lbl_lpm_prediction.Name = "lbl_lpm_prediction";
+            this.lbl_lpm_prediction.Size = new System.Drawing.Size(67, 15);
+            this.lbl_lpm_prediction.TabIndex = 926;
+            this.lbl_lpm_prediction.Text = "Prediction: ";
+            // 
+            // lbl_rpm_prediction
+            // 
+            this.lbl_rpm_prediction.AutoSize = true;
+            this.lbl_rpm_prediction.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_rpm_prediction.Location = new System.Drawing.Point(552, 506);
+            this.lbl_rpm_prediction.Name = "lbl_rpm_prediction";
+            this.lbl_rpm_prediction.Size = new System.Drawing.Size(67, 15);
+            this.lbl_rpm_prediction.TabIndex = 925;
+            this.lbl_rpm_prediction.Text = "Prediction: ";
+            // 
+            // lbl_lp_prediction
+            // 
+            this.lbl_lp_prediction.AutoSize = true;
+            this.lbl_lp_prediction.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_lp_prediction.Location = new System.Drawing.Point(282, 506);
+            this.lbl_lp_prediction.Name = "lbl_lp_prediction";
+            this.lbl_lp_prediction.Size = new System.Drawing.Size(64, 15);
+            this.lbl_lp_prediction.TabIndex = 924;
+            this.lbl_lp_prediction.Text = "Prediction:";
+            // 
+            // lbl_rp_prediction
+            // 
+            this.lbl_rp_prediction.AutoSize = true;
+            this.lbl_rp_prediction.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_rp_prediction.Location = new System.Drawing.Point(11, 506);
+            this.lbl_rp_prediction.Name = "lbl_rp_prediction";
+            this.lbl_rp_prediction.Size = new System.Drawing.Size(64, 15);
+            this.lbl_rp_prediction.TabIndex = 923;
+            this.lbl_rp_prediction.Text = "Prediction:";
+            // 
+            // buttonTest
+            // 
+            this.buttonTest.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonTest.BackgroundImage")));
+            this.buttonTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonTest.Location = new System.Drawing.Point(860, 615);
+            this.buttonTest.Name = "buttonTest";
+            this.buttonTest.Size = new System.Drawing.Size(50, 50);
+            this.buttonTest.TabIndex = 922;
+            this.buttonTest.UseVisualStyleBackColor = true;
+            this.buttonTest.Click += new System.EventHandler(this.buttonTest_Click);
             // 
             // labelMa
             // 
@@ -488,5 +549,10 @@
         private PictureBox pictureBox1;
         private Panel panel4;
         private Label labelMa;
+        private Button buttonTest;
+        private Label lbl_lpm_prediction;
+        private Label lbl_rpm_prediction;
+        private Label lbl_lp_prediction;
+        private Label lbl_rp_prediction;
     }
 }

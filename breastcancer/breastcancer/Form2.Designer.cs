@@ -65,6 +65,7 @@
             this.lbl_rp_prediction = new System.Windows.Forms.Label();
             this.buttonTest = new System.Windows.Forms.Button();
             this.labelMa = new System.Windows.Forms.Label();
+            this.lbl_patient = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -401,6 +402,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.lbl_patient);
             this.panel4.Controls.Add(this.lbl_lpm_prediction);
             this.panel4.Controls.Add(this.lbl_rpm_prediction);
             this.panel4.Controls.Add(this.lbl_lp_prediction);
@@ -488,6 +490,15 @@
             this.labelMa.TabIndex = 922;
             this.labelMa.Text = "Mammograms";
             // 
+            // lbl_patient
+            // 
+            this.lbl_patient.AutoSize = true;
+            this.lbl_patient.Location = new System.Drawing.Point(341, 568);
+            this.lbl_patient.Name = "lbl_patient";
+            this.lbl_patient.Size = new System.Drawing.Size(50, 15);
+            this.lbl_patient.TabIndex = 927;
+            this.lbl_patient.Text = "Patient: ";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -554,5 +565,6 @@
         private Label lbl_rpm_prediction;
         private Label lbl_lp_prediction;
         private Label lbl_rp_prediction;
+        private Label lbl_patient;
     }
 }

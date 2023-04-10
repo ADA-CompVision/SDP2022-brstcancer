@@ -693,11 +693,54 @@ namespace breastcancer
         }
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //if ((radioButtonNegative.Checked == true || radioButtonPositive.Checked == true || radioButtonPotential.Checked == true))
-            //{
-            //    MessageBox.Show(ii.ToString());
-            //    Update(ii);
-            //}
+            if ((radioButtonNegative.Checked == true || radioButtonPositive.Checked == true || radioButtonPotential.Checked == true))
+            {
+                int id;
+                MessageBox.Show(ii.ToString());
+                id = dataList.Count * 4 + 1;
+                // MessageBox.Show("C; " + c);
+
+
+                // Add any new data
+                dataList.Add(new Data()
+                {
+                    Image1Id = id,// w,//get last image id from json file then ++ and assign
+                    Image1Name = filesOriginal[0].TrimEnd('\\'),
+
+                    Image2Id = id + 1,// w,//get last image id from json file then ++ and assign
+                    Image2Name = filesOriginal[1].TrimEnd('\\'),
+
+                    Image3Id = id + 2,// w,//get last image id from json file then ++ and assign
+                    Image3Name = filesOriginal[2].TrimEnd('\\'),
+
+                    Image4Id = id + 3,// w,//get last image id from json file then ++ and assign
+                    Image4Name = filesOriginal[3].TrimEnd('\\'),
+
+                    Diagnosis = diagnosisInt,
+                    Comment = textBoxComment.Text,
+                    DoctorId = 1,
+                    Rect1X1 = Location1XY.X * 11,       //bunu da bagladim su an
+                    Rect1Y1 = Location1XY.Y * 11,
+                    Rect1X2 = Location1X1Y1.X * 11,
+                    Rect1Y2 = Location1X1Y1.Y * 11,
+
+                    Rect2X1 = Location2XY.X * 11,       //bunu da bagladim su an
+                    Rect2Y1 = Location2XY.Y * 11,
+                    Rect2X2 = Location2X1Y1.X * 11,
+                    Rect2Y2 = Location2X1Y1.Y * 11,
+
+                    Rect3X1 = Location3XY.X * 11,       //bunu da bagladim su an
+                    Rect3Y1 = Location3XY.Y * 11,
+                    Rect3X2 = Location3X1Y1.X * 11,
+                    Rect3Y2 = Location3X1Y1.Y * 11,
+
+                    Rect4X1 = Location4XY.X * 11,       //bunu da bagladim su an
+                    Rect4Y1 = Location4XY.Y * 11,
+                    Rect4X2 = Location4X1Y1.X * 11,
+                    Rect4Y2 = Location4X1Y1.Y * 11
+                });
+                Update(ii);
+            }
             JsonSave();
             Application.Exit();
         }
@@ -770,10 +813,19 @@ namespace breastcancer
         }
         private void buttonTest_Click(object sender, EventArgs e)
         {
-         
-            run_cmd();
-            readText();
 
+            if (radioButtonNegative.Checked == false && radioButtonPositive.Checked == false && radioButtonPotential.Checked == false)
+            {
+                string message = "You need to choose one option!";
+                string title = "Close Window";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+            }
+            else
+            {
+                run_cmd();
+                readText();
+            }
         }
         public void run_cmd()
         {

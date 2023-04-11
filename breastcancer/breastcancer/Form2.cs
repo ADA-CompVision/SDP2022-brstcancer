@@ -73,8 +73,6 @@ namespace breastcancer
             pathCol = parentName + "\\Augmentation\\Colorized";
             pathOri = directory + "\\Patients\\";
 
-
-
             LoadData();
         }
         private void dcm_to_png()
@@ -260,7 +258,11 @@ namespace breastcancer
             pictureBox4.Image = Image.FromFile(filesOriginal[3]);
             fileCount = dirs.Length;//Directory.GetFiles(dirs.Count);
                                     //  MessageBox.Show("filecount: " + fileCount);
-            lbl_patient.Text = "Patient: " + dirs[ii];
+
+            string dirName = new DirectoryInfo(dirs[ii]).Name;
+            //new DirectoryInfo(@"C:\Users\me\Projects\myProject\").Name;
+
+            lbl_patient.Text = "Patient: " + dirName;
             //c++;
             //ii++;
             //}
@@ -687,51 +689,56 @@ namespace breastcancer
             CheckIfWeHave();
             if ((radioButtonNegative.Checked == true || radioButtonPositive.Checked == true || radioButtonPotential.Checked == true))
             {
-                int id;
-                MessageBox.Show(ii.ToString());
-                id = dataList.Count * 4 + 1;
-                // MessageBox.Show("C; " + c);
+                string[] dirs = Directory.GetDirectories(pathOri);
 
-
-                // Add any new data
-                dataList.Add(new Data()
+                if (ii == dirs.Length - 1) 
                 {
-                    Image1Id = id,// w,//get last image id from json file then ++ and assign
-                    Image1Name = filesOriginal[0].TrimEnd('\\'),
+                    int id;
+                    MessageBox.Show(ii.ToString());
+                    id = dataList.Count * 4 + 1;
+                    // MessageBox.Show("C; " + c);
 
-                    Image2Id = id + 1,// w,//get last image id from json file then ++ and assign
-                    Image2Name = filesOriginal[1].TrimEnd('\\'),
 
-                    Image3Id = id + 2,// w,//get last image id from json file then ++ and assign
-                    Image3Name = filesOriginal[2].TrimEnd('\\'),
+                    // Add any new data
+                    dataList.Add(new Data()
+                    {
+                        Image1Id = id,// w,//get last image id from json file then ++ and assign
+                        Image1Name = filesOriginal[0].TrimEnd('\\'),
 
-                    Image4Id = id + 3,// w,//get last image id from json file then ++ and assign
-                    Image4Name = filesOriginal[3].TrimEnd('\\'),
+                        Image2Id = id + 1,// w,//get last image id from json file then ++ and assign
+                        Image2Name = filesOriginal[1].TrimEnd('\\'),
 
-                    Diagnosis = diagnosisInt,
-                    Comment = textBoxComment.Text,
-                    DoctorId = 1,
-                    Rect1X1 = Location1XY.X * 11,       //bunu da bagladim su an
-                    Rect1Y1 = Location1XY.Y * 11,
-                    Rect1X2 = Location1X1Y1.X * 11,
-                    Rect1Y2 = Location1X1Y1.Y * 11,
+                        Image3Id = id + 2,// w,//get last image id from json file then ++ and assign
+                        Image3Name = filesOriginal[2].TrimEnd('\\'),
 
-                    Rect2X1 = Location2XY.X * 11,       //bunu da bagladim su an
-                    Rect2Y1 = Location2XY.Y * 11,
-                    Rect2X2 = Location2X1Y1.X * 11,
-                    Rect2Y2 = Location2X1Y1.Y * 11,
+                        Image4Id = id + 3,// w,//get last image id from json file then ++ and assign
+                        Image4Name = filesOriginal[3].TrimEnd('\\'),
 
-                    Rect3X1 = Location3XY.X * 11,       //bunu da bagladim su an
-                    Rect3Y1 = Location3XY.Y * 11,
-                    Rect3X2 = Location3X1Y1.X * 11,
-                    Rect3Y2 = Location3X1Y1.Y * 11,
+                        Diagnosis = diagnosisInt,
+                        Comment = textBoxComment.Text,
+                        DoctorId = 1,
+                        Rect1X1 = Location1XY.X * 11,       //bunu da bagladim su an
+                        Rect1Y1 = Location1XY.Y * 11,
+                        Rect1X2 = Location1X1Y1.X * 11,
+                        Rect1Y2 = Location1X1Y1.Y * 11,
 
-                    Rect4X1 = Location4XY.X * 11,       //bunu da bagladim su an
-                    Rect4Y1 = Location4XY.Y * 11,
-                    Rect4X2 = Location4X1Y1.X * 11,
-                    Rect4Y2 = Location4X1Y1.Y * 11
-                });
-                Update(ii);
+                        Rect2X1 = Location2XY.X * 11,       //bunu da bagladim su an
+                        Rect2Y1 = Location2XY.Y * 11,
+                        Rect2X2 = Location2X1Y1.X * 11,
+                        Rect2Y2 = Location2X1Y1.Y * 11,
+
+                        Rect3X1 = Location3XY.X * 11,       //bunu da bagladim su an
+                        Rect3Y1 = Location3XY.Y * 11,
+                        Rect3X2 = Location3X1Y1.X * 11,
+                        Rect3Y2 = Location3X1Y1.Y * 11,
+
+                        Rect4X1 = Location4XY.X * 11,       //bunu da bagladim su an
+                        Rect4Y1 = Location4XY.Y * 11,
+                        Rect4X2 = Location4X1Y1.X * 11,
+                        Rect4Y2 = Location4X1Y1.Y * 11
+                    });
+                    Update(ii);
+                }
             }
             JsonSave();
             Application.Exit();
@@ -918,7 +925,7 @@ namespace breastcancer
         {
             if (!downFlag)
             {
-                MessageBox.Show("c, ii: " + c + " " + ii);
+                //MessageBox.Show("c, ii: " + c + " " + ii);
                 // filesOriginal = Directory.GetFiles(dirs[ii]);
                 // MessageBox.Show("filesOri: " + filesOriginal[ii]);
 
@@ -930,9 +937,13 @@ namespace breastcancer
                 pictureBox3.Image = Image.FromFile(filesOriginal[2]);
                 pictureBox4.Image = Image.FromFile(filesOriginal[3]);
                 fileCount = dirs.Length;//Directory.GetFiles(dirs.Count);
-                MessageBox.Show("filecount: " + fileCount);
+              //  MessageBox.Show("filecount: " + fileCount);
 
-                lbl_patient.Text = "Patient: " + dirs[c];
+                string dirName = new DirectoryInfo(dirs[ii+1]).Name;
+                //new DirectoryInfo(@"C:\Users\me\Projects\myProject\").Name;
+
+                lbl_patient.Text = "Patient: " + dirName;
+                //lbl_patient.Text = "Patient: " + dirs[c];
                 lbl_rp_prediction.Text = "Prediction: ";
                 lbl_lp_prediction.Text = "Prediction: ";
                 lbl_rpm_prediction.Text = "Prediction: ";

@@ -13,19 +13,26 @@ namespace breastcancer
 
             //label pink
             string directory = Directory.GetCurrentDirectory();
+            pictureBox1.Image = Image.FromFile(directory + "\\adaf.png");
+            pictureBox2.Image = Image.FromFile(directory + "\\ribbon.png"); //Image.FromFile(pathLogoR);
+            pictureBox3.Image = Image.FromFile(directory + "\\tabibf.png");
+
+
+
+
             //MessageBox.Show(directory);
             var parentName = Directory.GetParent(directory).FullName;
             parentName = Directory.GetParent(parentName).FullName;
             parentName = Directory.GetParent(parentName).FullName;
             parentName = Directory.GetParent(parentName).FullName;
-            parentName = Directory.GetParent(parentName).FullName;       
+            parentName = Directory.GetParent(parentName).FullName;
 
-            string pathLogoR = parentName + "\\Logo\\ribbon.png";
-            pictureBox2.Image = Image.FromFile(pathLogoR);
-            string pathLogoADA = parentName + "\\Logo\\adaf.png";
-            pictureBox1.Image = Image.FromFile(pathLogoADA);
-            string pathLogoT = parentName + "\\Logo\\tabibf.png";
-            pictureBox3.Image = Image.FromFile(pathLogoT);
+            // string pathLogoR = parentName + "\\Logo\\ribbon.png";
+            //    pictureBox2.Image = Image.FromFile("\\ribbon.png"); //Image.FromFile(pathLogoR);
+         //   string pathLogoADA = parentName + "\\Logo\\adaf.png";
+        //    pictureBox1.Image = Image.FromFile(pathLogoADA);
+         //   string pathLogoT = parentName + "\\Logo\\tabibf.png";
+          //  pictureBox3.Image = Image.FromFile(pathLogoT);
 
 
             label1.ForeColor = Color.WhiteSmoke;

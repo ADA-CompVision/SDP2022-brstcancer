@@ -1,0 +1,31 @@
+[
+  {
+    "Diagnosis": 1,
+    "Comment": "Write a comment...",
+    "DoctorId": 1,
+    "Image1Id": 1,
+    "Image1Name": "CN00020000.png",
+    "Rect1X1": 0,
+    "Rect1X2": 0,
+    "Rect1Y1": 0,
+    "Rect1Y2": 0,
+    "Image2Id": 2,
+    "Image2Name": "CN00020001.png",
+    "Rect2X1": 0,
+    "Rect2X2": 0,
+    "Rect2Y1": 0,
+    "Rect2Y2": 0,
+    "Image3Id": 3,
+    "Image3Name": "CN00020002.png",
+    "Rect3X1": 0,
+    "Rect3X2": 0,
+    "Rect3Y1": 0,
+    "Rect3Y2": 0,
+    "Image4Id": 4,
+    "Image4Name": "CN00020003.png",
+    "Rect4X1": 363,
+    "Rect4X2": 1045,
+    "Rect4Y1": 1221,
+    "Rect4Y2": 1903
+  }
+]

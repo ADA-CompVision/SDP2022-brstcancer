@@ -63,14 +63,14 @@ namespace breastcancer
             String patientId = "";
 
             string directory = Directory.GetCurrentDirectory();
-            var parentName = Directory.GetParent(directory).FullName;
-            parentName = Directory.GetParent(parentName).FullName;
-            parentName = Directory.GetParent(parentName).FullName;
-            parentName = Directory.GetParent(parentName).FullName;
-            parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive\Desktop\SDP2022-brstcancer
+            //var parentName = Directory.GetParent(directory).FullName;
+            //parentName = Directory.GetParent(parentName).FullName;
+            //parentName = Directory.GetParent(parentName).FullName;
+            //parentName = Directory.GetParent(parentName).FullName;
+            //parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive\Desktop\SDP2022-brstcancer
 
-            pathJson = parentName + "\\path.json";
-            pathCol = parentName + "\\Augmentation\\Colorized";
+            pathJson = directory + "\\path.json";
+            pathCol = directory + "\\Augmentation\\Colorized";
             pathOri = directory + "\\Patients\\";
 
             LoadData();
@@ -78,17 +78,17 @@ namespace breastcancer
         private void dcm_to_png()
         {
             string directory = Directory.GetCurrentDirectory();
-            var parentName = Directory.GetParent(directory).FullName;
-            parentName = Directory.GetParent(parentName).FullName;
-            parentName = Directory.GetParent(parentName).FullName;
-            parentName = Directory.GetParent(parentName).FullName;
-            parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
+            //var parentName = Directory.GetParent(directory).FullName;
+            //parentName = Directory.GetParent(parentName).FullName;
+            //parentName = Directory.GetParent(parentName).FullName;
+            //parentName = Directory.GetParent(parentName).FullName;
+            //parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
 
 
             var psi = new ProcessStartInfo();
             psi.FileName = @"E:\User\anaconda3\python.exe";
 
-            var script = parentName + "\\PyFiles\\dcm_to_png.py";               //@"E:\OneDrive\Desktop\dcm_to_png.py";
+            var script = directory + "\\dcm_to_png.py";               //@"E:\OneDrive\Desktop\dcm_to_png.py";
                                                                                 //var fname = parentName + "\\test.png";                              // @"E:\OneDrive\Desktop\test.png";
                                                                                 //var pth =  parentName+ "\\dicoms\\";              
                                                                                 //   MessageBox.Show(pth);
@@ -109,12 +109,12 @@ namespace breastcancer
                 results = process.StandardOutput.ReadToEnd();
             }
             Console.WriteLine("ERRORS:");
-            //MessageBox.Show(errors, " Errors");
+            MessageBox.Show(errors, " Errors");
             Console.WriteLine(errors);
             Console.WriteLine();
             Console.WriteLine("Results:");
             Console.WriteLine(results);
-            // MessageBox.Show(results, " results");
+            MessageBox.Show(results, " results");
 
         }
         private void LoadData()
@@ -758,13 +758,15 @@ namespace breastcancer
             if (!penClick)
             {
                 string directory = Directory.GetCurrentDirectory();
-                var parentName = Directory.GetParent(directory).FullName;
-                parentName = Directory.GetParent(parentName).FullName;
-                parentName = Directory.GetParent(parentName).FullName;
-                parentName = Directory.GetParent(parentName).FullName;
-                parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
+                pathPencil = directory + "\\minipencil.png";
 
-                pathPencil = parentName + "\\Logo\\minipencil.png";
+                //var parentName = Directory.GetParent(directory).FullName;
+                //parentName = Directory.GetParent(parentName).FullName;
+                //parentName = Directory.GetParent(parentName).FullName;
+                //parentName = Directory.GetParent(parentName).FullName;
+                //parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
+
+                // pathPencil = parentName + "\\Logo\\minipencil.png";
                 var bitmap = (Bitmap)Image.FromFile(pathPencil);//dlg.FileName);
                 this.Cursor = CreateCursor(bitmap, new Size(bitmap.Width / 15, bitmap.Height / 15));
                 penClick = true;
@@ -837,17 +839,17 @@ namespace breastcancer
         public void run_cmd()
         {
             string directory = Directory.GetCurrentDirectory();
-            var parentName = Directory.GetParent(directory).FullName;
-            parentName = Directory.GetParent(parentName).FullName;
-            parentName = Directory.GetParent(parentName).FullName;
-            parentName = Directory.GetParent(parentName).FullName;
-            parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
+            //var parentName = Directory.GetParent(directory).FullName;
+            //parentName = Directory.GetParent(parentName).FullName;
+            //parentName = Directory.GetParent(parentName).FullName;
+            //parentName = Directory.GetParent(parentName).FullName;
+            //parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
 
             var psi = new ProcessStartInfo();
             psi.FileName = @"E:\User\anaconda3\python.exe";
 
-            var script = parentName + "\\PyFiles\\model_test.py";               //@"E:\OneDrive\Desktop\dcm_to_png.py";
-            var filename = parentName + "\\PyFiles\\finalized_model.sav";       // @"E:\OneDrive\Desktop\finalized_model.sav";
+            var script = directory + "\\model_test.py";               //@"E:\OneDrive\Desktop\dcm_to_png.py";
+            var filename = directory + "\\finalized_model.sav";       // @"E:\OneDrive\Desktop\finalized_model.sav";
                                                                                 // var fname1 = parentName + "\\PyFiles\\test.png";                              // @"E:\OneDrive\Desktop\test.png";
 
             string[] dirs = Directory.GetDirectories(pathOri);

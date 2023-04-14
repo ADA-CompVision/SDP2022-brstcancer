@@ -59,13 +59,13 @@
             this.buttonPencil = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lbl_patient = new System.Windows.Forms.Label();
             this.lbl_lpm_prediction = new System.Windows.Forms.Label();
             this.lbl_rpm_prediction = new System.Windows.Forms.Label();
             this.lbl_lp_prediction = new System.Windows.Forms.Label();
             this.lbl_rp_prediction = new System.Windows.Forms.Label();
             this.buttonTest = new System.Windows.Forms.Button();
             this.labelMa = new System.Windows.Forms.Label();
-            this.lbl_patient = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -429,6 +429,15 @@
             this.panel4.TabIndex = 920;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
+            // lbl_patient
+            // 
+            this.lbl_patient.AutoSize = true;
+            this.lbl_patient.Location = new System.Drawing.Point(341, 568);
+            this.lbl_patient.Name = "lbl_patient";
+            this.lbl_patient.Size = new System.Drawing.Size(50, 15);
+            this.lbl_patient.TabIndex = 927;
+            this.lbl_patient.Text = "Patient: ";
+            // 
             // lbl_lpm_prediction
             // 
             this.lbl_lpm_prediction.AutoSize = true;
@@ -489,15 +498,6 @@
             this.labelMa.Size = new System.Drawing.Size(141, 25);
             this.labelMa.TabIndex = 922;
             this.labelMa.Text = "Mammograms";
-            // 
-            // lbl_patient
-            // 
-            this.lbl_patient.AutoSize = true;
-            this.lbl_patient.Location = new System.Drawing.Point(341, 568);
-            this.lbl_patient.Name = "lbl_patient";
-            this.lbl_patient.Size = new System.Drawing.Size(50, 15);
-            this.lbl_patient.TabIndex = 927;
-            this.lbl_patient.Text = "Patient: ";
             // 
             // Form2
             // 

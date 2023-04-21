@@ -43,7 +43,9 @@ def all_dicom_convert(path2):
 #print(cwd)   
 #cwd = os.chdir(cwd)
 #print(cwd)
-from win32com.shell import shell, shellcon
-desktop = shell.SHGetFolderPath (0, shellcon.CSIDL_DESKTOP, 0, 0)
+#from win32com.shell import shell, shellcon
+#desktop = shell.SHGetFolderPath (0, shellcon.CSIDL_DESKTOP, 0, 0)
 #print(desktop)
-all_dicom_convert(desktop + '/dicoms/')
+
+pth = sys.argv[1]
+all_dicom_convert(pth + '/dicoms/')

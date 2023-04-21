@@ -1,15 +1,6 @@
 ﻿using Newtonsoft.Json;
 using breastcancer.Service;
-using System.Reflection;
 using System.Diagnostics;
-using System.IO;
-using IronPython.Hosting;
-using Microsoft.Scripting.Hosting;
-using static IronPython.Modules._ast;
-using System.Linq;
-using IronPython.Runtime;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Xml.Linq;
 
 namespace breastcancer
 {
@@ -42,7 +33,7 @@ namespace breastcancer
         int d = 0;
         int diagnosisInt = 0;
         int fileCount;
-        string[] filesOriginal, filesColored;
+        string[] filesOriginal, filesColored, filesPatient;
 
         // string filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
         string jsonData;
@@ -63,36 +54,26 @@ namespace breastcancer
             String patientId = "";
 
             string directory = Directory.GetCurrentDirectory();
-            //var parentName = Directory.GetParent(directory).FullName;
-            //parentName = Directory.GetParent(parentName).FullName;
-            //parentName = Directory.GetParent(parentName).FullName;
-            //parentName = Directory.GetParent(parentName).FullName;
-            //parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive\Desktop\SDP2022-brstcancer
-
             pathJson = directory + "\\path.json";
             pathCol = directory + "\\Augmentation\\Colorized";
             pathOri = directory + "\\Patients\\";
-
+            // filesPatient = Directory.GetFiles(pathOri);
             LoadData();
         }
         private void dcm_to_png()
         {
             string directory = Directory.GetCurrentDirectory();
-            //var parentName = Directory.GetParent(directory).FullName;
-            //parentName = Directory.GetParent(parentName).FullName;
-            //parentName = Directory.GetParent(parentName).FullName;
-            //parentName = Directory.GetParent(parentName).FullName;
-            //parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
-
 
             var psi = new ProcessStartInfo();
             psi.FileName = @"E:\User\anaconda3\python.exe";
 
-            var script = directory + "\\dcm_to_png.py";               //@"E:\OneDrive\Desktop\dcm_to_png.py";
-                                                                                //var fname = parentName + "\\test.png";                              // @"E:\OneDrive\Desktop\test.png";
-                                                                                //var pth =  parentName+ "\\dicoms\\";              
-                                                                                //   MessageBox.Show(pth);
-            psi.Arguments = $"\"{script}\"";             // \"{pth}\"";    // \"{filename}\"";
+            var script = directory + "\\dcm_to_png.py";
+
+            string fdir = System.IO.File.ReadAllText(directory + "\\path_to_dcm.txt");
+
+            var fname = fdir;// + "\\dcm_to_png.py";
+
+            psi.Arguments = $"\"{script}\"   \"{fname}\"";
 
 
             psi.UseShellExecute = false;
@@ -109,17 +90,23 @@ namespace breastcancer
                 results = process.StandardOutput.ReadToEnd();
             }
             Console.WriteLine("ERRORS:");
-            MessageBox.Show(errors, " Errors");
+            // MessageBox.Show(errors, " Errors");
             Console.WriteLine(errors);
             Console.WriteLine();
             Console.WriteLine("Results:");
             Console.WriteLine(results);
-            MessageBox.Show(results, " results");
+            // MessageBox.Show(results, " results");
 
         }
         private void LoadData()
         {
-            ii = dataList.Count();
+            LoadJson();
+            //    if (dataList.Count() != 0)
+            //{
+            c = dataList.Count();
+            int icount = dataList.Count;
+            ii = dataList.Count;
+            ////}
             PictureBoxClicked[0] = false;
             PictureBoxClicked[1] = false;
             PictureBoxClicked[2] = false;
@@ -169,19 +156,19 @@ namespace breastcancer
             lbl_patient.ForeColor = Color.FromArgb(161, 161, 161);
 
             buttonPrevious.ForeColor = Color.WhiteSmoke;
-            buttonPrevious.BackColor = Color.FromArgb(45, 45, 45);
+            buttonPrevious.BackColor = Color.FromArgb(50, 50, 50);
             IntPtr ptrPre = NativeMethods.CreateRoundRectRgn(2, 2, this.buttonPrevious.Width, this.buttonPrevious.Height, 5, 5);
             this.buttonPrevious.Region = System.Drawing.Region.FromHrgn(ptrPre);
             NativeMethods.DeleteObject(ptrPre);
 
             buttonNext.ForeColor = Color.WhiteSmoke;
-            buttonNext.BackColor = Color.FromArgb(45, 45, 45);
+            buttonNext.BackColor = Color.FromArgb(50, 50, 50);
             IntPtr ptrNext = NativeMethods.CreateRoundRectRgn(2, 2, this.buttonNext.Width, this.buttonNext.Height, 5, 5);
             this.buttonNext.Region = System.Drawing.Region.FromHrgn(ptrNext);
             NativeMethods.DeleteObject(ptrNext);
 
             buttonUp.ForeColor = Color.WhiteSmoke;
-            buttonUp.BackColor = Color.FromArgb(66, 66, 66);
+            buttonUp.BackColor = Color.FromArgb(50, 50, 50);
             buttonUp.FlatStyle = FlatStyle.Flat;
             buttonUp.FlatAppearance.BorderSize = 0;
             IntPtr ptrUp = NativeMethods.CreateRoundRectRgn(-1, -1, this.buttonUp.Width + 2, this.buttonUp.Height + 2, 100, 100);
@@ -189,7 +176,7 @@ namespace breastcancer
             NativeMethods.DeleteObject(ptrUp);
 
             buttonDown.ForeColor = Color.WhiteSmoke;
-            buttonDown.BackColor = Color.FromArgb(66, 66, 66);
+            buttonDown.BackColor = Color.FromArgb(50, 50, 50);
             buttonDown.FlatStyle = FlatStyle.Flat;
             buttonDown.FlatAppearance.BorderSize = 0;
             IntPtr ptrDown = NativeMethods.CreateRoundRectRgn(-1, -1, this.buttonDown.Width + 2, this.buttonDown.Height + 2, 100, 100);
@@ -197,7 +184,7 @@ namespace breastcancer
             NativeMethods.DeleteObject(ptrDown);
 
             buttonQuestionM.ForeColor = Color.FromArgb(161, 161, 161);
-            buttonQuestionM.BackColor = Color.FromArgb(66, 66, 66);
+            buttonQuestionM.BackColor = Color.FromArgb(50, 50, 50);
             buttonQuestionM.FlatStyle = FlatStyle.Flat;
             buttonQuestionM.FlatAppearance.BorderSize = 0;
             IntPtr ptrQues = NativeMethods.CreateRoundRectRgn(0, 0, this.buttonQuestionM.Width + 1, this.buttonQuestionM.Height + 1, 100, 100);
@@ -205,20 +192,32 @@ namespace breastcancer
             NativeMethods.DeleteObject(ptrQues);
 
             buttonPencil.ForeColor = Color.FromArgb(161, 161, 161);
-            buttonPencil.BackColor = Color.FromArgb(66, 66, 66);
+            buttonPencil.BackColor = Color.FromArgb(50, 50, 50);
             buttonPencil.FlatStyle = FlatStyle.Flat;
             buttonPencil.FlatAppearance.BorderSize = 0;
-            IntPtr ptrPencil = NativeMethods.CreateRoundRectRgn(-1, -1, this.buttonPencil.Width + 2, this.buttonPencil.Height + 2, 100, 100);
+            IntPtr ptrPencil = NativeMethods.CreateRoundRectRgn(-3, -3, this.buttonPencil.Width + 4, this.buttonPencil.Height + 4, 100, 100);
             this.buttonPencil.Region = System.Drawing.Region.FromHrgn(ptrPencil);
             NativeMethods.DeleteObject(ptrPencil);
 
             buttonTest.ForeColor = Color.FromArgb(161, 161, 161);
-            buttonTest.BackColor = Color.FromArgb(66, 66, 66);
+            buttonTest.BackColor = Color.FromArgb(50, 50, 50);
             buttonTest.FlatStyle = FlatStyle.Flat;
             buttonTest.FlatAppearance.BorderSize = 0;
-            IntPtr ptrTest = NativeMethods.CreateRoundRectRgn(-2, -2, this.buttonTest.Width + 2, this.buttonTest.Height + 2, 100, 100);
+            IntPtr ptrTest = NativeMethods.CreateRoundRectRgn(-1, -1, this.buttonTest.Width +3, this.buttonTest.Height + 2, 100, 100);
             this.buttonTest.Region = System.Drawing.Region.FromHrgn(ptrTest);
             NativeMethods.DeleteObject(ptrTest);
+
+
+            buttonClean.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+
+            buttonClean.ForeColor = System.Drawing.Color.Blue;
+            //Color.FromArgb(161, 161, 161);
+            buttonClean.BackColor = Color.FromArgb(50, 50, 50);
+            buttonClean.FlatStyle = FlatStyle.Flat;
+            buttonClean.FlatAppearance.BorderSize = 0;
+            IntPtr ptrClean = NativeMethods.CreateRoundRectRgn(-2, -2, this.buttonTest.Width + 2, this.buttonTest.Height + 2, 100, 100);
+            this.buttonClean.Region = System.Drawing.Region.FromHrgn(ptrClean);
+            NativeMethods.DeleteObject(ptrClean);
 
             IntPtr ptr = NativeMethods.CreateRoundRectRgn(2, 2, this.textBoxComment.Width - 1, this.textBoxComment.Height - 1, 5, 5); //play with these values till you are happy
             this.textBoxComment.Region = System.Drawing.Region.FromHrgn(ptr);
@@ -226,62 +225,34 @@ namespace breastcancer
 
             // Read existing json data
             jsonData = System.IO.File.ReadAllText(pathJson);
-            // De-serialize to object or create new list
             dataList = JsonConvert.DeserializeObject<List<Data>>(jsonData)
                                   ?? new List<Data>();
 
-            //string filePathOriginal = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Original";
-
-
-            //string filePathColored = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Colorized";
             filesColored = Directory.GetFiles(pathCol);//filePathColored);
 
-
             string[] dirs = Directory.GetDirectories(pathOri);
-            // MessageBox.Show(String.Join(Environment.NewLine, dirs));
 
-
-            //if (c == 0)
-            //{
-            //    filesOriginal = Directory.GetFiles(dirs[0]);
-            //    pictureBox1.Image = Image.FromFile(filesOriginal[c]);
-            //    pictureBox2.Image = Image.FromFile(filesOriginal[c + 1]);
-            //    pictureBox3.Image = Image.FromFile(filesOriginal[c + 2]);
-            //    pictureBox4.Image = Image.FromFile(filesOriginal[c + 3]);
-            //    fileCount = Directory.GetFiles(dirs[0]).Length;//filePathOriginal).Length;
-            //}
-            // while (c < dirs.Length)
-            //{
+            if (c == dirs.Length)
+            {
+                c--;
+                ii--;
+            }
             if (dirs[ii].Length != 0)
             {
-                filesOriginal = Directory.GetFiles(dirs[ii]);
+                filesOriginal = Directory.GetFiles(dirs[ii]);//from ii to c
                 pictureBox1.Image = Image.FromFile(filesOriginal[0]);
                 pictureBox2.Image = Image.FromFile(filesOriginal[1]);
                 pictureBox3.Image = Image.FromFile(filesOriginal[2]);
                 pictureBox4.Image = Image.FromFile(filesOriginal[3]);
             }
-            fileCount = dirs.Length;//Directory.GetFiles(dirs.Count);
-                                    //  MessageBox.Show("filecount: " + fileCount);
+            fileCount = dirs.Length;
 
             string dirName = new DirectoryInfo(dirs[ii]).Name;
-            //new DirectoryInfo(@"C:\Users\me\Projects\myProject\").Name;
-
             lbl_patient.Text = "Patient: " + dirName;
-            //c++;
-            //ii++;
-            //}
-            //fileCount = Directory.GetFiles(pathOri).Length;//filePathOriginal).Length;
 
-            //pictureBox1.Image = Image.FromFile(filesOriginal[c]);
-            //pictureBox2.Image = Image.FromFile(filesOriginal[c + 1]);
-            //pictureBox3.Image = Image.FromFile(filesOriginal[c + 2]);
-            //pictureBox4.Image = Image.FromFile(filesOriginal[c + 3]);
-
-            ////////////////////
             CheckIfWeHave();
-            ////////////////////
 
-            label1.Text = c + 1 + " out of " + filesOriginal.Length / 4 + " images \n";
+            label1.Text = c + 1 + " out of " + dirs.Length + " images \n";
 
             if (c == 0) //changed it here
                 buttonPrevious.Enabled = false;
@@ -294,11 +265,14 @@ namespace breastcancer
             {
                 Update(ii);
                 var item = dataList[ch];
-
-                if (File.Exists(item.Image1Name.ToString()))
+                string[] dirs = Directory.GetDirectories(pathOri);
+                string dirName = new DirectoryInfo(dirs[ii]).Name;
+                //MessageBox.Show(dirs[ii] + "\\" +  item.Image1Name.ToString());
+                if (File.Exists(dirs[ii] + "\\" + item.Image1Name.ToString()))
                 {
                     // var item = dataList[ii];
-                    this.textBoxComment.Text = item.Comment;
+                    if (textBoxComment.Equals(textCom))
+                        this.textBoxComment.Text = item.Comment;
 
                     if (item.Diagnosis == 1)
                     {
@@ -423,6 +397,17 @@ namespace breastcancer
             {
                 this.buttonPrevious.Focus();
                 buttonPreviousFunction();
+            }
+        }
+        private void LoadJson()
+        {
+            using (StreamReader r = new StreamReader("path.json"))
+            {
+                string json = r.ReadToEnd();
+                if (json.Length > 0)
+                    dataList = JsonConvert.DeserializeObject<List<Data>>(json);
+                if (dataList == null)
+                    MessageBox.Show("datalist null");
             }
         }
         private void JsonSave()
@@ -694,62 +679,68 @@ namespace breastcancer
         }
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            CheckIfWeHave();
-            if ((radioButtonNegative.Checked == true || radioButtonPositive.Checked == true || radioButtonPotential.Checked == true))
-            {
-                string[] dirs = Directory.GetDirectories(pathOri);
+            //CheckIfWeHave();
+            //if (radioButtonNegative.Checked == true || radioButtonPositive.Checked == true || radioButtonPotential.Checked == true)
+            //{
+            //    string[] dirs = Directory.GetDirectories(pathOri);
 
-                if (ii == dirs.Length - 1)
-                {
-                    int id;
-                    //  MessageBox.Show(ii.ToString());
-                    id = dataList.Count * 4 + 1;
-                    // MessageBox.Show("C; " + c);
+            //    if (ii == dirs.Length - 1)
+            //    {
+            //        int id;
+            //        //  MessageBox.Show(ii.ToString());
+            //        id = dataList.Count * 4 + 1;
+            //        // MessageBox.Show("C; " + c);
 
 
-                    // Add any new data
-                    dataList.Add(new Data()
-                    {
-                        Image1Id = id,// w,//get last image id from json file then ++ and assign
-                        Image1Name = Path.GetFileName(filesOriginal[0]),
+            //        // Add any new data
+            //        dataList.Add(new Data()
+            //        {
+            //            Image1Id = id,// w,//get last image id from json file then ++ and assign
+            //            Image1Name = Path.GetFileName(filesOriginal[0]),
 
-                        Image2Id = id + 1,// w,//get last image id from json file then ++ and assign
-                        Image2Name = Path.GetFileName(filesOriginal[1]),
+            //            Image2Id = id + 1,// w,//get last image id from json file then ++ and assign
+            //            Image2Name = Path.GetFileName(filesOriginal[1]),
 
-                        Image3Id = id + 2,// w,//get last image id from json file then ++ and assign
-                        Image3Name = Path.GetFileName(filesOriginal[2]),
+            //            Image3Id = id + 2,// w,//get last image id from json file then ++ and assign
+            //            Image3Name = Path.GetFileName(filesOriginal[2]),
 
-                        Image4Id = id + 3,// w,//get last image id from json file then ++ and assign
-                        Image4Name = Path.GetFileName(filesOriginal[3]),
+            //            Image4Id = id + 3,// w,//get last image id from json file then ++ and assign
+            //            Image4Name = Path.GetFileName(filesOriginal[3]),
 
-                        Diagnosis = diagnosisInt,
-                        Comment = textBoxComment.Text,
-                        DoctorId = 1,
-                        Rect1X1 = Location1XY.X * 11,       //bunu da bagladim su an
-                        Rect1Y1 = Location1XY.Y * 11,
-                        Rect1X2 = Location1X1Y1.X * 11,
-                        Rect1Y2 = Location1X1Y1.Y * 11,
+            //            Diagnosis = diagnosisInt,
+            //            Comment = textBoxComment.Text,
+            //            DoctorId = 1,
+            //            Rect1X1 = Location1XY.X * 11,       //bunu da bagladim su an
+            //            Rect1Y1 = Location1XY.Y * 11,
+            //            Rect1X2 = Location1X1Y1.X * 11,
+            //            Rect1Y2 = Location1X1Y1.Y * 11,
 
-                        Rect2X1 = Location2XY.X * 11,       //bunu da bagladim su an
-                        Rect2Y1 = Location2XY.Y * 11,
-                        Rect2X2 = Location2X1Y1.X * 11,
-                        Rect2Y2 = Location2X1Y1.Y * 11,
+            //            Rect2X1 = Location2XY.X * 11,       //bunu da bagladim su an
+            //            Rect2Y1 = Location2XY.Y * 11,
+            //            Rect2X2 = Location2X1Y1.X * 11,
+            //            Rect2Y2 = Location2X1Y1.Y * 11,
 
-                        Rect3X1 = Location3XY.X * 11,       //bunu da bagladim su an
-                        Rect3Y1 = Location3XY.Y * 11,
-                        Rect3X2 = Location3X1Y1.X * 11,
-                        Rect3Y2 = Location3X1Y1.Y * 11,
+            //            Rect3X1 = Location3XY.X * 11,       //bunu da bagladim su an
+            //            Rect3Y1 = Location3XY.Y * 11,
+            //            Rect3X2 = Location3X1Y1.X * 11,
+            //            Rect3Y2 = Location3X1Y1.Y * 11,
 
-                        Rect4X1 = Location4XY.X * 11,       //bunu da bagladim su an
-                        Rect4Y1 = Location4XY.Y * 11,
-                        Rect4X2 = Location4X1Y1.X * 11,
-                        Rect4Y2 = Location4X1Y1.Y * 11
-                    });
-                    Update(ii);
-                }
-            }
-            JsonSave();
-            Application.Exit();
+            //            Rect4X1 = Location4XY.X * 11,       //bunu da bagladim su an
+            //            Rect4Y1 = Location4XY.Y * 11,
+            //            Rect4X2 = Location4X1Y1.X * 11,
+            //            Rect4Y2 = Location4X1Y1.Y * 11
+            //        });
+            //        Update(ii);
+            //    }
+            //}
+            //JsonSave();
+            ////string[] files = Directory.GetFiles(rootFolder);
+            ////for (int ci = 0; ci<//foreach (string file in files)
+            ////{
+            ////    File.Delete(file);
+            ////    Console.WriteLine($"{file} is deleted.");
+            ////}
+            //Application.Exit();
         }
         private void buttonPencil_Click(object sender, EventArgs e)
         {
@@ -759,15 +750,7 @@ namespace breastcancer
             {
                 string directory = Directory.GetCurrentDirectory();
                 pathPencil = directory + "\\minipencil.png";
-
-                //var parentName = Directory.GetParent(directory).FullName;
-                //parentName = Directory.GetParent(parentName).FullName;
-                //parentName = Directory.GetParent(parentName).FullName;
-                //parentName = Directory.GetParent(parentName).FullName;
-                //parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
-
-                // pathPencil = parentName + "\\Logo\\minipencil.png";
-                var bitmap = (Bitmap)Image.FromFile(pathPencil);//dlg.FileName);
+                var bitmap = (Bitmap)Image.FromFile(pathPencil);
                 this.Cursor = CreateCursor(bitmap, new Size(bitmap.Width / 15, bitmap.Height / 15));
                 penClick = true;
             }
@@ -822,7 +805,6 @@ namespace breastcancer
         }
         private void buttonTest_Click(object sender, EventArgs e)
         {
-
             if (radioButtonNegative.Checked == false && radioButtonPositive.Checked == false && radioButtonPotential.Checked == false)
             {
                 string message = "You need to choose one option!";
@@ -839,18 +821,12 @@ namespace breastcancer
         public void run_cmd()
         {
             string directory = Directory.GetCurrentDirectory();
-            //var parentName = Directory.GetParent(directory).FullName;
-            //parentName = Directory.GetParent(parentName).FullName;
-            //parentName = Directory.GetParent(parentName).FullName;
-            //parentName = Directory.GetParent(parentName).FullName;
-            //parentName = Directory.GetParent(parentName).FullName;        //E:\OneDrive - ADA University\Homework\SDP2022-brstcancer
 
             var psi = new ProcessStartInfo();
             psi.FileName = @"E:\User\anaconda3\python.exe";
 
-            var script = directory + "\\model_test.py";               //@"E:\OneDrive\Desktop\dcm_to_png.py";
-            var filename = directory + "\\finalized_model.sav";       // @"E:\OneDrive\Desktop\finalized_model.sav";
-                                                                                // var fname1 = parentName + "\\PyFiles\\test.png";                              // @"E:\OneDrive\Desktop\test.png";
+            var script = directory + "\\model_test.py";
+            var filename = directory + "\\finalized_model.sav";
 
             string[] dirs = Directory.GetDirectories(pathOri);
 
@@ -860,15 +836,7 @@ namespace breastcancer
             var fname3 = filesOriginal[2];
             var fname4 = filesOriginal[3];
 
-            //   MessageBox.Show(fname1.ToString());
-
             psi.Arguments = $"\"{script}\" \"{fname1}\" \"{fname2}\" \"{fname3}\" \"{fname4}\" \"{filename}\"";
-
-
-
-
-            //psi.Arguments = $"\"{script}\" \"{fname}\" \"{filename}\"";
-
 
             psi.UseShellExecute = false;
             psi.CreateNoWindow = true;
@@ -927,12 +895,140 @@ namespace breastcancer
                 Console.WriteLine("Executing finally block.");
             }
         }
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CheckIfWeHave();
+            if (radioButtonNegative.Checked == true || radioButtonPositive.Checked == true || radioButtonPotential.Checked == true)
+            {
+                string[] dirs = Directory.GetDirectories(pathOri);
+
+                if (ii == dirs.Length - 1)
+                {
+                    int id;
+                    //  MessageBox.Show(ii.ToString());
+                    id = dataList.Count * 4 + 1;
+                    // MessageBox.Show("C; " + c);
+
+
+                    // Add any new data
+                    dataList.Add(new Data()
+                    {
+                        Image1Id = id,// w,//get last image id from json file then ++ and assign
+                        Image1Name = Path.GetFileName(filesOriginal[0]),
+
+                        Image2Id = id + 1,// w,//get last image id from json file then ++ and assign
+                        Image2Name = Path.GetFileName(filesOriginal[1]),
+
+                        Image3Id = id + 2,// w,//get last image id from json file then ++ and assign
+                        Image3Name = Path.GetFileName(filesOriginal[2]),
+
+                        Image4Id = id + 3,// w,//get last image id from json file then ++ and assign
+                        Image4Name = Path.GetFileName(filesOriginal[3]),
+
+                        Diagnosis = diagnosisInt,
+                        Comment = textBoxComment.Text,
+                        DoctorId = 1,
+                        Rect1X1 = Location1XY.X * 11,       //bunu da bagladim su an
+                        Rect1Y1 = Location1XY.Y * 11,
+                        Rect1X2 = Location1X1Y1.X * 11,
+                        Rect1Y2 = Location1X1Y1.Y * 11,
+
+                        Rect2X1 = Location2XY.X * 11,       //bunu da bagladim su an
+                        Rect2Y1 = Location2XY.Y * 11,
+                        Rect2X2 = Location2X1Y1.X * 11,
+                        Rect2Y2 = Location2X1Y1.Y * 11,
+
+                        Rect3X1 = Location3XY.X * 11,       //bunu da bagladim su an
+                        Rect3Y1 = Location3XY.Y * 11,
+                        Rect3X2 = Location3X1Y1.X * 11,
+                        Rect3Y2 = Location3X1Y1.Y * 11,
+
+                        Rect4X1 = Location4XY.X * 11,       //bunu da bagladim su an
+                        Rect4Y1 = Location4XY.Y * 11,
+                        Rect4X2 = Location4X1Y1.X * 11,
+                        Rect4Y2 = Location4X1Y1.Y * 11
+                    });
+                    Update(ii);
+                }
+            }
+            JsonSave();
+            //string[] files = Directory.GetFiles(rootFolder);
+            //for (int ci = 0; ci<//foreach (string file in files)
+            //{
+            //    File.Delete(file);
+            //    Console.WriteLine($"{file} is deleted.");
+            //}
+            Application.Exit();
+        }
+        private void buttonPencil_Paint(object sender, PaintEventArgs e)
+        {
+
+            //Rectangle borderRectangle = this.ClientRectangle;
+            //borderRectangle.Inflate(-10, -10);
+            //ControlPaint.DrawBorder3D(e.Graphics, borderRectangle,
+            //    Border3DStyle.Raised);
+        }
+        private void buttonClean_Click(object sender, EventArgs e)
+        {
+            Location1XY.X = 0;
+            Location1XY.Y = 0;
+            Location1X1Y1.X = 0;
+            Location1X1Y1.Y = 0;
+
+            Location2XY.X = 0;
+            Location2XY.Y = 0;
+            Location2X1Y1.X = 0;
+            Location2X1Y1.Y = 0;
+
+            Location3XY.X = 0;
+            Location3XY.Y = 0;
+            Location3X1Y1.X = 0;
+            Location3X1Y1.Y = 0;
+
+            Location4XY.X = 0;
+            Location4XY.Y = 0;
+            Location4X1Y1.X = 0;
+            Location4X1Y1.Y = 0;
+            // btnNavLR = false;
+
+            // pictureBox3.Invalidate();
+            //or
+            // pictureBox3.Update();
+            //or
+            Refresh();
+            if (dataList.Count > ii)
+            {
+                var item = dataList[ii];
+                item.Rect1X1 = Location1XY.X * 11;
+                item.Rect1Y1 = Location1XY.Y * 11;
+                item.Rect1X2 = Location1X1Y1.X * 11;
+                item.Rect1Y2 = Location1X1Y1.Y * 11; //indi bagladim
+
+                item.Rect2X1 = Location2XY.X * 11;
+                item.Rect2Y1 = Location2XY.Y * 11;
+                item.Rect2X2 = Location2X1Y1.X * 11;
+                item.Rect2Y2 = Location2X1Y1.Y * 11; //indi bagladim
+
+                item.Rect3X1 = Location3XY.X * 11;
+                item.Rect3Y1 = Location3XY.Y * 11;
+                item.Rect3X2 = Location3X1Y1.X * 11;
+                item.Rect3Y2 = Location3X1Y1.Y * 11; //indi bagladim
+
+                item.Rect4X1 = Location4XY.X * 11;
+                item.Rect4Y1 = Location4XY.Y * 11;
+                item.Rect4X2 = Location4X1Y1.X * 11;
+                item.Rect4Y2 = Location4X1Y1.Y * 11; //indi bagladim
+                                                     // Update(ii);
+            }
+        }
         private void drawPic()
         {
             btnNavLR = true;
         }
         private void downCheckFunction(bool downFlag)
         {
+            string[] dirs = Directory.GetDirectories(pathOri);
+
             string dirName = "";
             if (!downFlag)
             {
@@ -940,7 +1036,6 @@ namespace breastcancer
                 // filesOriginal = Directory.GetFiles(dirs[ii]);
                 // MessageBox.Show("filesOri: " + filesOriginal[ii]);
 
-                string[] dirs = Directory.GetDirectories(pathOri);
                 // MessageBox.Show(String.Join(Environment.NewLine, dirs));
                 if (c < dirs.Length)
                 {
@@ -952,7 +1047,10 @@ namespace breastcancer
                     fileCount = dirs.Length;//Directory.GetFiles(dirs.Count);
                                             //  MessageBox.Show("filecount: " + fileCount);
                     if (ii < dirs.Length)
-                        dirName = new DirectoryInfo(dirs[ii + 1]).Name;
+                        //  if (dataList.Count != 0)
+                        dirName = new DirectoryInfo(dirs[ii]).Name;
+                    //else
+                    //    dirName = new DirectoryInfo(dirs[ii]).Name;
                 }
                 // MessageBox.Show("ii: " + ii + " c: " + c);
                 //new DirectoryInfo(@"C:\Users\me\Projects\myProject\").Name;
@@ -1101,6 +1199,8 @@ namespace breastcancer
 
             ch++;
 
+            string[] dirs = Directory.GetDirectories(pathOri);
+
 
             if (radioButtonNegative.Checked == false && radioButtonPositive.Checked == false && radioButtonPotential.Checked == false)
             {
@@ -1116,19 +1216,9 @@ namespace breastcancer
                 {
                     id = dataList.Count * 4 + 1;
 
-                    string[] dirs = Directory.GetDirectories(pathOri);
-                    // MessageBox.Show(String.Join(Environment.NewLine, dirs));
+                    string dirName = new DirectoryInfo(dirs[ii]).Name;
 
-                    //filesOriginal = Directory.GetFiles(dirs[ii]);
-                    //pictureBox1.Image = Image.FromFile(filesOriginal[0]);
-                    //pictureBox2.Image = Image.FromFile(filesOriginal[1]);
-                    //pictureBox3.Image = Image.FromFile(filesOriginal[2]);
-                    //pictureBox4.Image = Image.FromFile(filesOriginal[3]);
-                    //fileCount = dirs.Length;
-
-                    string dirName= new DirectoryInfo(dirs[ii]).Name;
-                    
-                   // lbl_patient.Text = "Patient: " + dirName;
+                    // lbl_patient.Text = "Patient: " + dirName;
 
                     // Add any new data
                     dataList.Add(new Data()
@@ -1185,7 +1275,7 @@ namespace breastcancer
                     {
                         c++;// += 4;
                         buttonPrevious.Enabled = true;
-                        label1.Text = c + 1 + " out of " + filesOriginal.Length + " images \n";// + files[c];
+                        label1.Text = c + 1 + " out of " + dirs.Length + " images \n";// + files[c];
 
                         downCheckFunction(downFlag);
                     }
@@ -1243,7 +1333,7 @@ namespace breastcancer
                         //{
                         c++;// += 4;         ///////////////////////////////////////////yav baxaq gorek nolur
                         buttonPrevious.Enabled = true;
-                        label1.Text = c + 1 + " out of " + filesOriginal.Length + " images \n";// + files[c];
+                        label1.Text = c + 1 + " out of " + dirs.Length + " images \n";// + files[c];
 
                         downCheckFunction(downFlag);
                         // }
@@ -1261,7 +1351,7 @@ namespace breastcancer
                         //added later
                         c++;// += 4;
                         buttonPrevious.Enabled = true;
-                        label1.Text = c + 1 + " out of " + filesOriginal.Length + " images \n";// + files[c];
+                        label1.Text = c + 1 + " out of " + dirs.Length + " images \n";// + files[c];
 
                         downCheckFunction(downFlag);
                     }
@@ -1440,7 +1530,8 @@ namespace breastcancer
 
             var item = dataList[i];
             //Console.WriteLine(i.ToString());
-            item.Comment = this.textBoxComment.Text;
+            if (item.Comment.Equals(textCom))
+                item.Comment = this.textBoxComment.Text;
 
             if (this.radioButtonPositive.Checked)
             {
@@ -1530,6 +1621,8 @@ namespace breastcancer
         }
         public void buttonUpFunction()
         {
+            string[] dirs = Directory.GetDirectories(pathOri);
+
             btnNavLR = true;
             downFlag = false;
             pictureBox1.Image = Image.FromFile(filesOriginal[0]);
@@ -1537,10 +1630,12 @@ namespace breastcancer
             pictureBox3.Image = Image.FromFile(filesOriginal[2]);
             pictureBox4.Image = Image.FromFile(filesOriginal[3]);
 
-            label1.Text = c + 1 + " out of " + filesOriginal.Length + " images \n";
+            label1.Text = c + 1 + " out of " + dirs.Length + " images \n";
         }
         public void buttonDownFunction()
         {
+            string[] dirs = Directory.GetDirectories(pathOri);
+
             downFlag = true;
             btnNavLR = true;
             pictureBox1.Image = Image.FromFile(filesColored[0]);
@@ -1548,7 +1643,7 @@ namespace breastcancer
             pictureBox3.Image = Image.FromFile(filesColored[2]);
             pictureBox4.Image = Image.FromFile(filesColored[3]);
 
-            label1.Text = c + 1 + " out of " + filesColored.Length + " images \n";
+            label1.Text = c + 1 + " out of " + dirs.Length + " images \n";
         }
         private void buttonPreviousFunction()
         {
@@ -1678,8 +1773,8 @@ namespace breastcancer
 
                 //  c--;//= 4;
                 buttonNext.Enabled = true;
-                label1.Text = c + 1 + " out of " + filesColored.Length + " images \n";// + filesNotResized[c];
-                                                                                      //    MessageBox.Show(c.ToString());
+                label1.Text = c + 1 + " out of " + dirs.Length + " images \n";// + filesNotResized[c];
+                                                                              //    MessageBox.Show(c.ToString());
 
                 downCheckFunction(downFlag);
             }

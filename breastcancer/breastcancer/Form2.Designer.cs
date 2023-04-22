@@ -349,15 +349,6 @@
             this.buttonUp.UseVisualStyleBackColor = true;
             this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(0, 590);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
-            this.label2.TabIndex = 918;
-            this.label2.Text = "label2";
-            // 
             // buttonDown
             // 
             this.buttonDown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDown.BackgroundImage")));
@@ -368,6 +359,15 @@
             this.buttonDown.TabIndex = 801;
             this.buttonDown.UseVisualStyleBackColor = true;
             this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 597);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 15);
+            this.label2.TabIndex = 918;
+            this.label2.Text = "label2";
             // 
             // buttonQuestionM
             // 

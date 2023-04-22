@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using breastcancer.Service;
+using static IronPython.Modules._ast;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace breastcancer
 {
@@ -80,23 +83,6 @@ namespace breastcancer
             label2.ForeColor = Color.FromArgb(161, 161, 161);
             label2.Width = 10000;
             label2.BorderStyle = BorderStyle.Fixed3D;
-            string directory = Directory.GetCurrentDirectory();
-            //  MessageBox.Show(directory);
-            var parentName = Directory.GetParent(directory).FullName;
-            parentName = Directory.GetParent(parentName).FullName;
-            parentName = Directory.GetParent(parentName).FullName;
-            parentName = Directory.GetParent(parentName).FullName;
-            parentName = Directory.GetParent(parentName).FullName;
-
-
-            pathJson = parentName + "\\path.json";
-            pathCol = parentName + "\\Augmentation\\Colorized";
-            pathOri = parentName + "\\Augmentation\\Original";
-            //filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
-
-
-            string filePathOriginal = pathOri;//@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Original";
-            string filePathColored = pathCol;//@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Colorized";
 
             buttonPrevious.ForeColor = Color.WhiteSmoke;
             buttonPrevious.BackColor = Color.FromArgb(45, 45, 45);
@@ -134,6 +120,18 @@ namespace breastcancer
             this.buttonQuestionM.Region = System.Drawing.Region.FromHrgn(ptrQues);
             NativeMethods.DeleteObject(ptrQues);
 
+
+            buttonClean.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+
+            buttonClean.ForeColor = System.Drawing.Color.Blue;
+            //Color.FromArgb(161, 161, 161);
+            buttonClean.BackColor = Color.FromArgb(66, 66, 66);
+            buttonClean.FlatStyle = FlatStyle.Flat;
+            buttonClean.FlatAppearance.BorderSize = 0;
+            IntPtr ptrClean = NativeMethods.CreateRoundRectRgn(-2, -2, this.buttonClean.Width + 2, this.buttonClean.Height + 2, 100, 100);
+            this.buttonClean.Region = System.Drawing.Region.FromHrgn(ptrClean);
+            NativeMethods.DeleteObject(ptrClean);
+
             buttonPencil.ForeColor = Color.FromArgb(161, 161, 161);
             buttonPencil.BackColor = Color.FromArgb(66, 66, 66);
             buttonPencil.FlatStyle = FlatStyle.Flat;
@@ -146,22 +144,39 @@ namespace breastcancer
             this.textBoxComment.Region = System.Drawing.Region.FromHrgn(ptr);
             NativeMethods.DeleteObject(ptr);
 
+            string directory = Directory.GetCurrentDirectory();
+
+            pathJson = directory + "\\path.json";
+            pathCol = directory + "\\Patients\\Colored";
+            pathOri = directory + "\\Patients\\Original";
+            //filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
+
+
+            //string filePathOriginal = pathOri;//@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Original";
+            //string filePathColored = pathCol;//@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Colorized";
+
             if (!downFlag4)
             {
-                filepath = filePathOriginal;
+                filepath = pathOri;
                 label3.Text = "Original";
             }
             else
             {
-                filepath = filePathColored;
+                filepath = pathCol;
                 label3.Text = "Colored";
             }
 
-            files = Directory.GetFiles(filepath);
+            //////////////////////
 
-            filesOriginal = Directory.GetFiles(filePathOriginal);
-            //string filePathColored = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Colorized";
-            filesColored = Directory.GetFiles(filePathColored);//filePathColored);
+      
+            files = Directory.GetDirectories(filepath);
+
+            filesColored = Directory.GetFiles(pathCol);
+            string[] dirsIMG = Directory.GetFiles(files[c4]);
+
+
+
+            //////////////////////////
             sx1 = 0;
             sy1 = 0;
             sw = 0;
@@ -204,7 +219,7 @@ namespace breastcancer
             if (picNum4 == 0)
             {
                 btnNavLR = true;
-                pictureBox1.Image = Image.FromFile(files[c4]);
+                pictureBox1.Image = Image.FromFile(dirsIMG[0]);
                 sx1 = (int)Math.Abs(StaticData.DataList1.Rect1X1 / 6);
                 sy1 = (int)Math.Abs(StaticData.DataList1.Rect1Y1 / 6);
                 sw = (int)Math.Abs((StaticData.DataList1.Rect1X2 - StaticData.DataList1.Rect1X1) / 6);
@@ -218,46 +233,48 @@ namespace breastcancer
                 //MessageBox.Show("size ", pictureBox1.Size.Width.ToString());
                 //MessageBox.Show("size h", pictureBox1.Size.Height.ToString());
 
-                MessageBox.Show("sw = " + sw.ToString() + " sh = " + sh.ToString());
+               // MessageBox.Show("sw = " + sw.ToString() + " sh = " + sh.ToString());
             }
-             if (picNum4 == 1)
+            if (picNum4 == 1)
             {
                 btnNavLR = true;
 
-                pictureBox1.Image = Image.FromFile(files[c4 + 1]);
+                pictureBox1.Image = Image.FromFile(dirsIMG[1]);
                 sx1 = (int)(StaticData.DataList1.Rect2X1 / 6);
                 sy1 = (int)(StaticData.DataList1.Rect2Y1 / 6);
                 sw = (int)((StaticData.DataList1.Rect2X2 - StaticData.DataList1.Rect2X1) / 6);
                 sh = (int)((StaticData.DataList1.Rect2Y2 - StaticData.DataList1.Rect2Y1) / 6);
-                MessageBox.Show("sw = " + sw.ToString());
+              //  MessageBox.Show("sw = " + sw.ToString());
 
             }
-             if (picNum4 == 2)
+            if (picNum4 == 2)
             {
                 btnNavLR = true;
 
-                pictureBox1.Image = Image.FromFile(files[c4 + 2]);
+                pictureBox1.Image = Image.FromFile(dirsIMG[2]);
                 sx1 = (int)(StaticData.DataList1.Rect3X1 / 6);
                 sy1 = (int)(StaticData.DataList1.Rect3Y1 / 6);
                 sw = (int)((StaticData.DataList1.Rect3X2 - StaticData.DataList1.Rect3X1) / 6);
                 sh = (int)((StaticData.DataList1.Rect3Y2 - StaticData.DataList1.Rect3Y1) / 6);
-                MessageBox.Show("sw = " + sw.ToString());
+             //   MessageBox.Show("sw = " + sw.ToString());
 
             }
-             if (picNum4 == 3)
+            if (picNum4 == 3)
             {
                 btnNavLR = true;
 
-                pictureBox1.Image = Image.FromFile(files[c4 + 3]);
+                pictureBox1.Image = Image.FromFile(dirsIMG[3]);
                 sx1 = (int)(StaticData.DataList1.Rect4X1 / 6);
                 sy1 = (int)(StaticData.DataList1.Rect4Y1 / 6);
                 sw = (int)((StaticData.DataList1.Rect4X2 - StaticData.DataList1.Rect4X1) / 6);
                 sh = (int)((StaticData.DataList1.Rect4Y2 - StaticData.DataList1.Rect4Y1) / 6);
-                MessageBox.Show("sw = " + sw.ToString());
+              //  MessageBox.Show("sw = " + sw.ToString());
 
             }
 
-            label1.Text = filepath.TrimStart('\\');
+            string[] dirs = Directory.GetDirectories(pathOri);
+            string dirName = new DirectoryInfo(dirs[c4]).Name;
+            label1.Text = "Patient: " + dirName;
 
             //  drawPic();
         }
@@ -381,20 +398,22 @@ namespace breastcancer
             //label4.Text = "Brightened";
             //label5.Text = "Highly Brightened";
             //label12.Text = "Darkened";
+            this.Close();
 
-            if (picNum4 == 0)
-                pictureBox1.Image = Image.FromFile(filesColored[c4]);
-            else if (picNum4 == 1)
-                pictureBox1.Image = Image.FromFile(filesColored[c4 + 1]);
-            else if (picNum4 == 2)
-                pictureBox1.Image = Image.FromFile(filesColored[c4 + 2]);
-            else if (picNum4 == 3)
-                pictureBox1.Image = Image.FromFile(filesColored[c4 + 3]);
+            //if (picNum4 == 0)
+            //    pictureBox1.Image = Image.FromFile(filesColored[c4]);
+            //else if (picNum4 == 1)
+            //    pictureBox1.Image = Image.FromFile(filesColored[c4 + 1]);
+            //else if (picNum4 == 2)
+            //    pictureBox1.Image = Image.FromFile(filesColored[c4 + 2]);
+            //else if (picNum4 == 3)
+            //    pictureBox1.Image = Image.FromFile(filesColored[c4 + 3]);
         }
 
         private void buttonUp_Click(object sender, EventArgs e)
         {
             //this.Close();
+            this.Close();
 
 
             // btnNavLR = true;
@@ -404,21 +423,16 @@ namespace breastcancer
             //label5.Text = "Highly Brightened";
             //label12.Text = "Darkened";
 
-            if (picNum4 == 0)
-                pictureBox1.Image = Image.FromFile(filesOriginal[c4]);
-            else if (picNum4 == 1)
-                pictureBox1.Image = Image.FromFile(filesOriginal[c4 + 1]);
-            else if (picNum4 == 2)
-                pictureBox1.Image = Image.FromFile(filesOriginal[c4 + 2]);
-            else if (picNum4 == 3)
-                pictureBox1.Image = Image.FromFile(filesOriginal[c4 + 3]);
+            //if (picNum4 == 0)
+            //    pictureBox1.Image = Image.FromFile(filesOriginal[c4]);
+            //else if (picNum4 == 1)
+            //    pictureBox1.Image = Image.FromFile(filesOriginal[c4 + 1]);
+            //else if (picNum4 == 2)
+            //    pictureBox1.Image = Image.FromFile(filesOriginal[c4 + 2]);
+            //else if (picNum4 == 3)
+            //    pictureBox1.Image = Image.FromFile(filesOriginal[c4 + 3]);
 
             //label1.Text = c + 1 + " out of " + filesOriginal.Length + " images \n";
-        }
-
-        private void Form4_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //MessageBox.Show("")
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

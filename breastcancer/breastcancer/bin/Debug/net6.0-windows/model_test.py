@@ -1,4 +1,3 @@
-#print("Python C# Test")
 
 import pickle
 import numpy as np
@@ -114,43 +113,18 @@ def full_feature_extractor(img):
 
 #fname = 'test.png'
 fname1 = sys.argv[1]
-
 img = Image.open(fname1)
 img = cv2.imread(fname1,0)
-
-# visualize the image here
-#print(img.shape)
-#plt.imshow(img,cmap='gray')
-
 img = np.array(img)
-#print(img.shape)
-#img = np.mean(img,2)
-# print(img.shape)
 features = full_feature_extractor(img)
-
-#print(features.shape)
-#print(features.type)
-
 fs=features.detach().numpy()
-#print(fs)
 fs = fs.reshape(1,-1)
-
-
-
-
-
 #filename = 'finalized_model.sav'
 filename = sys.argv[5] #2
-
-
-#print(filename)
-#model = pickle.load(open("model.pkl", "rb"))
 loaded_model = pickle.load(open(filename, 'rb'))
 result = loaded_model.predict(fs)
-#print(result)
 a = result[0]
 b = str(int(a))
-
 
 
 fname2 = sys.argv[2]
@@ -193,7 +167,7 @@ fs = fs.reshape(1,-1)
 filename = sys.argv[5] #2
 #model = pickle.load(open("model.pkl", "rb"))
 loaded_model = pickle.load(open(filename, 'rb'))
-result = loaded_model.predict(fs)
+result = loaded_model.predict_proba(fs)
 a = result[0]
 b = b + ' ' + str(int(a)) + '\n'
 
@@ -202,19 +176,3 @@ print(b)
 file1 = open('pred.txt', 'w')
 file1.write(b)
 file1.close()
-
-
-#def all_dicom_convert(path2):
- #   for filename in os.listdir(path2):
-  #      ds=path2 + filename
-   #     dicom_to_png(ds)
-    #os.rmdir(path2)
-        
-#pth = sys.argv[1]
- 
-#cwd = os.getcwd()
-#print(cwd)   
-#cwd = os.chdir(cwd)
-#print(cwd)
-#all_dicom_convert('dicoms/')
-

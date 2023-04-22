@@ -38,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonClean = new System.Windows.Forms.Button();
             this.labelMark = new System.Windows.Forms.Label();
             this.radioButtonPositive = new System.Windows.Forms.RadioButton();
             this.radioButtonNegative = new System.Windows.Forms.RadioButton();
@@ -63,9 +64,9 @@
             // 
             this.buttonPencil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPencil.BackgroundImage")));
             this.buttonPencil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonPencil.Location = new System.Drawing.Point(905, 631);
+            this.buttonPencil.Location = new System.Drawing.Point(953, 78);
             this.buttonPencil.Name = "buttonPencil";
-            this.buttonPencil.Size = new System.Drawing.Size(44, 44);
+            this.buttonPencil.Size = new System.Drawing.Size(50, 50);
             this.buttonPencil.TabIndex = 921;
             this.buttonPencil.UseVisualStyleBackColor = true;
             this.buttonPencil.Click += new System.EventHandler(this.buttonPencil_Click);
@@ -85,9 +86,9 @@
             // 
             this.buttonDown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDown.BackgroundImage")));
             this.buttonDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonDown.Location = new System.Drawing.Point(1005, 632);
+            this.buttonDown.Location = new System.Drawing.Point(1028, 615);
             this.buttonDown.Name = "buttonDown";
-            this.buttonDown.Size = new System.Drawing.Size(44, 44);
+            this.buttonDown.Size = new System.Drawing.Size(50, 50);
             this.buttonDown.TabIndex = 801;
             this.buttonDown.UseVisualStyleBackColor = true;
             this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
@@ -95,7 +96,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(0, 615);
+            this.label2.Location = new System.Drawing.Point(3, 597);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 15);
             this.label2.TabIndex = 918;
@@ -105,9 +106,9 @@
             // 
             this.buttonUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUp.BackgroundImage")));
             this.buttonUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonUp.Location = new System.Drawing.Point(955, 631);
+            this.buttonUp.Location = new System.Drawing.Point(972, 615);
             this.buttonUp.Name = "buttonUp";
-            this.buttonUp.Size = new System.Drawing.Size(44, 44);
+            this.buttonUp.Size = new System.Drawing.Size(50, 50);
             this.buttonUp.TabIndex = 302;
             this.buttonUp.UseVisualStyleBackColor = true;
             this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
@@ -115,11 +116,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(158, 661);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(942, 565);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 801;
-            this.label1.Text = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 20);
+            this.label1.TabIndex = 927;
+            this.label1.Text = "Patient: ";
             // 
             // label3
             // 
@@ -145,6 +147,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.buttonClean);
             this.panel4.Controls.Add(this.buttonPencil);
             this.panel4.Controls.Add(this.buttonQuestionM);
             this.panel4.Controls.Add(this.buttonDown);
@@ -158,6 +161,16 @@
             this.panel4.Size = new System.Drawing.Size(1087, 691);
             this.panel4.TabIndex = 922;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // buttonClean
+            // 
+            this.buttonClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonClean.BackgroundImage")));
+            this.buttonClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonClean.Location = new System.Drawing.Point(1018, 78);
+            this.buttonClean.Name = "buttonClean";
+            this.buttonClean.Size = new System.Drawing.Size(50, 50);
+            this.buttonClean.TabIndex = 928;
+            this.buttonClean.UseVisualStyleBackColor = true;
             // 
             // labelMark
             // 
@@ -330,13 +343,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 724);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form4";
             this.Text = "Form4";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form4_FormClosing);
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -375,5 +387,6 @@
         private TextBox textBoxComment;
         private Button buttonNext;
         private Button buttonPrevious;
+        private Button buttonClean;
     }
 }

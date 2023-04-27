@@ -1,4 +1,3 @@
-
 import pickle
 import numpy as np
 import pandas as pd
@@ -9,7 +8,7 @@ import os, os.path
 import pickle # to save objects to a file
 import bz2
 import sys
-
+import math
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -111,68 +110,109 @@ def full_feature_extractor(img):
 # 48  - GLCM
 
 
-#fname = 'test.png'
-fname1 = sys.argv[1]
+#fname1 = 'CN00020000.png'
+fname1 = sys.argv[1]#"CN00020000.png"#
 img = Image.open(fname1)
 img = cv2.imread(fname1,0)
 img = np.array(img)
 features = full_feature_extractor(img)
 fs=features.detach().numpy()
 fs = fs.reshape(1,-1)
-#filename = 'finalized_model.sav'
-filename = sys.argv[5] #2
+filename = 'finalized_model.sav'
+#filename = sys.argv[5] #2
 loaded_model = pickle.load(open(filename, 'rb'))
 result = loaded_model.predict(fs)
 a = result[0]
-b = str(int(a))
+#b = str(int(a))
+
+#print(b)
+resultt = loaded_model.predict_proba(fs)
+b = str(format(resultt[0][0] * 100, ".0f")) +  ' ' + str(format(resultt[0][1] * 100, ".0f")) + '\n'
+#c1 = str(resultt[0][0])
+#c2 = str(resultt[0][1])
+
+#print(c1)
+#print(c2)
+print(b)
 
 
-fname2 = sys.argv[2]
+
+
+fname2 = sys.argv[2] #"EH00040000.png"#
 img = Image.open(fname2)
 img = cv2.imread(fname2,0)
 img = np.array(img)
 features = full_feature_extractor(img)
 fs=features.detach().numpy()
 fs = fs.reshape(1,-1)
-filename = sys.argv[5] #2
+#filename = sys.argv[5] #2
 #model = pickle.load(open("model.pkl", "rb"))
 loaded_model = pickle.load(open(filename, 'rb'))
 result = loaded_model.predict(fs)
 a = result[0]
-b = b + ' ' + str(int(a))
+#b = b + ' ' + str(int(a))
 
-fname3 = sys.argv[3]
+
+
+resultt = loaded_model.predict_proba(fs)
+#c1 = c1 + " " + str(resultt[0][0])
+#c2 = c2 + " " + str(resultt[0][1])
+b = b + str(format(resultt[0][0] * 100, ".0f")) +  ' ' + str(format(resultt[0][1] * 100, ".0f")) + '\n'
+
+
+
+fname3 = sys.argv[3] #"GM00050000.png"#
 img = Image.open(fname3)
 img = cv2.imread(fname3,0)
 img = np.array(img)
 features = full_feature_extractor(img)
 fs=features.detach().numpy()
 fs = fs.reshape(1,-1)
-filename = sys.argv[5] #2
+#filename = sys.argv[5] #2
 #model = pickle.load(open("model.pkl", "rb"))
 loaded_model = pickle.load(open(filename, 'rb'))
 result = loaded_model.predict(fs)
 a = result[0]
-b = b + ' ' + str(int(a))
+#b = b + ' ' + str(int(a))
 
 
 
-fname4 = sys.argv[4]
+resultt = loaded_model.predict_proba(fs)
+#c1 = c1 + " " + str(resultt[0][0])
+#c2 = c2 + " " + str(resultt[0][1])
+
+b = b + str(format(resultt[0][0] * 100, ".0f")) +  ' ' + str(format(resultt[0][1] * 100, ".0f")) + '\n'
+
+
+
+fname4 = sys.argv[4] #"GM00050001.png"
 img = Image.open(fname4)
 img = cv2.imread(fname4,0)
 img = np.array(img)
 features = full_feature_extractor(img)
 fs=features.detach().numpy()
 fs = fs.reshape(1,-1)
-filename = sys.argv[5] #2
+#filename = sys.argv[5] #2
 #model = pickle.load(open("model.pkl", "rb"))
 loaded_model = pickle.load(open(filename, 'rb'))
-result = loaded_model.predict_proba(fs)
+result = loaded_model.predict(fs)
 a = result[0]
-b = b + ' ' + str(int(a)) + '\n'
+#b = b + ' ' + str(int(a)) + '\n'
 
-print(b)
+
+
+resultt = loaded_model.predict_proba(fs)
+#c1 = c1 + " " + str(resultt[0][0]) + '\n'
+#c2 = c2 + " " + str(resultt[0][1])
+
+
+b = b + str(format(resultt[0][0] * 100, ".0f")) +  ' ' + str(format(resultt[0][1] * 100, ".0f")) + '\n'
+
 
 file1 = open('pred.txt', 'w')
 file1.write(b)
+#file1.write(c1)
+#file1.write(c2)
 file1.close()
+
+

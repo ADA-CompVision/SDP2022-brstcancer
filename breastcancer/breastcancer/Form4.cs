@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using breastcancer.Service;
-using static IronPython.Modules._ast;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace breastcancer

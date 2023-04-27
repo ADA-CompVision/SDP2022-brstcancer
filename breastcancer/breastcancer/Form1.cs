@@ -1,3 +1,7 @@
+using System.Drawing.Text;
+using System.Reflection;
+using System.Runtime.InteropServices;
+
 namespace breastcancer
 {
     public partial class Form1 : Form
@@ -11,29 +15,9 @@ namespace breastcancer
             this.WindowState = FormWindowState.Maximized;
             this.BackColor = Color.FromArgb(34, 34, 34);
 
-            //label pink
-            string directory = Directory.GetCurrentDirectory();
-            pictureBox1.Image = Image.FromFile(directory + "\\adaf.png");
-            pictureBox2.Image = Image.FromFile(directory + "\\ribbon.png"); //Image.FromFile(pathLogoR);
-            pictureBox3.Image = Image.FromFile(directory + "\\tabibf.png");
-
-
-
-
-            //MessageBox.Show(directory);
-            var parentName = Directory.GetParent(directory).FullName;
-            parentName = Directory.GetParent(parentName).FullName;
-            parentName = Directory.GetParent(parentName).FullName;
-            parentName = Directory.GetParent(parentName).FullName;
-            parentName = Directory.GetParent(parentName).FullName;
-
-            // string pathLogoR = parentName + "\\Logo\\ribbon.png";
-            //    pictureBox2.Image = Image.FromFile("\\ribbon.png"); //Image.FromFile(pathLogoR);
-         //   string pathLogoADA = parentName + "\\Logo\\adaf.png";
-        //    pictureBox1.Image = Image.FromFile(pathLogoADA);
-         //   string pathLogoT = parentName + "\\Logo\\tabibf.png";
-          //  pictureBox3.Image = Image.FromFile(pathLogoT);
-
+            pictureBox1.Image = Properties.Resources.adaf;
+            pictureBox2.Image = Properties.Resources.ribbon;
+            pictureBox3.Image = Properties.Resources.tabibf;
 
             label1.ForeColor = Color.WhiteSmoke;
             label2.ForeColor = Color.FromArgb(126, 126, 126);
@@ -56,7 +40,6 @@ namespace breastcancer
         }
         private void buttonBrowse_Click(object sender, EventArgs e)
         {
-            //new Form2().Show();
             Form2 frm2 = new Form2();
             frm2.Show();
         }

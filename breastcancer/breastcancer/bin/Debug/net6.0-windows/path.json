@@ -1,7 +1,7 @@
 [
   {
-    "Diagnosis": 1,
-    "Comment": "pos1 cn bl",
+    "Diagnosis": 3,
+    "Comment": "\nWrite a comment...",
     "DoctorId": 1,
     "Image1Id": 1,
     "Image1Name": "CN00020000.png",
@@ -29,8 +29,8 @@
     "Rect4Y2": 0
   },
   {
-    "Diagnosis": 2,
-    "Comment": "pot2 col",
+    "Diagnosis": 3,
+    "Comment": "",
     "DoctorId": 1,
     "Image1Id": 5,
     "Image1Name": "EH00040000.png",
@@ -59,7 +59,7 @@
   },
   {
     "Diagnosis": 3,
-    "Comment": "bl neg",
+    "Comment": "\nWrite a comment...",
     "DoctorId": 1,
     "Image1Id": 9,
     "Image1Name": "GM00050000.png",
@@ -87,8 +87,8 @@
     "Rect4Y2": 0
   },
   {
-    "Diagnosis": 2,
-    "Comment": "pot b",
+    "Diagnosis": 1,
+    "Comment": "\nWrite a comment...",
     "DoctorId": 1,
     "Image1Id": 13,
     "Image1Name": "LN00030000.png",
@@ -116,8 +116,8 @@
     "Rect4Y2": 0
   },
   {
-    "Diagnosis": 3,
-    "Comment": "",
+    "Diagnosis": 1,
+    "Comment": "\nWrite a comment...",
     "DoctorId": 1,
     "Image1Id": 17,
     "Image1Name": "ST010000.png",
@@ -133,10 +133,10 @@
     "Rect2Y2": 0,
     "Image3Id": 19,
     "Image3Name": "ST010002.png",
-    "Rect3X1": 0,
-    "Rect3X2": 0,
-    "Rect3Y1": 0,
-    "Rect3Y2": 0,
+    "Rect3X1": 561,
+    "Rect3X2": 1694,
+    "Rect3Y1": 1342,
+    "Rect3Y2": 2618,
     "Image4Id": 20,
     "Image4Name": "ST010003.png",
     "Rect4X1": 0,

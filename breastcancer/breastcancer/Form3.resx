@@ -57,30 +57,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Swelling of all or part of a breast (even if no lump is felt)
-Skin dimpling (sometimes looking like an orange peel)
-Breast or nipple pain
-Nipple retraction (turning inward)
-Nipple or breast skin that is red, dry, flaking, or thickened
-Nipple discharge (other than breast milk)
-Swollen lymph nodes under the arm or near the collar bone</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>This program was developed by four ADA University students: Asiman Mammadzada, Minura Hajisoy,
-Rumiyya Alili and Narmina Mahmudova as a part of their research topic. The aim of the program is to 
-connect healthcare and technology as doctors are facing difficulties working with image data as well 
-as contribute to the early detection of breast cancer and empower women who are going through 
-recovery process.</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Maintain a healthy weight
-Be physically active (try to exercise at least 30 minutes a day)
-Avoid alcohol or consume in moderation
-Breastfeed your children, if possible
-If you are taking hormone replacement therapy or oral contraceptives, ask your doctor about 
-       the risks to determine if they are right for you
-If you have a family history of breast cancer, inherited changes to your BRCA1 and BRCA2 genes 
-       or have a precancerous breast condition, talk to your doctor about ways to lower your risk</value>
-  </data>
 </root>

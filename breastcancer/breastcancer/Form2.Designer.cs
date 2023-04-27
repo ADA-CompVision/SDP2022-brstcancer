@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.buttonPrevious = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.textBoxComment = new System.Windows.Forms.TextBox();
@@ -52,7 +51,6 @@
             this.labelRight = new System.Windows.Forms.Label();
             this.labelLeftM = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonUp = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonDown = new System.Windows.Forms.Button();
             this.buttonQuestionM = new System.Windows.Forms.Button();
@@ -67,6 +65,7 @@
             this.lbl_rp_prediction = new System.Windows.Forms.Label();
             this.buttonTest = new System.Windows.Forms.Button();
             this.labelMa = new System.Windows.Forms.Label();
+            this.buttonUp = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -78,16 +77,19 @@
             // 
             // buttonPrevious
             // 
+            this.buttonPrevious.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonPrevious.Location = new System.Drawing.Point(20, 622);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(110, 37);
             this.buttonPrevious.TabIndex = 297;
             this.buttonPrevious.Text = "Back";
             this.buttonPrevious.UseVisualStyleBackColor = true;
+            this.buttonPrevious.EnabledChanged += new System.EventHandler(this.buttonPrevious_EnabledChanged);
             this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
             // 
             // buttonNext
             // 
+            this.buttonNext.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonNext.Location = new System.Drawing.Point(136, 622);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(110, 37);
@@ -98,11 +100,11 @@
             // 
             // textBoxComment
             // 
-            this.textBoxComment.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxComment.Location = new System.Drawing.Point(19, 368);
+            this.textBoxComment.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxComment.Location = new System.Drawing.Point(19, 367);
             this.textBoxComment.Multiline = true;
             this.textBoxComment.Name = "textBoxComment";
-            this.textBoxComment.Size = new System.Drawing.Size(227, 153);
+            this.textBoxComment.Size = new System.Drawing.Size(227, 141);
             this.textBoxComment.TabIndex = 905;
             this.textBoxComment.TabStop = false;
             this.textBoxComment.Enter += new System.EventHandler(this.textBoxComment_Enter);
@@ -111,10 +113,10 @@
             // labelNotes
             // 
             this.labelNotes.AutoSize = true;
-            this.labelNotes.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelNotes.Location = new System.Drawing.Point(19, 306);
+            this.labelNotes.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelNotes.Location = new System.Drawing.Point(20, 332);
             this.labelNotes.Name = "labelNotes";
-            this.labelNotes.Size = new System.Drawing.Size(64, 25);
+            this.labelNotes.Size = new System.Drawing.Size(65, 22);
             this.labelNotes.TabIndex = 301;
             this.labelNotes.Text = "Notes";
             // 
@@ -142,29 +144,29 @@
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Location = new System.Drawing.Point(19, 109);
+            this.panel2.Location = new System.Drawing.Point(19, 145);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(227, 153);
+            this.panel2.Size = new System.Drawing.Size(227, 141);
             this.panel2.TabIndex = 915;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // labelMark
             // 
             this.labelMark.AutoSize = true;
-            this.labelMark.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelMark.Location = new System.Drawing.Point(41, 18);
+            this.labelMark.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelMark.Location = new System.Drawing.Point(10, 15);
             this.labelMark.Name = "labelMark";
-            this.labelMark.Size = new System.Drawing.Size(77, 18);
+            this.labelMark.Size = new System.Drawing.Size(90, 19);
             this.labelMark.TabIndex = 915;
             this.labelMark.Text = "Mark it as:";
             // 
             // radioButtonPositive
             // 
             this.radioButtonPositive.AutoSize = true;
-            this.radioButtonPositive.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonPositive.Location = new System.Drawing.Point(41, 63);
+            this.radioButtonPositive.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonPositive.Location = new System.Drawing.Point(10, 52);
             this.radioButtonPositive.Name = "radioButtonPositive";
-            this.radioButtonPositive.Size = new System.Drawing.Size(78, 22);
+            this.radioButtonPositive.Size = new System.Drawing.Size(84, 23);
             this.radioButtonPositive.TabIndex = 300;
             this.radioButtonPositive.TabStop = true;
             this.radioButtonPositive.Text = "Positive";
@@ -174,10 +176,10 @@
             // radioButtonNegative
             // 
             this.radioButtonNegative.AutoSize = true;
-            this.radioButtonNegative.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonNegative.Location = new System.Drawing.Point(41, 117);
+            this.radioButtonNegative.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonNegative.Location = new System.Drawing.Point(10, 106);
             this.radioButtonNegative.Name = "radioButtonNegative";
-            this.radioButtonNegative.Size = new System.Drawing.Size(83, 22);
+            this.radioButtonNegative.Size = new System.Drawing.Size(91, 23);
             this.radioButtonNegative.TabIndex = 900;
             this.radioButtonNegative.TabStop = true;
             this.radioButtonNegative.Text = "Negative";
@@ -187,10 +189,10 @@
             // radioButtonPotential
             // 
             this.radioButtonPotential.AutoSize = true;
-            this.radioButtonPotential.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonPotential.Location = new System.Drawing.Point(41, 90);
+            this.radioButtonPotential.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonPotential.Location = new System.Drawing.Point(10, 79);
             this.radioButtonPotential.Name = "radioButtonPotential";
-            this.radioButtonPotential.Size = new System.Drawing.Size(83, 22);
+            this.radioButtonPotential.Size = new System.Drawing.Size(94, 23);
             this.radioButtonPotential.TabIndex = 800;
             this.radioButtonPotential.TabStop = true;
             this.radioButtonPotential.Text = "Potential";
@@ -236,10 +238,10 @@
             // labelDComment
             // 
             this.labelDComment.AutoSize = true;
-            this.labelDComment.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelDComment.Location = new System.Drawing.Point(20, 49);
+            this.labelDComment.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelDComment.Location = new System.Drawing.Point(19, 78);
             this.labelDComment.Name = "labelDComment";
-            this.labelDComment.Size = new System.Drawing.Size(202, 30);
+            this.labelDComment.Size = new System.Drawing.Size(221, 24);
             this.labelDComment.TabIndex = 916;
             this.labelDComment.Text = "Doctor\'s comments";
             // 
@@ -276,20 +278,20 @@
             // labelRightM
             // 
             this.labelRightM.AutoSize = true;
-            this.labelRightM.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelRightM.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelRightM.Location = new System.Drawing.Point(552, 479);
             this.labelRightM.Name = "labelRightM";
-            this.labelRightM.Size = new System.Drawing.Size(132, 20);
+            this.labelRightM.Size = new System.Drawing.Size(147, 19);
             this.labelRightM.TabIndex = 910;
             this.labelRightM.Text = "Right Projection M";
             // 
             // labelLeft
             // 
             this.labelLeft.AutoSize = true;
-            this.labelLeft.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelLeft.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelLeft.Location = new System.Drawing.Point(282, 479);
             this.labelLeft.Name = "labelLeft";
-            this.labelLeft.Size = new System.Drawing.Size(105, 20);
+            this.labelLeft.Size = new System.Drawing.Size(118, 19);
             this.labelLeft.TabIndex = 909;
             this.labelLeft.Text = "Left Projection";
             // 
@@ -311,47 +313,46 @@
             // labelRight
             // 
             this.labelRight.AutoSize = true;
-            this.labelRight.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelRight.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelRight.Location = new System.Drawing.Point(11, 479);
             this.labelRight.Name = "labelRight";
-            this.labelRight.Size = new System.Drawing.Size(115, 20);
+            this.labelRight.Size = new System.Drawing.Size(129, 19);
             this.labelRight.TabIndex = 908;
             this.labelRight.Text = "Right Projection";
             // 
             // labelLeftM
             // 
             this.labelLeftM.AutoSize = true;
-            this.labelLeftM.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelLeftM.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelLeftM.Location = new System.Drawing.Point(823, 479);
             this.labelLeftM.Name = "labelLeftM";
-            this.labelLeftM.Size = new System.Drawing.Size(122, 20);
+            this.labelLeftM.Size = new System.Drawing.Size(136, 19);
             this.labelLeftM.TabIndex = 916;
             this.labelLeftM.Text = "Left Projection M";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(523, 639);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.Size = new System.Drawing.Size(54, 19);
             this.label1.TabIndex = 801;
             this.label1.Text = "label1";
             // 
-            // buttonUp
+            // label2
             // 
-            this.buttonUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUp.BackgroundImage")));
-            this.buttonUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonUp.Location = new System.Drawing.Point(972, 615);
-            this.buttonUp.Name = "buttonUp";
-            this.buttonUp.Size = new System.Drawing.Size(50, 50);
-            this.buttonUp.TabIndex = 302;
-            this.buttonUp.UseVisualStyleBackColor = true;
-            this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(3, 597);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 19);
+            this.label2.TabIndex = 918;
+            this.label2.Text = "label2";
             // 
             // buttonDown
             // 
-            this.buttonDown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDown.BackgroundImage")));
+            this.buttonDown.BackgroundImage = global::breastcancer.Properties.Resources.down11;
             this.buttonDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonDown.Location = new System.Drawing.Point(1028, 615);
             this.buttonDown.Name = "buttonDown";
@@ -360,18 +361,9 @@
             this.buttonDown.UseVisualStyleBackColor = true;
             this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 597);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
-            this.label2.TabIndex = 918;
-            this.label2.Text = "label2";
-            // 
             // buttonQuestionM
             // 
-            this.buttonQuestionM.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonQuestionM.BackgroundImage")));
+            this.buttonQuestionM.BackgroundImage = global::breastcancer.Properties.Resources.ques;
             this.buttonQuestionM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonQuestionM.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonQuestionM.Location = new System.Drawing.Point(11, 615);
@@ -382,9 +374,9 @@
             // 
             // buttonPencil
             // 
-            this.buttonPencil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPencil.BackgroundImage")));
+            this.buttonPencil.BackgroundImage = global::breastcancer.Properties.Resources.pencil;
             this.buttonPencil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonPencil.Location = new System.Drawing.Point(953, 78);
+            this.buttonPencil.Location = new System.Drawing.Point(962, 78);
             this.buttonPencil.Name = "buttonPencil";
             this.buttonPencil.Size = new System.Drawing.Size(50, 50);
             this.buttonPencil.TabIndex = 921;
@@ -440,7 +432,7 @@
             // 
             // buttonClean
             // 
-            this.buttonClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonClean.BackgroundImage")));
+            this.buttonClean.BackgroundImage = global::breastcancer.Properties.Resources.eraser;
             this.buttonClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonClean.Location = new System.Drawing.Point(1018, 78);
             this.buttonClean.Name = "buttonClean";
@@ -452,73 +444,87 @@
             // lbl_patient
             // 
             this.lbl_patient.AutoSize = true;
-            this.lbl_patient.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_patient.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_patient.Location = new System.Drawing.Point(942, 565);
             this.lbl_patient.Name = "lbl_patient";
-            this.lbl_patient.Size = new System.Drawing.Size(61, 20);
+            this.lbl_patient.Size = new System.Drawing.Size(73, 19);
             this.lbl_patient.TabIndex = 927;
             this.lbl_patient.Text = "Patient: ";
             // 
             // lbl_lpm_prediction
             // 
             this.lbl_lpm_prediction.AutoSize = true;
-            this.lbl_lpm_prediction.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_lpm_prediction.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_lpm_prediction.Location = new System.Drawing.Point(822, 511);
             this.lbl_lpm_prediction.Name = "lbl_lpm_prediction";
-            this.lbl_lpm_prediction.Size = new System.Drawing.Size(83, 20);
+            this.lbl_lpm_prediction.Size = new System.Drawing.Size(95, 19);
             this.lbl_lpm_prediction.TabIndex = 926;
             this.lbl_lpm_prediction.Text = "Prediction: ";
             // 
             // lbl_rpm_prediction
             // 
             this.lbl_rpm_prediction.AutoSize = true;
-            this.lbl_rpm_prediction.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_rpm_prediction.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_rpm_prediction.Location = new System.Drawing.Point(551, 511);
             this.lbl_rpm_prediction.Name = "lbl_rpm_prediction";
-            this.lbl_rpm_prediction.Size = new System.Drawing.Size(83, 20);
+            this.lbl_rpm_prediction.Size = new System.Drawing.Size(95, 19);
             this.lbl_rpm_prediction.TabIndex = 925;
             this.lbl_rpm_prediction.Text = "Prediction: ";
             // 
             // lbl_lp_prediction
             // 
             this.lbl_lp_prediction.AutoSize = true;
-            this.lbl_lp_prediction.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_lp_prediction.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_lp_prediction.Location = new System.Drawing.Point(281, 511);
             this.lbl_lp_prediction.Name = "lbl_lp_prediction";
-            this.lbl_lp_prediction.Size = new System.Drawing.Size(79, 20);
+            this.lbl_lp_prediction.Size = new System.Drawing.Size(90, 19);
             this.lbl_lp_prediction.TabIndex = 924;
             this.lbl_lp_prediction.Text = "Prediction:";
             // 
             // lbl_rp_prediction
             // 
             this.lbl_rp_prediction.AutoSize = true;
-            this.lbl_rp_prediction.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_rp_prediction.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_rp_prediction.Location = new System.Drawing.Point(10, 511);
             this.lbl_rp_prediction.Name = "lbl_rp_prediction";
-            this.lbl_rp_prediction.Size = new System.Drawing.Size(79, 20);
+            this.lbl_rp_prediction.Size = new System.Drawing.Size(90, 19);
             this.lbl_rp_prediction.TabIndex = 923;
             this.lbl_rp_prediction.Text = "Prediction:";
             // 
             // buttonTest
             // 
-            this.buttonTest.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonTest.BackgroundImage")));
+            this.buttonTest.BackgroundImage = global::breastcancer.Properties.Resources.predict1;
             this.buttonTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonTest.Location = new System.Drawing.Point(916, 615);
+            this.buttonTest.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonTest.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonTest.Location = new System.Drawing.Point(858, 612);
             this.buttonTest.Name = "buttonTest";
-            this.buttonTest.Size = new System.Drawing.Size(50, 50);
+            this.buttonTest.Size = new System.Drawing.Size(108, 57);
             this.buttonTest.TabIndex = 922;
+            this.buttonTest.Text = "Predict";
             this.buttonTest.UseVisualStyleBackColor = true;
             this.buttonTest.Click += new System.EventHandler(this.buttonTest_Click);
             // 
             // labelMa
             // 
             this.labelMa.AutoSize = true;
-            this.labelMa.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelMa.Location = new System.Drawing.Point(11, 49);
+            this.labelMa.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelMa.Location = new System.Drawing.Point(11, 67);
             this.labelMa.Name = "labelMa";
-            this.labelMa.Size = new System.Drawing.Size(155, 30);
+            this.labelMa.Size = new System.Drawing.Size(161, 24);
             this.labelMa.TabIndex = 922;
             this.labelMa.Text = "Mammograms";
+            // 
+            // buttonUp
+            // 
+            this.buttonUp.BackgroundImage = global::breastcancer.Properties.Resources.up11;
+            this.buttonUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonUp.Location = new System.Drawing.Point(972, 615);
+            this.buttonUp.Name = "buttonUp";
+            this.buttonUp.Size = new System.Drawing.Size(50, 50);
+            this.buttonUp.TabIndex = 302;
+            this.buttonUp.UseVisualStyleBackColor = true;
+            this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
             // 
             // Form2
             // 
@@ -574,7 +580,6 @@
         private Label labelRight;
         private Label labelLeftM;
         private Label label1;
-        private Button buttonUp;
         private Label label2;
         private Button buttonDown;
         private Button buttonQuestionM;
@@ -589,5 +594,6 @@
         private Label lbl_rp_prediction;
         private Label lbl_patient;
         private Button buttonClean;
+        private Button buttonUp;
     }
 }

@@ -1,1 +1,2 @@
 E:\OneDrive\Desktop
+E:\User\anaconda3\python.exe

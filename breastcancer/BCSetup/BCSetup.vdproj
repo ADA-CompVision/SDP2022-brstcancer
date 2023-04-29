@@ -45,6 +45,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_5125CE4C72984E0EAD8EE153640CDE1F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_61D8FE30C1754C93992E566E9B07019B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -82,6 +88,12 @@
         "Entry"
         {
         "MsmKey" = "8:_8FFD69E08D474740B9FB712AFF88A572"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9DB82EBF1F344936AE184884A90281B7"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -304,6 +316,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5125CE4C72984E0EAD8EE153640CDE1F"
+            {
+            "SourcePath" = "8:..\\breastcancer\\bin\\Debug\\net6.0-windows\\requirements.txt"
+            "TargetName" = "8:requirements.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_489B74A9E4CF4FE5B43063527DD2CA8B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_61D8FE30C1754C93992E566E9B07019B"
             {
             "SourcePath" = "8:..\\breastcancer\\Pics\\pencil.png"
@@ -428,6 +460,26 @@
             {
             "SourcePath" = "8:..\\breastcancer\\Pics\\adaf.png"
             "TargetName" = "8:adaf.png"
+            "Tag" = "8:"
+            "Folder" = "8:_489B74A9E4CF4FE5B43063527DD2CA8B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9DB82EBF1F344936AE184884A90281B7"
+            {
+            "SourcePath" = "8:..\\breastcancer\\bin\\Debug\\net6.0-windows\\instructions.txt"
+            "TargetName" = "8:instructions.txt"
             "Tag" = "8:"
             "Folder" = "8:_489B74A9E4CF4FE5B43063527DD2CA8B"
             "Condition" = "8:"
@@ -641,7 +693,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:BCSetup"
         "ProductCode" = "8:{FB12774E-0C96-404A-AE93-3CA4F559E1E8}"
-        "PackageCode" = "8:{2DF7B0F4-1518-4DF4-B510-4959918AE496}"
+        "PackageCode" = "8:{2342FB4C-B6F1-480D-A2A0-8A488E54A094}"
         "UpgradeCode" = "8:{2971D502-8D8B-4D88-9F08-D51E76001BC9}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -654,7 +706,7 @@
         "ARPHELPLINK" = "8:"
         "Title" = "8:BCSetup"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Hewlett-Packard Company"
+        "ARPCONTACT" = "8:Minura Hajisoy"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"

@@ -2,11 +2,10 @@ import pickle
 import numpy as np
 import pandas as pd
 import pydicom
-import matplotlib.pyplot as plt
-import matplotlib
+#import matplotlib.pyplot as plt
+#import matplotlib
 import os, os.path
-import pickle # to save objects to a file
-import bz2
+#import bz2
 import sys
 import math
 import torch
@@ -15,49 +14,37 @@ import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 
 
-
 DEBUG = False
 IMG_SIZE = 224
 
-from skimage.feature import greycomatrix, greycoprops
+from skimage.feature import graycomatrix, graycoprops
 from PIL import Image
 
-distances  =  [1,3] # [1,2,3]
+distances  =  [1,3]
 directions =  [0, np.pi/4, np.pi/2, 3*np.pi/4, np.pi, 5*np.pi/4, 3*np.pi/2, 7*np.pi/4]
 
 def get_glcm_features(crop_norm):
     crop_norm_255 = (crop_norm*255).astype(np.uint8)
     
     # 2 pixel distance in 8 directions
-    GLCM = greycomatrix(crop_norm_255, distances, directions, normed=False) # symmetric=True, 
+    GLCM = graycomatrix(crop_norm_255, distances, directions, normed=False) # symmetric=True, 
 
     glcm_features = np.empty((0),dtype=np.float32)
     
     for i in range(len(distances)):
-        GLCM_Energy = greycoprops(GLCM, 'energy')[i]
+        GLCM_Energy = graycoprops(GLCM, 'energy')[i]
         glcm_features = np.concatenate((glcm_features,GLCM_Energy))
 
-        GLCM_corr = greycoprops(GLCM, 'correlation')[i]
+        GLCM_corr = graycoprops(GLCM, 'correlation')[i]
         glcm_features = np.concatenate((glcm_features,GLCM_corr))
 
-        GLCM_diss = greycoprops(GLCM, 'dissimilarity')[i]/150 # normalize
+        GLCM_diss = graycoprops(GLCM, 'dissimilarity')[i]/150 # normalize
         glcm_features = np.concatenate((glcm_features,GLCM_diss))
 
-#         GLCM_hom = graycoprops(GLCM, 'homogeneity')[i]
-#         glcm_features = np.concatenate((glcm_features,GLCM_hom))
-
-#         GLCM_contr = graycoprops(GLCM, 'contrast')[i]/15000 # normalize
-#         glcm_features = np.concatenate((glcm_features,GLCM_contr))
-
-#         GLCM_asm = graycoprops(GLCM, 'ASM')[i]
-#         glcm_features = np.concatenate((glcm_features,GLCM_asm))
     
     glcm_features = np.reshape(glcm_features,(1,3*len(distances)*len(directions)))
 
     return glcm_features
-
-#if DEBUG:
-  #   print(get_glcm_features(img).shape)
 
 import torchvision
 from torchvision import datasets, models, transforms
@@ -74,8 +61,7 @@ pretrained_model.eval()
 
 x = torch.rand(1, 3, 224, 224)
 result = pretrained_model(x)
-#print(result)
-#print(result['feats'].shape)
+
 
 import cv2
 
@@ -214,5 +200,6 @@ file1.write(b)
 #file1.write(c1)
 #file1.write(c2)
 file1.close()
+
 
 

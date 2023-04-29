@@ -16,7 +16,7 @@ namespace breastcancer
 {
     public partial class FormZoom : Form
     {
-        bool btnNavLR = false;
+        bool picBoxDraw = false;
         bool penClick = false;
         int picNum4;
         bool downFlag4;

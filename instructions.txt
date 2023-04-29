@@ -1,0 +1,9 @@
+1. Specify the folder to the application when installing (not in program files as we won't be able to change txt files). 
+2. Unzip the dicoms folder.
+3. Download python                                         https://www.python.org/downloads/
+4. Add python to Path from environment variables           https://projects.raspberrypi.org/en/projects/using-pip-on-windows/4
+4. In the dicom_to_png.txt file add the links to "dicoms" folder, and python.exe
+5. Check pip version        pip --version 
+6. pip3 install -r /path/to/requirements.txt
+7. When there are errors in loading the app, install those libraries as well. (pip3 install)
+8. download microsoft windows desktop runtime when error occurs.

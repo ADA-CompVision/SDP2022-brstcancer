@@ -15,7 +15,7 @@ namespace breastcancer
 {
     public partial class Form4 : Form
     {
-        bool btnNavLR = false;
+        bool picBoxDraw = false;
         bool penClick = false;
         int picNum4;
         bool downFlag4;
@@ -217,7 +217,7 @@ namespace breastcancer
 
             if (picNum4 == 0)
             {
-                btnNavLR = true;
+                picBoxDraw = true;
                 pictureBox1.Image = Image.FromFile(dirsIMG[0]);
                 sx1 = (int)Math.Abs(StaticData.DataList1.Rect1X1 / 6);
                 sy1 = (int)Math.Abs(StaticData.DataList1.Rect1Y1 / 6);
@@ -236,7 +236,7 @@ namespace breastcancer
             }
             if (picNum4 == 1)
             {
-                btnNavLR = true;
+                picBoxDraw = true;
 
                 pictureBox1.Image = Image.FromFile(dirsIMG[1]);
                 sx1 = (int)(StaticData.DataList1.Rect2X1 / 6);
@@ -248,7 +248,7 @@ namespace breastcancer
             }
             if (picNum4 == 2)
             {
-                btnNavLR = true;
+                picBoxDraw = true;
 
                 pictureBox1.Image = Image.FromFile(dirsIMG[2]);
                 sx1 = (int)(StaticData.DataList1.Rect3X1 / 6);
@@ -260,7 +260,7 @@ namespace breastcancer
             }
             if (picNum4 == 3)
             {
-                btnNavLR = true;
+                picBoxDraw = true;
 
                 pictureBox1.Image = Image.FromFile(dirsIMG[3]);
                 sx1 = (int)(StaticData.DataList1.Rect4X1 / 6);
@@ -360,7 +360,7 @@ namespace breastcancer
         private void buttonPencil_Click(object sender, EventArgs e)
         {
             this.Close();
-            //btnNavLR = true;
+            //picBoxDraw = true;
 
             //if (!penClick)
             //{
@@ -415,7 +415,7 @@ namespace breastcancer
             this.Close();
 
 
-            // btnNavLR = true;
+            // picBoxDraw = true;
             downFlag4 = false;
             //labelRight.Text = "Not Resized";
             //label4.Text = "Brightened";
@@ -448,7 +448,7 @@ namespace breastcancer
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-            if (btnNavLR)
+            if (picBoxDraw)
             {
                 // e.Graphics.DrawRectangle(Pens.Red, new Rectangle(205, 203, 153, 171));
                 Pen pen = new Pen(Color.Red, 3);

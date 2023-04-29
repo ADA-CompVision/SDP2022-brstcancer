@@ -94,3 +94,28 @@ E:\OneDrive\Desktop\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.
 E:\OneDrive\Desktop\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.pdb
 E:\OneDrive\Desktop\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.genruntimeconfig.cache
 E:\OneDrive\Desktop\SDP2022-brstcancer\breastcancer\breastcancer\obj\Debug\net6.0-windows\ref\breastcancer.dll
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\bin\Debug\net6.0-windows\breastcancer.exe
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\bin\Debug\net6.0-windows\breastcancer.deps.json
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\bin\Debug\net6.0-windows\breastcancer.runtimeconfig.json
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\bin\Debug\net6.0-windows\breastcancer.dll
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\bin\Debug\net6.0-windows\breastcancer.pdb
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\bin\Debug\net6.0-windows\Newtonsoft.Json.Bson.dll
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.csproj.AssemblyReference.cache
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.Form1.resources
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.Form2.resources
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.Form3.resources
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.Form4.resources
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.FormZoom.resources
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.Properties.Resources.resources
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.csproj.GenerateResource.cache
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.GeneratedMSBuildEditorConfig.editorconfig
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.AssemblyInfoInputs.cache
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.AssemblyInfo.cs
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.csproj.CoreCompileInputs.cache
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.csproj.CopyComplete
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.dll
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\obj\Debug\net6.0-windows\refint\breastcancer.dll
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.pdb
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\obj\Debug\net6.0-windows\breastcancer.genruntimeconfig.cache
+E:\OneDrive\Desktop\SDP2022-brstcancer - Copy\breastcancer\breastcancer\obj\Debug\net6.0-windows\ref\breastcancer.dll

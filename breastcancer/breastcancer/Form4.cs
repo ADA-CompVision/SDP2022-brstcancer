@@ -38,7 +38,7 @@ namespace breastcancer
         private Font fnt = new Font("Arial", 10);
         string filepath;
 
-        private void Form4_Load(object sender, EventArgs e)
+        private void Form4_Load5(object sender, EventArgs e)
         {
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             this.WindowState = FormWindowState.Maximized;
@@ -72,7 +72,6 @@ namespace breastcancer
             labelNotes.ForeColor = Color.White;
             labelNotes.BackColor = Color.Transparent;
             label1.ForeColor = Color.FromArgb(161, 161, 161);
-            label3.ForeColor = Color.FromArgb(161, 161, 161);
 
             panel1.BackColor = Color.FromArgb(45, 45, 45);
             panel4.BackColor = Color.FromArgb(45, 45, 45);
@@ -157,17 +156,17 @@ namespace breastcancer
             if (!downFlag4)
             {
                 filepath = pathOri;
-                label3.Text = "Original";
+                //label3.Text = "Original";
             }
             else
             {
                 filepath = pathCol;
-                label3.Text = "Colored";
+                //label3.Text = "Colored";
             }
 
             //////////////////////
 
-      
+
             files = Directory.GetDirectories(filepath);
 
             filesColored = Directory.GetFiles(pathCol);
@@ -232,7 +231,7 @@ namespace breastcancer
                 //MessageBox.Show("size ", pictureBox1.Size.Width.ToString());
                 //MessageBox.Show("size h", pictureBox1.Size.Height.ToString());
 
-               // MessageBox.Show("sw = " + sw.ToString() + " sh = " + sh.ToString());
+                // MessageBox.Show("sw = " + sw.ToString() + " sh = " + sh.ToString());
             }
             if (picNum4 == 1)
             {
@@ -243,7 +242,7 @@ namespace breastcancer
                 sy1 = (int)(StaticData.DataList1.Rect2Y1 / 6);
                 sw = (int)((StaticData.DataList1.Rect2X2 - StaticData.DataList1.Rect2X1) / 6);
                 sh = (int)((StaticData.DataList1.Rect2Y2 - StaticData.DataList1.Rect2Y1) / 6);
-              //  MessageBox.Show("sw = " + sw.ToString());
+                //  MessageBox.Show("sw = " + sw.ToString());
 
             }
             if (picNum4 == 2)
@@ -255,7 +254,7 @@ namespace breastcancer
                 sy1 = (int)(StaticData.DataList1.Rect3Y1 / 6);
                 sw = (int)((StaticData.DataList1.Rect3X2 - StaticData.DataList1.Rect3X1) / 6);
                 sh = (int)((StaticData.DataList1.Rect3Y2 - StaticData.DataList1.Rect3Y1) / 6);
-             //   MessageBox.Show("sw = " + sw.ToString());
+                //   MessageBox.Show("sw = " + sw.ToString());
 
             }
             if (picNum4 == 3)
@@ -267,7 +266,7 @@ namespace breastcancer
                 sy1 = (int)(StaticData.DataList1.Rect4Y1 / 6);
                 sw = (int)((StaticData.DataList1.Rect4X2 - StaticData.DataList1.Rect4X1) / 6);
                 sh = (int)((StaticData.DataList1.Rect4Y2 - StaticData.DataList1.Rect4Y1) / 6);
-              //  MessageBox.Show("sw = " + sw.ToString());
+                //  MessageBox.Show("sw = " + sw.ToString());
 
             }
 
@@ -379,6 +378,246 @@ namespace breastcancer
             bitmap = new Bitmap(bitmap, size);
             return new Cursor(bitmap.GetHicon());
         }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.KeyPreview = true;
+            this.BackColor = Color.FromArgb(34, 34, 34);
+
+            panel1.BackColor = Color.FromArgb(45, 45, 45);
+            panel2.BackColor = Color.FromArgb(55, 55, 55);
+            panel4.BackColor = Color.FromArgb(45, 45, 45);
+
+            radioButtonNegative.BackColor = Color.FromArgb(55, 55, 55);
+            radioButtonNegative.ForeColor = Color.White;
+            radioButtonPositive.BackColor = Color.FromArgb(55, 55, 55);
+            radioButtonPositive.ForeColor = Color.White;
+            radioButtonPotential.BackColor = Color.FromArgb(55, 55, 55);
+            radioButtonPotential.ForeColor = Color.White;
+
+            textBoxComment.Text = textCom;
+            textBoxComment.ForeColor = Color.White;
+            textBoxComment.BackColor = Color.FromArgb(55, 55, 55);
+
+            label2.AutoSize = false;
+            label2.Height = 1;
+            label2.ForeColor = Color.FromArgb(161, 161, 161);
+            label2.Width = 10000;
+            label2.BorderStyle = BorderStyle.Fixed3D;
+            labelMark.BackColor = Color.Transparent;
+            labelMark.ForeColor = Color.White;
+            labelDComment.ForeColor = Color.White;
+            labelDComment.BackColor = Color.Transparent;
+            labelMa.ForeColor = Color.White;
+            labelMa.BackColor = Color.Transparent;
+            labelNotes.ForeColor = Color.White;
+            labelNotes.BackColor = Color.Transparent;
+            label1.ForeColor = Color.FromArgb(161, 161, 161);
+
+            lbl_patient.ForeColor = Color.FromArgb(161, 161, 161);
+
+            buttonPrevious.ForeColor = Color.WhiteSmoke;
+            buttonPrevious.BackColor = Color.FromArgb(50, 50, 50);
+            IntPtr ptrPre = NativeMethods.CreateRoundRectRgn(2, 2, this.buttonPrevious.Width, this.buttonPrevious.Height, 5, 5);
+            this.buttonPrevious.Region = System.Drawing.Region.FromHrgn(ptrPre);
+            NativeMethods.DeleteObject(ptrPre);
+
+            buttonNext.ForeColor = Color.WhiteSmoke;
+            buttonNext.BackColor = Color.FromArgb(50, 50, 50);
+            IntPtr ptrNext = NativeMethods.CreateRoundRectRgn(2, 2, this.buttonNext.Width, this.buttonNext.Height, 5, 5);
+            this.buttonNext.Region = System.Drawing.Region.FromHrgn(ptrNext);
+            NativeMethods.DeleteObject(ptrNext);
+
+            buttonUp.ForeColor = Color.WhiteSmoke;
+            buttonUp.BackColor = Color.FromArgb(50, 50, 50);
+            buttonUp.FlatStyle = FlatStyle.Flat;
+            buttonUp.FlatAppearance.BorderSize = 0;
+            IntPtr ptrUp = NativeMethods.CreateRoundRectRgn(-1, -1, this.buttonUp.Width + 2, this.buttonUp.Height + 2, 100, 100);
+            this.buttonUp.Region = System.Drawing.Region.FromHrgn(ptrUp);
+            NativeMethods.DeleteObject(ptrUp);
+
+            buttonDown.ForeColor = Color.WhiteSmoke;
+            buttonDown.BackColor = Color.FromArgb(50, 50, 50);
+            buttonDown.FlatStyle = FlatStyle.Flat;
+            buttonDown.FlatAppearance.BorderSize = 0;
+            IntPtr ptrDown = NativeMethods.CreateRoundRectRgn(-1, -1, this.buttonDown.Width + 2, this.buttonDown.Height + 2, 100, 100);
+            this.buttonDown.Region = System.Drawing.Region.FromHrgn(ptrDown);
+            NativeMethods.DeleteObject(ptrDown);
+
+            buttonQuestionM.ForeColor = Color.FromArgb(161, 161, 161);
+            buttonQuestionM.BackColor = Color.FromArgb(50, 50, 50);
+            buttonQuestionM.FlatStyle = FlatStyle.Flat;
+            buttonQuestionM.FlatAppearance.BorderSize = 0;
+            IntPtr ptrQues = NativeMethods.CreateRoundRectRgn(0, 0, this.buttonQuestionM.Width + 1, this.buttonQuestionM.Height + 1, 100, 100);
+            this.buttonQuestionM.Region = System.Drawing.Region.FromHrgn(ptrQues);
+            NativeMethods.DeleteObject(ptrQues);
+
+            buttonPencil.ForeColor = Color.FromArgb(161, 161, 161);
+            buttonPencil.BackColor = Color.FromArgb(50, 50, 50);
+            buttonPencil.FlatStyle = FlatStyle.Flat;
+            buttonPencil.FlatAppearance.BorderSize = 0;
+            IntPtr ptrPencil = NativeMethods.CreateRoundRectRgn(-3, -3, this.buttonPencil.Width + 4, this.buttonPencil.Height + 4, 100, 100);
+            this.buttonPencil.Region = System.Drawing.Region.FromHrgn(ptrPencil);
+            NativeMethods.DeleteObject(ptrPencil);
+
+            buttonTest.FlatStyle = FlatStyle.Flat;
+            buttonTest.FlatAppearance.BorderSize = 0;
+
+            buttonTest.ForeColor = Color.WhiteSmoke;
+            IntPtr ptrTest = NativeMethods.CreateRoundRectRgn(6, 6, this.buttonTest.Width - 7, this.buttonTest.Height - 1, 27, 20);
+            this.buttonTest.Region = System.Drawing.Region.FromHrgn(ptrTest);
+            NativeMethods.DeleteObject(ptrTest);
+
+            buttonClean.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+
+            buttonClean.ForeColor = System.Drawing.Color.Blue;
+            buttonClean.BackColor = Color.FromArgb(50, 50, 50);
+            buttonClean.FlatStyle = FlatStyle.Flat;
+            buttonClean.FlatAppearance.BorderSize = 0;
+            IntPtr ptrClean = NativeMethods.CreateRoundRectRgn(-2, -2, this.buttonClean.Width + 2, this.buttonClean.Height + 2, 100, 100);
+            this.buttonClean.Region = System.Drawing.Region.FromHrgn(ptrClean);
+            NativeMethods.DeleteObject(ptrClean);
+
+            IntPtr ptr = NativeMethods.CreateRoundRectRgn(2, 2, this.textBoxComment.Width - 1, this.textBoxComment.Height - 1, 5, 5); //play with these values till you are happy
+            this.textBoxComment.Region = System.Drawing.Region.FromHrgn(ptr);
+            NativeMethods.DeleteObject(ptr);
+
+
+            string directory = Directory.GetCurrentDirectory();
+
+            pathJson = directory + "\\path.json";
+            pathCol = directory + "\\Patients\\Colored";
+            pathOri = directory + "\\Patients\\Original";
+            //filePath = @"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\path.json";
+
+
+            //string filePathOriginal = pathOri;//@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Original";
+            //string filePathColored = pathCol;//@"E:\OneDrive - ADA University\Homework\SDP2022-brstcancer\Augmentation\Colorized";
+
+            if (!downFlag4)
+            {
+                filepath = pathOri;
+                //label3.Text = "Original";
+            }
+            else
+            {
+                filepath = pathCol;
+                //label3.Text = "Colored";
+            }
+
+            //////////////////////
+
+
+            files = Directory.GetDirectories(filepath);
+
+            filesColored = Directory.GetFiles(pathCol);
+            string[] dirsIMG = Directory.GetFiles(files[c4]);
+
+
+
+            //////////////////////////
+            sx1 = 0;
+            sy1 = 0;
+            sw = 0;
+            sh = 0;
+
+            //if (picNum4 == 0)
+            //{
+            //    pictureBox1.Image = Image.FromFile(files[c4]);
+
+            //    sx1 = (int)(StaticData.DataList1.Rect1X1 / 6);
+            //    sy1 = (int)(StaticData.DataList1.Rect1Y1 / 6);
+            //    sw = (int)((StaticData.DataList1.Rect1X2 - StaticData.DataList1.Rect1X1) / 6);
+            //    sh = (int)((StaticData.DataList1.Rect1Y2 - StaticData.DataList1.Rect1Y1) / 6);
+            //}
+            //else if (picNum4 == 1)
+            //{
+            //    pictureBox1.Image = Image.FromFile(files[c4 + 1]);
+            //    sx1 = (int)(StaticData.DataList1.Rect2X1 / 6);
+            //    sy1 = (int)(StaticData.DataList1.Rect2Y1 / 6);
+            //    sw = (int)((StaticData.DataList1.Rect2X2 - StaticData.DataList1.Rect2X1) / 6);
+            //    sh = (int)((StaticData.DataList1.Rect2Y2 - StaticData.DataList1.Rect2Y1) / 6);
+            //}
+            //else if (picNum4 == 2)
+            //{
+            //    pictureBox1.Image = Image.FromFile(files[c4 + 2]);
+            //    sx1 = (int)(StaticData.DataList1.Rect3X1 / 6);
+            //    sy1 = (int)(StaticData.DataList1.Rect3Y1 / 6);
+            //    sw = (int)((StaticData.DataList1.Rect3X2 - StaticData.DataList1.Rect3X1) / 6);
+            //    sh = (int)((StaticData.DataList1.Rect3Y2 - StaticData.DataList1.Rect3Y1) / 6);
+            //}
+            //else if (picNum4 == 3)
+            //{
+            //    pictureBox1.Image = Image.FromFile(files[c4 + 3]);
+            //    sx1 = (int)(StaticData.DataList1.Rect4X1 / 6);
+            //    sy1 = (int)(StaticData.DataList1.Rect4Y1 / 6);
+            //    sw = (int)((StaticData.DataList1.Rect4X2 - StaticData.DataList1.Rect4X1) / 6);
+            //    sh = (int)((StaticData.DataList1.Rect4Y2 - StaticData.DataList1.Rect4Y1) / 6);
+            //}
+
+            if (picNum4 == 0)
+            {
+                picBoxDraw = true;
+                pictureBox1.Image = Image.FromFile(dirsIMG[0]);
+                sx1 = (int)Math.Abs(StaticData.DataList1.Rect1X1 / 6);
+                sy1 = (int)Math.Abs(StaticData.DataList1.Rect1Y1 / 6);
+                sw = (int)Math.Abs((StaticData.DataList1.Rect1X2 - StaticData.DataList1.Rect1X1) / 6);
+                sh = (int)Math.Abs((StaticData.DataList1.Rect1Y2 - StaticData.DataList1.Rect1Y1) / 6);
+
+                //sx1 = (int)(StaticData.DataList1.Rect1X1 * divX) / 11;
+                //sy1 = (int)(StaticData.DataList1.Rect1Y1 * divY) / 11;
+                //sw = (int)((StaticData.DataList1.Rect1X2 - StaticData.DataList1.Rect1X1) * divX) / 11;
+                //sh = (int)((StaticData.DataList1.Rect1Y2 - StaticData.DataList1.Rect1Y1) * divY) / 11;
+                //MessageBox.Show("locax", pictureBox1.Location.X.ToString());
+                //MessageBox.Show("size ", pictureBox1.Size.Width.ToString());
+                //MessageBox.Show("size h", pictureBox1.Size.Height.ToString());
+
+                // MessageBox.Show("sw = " + sw.ToString() + " sh = " + sh.ToString());
+            }
+            if (picNum4 == 1)
+            {
+                picBoxDraw = true;
+
+                pictureBox1.Image = Image.FromFile(dirsIMG[1]);
+                sx1 = (int)(StaticData.DataList1.Rect2X1 / 6);
+                sy1 = (int)(StaticData.DataList1.Rect2Y1 / 6);
+                sw = (int)((StaticData.DataList1.Rect2X2 - StaticData.DataList1.Rect2X1) / 6);
+                sh = (int)((StaticData.DataList1.Rect2Y2 - StaticData.DataList1.Rect2Y1) / 6);
+                //  MessageBox.Show("sw = " + sw.ToString());
+
+            }
+            if (picNum4 == 2)
+            {
+                picBoxDraw = true;
+
+                pictureBox1.Image = Image.FromFile(dirsIMG[2]);
+                sx1 = (int)(StaticData.DataList1.Rect3X1 / 6);
+                sy1 = (int)(StaticData.DataList1.Rect3Y1 / 6);
+                sw = (int)((StaticData.DataList1.Rect3X2 - StaticData.DataList1.Rect3X1) / 6);
+                sh = (int)((StaticData.DataList1.Rect3Y2 - StaticData.DataList1.Rect3Y1) / 6);
+                //   MessageBox.Show("sw = " + sw.ToString());
+
+            }
+            if (picNum4 == 3)
+            {
+                picBoxDraw = true;
+
+                pictureBox1.Image = Image.FromFile(dirsIMG[3]);
+                sx1 = (int)(StaticData.DataList1.Rect4X1 / 6);
+                sy1 = (int)(StaticData.DataList1.Rect4Y1 / 6);
+                sw = (int)((StaticData.DataList1.Rect4X2 - StaticData.DataList1.Rect4X1) / 6);
+                sh = (int)((StaticData.DataList1.Rect4Y2 - StaticData.DataList1.Rect4Y1) / 6);
+                //  MessageBox.Show("sw = " + sw.ToString());
+
+            }
+
+            string[] dirs = Directory.GetDirectories(pathOri);
+            string dirName = new DirectoryInfo(dirs[c4]).Name;
+            lbl_patient.Text = "Patient: " + dirName;
+            label1.Text = c4 + 1 + " out of " + dirs.Length + " images \n";
+        }
+
 
         private void buttonPrevious_Click(object sender, EventArgs e)
         {

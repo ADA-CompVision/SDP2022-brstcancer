@@ -47,10 +47,12 @@
             this.textBoxComment = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelMa = new System.Windows.Forms.Label();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonPencil = new System.Windows.Forms.Button();
             this.buttonClean = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelMa = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_rp_prediction = new System.Windows.Forms.Label();
             this.labelRight = new System.Windows.Forms.Label();
@@ -70,7 +72,6 @@
             this.buttonUp = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonTest = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.lbl_patient = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -78,6 +79,7 @@
             this.panel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -324,10 +326,11 @@
             // 
             this.panel4.AutoSize = true;
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel4.Controls.Add(this.tableLayoutPanel7);
+            this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.tableLayoutPanel5);
             this.panel4.Controls.Add(this.tableLayoutPanel4);
             this.panel4.Controls.Add(this.tableLayoutPanel3);
-            this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.lbl_patient);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
@@ -336,6 +339,56 @@
             this.panel4.TabIndex = 920;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Controls.Add(this.buttonPencil, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.buttonClean, 1, 0);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(899, 46);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(131, 71);
+            this.tableLayoutPanel7.TabIndex = 933;
+            // 
+            // buttonPencil
+            // 
+            this.buttonPencil.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonPencil.BackgroundImage = global::breastcancer.Properties.Resources.pencil;
+            this.buttonPencil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonPencil.Location = new System.Drawing.Point(7, 11);
+            this.buttonPencil.Name = "buttonPencil";
+            this.buttonPencil.Size = new System.Drawing.Size(50, 48);
+            this.buttonPencil.TabIndex = 921;
+            this.buttonPencil.UseVisualStyleBackColor = true;
+            this.buttonPencil.Click += new System.EventHandler(this.buttonPencil_Click);
+            this.buttonPencil.Paint += new System.Windows.Forms.PaintEventHandler(this.buttonPencil_Paint);
+            // 
+            // buttonClean
+            // 
+            this.buttonClean.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonClean.BackgroundImage = global::breastcancer.Properties.Resources.eraser;
+            this.buttonClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonClean.Location = new System.Drawing.Point(73, 11);
+            this.buttonClean.Name = "buttonClean";
+            this.buttonClean.Size = new System.Drawing.Size(50, 48);
+            this.buttonClean.TabIndex = 928;
+            this.buttonClean.UseVisualStyleBackColor = true;
+            this.buttonClean.Click += new System.EventHandler(this.buttonClean_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(9, 609);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 19);
+            this.label2.TabIndex = 918;
+            this.label2.Text = "label2";
+            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 3;
@@ -343,13 +396,11 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
             this.tableLayoutPanel5.Controls.Add(this.labelMa, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.buttonPencil, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.buttonClean, 2, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(23, 40);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1010, 71);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(317, 36);
             this.tableLayoutPanel5.TabIndex = 932;
             // 
             // labelMa
@@ -361,31 +412,6 @@
             this.labelMa.Size = new System.Drawing.Size(161, 24);
             this.labelMa.TabIndex = 922;
             this.labelMa.Text = "Mammograms";
-            // 
-            // buttonPencil
-            // 
-            this.buttonPencil.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonPencil.BackgroundImage = global::breastcancer.Properties.Resources.pencil;
-            this.buttonPencil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonPencil.Location = new System.Drawing.Point(894, 10);
-            this.buttonPencil.Name = "buttonPencil";
-            this.buttonPencil.Size = new System.Drawing.Size(50, 50);
-            this.buttonPencil.TabIndex = 921;
-            this.buttonPencil.UseVisualStyleBackColor = true;
-            this.buttonPencil.Click += new System.EventHandler(this.buttonPencil_Click);
-            this.buttonPencil.Paint += new System.Windows.Forms.PaintEventHandler(this.buttonPencil_Paint);
-            // 
-            // buttonClean
-            // 
-            this.buttonClean.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonClean.BackgroundImage = global::breastcancer.Properties.Resources.eraser;
-            this.buttonClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonClean.Location = new System.Drawing.Point(957, 11);
-            this.buttonClean.Name = "buttonClean";
-            this.buttonClean.Size = new System.Drawing.Size(50, 48);
-            this.buttonClean.TabIndex = 928;
-            this.buttonClean.UseVisualStyleBackColor = true;
-            this.buttonClean.Click += new System.EventHandler(this.buttonClean_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -406,13 +432,13 @@
             this.tableLayoutPanel4.Controls.Add(this.labelLeftM, 3, 1);
             this.tableLayoutPanel4.Controls.Add(this.labelRightM, 2, 1);
             this.tableLayoutPanel4.Controls.Add(this.pictureBox2, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(17, 117);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(17, 120);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 3;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.20113F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.798867F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44.49F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1016, 398);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1032, 395);
             this.tableLayoutPanel4.TabIndex = 931;
             // 
             // lbl_rp_prediction
@@ -420,9 +446,9 @@
             this.lbl_rp_prediction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_rp_prediction.AutoSize = true;
             this.lbl_rp_prediction.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_rp_prediction.Location = new System.Drawing.Point(3, 366);
+            this.lbl_rp_prediction.Location = new System.Drawing.Point(3, 363);
             this.lbl_rp_prediction.Name = "lbl_rp_prediction";
-            this.lbl_rp_prediction.Size = new System.Drawing.Size(248, 19);
+            this.lbl_rp_prediction.Size = new System.Drawing.Size(252, 19);
             this.lbl_rp_prediction.TabIndex = 923;
             this.lbl_rp_prediction.Text = "Prediction:";
             // 
@@ -431,9 +457,9 @@
             this.labelRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelRight.AutoSize = true;
             this.labelRight.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelRight.Location = new System.Drawing.Point(3, 331);
+            this.labelRight.Location = new System.Drawing.Point(3, 329);
             this.labelRight.Name = "labelRight";
-            this.labelRight.Size = new System.Drawing.Size(248, 19);
+            this.labelRight.Size = new System.Drawing.Size(252, 19);
             this.labelRight.TabIndex = 908;
             this.labelRight.Text = "Right Projection";
             // 
@@ -442,9 +468,9 @@
             this.lbl_lpm_prediction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_lpm_prediction.AutoSize = true;
             this.lbl_lpm_prediction.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_lpm_prediction.Location = new System.Drawing.Point(765, 366);
+            this.lbl_lpm_prediction.Location = new System.Drawing.Point(777, 363);
             this.lbl_lpm_prediction.Name = "lbl_lpm_prediction";
-            this.lbl_lpm_prediction.Size = new System.Drawing.Size(248, 19);
+            this.lbl_lpm_prediction.Size = new System.Drawing.Size(252, 19);
             this.lbl_lpm_prediction.TabIndex = 926;
             this.lbl_lpm_prediction.Text = "Prediction: ";
             // 
@@ -452,7 +478,7 @@
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox3.Location = new System.Drawing.Point(511, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(521, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(247, 320);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -469,9 +495,9 @@
             this.lbl_lp_prediction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_lp_prediction.AutoSize = true;
             this.lbl_lp_prediction.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_lp_prediction.Location = new System.Drawing.Point(257, 366);
+            this.lbl_lp_prediction.Location = new System.Drawing.Point(261, 363);
             this.lbl_lp_prediction.Name = "lbl_lp_prediction";
-            this.lbl_lp_prediction.Size = new System.Drawing.Size(248, 19);
+            this.lbl_lp_prediction.Size = new System.Drawing.Size(252, 19);
             this.lbl_lp_prediction.TabIndex = 924;
             this.lbl_lp_prediction.Text = "Prediction:";
             // 
@@ -479,7 +505,7 @@
             // 
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox4.Location = new System.Drawing.Point(765, 3);
+            this.pictureBox4.Location = new System.Drawing.Point(779, 3);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(248, 320);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -496,9 +522,9 @@
             this.labelLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelLeft.AutoSize = true;
             this.labelLeft.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLeft.Location = new System.Drawing.Point(257, 331);
+            this.labelLeft.Location = new System.Drawing.Point(261, 329);
             this.labelLeft.Name = "labelLeft";
-            this.labelLeft.Size = new System.Drawing.Size(248, 19);
+            this.labelLeft.Size = new System.Drawing.Size(252, 19);
             this.labelLeft.TabIndex = 909;
             this.labelLeft.Text = "Left Projection";
             // 
@@ -507,9 +533,9 @@
             this.lbl_rpm_prediction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_rpm_prediction.AutoSize = true;
             this.lbl_rpm_prediction.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_rpm_prediction.Location = new System.Drawing.Point(511, 366);
+            this.lbl_rpm_prediction.Location = new System.Drawing.Point(519, 363);
             this.lbl_rpm_prediction.Name = "lbl_rpm_prediction";
-            this.lbl_rpm_prediction.Size = new System.Drawing.Size(248, 19);
+            this.lbl_rpm_prediction.Size = new System.Drawing.Size(252, 19);
             this.lbl_rpm_prediction.TabIndex = 925;
             this.lbl_rpm_prediction.Text = "Prediction: ";
             // 
@@ -517,7 +543,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox1.Location = new System.Drawing.Point(257, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(263, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(247, 320);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -534,9 +560,9 @@
             this.labelLeftM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelLeftM.AutoSize = true;
             this.labelLeftM.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLeftM.Location = new System.Drawing.Point(765, 331);
+            this.labelLeftM.Location = new System.Drawing.Point(777, 329);
             this.labelLeftM.Name = "labelLeftM";
-            this.labelLeftM.Size = new System.Drawing.Size(248, 19);
+            this.labelLeftM.Size = new System.Drawing.Size(252, 19);
             this.labelLeftM.TabIndex = 916;
             this.labelLeftM.Text = "Left Projection M";
             // 
@@ -545,9 +571,9 @@
             this.labelRightM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelRightM.AutoSize = true;
             this.labelRightM.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelRightM.Location = new System.Drawing.Point(511, 331);
+            this.labelRightM.Location = new System.Drawing.Point(519, 329);
             this.labelRightM.Name = "labelRightM";
-            this.labelRightM.Size = new System.Drawing.Size(248, 19);
+            this.labelRightM.Size = new System.Drawing.Size(252, 19);
             this.labelRightM.TabIndex = 910;
             this.labelRightM.Text = "Right Projection M";
             // 
@@ -555,7 +581,7 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(5, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(247, 320);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -648,23 +674,12 @@
             this.buttonTest.UseVisualStyleBackColor = true;
             this.buttonTest.Click += new System.EventHandler(this.buttonTest_Click);
             // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(8, 590);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 19);
-            this.label2.TabIndex = 918;
-            this.label2.Text = "label2";
-            // 
             // lbl_patient
             // 
             this.lbl_patient.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_patient.AutoSize = true;
             this.lbl_patient.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_patient.Location = new System.Drawing.Point(765, 570);
+            this.lbl_patient.Location = new System.Drawing.Point(773, 583);
             this.lbl_patient.Name = "lbl_patient";
             this.lbl_patient.Size = new System.Drawing.Size(73, 19);
             this.lbl_patient.TabIndex = 927;
@@ -697,6 +712,7 @@
             this.tableLayoutPanel6.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -757,5 +773,6 @@
         private TableLayoutPanel tableLayoutPanel4;
         private TableLayoutPanel tableLayoutPanel3;
         private TableLayoutPanel tableLayoutPanel5;
+        private TableLayoutPanel tableLayoutPanel7;
     }
 }

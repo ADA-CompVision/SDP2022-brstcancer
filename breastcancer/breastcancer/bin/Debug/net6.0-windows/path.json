@@ -116,7 +116,7 @@
     "Rect4Y2": 0
   },
   {
-    "Diagnosis": 1,
+    "Diagnosis": 2,
     "Comment": "jkhk",
     "DoctorId": 1,
     "Image1Id": 17,
@@ -139,9 +139,9 @@
     "Rect3Y2": 0,
     "Image4Id": 20,
     "Image4Name": "ST010003.png",
-    "Rect4X1": 0,
-    "Rect4X2": 0,
-    "Rect4Y1": 0,
-    "Rect4Y2": 0
+    "Rect4X1": 572,
+    "Rect4X2": 979,
+    "Rect4Y1": 858,
+    "Rect4Y2": 1408
   }
 ]

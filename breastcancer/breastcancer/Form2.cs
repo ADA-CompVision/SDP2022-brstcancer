@@ -1647,5 +1647,10 @@ namespace breastcancer
                 item1.Rect4Y2 = StaticData.DataList1.Rect4Y2;
             }
         }
+
+        private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -28,704 +28,694 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonPrevious = new System.Windows.Forms.Button();
-            this.buttonNext = new System.Windows.Forms.Button();
-            this.labelNotes = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.labelMark = new System.Windows.Forms.Label();
-            this.radioButtonPositive = new System.Windows.Forms.RadioButton();
-            this.radioButtonNegative = new System.Windows.Forms.RadioButton();
-            this.radioButtonPotential = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.labelDComment = new System.Windows.Forms.Label();
-            this.textBoxComment = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonPencil = new System.Windows.Forms.Button();
-            this.buttonClean = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelMa = new System.Windows.Forms.Label();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.lbl_rp_prediction = new System.Windows.Forms.Label();
-            this.labelRight = new System.Windows.Forms.Label();
-            this.lbl_lpm_prediction = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.lbl_lp_prediction = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.labelLeft = new System.Windows.Forms.Label();
-            this.lbl_rpm_prediction = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelLeftM = new System.Windows.Forms.Label();
-            this.labelRightM = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonQuestionM = new System.Windows.Forms.Button();
-            this.buttonDown = new System.Windows.Forms.Button();
-            this.buttonUp = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonTest = new System.Windows.Forms.Button();
-            this.lbl_patient = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.SuspendLayout();
+            buttonPrevious = new Button();
+            buttonNext = new Button();
+            labelNotes = new Label();
+            panel1 = new Panel();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            panel2 = new Panel();
+            labelMark = new Label();
+            radioButtonPositive = new RadioButton();
+            radioButtonNegative = new RadioButton();
+            radioButtonPotential = new RadioButton();
+            textBox1 = new TextBox();
+            label14 = new Label();
+            button1 = new Button();
+            button2 = new Button();
+            labelDComment = new Label();
+            textBoxComment = new TextBox();
+            tableLayoutPanel6 = new TableLayoutPanel();
+            panel4 = new Panel();
+            tableLayoutPanel7 = new TableLayoutPanel();
+            buttonPencil = new Button();
+            buttonClean = new Button();
+            label2 = new Label();
+            tableLayoutPanel5 = new TableLayoutPanel();
+            labelMa = new Label();
+            tableLayoutPanel4 = new TableLayoutPanel();
+            lbl_rp_prediction = new Label();
+            labelRight = new Label();
+            lbl_lpm_prediction = new Label();
+            pictureBox3 = new PictureBox();
+            lbl_lp_prediction = new Label();
+            pictureBox4 = new PictureBox();
+            labelLeft = new Label();
+            lbl_rpm_prediction = new Label();
+            pictureBox1 = new PictureBox();
+            labelLeftM = new Label();
+            labelRightM = new Label();
+            pictureBox2 = new PictureBox();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            buttonQuestionM = new Button();
+            buttonDown = new Button();
+            buttonUp = new Button();
+            label1 = new Label();
+            buttonTest = new Button();
+            lbl_patient = new Label();
+            panel1.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            panel2.SuspendLayout();
+            tableLayoutPanel6.SuspendLayout();
+            panel4.SuspendLayout();
+            tableLayoutPanel7.SuspendLayout();
+            tableLayoutPanel5.SuspendLayout();
+            tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            tableLayoutPanel3.SuspendLayout();
+            SuspendLayout();
             // 
             // buttonPrevious
             // 
-            this.buttonPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonPrevious.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonPrevious.Location = new System.Drawing.Point(3, 6);
-            this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(111, 37);
-            this.buttonPrevious.TabIndex = 297;
-            this.buttonPrevious.Text = "Back";
-            this.buttonPrevious.UseVisualStyleBackColor = true;
-            this.buttonPrevious.EnabledChanged += new System.EventHandler(this.buttonPrevious_EnabledChanged);
-            this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
+            buttonPrevious.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            buttonPrevious.Font = new Font("Bookman Old Style", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonPrevious.Location = new Point(3, 6);
+            buttonPrevious.Name = "buttonPrevious";
+            buttonPrevious.Size = new Size(111, 37);
+            buttonPrevious.TabIndex = 297;
+            buttonPrevious.Text = "Back";
+            buttonPrevious.UseVisualStyleBackColor = true;
+            buttonPrevious.EnabledChanged += buttonPrevious_EnabledChanged;
+            buttonPrevious.Click += buttonPrevious_Click;
             // 
             // buttonNext
             // 
-            this.buttonNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonNext.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonNext.Location = new System.Drawing.Point(120, 6);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(112, 37);
-            this.buttonNext.TabIndex = 298;
-            this.buttonNext.Text = "Next";
-            this.buttonNext.UseVisualStyleBackColor = true;
-            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            buttonNext.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            buttonNext.Font = new Font("Bookman Old Style", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonNext.Location = new Point(120, 6);
+            buttonNext.Name = "buttonNext";
+            buttonNext.Size = new Size(112, 37);
+            buttonNext.TabIndex = 298;
+            buttonNext.Text = "Next";
+            buttonNext.UseVisualStyleBackColor = true;
+            buttonNext.Click += buttonNext_Click;
             // 
             // labelNotes
             // 
-            this.labelNotes.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelNotes.AutoSize = true;
-            this.labelNotes.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelNotes.Location = new System.Drawing.Point(3, 222);
-            this.labelNotes.Name = "labelNotes";
-            this.labelNotes.Size = new System.Drawing.Size(65, 22);
-            this.labelNotes.TabIndex = 301;
-            this.labelNotes.Text = "Notes";
+            labelNotes.Anchor = AnchorStyles.Left;
+            labelNotes.AutoSize = true;
+            labelNotes.Font = new Font("Bookman Old Style", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelNotes.Location = new Point(3, 222);
+            labelNotes.Name = "labelNotes";
+            labelNotes.Size = new Size(65, 22);
+            labelNotes.TabIndex = 301;
+            labelNotes.Text = "Notes";
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.AutoSize = true;
-            this.panel1.Controls.Add(this.tableLayoutPanel2);
-            this.panel1.Controls.Add(this.tableLayoutPanel1);
-            this.panel1.Location = new System.Drawing.Point(1042, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(259, 702);
-            this.panel1.TabIndex = 914;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.AutoSize = true;
+            panel1.Controls.Add(tableLayoutPanel2);
+            panel1.Controls.Add(tableLayoutPanel1);
+            panel1.Location = new Point(1042, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(259, 702);
+            panel1.TabIndex = 914;
+            panel1.Paint += panel1_Paint;
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.buttonPrevious, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.buttonNext, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(16, 615);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(235, 49);
-            this.tableLayoutPanel2.TabIndex = 918;
+            tableLayoutPanel2.ColumnCount = 2;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.Controls.Add(buttonPrevious, 0, 0);
+            tableLayoutPanel2.Controls.Add(buttonNext, 1, 0);
+            tableLayoutPanel2.Location = new Point(16, 615);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Size = new Size(235, 49);
+            tableLayoutPanel2.TabIndex = 918;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.labelDComment, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.labelNotes, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxComment, 0, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 40);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.27184F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.72816F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(235, 459);
-            this.tableLayoutPanel1.TabIndex = 917;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(panel2, 0, 1);
+            tableLayoutPanel1.Controls.Add(labelDComment, 0, 0);
+            tableLayoutPanel1.Controls.Add(labelNotes, 0, 2);
+            tableLayoutPanel1.Controls.Add(textBoxComment, 0, 3);
+            tableLayoutPanel1.Location = new Point(16, 40);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 24.27184F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 75.72816F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 49F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 200F));
+            tableLayoutPanel1.Size = new Size(235, 459);
+            tableLayoutPanel1.TabIndex = 917;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.labelMark);
-            this.panel2.Controls.Add(this.radioButtonPositive);
-            this.panel2.Controls.Add(this.radioButtonNegative);
-            this.panel2.Controls.Add(this.radioButtonPotential);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Location = new System.Drawing.Point(3, 53);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(229, 153);
-            this.panel2.TabIndex = 915;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.Controls.Add(labelMark);
+            panel2.Controls.Add(radioButtonPositive);
+            panel2.Controls.Add(radioButtonNegative);
+            panel2.Controls.Add(radioButtonPotential);
+            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(label14);
+            panel2.Controls.Add(button1);
+            panel2.Controls.Add(button2);
+            panel2.Location = new Point(3, 53);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(229, 153);
+            panel2.TabIndex = 915;
+            panel2.Paint += panel2_Paint;
             // 
             // labelMark
             // 
-            this.labelMark.AutoSize = true;
-            this.labelMark.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelMark.Location = new System.Drawing.Point(10, 15);
-            this.labelMark.Name = "labelMark";
-            this.labelMark.Size = new System.Drawing.Size(90, 19);
-            this.labelMark.TabIndex = 915;
-            this.labelMark.Text = "Mark it as:";
+            labelMark.AutoSize = true;
+            labelMark.Font = new Font("Bookman Old Style", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelMark.Location = new Point(10, 15);
+            labelMark.Name = "labelMark";
+            labelMark.Size = new Size(90, 19);
+            labelMark.TabIndex = 915;
+            labelMark.Text = "Mark it as:";
             // 
             // radioButtonPositive
             // 
-            this.radioButtonPositive.AutoSize = true;
-            this.radioButtonPositive.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonPositive.Location = new System.Drawing.Point(10, 52);
-            this.radioButtonPositive.Name = "radioButtonPositive";
-            this.radioButtonPositive.Size = new System.Drawing.Size(84, 23);
-            this.radioButtonPositive.TabIndex = 300;
-            this.radioButtonPositive.TabStop = true;
-            this.radioButtonPositive.Text = "Positive";
-            this.radioButtonPositive.UseVisualStyleBackColor = true;
-            this.radioButtonPositive.CheckedChanged += new System.EventHandler(this.radioButtonPositive_CheckedChanged);
+            radioButtonPositive.AutoSize = true;
+            radioButtonPositive.Font = new Font("Bookman Old Style", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            radioButtonPositive.Location = new Point(10, 52);
+            radioButtonPositive.Name = "radioButtonPositive";
+            radioButtonPositive.Size = new Size(84, 23);
+            radioButtonPositive.TabIndex = 300;
+            radioButtonPositive.TabStop = true;
+            radioButtonPositive.Text = "Positive";
+            radioButtonPositive.UseVisualStyleBackColor = true;
+            radioButtonPositive.CheckedChanged += radioButtonPositive_CheckedChanged;
             // 
             // radioButtonNegative
             // 
-            this.radioButtonNegative.AutoSize = true;
-            this.radioButtonNegative.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonNegative.Location = new System.Drawing.Point(10, 106);
-            this.radioButtonNegative.Name = "radioButtonNegative";
-            this.radioButtonNegative.Size = new System.Drawing.Size(91, 23);
-            this.radioButtonNegative.TabIndex = 900;
-            this.radioButtonNegative.TabStop = true;
-            this.radioButtonNegative.Text = "Negative";
-            this.radioButtonNegative.UseVisualStyleBackColor = true;
-            this.radioButtonNegative.CheckedChanged += new System.EventHandler(this.radioButtonNegative_CheckedChanged);
+            radioButtonNegative.AutoSize = true;
+            radioButtonNegative.Font = new Font("Bookman Old Style", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            radioButtonNegative.Location = new Point(10, 106);
+            radioButtonNegative.Name = "radioButtonNegative";
+            radioButtonNegative.Size = new Size(91, 23);
+            radioButtonNegative.TabIndex = 900;
+            radioButtonNegative.TabStop = true;
+            radioButtonNegative.Text = "Negative";
+            radioButtonNegative.UseVisualStyleBackColor = true;
+            radioButtonNegative.CheckedChanged += radioButtonNegative_CheckedChanged;
             // 
             // radioButtonPotential
             // 
-            this.radioButtonPotential.AutoSize = true;
-            this.radioButtonPotential.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonPotential.Location = new System.Drawing.Point(10, 79);
-            this.radioButtonPotential.Name = "radioButtonPotential";
-            this.radioButtonPotential.Size = new System.Drawing.Size(94, 23);
-            this.radioButtonPotential.TabIndex = 800;
-            this.radioButtonPotential.TabStop = true;
-            this.radioButtonPotential.Text = "Potential";
-            this.radioButtonPotential.UseVisualStyleBackColor = true;
-            this.radioButtonPotential.CheckedChanged += new System.EventHandler(this.radioButtonPotential_CheckedChanged);
+            radioButtonPotential.AutoSize = true;
+            radioButtonPotential.Font = new Font("Bookman Old Style", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            radioButtonPotential.Location = new Point(10, 79);
+            radioButtonPotential.Name = "radioButtonPotential";
+            radioButtonPotential.Size = new Size(94, 23);
+            radioButtonPotential.TabIndex = 800;
+            radioButtonPotential.TabStop = true;
+            radioButtonPotential.Text = "Potential";
+            radioButtonPotential.UseVisualStyleBackColor = true;
+            radioButtonPotential.CheckedChanged += radioButtonPotential_CheckedChanged;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(19, 385);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 111);
-            this.textBox1.TabIndex = 905;
-            this.textBox1.TabStop = false;
+            textBox1.Location = new Point(19, 385);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(227, 111);
+            textBox1.TabIndex = 905;
+            textBox1.TabStop = false;
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(64, 583);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(44, 15);
-            this.label14.TabIndex = 801;
-            this.label14.Text = "label14";
+            label14.AutoSize = true;
+            label14.Location = new Point(64, 583);
+            label14.Name = "label14";
+            label14.Size = new Size(44, 15);
+            label14.TabIndex = 801;
+            label14.Text = "label14";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(19, 677);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 298;
-            this.button1.Text = "Next";
-            this.button1.UseVisualStyleBackColor = true;
+            button1.Location = new Point(19, 677);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 298;
+            button1.Text = "Next";
+            button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(156, 677);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 299;
-            this.button2.Text = "Back";
-            this.button2.UseVisualStyleBackColor = true;
+            button2.Location = new Point(156, 677);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 299;
+            button2.Text = "Back";
+            button2.UseVisualStyleBackColor = true;
             // 
             // labelDComment
             // 
-            this.labelDComment.AutoSize = true;
-            this.labelDComment.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelDComment.Location = new System.Drawing.Point(3, 0);
-            this.labelDComment.Name = "labelDComment";
-            this.labelDComment.Size = new System.Drawing.Size(221, 24);
-            this.labelDComment.TabIndex = 916;
-            this.labelDComment.Text = "Doctor\'s comments";
+            labelDComment.AutoSize = true;
+            labelDComment.Font = new Font("Bookman Old Style", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelDComment.Location = new Point(3, 0);
+            labelDComment.Name = "labelDComment";
+            labelDComment.Size = new Size(221, 24);
+            labelDComment.TabIndex = 916;
+            labelDComment.Text = "Doctor's comments";
             // 
             // textBoxComment
             // 
-            this.textBoxComment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxComment.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxComment.Location = new System.Drawing.Point(3, 261);
-            this.textBoxComment.Multiline = true;
-            this.textBoxComment.Name = "textBoxComment";
-            this.textBoxComment.Size = new System.Drawing.Size(229, 195);
-            this.textBoxComment.TabIndex = 905;
-            this.textBoxComment.TabStop = false;
-            this.textBoxComment.Enter += new System.EventHandler(this.textBoxComment_Enter);
-            this.textBoxComment.Leave += new System.EventHandler(this.textBoxComment_Leave);
+            textBoxComment.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxComment.Font = new Font("Bookman Old Style", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxComment.Location = new Point(3, 261);
+            textBoxComment.Multiline = true;
+            textBoxComment.Name = "textBoxComment";
+            textBoxComment.Size = new Size(229, 195);
+            textBoxComment.TabIndex = 905;
+            textBoxComment.TabStop = false;
+            textBoxComment.Enter += textBoxComment_Enter;
+            textBoxComment.Leave += textBoxComment_Leave;
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel6.AutoSize = true;
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.74105F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.25895F));
-            this.tableLayoutPanel6.Controls.Add(this.panel4, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.panel1, 1, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 3);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1304, 708);
-            this.tableLayoutPanel6.TabIndex = 932;
+            tableLayoutPanel6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel6.AutoSize = true;
+            tableLayoutPanel6.ColumnCount = 2;
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 79.74105F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.25895F));
+            tableLayoutPanel6.Controls.Add(panel4, 0, 0);
+            tableLayoutPanel6.Controls.Add(panel1, 1, 0);
+            tableLayoutPanel6.Location = new Point(0, 3);
+            tableLayoutPanel6.Name = "tableLayoutPanel6";
+            tableLayoutPanel6.RowCount = 1;
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel6.Size = new Size(1304, 708);
+            tableLayoutPanel6.TabIndex = 932;
+            tableLayoutPanel6.Paint += tableLayoutPanel6_Paint;
             // 
             // panel4
             // 
-            this.panel4.AutoSize = true;
-            this.panel4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel4.Controls.Add(this.tableLayoutPanel7);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.tableLayoutPanel5);
-            this.panel4.Controls.Add(this.tableLayoutPanel4);
-            this.panel4.Controls.Add(this.tableLayoutPanel3);
-            this.panel4.Controls.Add(this.lbl_patient);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(3, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1033, 702);
-            this.panel4.TabIndex = 920;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            panel4.AutoSize = true;
+            panel4.BackColor = SystemColors.ButtonFace;
+            panel4.Controls.Add(tableLayoutPanel7);
+            panel4.Controls.Add(label2);
+            panel4.Controls.Add(tableLayoutPanel5);
+            panel4.Controls.Add(tableLayoutPanel4);
+            panel4.Controls.Add(tableLayoutPanel3);
+            panel4.Controls.Add(lbl_patient);
+            panel4.Dock = DockStyle.Fill;
+            panel4.Location = new Point(3, 3);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(1033, 702);
+            panel4.TabIndex = 920;
+            panel4.Paint += panel4_Paint;
             // 
             // tableLayoutPanel7
             // 
-            this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Controls.Add(this.buttonPencil, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.buttonClean, 1, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(899, 46);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(131, 71);
-            this.tableLayoutPanel7.TabIndex = 933;
+            tableLayoutPanel7.ColumnCount = 2;
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel7.Controls.Add(buttonPencil, 0, 0);
+            tableLayoutPanel7.Controls.Add(buttonClean, 1, 0);
+            tableLayoutPanel7.Location = new Point(899, 46);
+            tableLayoutPanel7.Name = "tableLayoutPanel7";
+            tableLayoutPanel7.RowCount = 1;
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel7.Size = new Size(131, 71);
+            tableLayoutPanel7.TabIndex = 933;
             // 
             // buttonPencil
             // 
-            this.buttonPencil.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonPencil.BackgroundImage = global::breastcancer.Properties.Resources.pencil;
-            this.buttonPencil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonPencil.Location = new System.Drawing.Point(7, 11);
-            this.buttonPencil.Name = "buttonPencil";
-            this.buttonPencil.Size = new System.Drawing.Size(50, 48);
-            this.buttonPencil.TabIndex = 921;
-            this.buttonPencil.UseVisualStyleBackColor = true;
-            this.buttonPencil.Click += new System.EventHandler(this.buttonPencil_Click);
-            this.buttonPencil.Paint += new System.Windows.Forms.PaintEventHandler(this.buttonPencil_Paint);
+            buttonPencil.Anchor = AnchorStyles.None;
+            buttonPencil.BackgroundImage = Properties.Resources.pencil;
+            buttonPencil.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonPencil.Location = new Point(7, 11);
+            buttonPencil.Name = "buttonPencil";
+            buttonPencil.Size = new Size(50, 48);
+            buttonPencil.TabIndex = 921;
+            buttonPencil.UseVisualStyleBackColor = true;
+            buttonPencil.Click += buttonPencil_Click;
+            buttonPencil.Paint += buttonPencil_Paint;
             // 
             // buttonClean
             // 
-            this.buttonClean.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonClean.BackgroundImage = global::breastcancer.Properties.Resources.eraser;
-            this.buttonClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonClean.Location = new System.Drawing.Point(73, 11);
-            this.buttonClean.Name = "buttonClean";
-            this.buttonClean.Size = new System.Drawing.Size(50, 48);
-            this.buttonClean.TabIndex = 928;
-            this.buttonClean.UseVisualStyleBackColor = true;
-            this.buttonClean.Click += new System.EventHandler(this.buttonClean_Click);
+            buttonClean.Anchor = AnchorStyles.None;
+            buttonClean.BackgroundImage = Properties.Resources.eraser;
+            buttonClean.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonClean.Location = new Point(73, 11);
+            buttonClean.Name = "buttonClean";
+            buttonClean.Size = new Size(50, 48);
+            buttonClean.TabIndex = 928;
+            buttonClean.UseVisualStyleBackColor = true;
+            buttonClean.Click += buttonClean_Click;
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(9, 609);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 19);
-            this.label2.TabIndex = 918;
-            this.label2.Text = "label2";
+            label2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Font = new Font("Bookman Old Style", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(9, 609);
+            label2.Name = "label2";
+            label2.Size = new Size(54, 19);
+            label2.TabIndex = 918;
+            label2.Text = "label2";
             // 
             // tableLayoutPanel5
             // 
-            this.tableLayoutPanel5.ColumnCount = 3;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.tableLayoutPanel5.Controls.Add(this.labelMa, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(23, 40);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(317, 36);
-            this.tableLayoutPanel5.TabIndex = 932;
+            tableLayoutPanel5.ColumnCount = 3;
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 63F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 63F));
+            tableLayoutPanel5.Controls.Add(labelMa, 0, 0);
+            tableLayoutPanel5.Location = new Point(23, 40);
+            tableLayoutPanel5.Name = "tableLayoutPanel5";
+            tableLayoutPanel5.RowCount = 1;
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel5.Size = new Size(317, 36);
+            tableLayoutPanel5.TabIndex = 932;
             // 
             // labelMa
             // 
-            this.labelMa.AutoSize = true;
-            this.labelMa.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelMa.Location = new System.Drawing.Point(3, 0);
-            this.labelMa.Name = "labelMa";
-            this.labelMa.Size = new System.Drawing.Size(161, 24);
-            this.labelMa.TabIndex = 922;
-            this.labelMa.Text = "Mammograms";
+            labelMa.AutoSize = true;
+            labelMa.Font = new Font("Bookman Old Style", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelMa.Location = new Point(3, 0);
+            labelMa.Name = "labelMa";
+            labelMa.Size = new Size(161, 24);
+            labelMa.TabIndex = 922;
+            labelMa.Text = "Mammograms";
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 4;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.Controls.Add(this.lbl_rp_prediction, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.labelRight, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.lbl_lpm_prediction, 3, 2);
-            this.tableLayoutPanel4.Controls.Add(this.pictureBox3, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.lbl_lp_prediction, 1, 2);
-            this.tableLayoutPanel4.Controls.Add(this.pictureBox4, 3, 0);
-            this.tableLayoutPanel4.Controls.Add(this.labelLeft, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.lbl_rpm_prediction, 2, 2);
-            this.tableLayoutPanel4.Controls.Add(this.pictureBox1, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.labelLeftM, 3, 1);
-            this.tableLayoutPanel4.Controls.Add(this.labelRightM, 2, 1);
-            this.tableLayoutPanel4.Controls.Add(this.pictureBox2, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(17, 120);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 3;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.20113F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.798867F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44.49F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1032, 395);
-            this.tableLayoutPanel4.TabIndex = 931;
+            tableLayoutPanel4.ColumnCount = 4;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel4.Controls.Add(lbl_rp_prediction, 0, 2);
+            tableLayoutPanel4.Controls.Add(labelRight, 0, 1);
+            tableLayoutPanel4.Controls.Add(lbl_lpm_prediction, 3, 2);
+            tableLayoutPanel4.Controls.Add(pictureBox3, 2, 0);
+            tableLayoutPanel4.Controls.Add(lbl_lp_prediction, 1, 2);
+            tableLayoutPanel4.Controls.Add(pictureBox4, 3, 0);
+            tableLayoutPanel4.Controls.Add(labelLeft, 1, 1);
+            tableLayoutPanel4.Controls.Add(lbl_rpm_prediction, 2, 2);
+            tableLayoutPanel4.Controls.Add(pictureBox1, 1, 0);
+            tableLayoutPanel4.Controls.Add(labelLeftM, 3, 1);
+            tableLayoutPanel4.Controls.Add(labelRightM, 2, 1);
+            tableLayoutPanel4.Controls.Add(pictureBox2, 0, 0);
+            tableLayoutPanel4.Location = new Point(17, 120);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 3;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 93.20113F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 6.798867F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 44.49F));
+            tableLayoutPanel4.Size = new Size(1032, 395);
+            tableLayoutPanel4.TabIndex = 931;
             // 
             // lbl_rp_prediction
             // 
-            this.lbl_rp_prediction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_rp_prediction.AutoSize = true;
-            this.lbl_rp_prediction.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_rp_prediction.Location = new System.Drawing.Point(3, 363);
-            this.lbl_rp_prediction.Name = "lbl_rp_prediction";
-            this.lbl_rp_prediction.Size = new System.Drawing.Size(252, 19);
-            this.lbl_rp_prediction.TabIndex = 923;
-            this.lbl_rp_prediction.Text = "Prediction:";
+            lbl_rp_prediction.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            lbl_rp_prediction.AutoSize = true;
+            lbl_rp_prediction.Font = new Font("Bookman Old Style", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_rp_prediction.Location = new Point(3, 363);
+            lbl_rp_prediction.Name = "lbl_rp_prediction";
+            lbl_rp_prediction.Size = new Size(252, 19);
+            lbl_rp_prediction.TabIndex = 923;
+            lbl_rp_prediction.Text = "Prediction:";
             // 
             // labelRight
             // 
-            this.labelRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelRight.AutoSize = true;
-            this.labelRight.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelRight.Location = new System.Drawing.Point(3, 329);
-            this.labelRight.Name = "labelRight";
-            this.labelRight.Size = new System.Drawing.Size(252, 19);
-            this.labelRight.TabIndex = 908;
-            this.labelRight.Text = "Right Projection";
+            labelRight.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelRight.AutoSize = true;
+            labelRight.Font = new Font("Bookman Old Style", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelRight.Location = new Point(3, 329);
+            labelRight.Name = "labelRight";
+            labelRight.Size = new Size(252, 19);
+            labelRight.TabIndex = 908;
+            labelRight.Text = "Right Projection";
             // 
             // lbl_lpm_prediction
             // 
-            this.lbl_lpm_prediction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_lpm_prediction.AutoSize = true;
-            this.lbl_lpm_prediction.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_lpm_prediction.Location = new System.Drawing.Point(777, 363);
-            this.lbl_lpm_prediction.Name = "lbl_lpm_prediction";
-            this.lbl_lpm_prediction.Size = new System.Drawing.Size(252, 19);
-            this.lbl_lpm_prediction.TabIndex = 926;
-            this.lbl_lpm_prediction.Text = "Prediction: ";
+            lbl_lpm_prediction.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            lbl_lpm_prediction.AutoSize = true;
+            lbl_lpm_prediction.Font = new Font("Bookman Old Style", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_lpm_prediction.Location = new Point(777, 363);
+            lbl_lpm_prediction.Name = "lbl_lpm_prediction";
+            lbl_lpm_prediction.Size = new Size(252, 19);
+            lbl_lpm_prediction.TabIndex = 926;
+            lbl_lpm_prediction.Text = "Prediction: ";
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox3.Location = new System.Drawing.Point(521, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(247, 320);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 902;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox3_Paint);
-            this.pictureBox3.DoubleClick += new System.EventHandler(this.pictureBox3_DoubleClick);
-            this.pictureBox3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox3_MouseDown);
-            this.pictureBox3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox3_MouseMove);
-            this.pictureBox3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox3_MouseUp);
+            pictureBox3.Anchor = AnchorStyles.Top;
+            pictureBox3.BackColor = SystemColors.ActiveCaptionText;
+            pictureBox3.Location = new Point(521, 3);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(247, 320);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 902;
+            pictureBox3.TabStop = false;
+            pictureBox3.Paint += pictureBox3_Paint;
+            pictureBox3.DoubleClick += pictureBox3_DoubleClick;
+            pictureBox3.MouseDown += pictureBox3_MouseDown;
+            pictureBox3.MouseMove += pictureBox3_MouseMove;
+            pictureBox3.MouseUp += pictureBox3_MouseUp;
             // 
             // lbl_lp_prediction
             // 
-            this.lbl_lp_prediction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_lp_prediction.AutoSize = true;
-            this.lbl_lp_prediction.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_lp_prediction.Location = new System.Drawing.Point(261, 363);
-            this.lbl_lp_prediction.Name = "lbl_lp_prediction";
-            this.lbl_lp_prediction.Size = new System.Drawing.Size(252, 19);
-            this.lbl_lp_prediction.TabIndex = 924;
-            this.lbl_lp_prediction.Text = "Prediction:";
+            lbl_lp_prediction.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            lbl_lp_prediction.AutoSize = true;
+            lbl_lp_prediction.Font = new Font("Bookman Old Style", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_lp_prediction.Location = new Point(261, 363);
+            lbl_lp_prediction.Name = "lbl_lp_prediction";
+            lbl_lp_prediction.Size = new Size(252, 19);
+            lbl_lp_prediction.TabIndex = 924;
+            lbl_lp_prediction.Text = "Prediction:";
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox4.Location = new System.Drawing.Point(779, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(248, 320);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 904;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox4_Paint);
-            this.pictureBox4.DoubleClick += new System.EventHandler(this.pictureBox4_DoubleClick);
-            this.pictureBox4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox4_MouseDown);
-            this.pictureBox4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox4_MouseMove);
-            this.pictureBox4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox4_MouseUp);
+            pictureBox4.Anchor = AnchorStyles.Top;
+            pictureBox4.BackColor = SystemColors.ActiveCaptionText;
+            pictureBox4.Location = new Point(779, 3);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(248, 320);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 904;
+            pictureBox4.TabStop = false;
+            pictureBox4.Paint += pictureBox4_Paint;
+            pictureBox4.DoubleClick += pictureBox4_DoubleClick;
+            pictureBox4.MouseDown += pictureBox4_MouseDown;
+            pictureBox4.MouseMove += pictureBox4_MouseMove;
+            pictureBox4.MouseUp += pictureBox4_MouseUp;
             // 
             // labelLeft
             // 
-            this.labelLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelLeft.AutoSize = true;
-            this.labelLeft.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLeft.Location = new System.Drawing.Point(261, 329);
-            this.labelLeft.Name = "labelLeft";
-            this.labelLeft.Size = new System.Drawing.Size(252, 19);
-            this.labelLeft.TabIndex = 909;
-            this.labelLeft.Text = "Left Projection";
+            labelLeft.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelLeft.AutoSize = true;
+            labelLeft.Font = new Font("Bookman Old Style", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelLeft.Location = new Point(261, 329);
+            labelLeft.Name = "labelLeft";
+            labelLeft.Size = new Size(252, 19);
+            labelLeft.TabIndex = 909;
+            labelLeft.Text = "Left Projection";
             // 
             // lbl_rpm_prediction
             // 
-            this.lbl_rpm_prediction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_rpm_prediction.AutoSize = true;
-            this.lbl_rpm_prediction.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_rpm_prediction.Location = new System.Drawing.Point(519, 363);
-            this.lbl_rpm_prediction.Name = "lbl_rpm_prediction";
-            this.lbl_rpm_prediction.Size = new System.Drawing.Size(252, 19);
-            this.lbl_rpm_prediction.TabIndex = 925;
-            this.lbl_rpm_prediction.Text = "Prediction: ";
+            lbl_rpm_prediction.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            lbl_rpm_prediction.AutoSize = true;
+            lbl_rpm_prediction.Font = new Font("Bookman Old Style", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_rpm_prediction.Location = new Point(519, 363);
+            lbl_rpm_prediction.Name = "lbl_rpm_prediction";
+            lbl_rpm_prediction.Size = new Size(252, 19);
+            lbl_rpm_prediction.TabIndex = 925;
+            lbl_rpm_prediction.Text = "Prediction: ";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox1.Location = new System.Drawing.Point(263, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(247, 320);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
-            this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            pictureBox1.Anchor = AnchorStyles.Top;
+            pictureBox1.BackColor = SystemColors.ActiveCaptionText;
+            pictureBox1.Location = new Point(263, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(247, 320);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            pictureBox1.Paint += pictureBox1_Paint;
+            pictureBox1.DoubleClick += pictureBox1_DoubleClick;
+            pictureBox1.MouseDown += pictureBox1_MouseDown;
+            pictureBox1.MouseMove += pictureBox1_MouseMove;
+            pictureBox1.MouseUp += pictureBox1_MouseUp;
             // 
             // labelLeftM
             // 
-            this.labelLeftM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelLeftM.AutoSize = true;
-            this.labelLeftM.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLeftM.Location = new System.Drawing.Point(777, 329);
-            this.labelLeftM.Name = "labelLeftM";
-            this.labelLeftM.Size = new System.Drawing.Size(252, 19);
-            this.labelLeftM.TabIndex = 916;
-            this.labelLeftM.Text = "Left Projection M";
+            labelLeftM.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelLeftM.AutoSize = true;
+            labelLeftM.Font = new Font("Bookman Old Style", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelLeftM.Location = new Point(777, 329);
+            labelLeftM.Name = "labelLeftM";
+            labelLeftM.Size = new Size(252, 19);
+            labelLeftM.TabIndex = 916;
+            labelLeftM.Text = "Left Projection M";
             // 
             // labelRightM
             // 
-            this.labelRightM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelRightM.AutoSize = true;
-            this.labelRightM.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelRightM.Location = new System.Drawing.Point(519, 329);
-            this.labelRightM.Name = "labelRightM";
-            this.labelRightM.Size = new System.Drawing.Size(252, 19);
-            this.labelRightM.TabIndex = 910;
-            this.labelRightM.Text = "Right Projection M";
+            labelRightM.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelRightM.AutoSize = true;
+            labelRightM.Font = new Font("Bookman Old Style", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelRightM.Location = new Point(519, 329);
+            labelRightM.Name = "labelRightM";
+            labelRightM.Size = new Size(252, 19);
+            labelRightM.TabIndex = 910;
+            labelRightM.Text = "Right Projection M";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox2.Location = new System.Drawing.Point(5, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(247, 320);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 907;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox2_Paint);
-            this.pictureBox2.DoubleClick += new System.EventHandler(this.pictureBox2_DoubleClick);
-            this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseDown);
-            this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseMove);
-            this.pictureBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseUp);
+            pictureBox2.Anchor = AnchorStyles.Top;
+            pictureBox2.BackColor = SystemColors.ActiveCaptionText;
+            pictureBox2.Location = new Point(5, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(247, 320);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 907;
+            pictureBox2.TabStop = false;
+            pictureBox2.Paint += pictureBox2_Paint;
+            pictureBox2.DoubleClick += pictureBox2_DoubleClick;
+            pictureBox2.MouseDown += pictureBox2_MouseDown;
+            pictureBox2.MouseMove += pictureBox2_MouseMove;
+            pictureBox2.MouseUp += pictureBox2_MouseUp;
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.tableLayoutPanel3.ColumnCount = 5;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.44695F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.68848F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.86456F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.tableLayoutPanel3.Controls.Add(this.buttonQuestionM, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.buttonDown, 4, 0);
-            this.tableLayoutPanel3.Controls.Add(this.buttonUp, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label1, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.buttonTest, 2, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(9, 621);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1024, 71);
-            this.tableLayoutPanel3.TabIndex = 930;
+            tableLayoutPanel3.Anchor = AnchorStyles.Left;
+            tableLayoutPanel3.ColumnCount = 5;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.44695F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 65.68848F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.86456F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 63F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 63F));
+            tableLayoutPanel3.Controls.Add(buttonQuestionM, 0, 0);
+            tableLayoutPanel3.Controls.Add(buttonDown, 4, 0);
+            tableLayoutPanel3.Controls.Add(buttonUp, 3, 0);
+            tableLayoutPanel3.Controls.Add(label1, 1, 0);
+            tableLayoutPanel3.Controls.Add(buttonTest, 2, 0);
+            tableLayoutPanel3.Location = new Point(9, 621);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 1;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.Size = new Size(1024, 71);
+            tableLayoutPanel3.TabIndex = 930;
             // 
             // buttonQuestionM
             // 
-            this.buttonQuestionM.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.buttonQuestionM.BackgroundImage = global::breastcancer.Properties.Resources.ques;
-            this.buttonQuestionM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonQuestionM.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonQuestionM.Location = new System.Drawing.Point(3, 10);
-            this.buttonQuestionM.Name = "buttonQuestionM";
-            this.buttonQuestionM.Size = new System.Drawing.Size(50, 50);
-            this.buttonQuestionM.TabIndex = 921;
-            this.buttonQuestionM.UseVisualStyleBackColor = true;
+            buttonQuestionM.Anchor = AnchorStyles.Left;
+            buttonQuestionM.BackgroundImage = Properties.Resources.ques;
+            buttonQuestionM.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonQuestionM.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonQuestionM.Location = new Point(3, 10);
+            buttonQuestionM.Name = "buttonQuestionM";
+            buttonQuestionM.Size = new Size(50, 50);
+            buttonQuestionM.TabIndex = 921;
+            buttonQuestionM.UseVisualStyleBackColor = true;
             // 
             // buttonDown
             // 
-            this.buttonDown.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonDown.BackgroundImage = global::breastcancer.Properties.Resources.down11;
-            this.buttonDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonDown.Location = new System.Drawing.Point(971, 10);
-            this.buttonDown.Name = "buttonDown";
-            this.buttonDown.Size = new System.Drawing.Size(50, 50);
-            this.buttonDown.TabIndex = 801;
-            this.buttonDown.UseVisualStyleBackColor = true;
-            this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
+            buttonDown.Anchor = AnchorStyles.Right;
+            buttonDown.BackgroundImage = Properties.Resources.down11;
+            buttonDown.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonDown.Location = new Point(971, 10);
+            buttonDown.Name = "buttonDown";
+            buttonDown.Size = new Size(50, 50);
+            buttonDown.TabIndex = 801;
+            buttonDown.UseVisualStyleBackColor = true;
+            buttonDown.Click += buttonDown_Click;
             // 
             // buttonUp
             // 
-            this.buttonUp.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonUp.BackgroundImage = global::breastcancer.Properties.Resources.up11;
-            this.buttonUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonUp.Location = new System.Drawing.Point(906, 10);
-            this.buttonUp.Name = "buttonUp";
-            this.buttonUp.Size = new System.Drawing.Size(50, 50);
-            this.buttonUp.TabIndex = 302;
-            this.buttonUp.UseVisualStyleBackColor = true;
-            this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
+            buttonUp.Anchor = AnchorStyles.Right;
+            buttonUp.BackgroundImage = Properties.Resources.up11;
+            buttonUp.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonUp.Location = new Point(906, 10);
+            buttonUp.Name = "buttonUp";
+            buttonUp.Size = new Size(50, 50);
+            buttonUp.TabIndex = 302;
+            buttonUp.UseVisualStyleBackColor = true;
+            buttonUp.Click += buttonUp_Click;
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(396, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 19);
-            this.label1.TabIndex = 801;
-            this.label1.Text = "label1";
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Font = new Font("Bookman Old Style", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(396, 26);
+            label1.Name = "label1";
+            label1.Size = new Size(54, 19);
+            label1.TabIndex = 801;
+            label1.Text = "label1";
             // 
             // buttonTest
             // 
-            this.buttonTest.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonTest.BackgroundImage = global::breastcancer.Properties.Resources.predict1;
-            this.buttonTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonTest.Location = new System.Drawing.Point(764, 7);
-            this.buttonTest.Name = "buttonTest";
-            this.buttonTest.Size = new System.Drawing.Size(129, 57);
-            this.buttonTest.TabIndex = 929;
-            this.buttonTest.Text = "Predict";
-            this.buttonTest.UseVisualStyleBackColor = true;
-            this.buttonTest.Click += new System.EventHandler(this.buttonTest_Click);
+            buttonTest.Anchor = AnchorStyles.Right;
+            buttonTest.BackgroundImage = Properties.Resources.predict1;
+            buttonTest.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonTest.Location = new Point(764, 7);
+            buttonTest.Name = "buttonTest";
+            buttonTest.Size = new Size(129, 57);
+            buttonTest.TabIndex = 929;
+            buttonTest.Text = "Predict";
+            buttonTest.UseVisualStyleBackColor = true;
+            buttonTest.Click += buttonTest_Click;
             // 
             // lbl_patient
             // 
-            this.lbl_patient.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbl_patient.AutoSize = true;
-            this.lbl_patient.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_patient.Location = new System.Drawing.Point(773, 583);
-            this.lbl_patient.Name = "lbl_patient";
-            this.lbl_patient.Size = new System.Drawing.Size(73, 19);
-            this.lbl_patient.TabIndex = 927;
-            this.lbl_patient.Text = "Patient: ";
+            lbl_patient.Anchor = AnchorStyles.Right;
+            lbl_patient.AutoSize = true;
+            lbl_patient.Font = new Font("Bookman Old Style", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_patient.Location = new Point(773, 583);
+            lbl_patient.Name = "lbl_patient";
+            lbl_patient.Size = new Size(73, 19);
+            lbl_patient.TabIndex = 927;
+            lbl_patient.Text = "Patient: ";
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1305, 713);
-            this.Controls.Add(this.tableLayoutPanel6);
-            this.MinimumSize = new System.Drawing.Size(1278, 678);
-            this.Name = "Form2";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mammograms";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Activated += new System.EventHandler(this.Form2_Activated);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
-            this.Load += new System.EventHandler(this.Form2_Load);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form2_KeyUp);
-            this.panel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonFace;
+            ClientSize = new Size(1305, 713);
+            Controls.Add(tableLayoutPanel6);
+            MinimumSize = new Size(1278, 678);
+            Name = "Form2";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Mammograms";
+            WindowState = FormWindowState.Maximized;
+            Activated += Form2_Activated;
+            FormClosing += Form2_FormClosing;
+            FormClosed += Form2_FormClosed;
+            Load += Form2_Load;
+            KeyUp += Form2_KeyUp;
+            panel1.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            tableLayoutPanel6.ResumeLayout(false);
+            tableLayoutPanel6.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            tableLayoutPanel7.ResumeLayout(false);
+            tableLayoutPanel5.ResumeLayout(false);
+            tableLayoutPanel5.PerformLayout();
+            tableLayoutPanel4.ResumeLayout(false);
+            tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel3.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tcdfdlfZZ8jKyTHMGYBhTG5pv733WTBjTYkgxGp0esaaQ9IGR0JkTW8w8vnvK3ich1j/E3bTJ5+SQ8w2NAOvew==",
+  "dgSpecHash": "6SuywD457pyyMSz6RX7Bo4+BjI2K+B0v1m0DVDJ3SkECvdyNlTl/p5tALsyxltXaQIJSDIX46Ya7hwPySkRwmQ==",
   "success": true,
-  "projectFilePath": "E:\\OneDrive\\Desktop\\SDP2022-brstcancer - Copy\\breastcancer\\breastcancer\\breastcancer.csproj",
+  "projectFilePath": "E:\\OneDrive - ADA University\\Homework\\SDP2022-brstcancer\\breastcancer\\breastcancer\\breastcancer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"

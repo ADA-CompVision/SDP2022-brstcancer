@@ -1,10 +1,10 @@
-# Breast Cancer Image Generation Using Generative Adversarial Networks (GANs)
+# Breast Cancer Image Generation Using Wasserstein Generative Adversarial Network with Gradient Penalty (WGAN-GP)
 
 ## Overview
 
-This project is an application of Generative Adversarial Networks (GANs) for the generation of synthetic breast cancer images. The motivation comes from the need for large, diverse datasets in medical imaging, where data collection is expensive and often imbalanced. By introducing synthetic data generation, we aim to augment existing datasets and improve downstream tasks such as classification, and segmentation.
+This project is an application of Wasserstein Generative Adversarial Network with Gradient Penalty (WGAN-GP) for the generation of synthetic breast cancer images. The motivation comes from the need for large, diverse datasets in medical imaging, where data collection is expensive and often imbalanced. By introducing synthetic data generation, we aim to augment existing datasets and improve downstream tasks such as classification, and segmentation.
 
-The main components for the GAN system include the followings:
+The main components for the WGAN-GP system include the followings:
 
 1. **Preprocessing Pipeline** – Responsible for downloading, saving, and preparing medical images (refer to `GAN/med_images_preprocessing.ipynb`)
 2. **GAN Training Pipeline** – Trains a deep convolutional GAN with applied gradient penalty to produce realistic breast cancer images (refer to `GAN/gan_tf_brst_cancer_FINAL.ipynb`)
@@ -26,14 +26,9 @@ GAN/
 
 This notebook constitutes the initial step in the image generation process. It prepares the mammography dataset through the following stages:
 
-### 2.1 Dataset Acquisition
+### 2.1 Conversion to PNG Format
 
-* The raw data is sourced from the **INbreast dataset** hosted on Kaggle.
-* The dataset was filtered to include **only DICOM (.dcm) files**, which contain high-resolution mammography images.
-* A total of **410 DICOM files** were identified and extracted for processing.
-
-### 2.2 Conversion to PNG Format
-
+The raw data is sourced from the **CBIS-DDSM dataset** hosted on Kaggle.
 To ensure compatibility with the image generation pipeline, the DICOM files are converted into PNG format using the following steps:
 
 * Each DICOM file is read using the `pydicom` library, which extracts both metadata and pixel data.
@@ -81,6 +76,7 @@ strategy = tf.distribute.TPUStrategy(resolver)
 
 * The training loop is manually implemented with `@tf.function` for speed.
 * Both generator and discriminator losses are computed using binary cross-entropy.
+* Gradient penalty is applied to the Discriminator loss to improve training stability and reduce mode collapse.
 * Optimizers used: Adam with separate learning rates for stability.
 
 ### 3.5 Visualization and Logging

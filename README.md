@@ -1,37 +1,96 @@
-# SDP2022-brstcancer
-This repository contains the code for the final project of the Senior Design Project at ADA University, for the Fall 2022 and Spring 2023 semesters. The project is focused on the classification of breast cancer images using various Machine Learning models
+# Breast Cancer Image Generation Using Generative Adversarial Networks (GANs)
 
-The project is divided into the following sections:
+## Overview
 
-data/: contains the dataset used for the project. The dataset is organized into subfolders, each corresponding to a different class. This dataset was obtained from different resources including Kaggle.
-notebooks/: contains Jupyter notebooks used for data exploration and model training. These notebooks contain detailed explanations of the code and experiments.
-src/: contains the implementation of the CNNs and Transfer Learning models used for classification.
-reports/: contains the final report and the presentation slides summarizing the project.
-Installation
-To use this code, you should first clone the repository to your local machine using the following command:
+This project is an application of Generative Adversarial Networks (GANs) for the generation of synthetic breast cancer images. The motivation comes from the need for large, diverse datasets in medical imaging, where data collection is expensive and often imbalanced. By introducing synthetic data generation, we aim to augment existing datasets and improve downstream tasks such as classification, and segmentation.
 
-bash
-Copy code
-git clone https://github.com/ADA-CompVision/SDP2022-brstcancer.git
-This code requires the following Python packages:
+The main components for the GAN system include the followings:
 
-numpy
-matplotlib
-scikit-learn
-tensorflow
-keras
-You can install these packages using pip:
+1. **Preprocessing Pipeline** – Responsible for downloading, saving, and preparing medical images (refer to `GAN/med_images_preprocessing.ipynb`)
+2. **GAN Training Pipeline** – Trains a deep convolutional GAN with applied gradient penalty to produce realistic breast cancer images (refer to `GAN/gan_tf_brst_cancer_FINAL.ipynb`)
 
-bash
-Copy code
-pip install numpy matplotlib scikit-learn tensorflow keras
-Usage
-You can use the Jupyter notebooks in the notebooks/ directory to explore the data and train the models. The notebooks are self-contained and contain detailed explanations of the code and experiments.
+---
 
-You can also use the code in the src/ directory to train and evaluate the models on your own data. The cnn.py and transfer_learning.py files contain the implementation of the CNN and Transfer Learning models, respectively.
+## 1. Project Structure
 
-Contributing
-If you find a bug or have a suggestion for improvement, please open an issue on GitHub.
+```
+GAN/
+├── tests/                         # GAN training tests
+├── med_images_preprocessing.ipynb # Image preprocessing
+├── gan_tf_brst_cancer_FINAL.ipynb # Final GAN model training
+```
 
-License
-This code is released under the MIT License. See the LICENSE file for more information.
+---
+
+## 2. Image Processing Pipeline (`med_images_preprocessing.ipynb`)
+
+This notebook constitutes the initial step in the image generation process. It prepares the mammography dataset through the following stages:
+
+### 2.1 Dataset Acquisition
+
+* The raw data is sourced from the **INbreast dataset** hosted on Kaggle.
+* The dataset was filtered to include **only DICOM (.dcm) files**, which contain high-resolution mammography images.
+* A total of **410 DICOM files** were identified and extracted for processing.
+
+### 2.2 Conversion to PNG Format
+
+To ensure compatibility with the image generation pipeline, the DICOM files are converted into PNG format using the following steps:
+
+* Each DICOM file is read using the `pydicom` library, which extracts both metadata and pixel data.
+* The pixel arrays are normalized and converted into image representations.
+* These arrays are then transformed into **PIL images** and saved in **PNG format**.
+
+---
+
+## 3. GAN Training Structure (`gan_tf_brst_cancer_FINAL.ipynb`)
+
+This notebook provides the the end-to-end GAN training process using TensorFlow and TPU acceleration.
+
+### 3.1 TPU Setup and Strategy
+
+The notebook uses `tf.distribute.TPUStrategy` for integrating Google TPUs for fast training of large models.
+
+```python
+resolver = tf.distribute.cluster_resolver.TPUClusterResolver()
+tf.config.experimental_connect_to_cluster(resolver)
+tf.tpu.experimental.initialize_tpu_system(resolver)
+strategy = tf.distribute.TPUStrategy(resolver)
+```
+
+### 3.2 Data Loading
+
+* Images are loaded and decoded from disk.
+* TensorFlow's **TfRecords** from `tf.data.Dataset` is used for efficient data loading and batching.
+* Data is shuffled and batched for training.
+
+### 3.3 GAN Architecture
+
+#### Generator
+
+* Transposed convolutional layers (`Conv2DTranspose`)
+* Batch Normalization and ReLU activations
+* Final layer uses `tanh` activation to output normalized images
+
+#### Discriminator
+
+* Standard convolutional layers
+* LeakyReLU activations
+* Final output is a sigmoid probability (real/fake)
+
+### 3.4 Training Logic
+
+* The training loop is manually implemented with `@tf.function` for speed.
+* Both generator and discriminator losses are computed using binary cross-entropy.
+* Optimizers used: Adam with separate learning rates for stability.
+
+### 3.5 Visualization and Logging
+
+* Generated images are saved at regular intervals.
+* Visual samples are used to assess the model’s learning progress.
+* Checkpoints are saved for both generator and discriminator.
+
+---
+
+## Acknowledgments
+
+This work was conducted as a continuation of the Senior Design Project (SDP2022) at ADA University. We acknowledge the contributions of all team members and faculty advisors who provided guidance throughout the project.
